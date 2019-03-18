@@ -2,7 +2,7 @@
 
 
 Morado oscuro:   #330033   exclusivo para el header.
-Morado oscuro 2: #660033   para ventanas modales y otros elementos de la página.
+Morado oscuro 2: #571845   para ventanas modales y otros elementos de la página.
 Magenta:         #990033   para todos los formularios.
 Rojo:            #CC0033   para todos los textos h1
 Naranja:         #FF6633   para todos los  textos h2
@@ -30,7 +30,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 li > #logo {
 			float:left;
 			font-family: Helvetica, sans-serif;
-			font-size: 28px;
+			font-size: 30px;
 			font-style: bolder;
 			color: white;
 			padding: 10px 15px 15px 25px;
@@ -63,7 +63,8 @@ li > #salir {
 			width: 25%;
 			height:auto;
 			position: absolute;
-			min-height: 1850px;
+			min-height: 2000px;
+			margin-top: -16px;
 }
 
 #container1{
@@ -89,7 +90,7 @@ li > #salir {
 			color: orange; /*  Para que los fontawesome cambien de color cuando les pasa el mouse encima*/
 }
 
-.mainSideMenu > .redFlagsSide{
+.redFlagsSide{
 			background-color:  #CC0033;
 			height: 100px;
 			width: 100%;
@@ -111,7 +112,8 @@ li > #salir {
 			font-family: Helvetica-light, sans-serif;
 			font-size: 1.4vw;
 			text-align: center;
-			padding: 18% 0% 5% 20%;
+			padding-top: 10%; 
+
 	
 }
 #container2{
@@ -133,7 +135,7 @@ li > #salir {
 /*     -------------  hover ranking stars -------------    */
 
 form{
-	margin: 0% 20% 0% 0%;
+	margin: 0;
 }
 
 input[type="radio"] {
@@ -147,6 +149,7 @@ label{
 .clasificacion{
 			direction: rtl;
 			unicode-bidi: bidi-override;
+			text-align: center;
 }
 
 label:hover,
@@ -169,7 +172,7 @@ input[type="radio"]:checked ~ label{
 }
 
 #appointment{
-			margin-top: 90%;
+			margin-top: 100%;
 }
 
 #calendar{
@@ -195,7 +198,7 @@ input[type="radio"]:checked ~ label{
 			font-family: Helvetica Light, sans-serif;
 			cursor: pointer;
 			border-radius: 5px;
-			margin: 5% 0% 0% 35%;
+			margin: 5% 0% 0% 25%;
 		
 }
 
@@ -207,7 +210,7 @@ input[type="radio"]:checked ~ label{
  }
 
 #contact{
-			margin-top: 90%;
+			margin-top: 100%
 }
 
 .contactForm{
@@ -225,7 +228,7 @@ input[type="radio"]:checked ~ label{
 }
 
 #schoolList{
-			margin-top: 80%;
+			margin-top: 100%;
 }
 
 #container5{
@@ -257,7 +260,7 @@ i.fa-file:hover, .fa-file-download:hover {
 }
 
 #otherDocs{
-			margin-top: 70%;
+			margin-top: 75%;
 }
 
 #container6{
@@ -303,7 +306,7 @@ i.fa-file:hover, .fa-file-download:hover {
 }
 
 #levelsID, #languagesID, #detailsID {
-			margin-left: 6.5%;
+			margin-left: 10%;
 			margin-bottom: 20px;
 			display: inline-block;
 }
@@ -322,7 +325,7 @@ i.fa-file:hover, .fa-file-download:hover {
 			background-color: #CC0033;
 			color: white;
 			text-align: center;
-			width: 226px;
+			width: 180px;
 			height: 50px;
 			margin: 0px;
 			padding-top: 20px;
@@ -474,3 +477,4 @@ ul {
 .YellowBtn:hover, .YellowBtn2:hover, .YellowBtn3:hover{   
 			background-color: gold; /*  Para que los botones amarillos cambien de color cuando les pasa el mouse encima*/
 }
+
