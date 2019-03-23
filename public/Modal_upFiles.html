@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<!--
+    Nombre: Modal Agregar Archivos.
+    Descripcion: Html Modal para la upload de archivos por parte del centro educativo.
+    Autor: GJMachado.
+    Fecha de Creacion:19/03/19.
+    Ultima Actualizacion:23/03/19.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- La siguiente linea es para que la web sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Referenciar CSS -->
+    <link rel="stylesheet" type="text/css" href="css/modalPlan.css">
+
+    <!-- Referenciar font-awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Modal Agregar Archivos</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="main_nav">
+                <li> <a href="#" id="logo">Educate<strong>CR</strong>.com</a></li>
+                <li> <a href="#" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="upFiles">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="ModalContent">
+
+                <!-- Modal Header -->
+                <div class="modal-header" id="HeaderModal">
+                    <h4 class="modal-title">Agregue archivos a continuaciòn</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body text-center">
+                    <p>Formatos permitidos: PDF, doc, docx, zip, rar</p>
+                    <input type="text" id="txtFiles">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer center">
+
+                    <input class=YellowBtn type="button" data-dismiss="modal" value="  Añadir Archivo  ">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        $("#upFiles").modal()
+    </script>
+</body>
+
+</html>
