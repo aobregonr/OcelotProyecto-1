@@ -1,0 +1,479 @@
+/* HEXADECIMAL COLOR PALLETE
+
+
+Morado oscuro:   #330033   exclusivo para el header.
+Morado oscuro 2: #571845   para ventanas modales y otros elementos de la página.
+Magenta:         #990033   para todos los formularios.
+Rojo:            #CC0033   para todos los textos h1
+Naranja:         #FF6633   para todos los  textos h2
+Amarillo:        #FFCC33   para botones principales, estrellas de ranking y otros elementos de la página.
+
+
+*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol
+{
+			margin:0;
+			padding:0;
+			font-family: Helvetica, sans-serif;
+}
+
+/*     -------------  header  -------------    */
+
+#main_nav{
+			background-color: #330033;
+			height: 50px;
+			list-style-type: none;
+
+		}
+
+li > #logo {
+			float:left;
+			font-family: Helvetica, sans-serif;
+			font-size: 30px;
+			font-style: bolder;
+			color: white;
+			padding: 10px 15px 15px 25px;
+			text-decoration: none;
+}
+
+li > #salir {
+			float:right;
+			font-family: Helvetica, sans-serif;
+			font-size: 15px;
+			font-style: normal;
+			color: white;
+			padding: 15px 15px 0px 5px;
+			padding-right: 5%;
+			text-decoration: none;
+}
+
+.fa-sign-out-alt {
+			color: white;
+			float:right;
+			padding: 15px;
+			padding-right:0px;
+}
+
+/*     -------------  side menu  -------------    */
+
+
+.mainSideMenu{
+			background-color: #571845; 
+			width: 25%;
+			height:auto;
+			position: absolute;
+			min-height: 2000px;
+			margin-top: -16px;
+}
+
+#container1{
+			width: 100%;
+			height: auto;
+			font-size: 1.4vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
+}
+
+.schoolLogo{
+			width: 100%;
+			padding: 8%;
+			height: auto;
+			border-radius: 50%
+}
+
+.fa-facebook, .fa-globe{
+			margin: -5% 0% 10% 10%;
+			color: #FF6633;
+			cursor: pointer;
+}
+
+.fa-facebook:hover, .fa-globe:hover { 
+			color: orange; /*  Para que los fontawesome cambien de color cuando les pasa el mouse encima*/
+}
+
+.redFlagsSide{
+			background-color:  #CC0033;
+			height: 100px;
+			width: 100%;
+			max-height: 2em;
+}
+
+.redFlagsSide > h3{
+			color: white;
+			font-family: Helvetica, sans-serif;
+			font-size: 1.4vw;
+			text-align: center;
+			padding: 3px;
+			font-weight: lighter;
+}
+
+#description {
+		
+			color: white;
+			font-family: Helvetica-light, sans-serif;
+			font-size: 1.4vw;
+			text-align: center;
+			padding-top: 10%; 
+
+	
+}
+#container2{
+			width: 100%;
+			height: auto;
+			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
+			background-color: #571845; 
+}
+
+/*     -------------  MEP ranking starts  -------------    */
+
+ .clasificacion > #starMEP1, #starMEP2, #starMEP3, #starMEP4{
+ 			color: #FFCC33;
+ }
+  .clasificacion > #starMEP5{
+ 			color: gray;
+ }
+
+/*     -------------  hover ranking stars -------------    */
+
+form{
+	margin: 0;
+}
+
+input[type="radio"] {
+			display: none;
+}
+
+label{
+			color: grey;
+}
+
+.clasificacion{
+			direction: rtl;
+			unicode-bidi: bidi-override;
+			text-align: center;
+}
+
+label:hover,
+label:hover ~ label{
+			color: #FFCC33;  /* esto es para que las estrellas pasen de ser grises a ser amarillas. */
+			cursor: pointer;
+}
+
+input[type="radio"]:checked ~ label{
+			color: #FFCC33;
+}
+
+/*     -------------  calendar -------------    */
+
+#container3{
+			width: 100%;
+			height: auto;
+			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
+			background-color: #571845; 
+}
+
+#appointment{
+			margin-top: 100%;
+}
+
+#calendar{
+			margin-left: 20%;
+			padding-top: 10%;
+			width: 60%;
+}
+
+.YellowBtn{
+			background-color: #FFCC33;
+			padding: 0% 15% 0% 15%;
+			font-size: 1.5em;
+			font-family: Helvetica Light, sans-serif;
+			cursor: pointer;
+			border-radius: 5px;
+			margin: 5% 20% 0% 20%;
+		
+}
+.YellowBtn2{
+			background-color: #FFCC33;
+			padding: 0% 15% 0% 15%;
+			font-size: 1.5em;
+			font-family: Helvetica Light, sans-serif;
+			cursor: pointer;
+			border-radius: 5px;
+			margin: 5% 0% 0% 25%;
+		
+}
+
+#container4 {
+ 			width: 100%;
+			height: auto;
+			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
+			background-color: #571845; 
+ }
+
+#contact{
+			margin-top: 100%
+}
+
+.contactForm{
+			border-radius: 10px;
+			padding: 10px;
+			width: 80%;
+			margin: 10% 10% 0% 10%;
+			height: auto;
+			font-size: 1em;
+			resize: none;
+}
+
+#msgContact{
+			margin-top: 5%;
+}
+
+#schoolList{
+			margin-top: 100%;
+}
+
+#container5{
+			width: 100%;
+			height: auto;
+			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
+			display: inline-block;
+			margin-top: 5px;
+			background-color: #571845; 
+}
+
+
+.fa-file, .fa-file-download{
+			color: #FF6633;
+			margin: 10% 10% 0% 10%;
+			cursor: pointer;
+}
+
+i.fa-file:hover, .fa-file-download:hover {  
+			color: orange; /*  Para que los fontawesome cambien de color cuando les pasa el mouse encima */
+}
+
+.pLists{
+			color: white;
+			font-weight: lighter;
+			font-size: 1em;
+			margin-left: 30%;
+			margin-top: -10%;
+}
+
+#otherDocs{
+			margin-top: 75%;
+}
+
+#container6{
+			width: 100%;
+			height: auto;
+			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
+			background-color: #571845; 
+
+}
+
+
+
+/*     -------------  main Profile  -------------    */
+
+.mainProfile {
+			width: 75%;
+			margin-left: 25%;
+}
+
+.mainProfile > h1{
+			font-family: Josefin Sans, sans-serif;
+			font-size: 40px;
+			font-style: normal;
+			text-align: center;
+			margin: 25px;
+			font-weight: bold;
+} 
+
+.mainProfile > p{
+			font-family: Helvetica, sans-serif;
+			font-size: 16px;
+			font-style: normal;
+			text-align: justify;
+			margin: 0px 30px 0px 30px;   /* top, right, bottom, left */
+}
+
+
+/*     -------------  general details  -------------    */
+
+
+.details{
+			margin: 20px ;
+}
+
+#levelsID, #languagesID, #detailsID {
+			margin-left: 10%;
+			margin-bottom: 20px;
+			display: inline-block;
+}
+
+.list{
+			background-color: white;
+			border-style: solid;
+			border-color:  #CC0033;
+			border-width: 5px;
+			width: 180px;
+			min-height: 170px;
+			padding: 8%;
+}
+
+.smallLabel{
+			background-color: #CC0033;
+			color: white;
+			text-align: center;
+			width: 180px;
+			height: 50px;
+			margin: 0px;
+			padding-top: 20px;
+
+}
+ul {
+  			list-style: none;  /*Esto es para eliminar las bullets negras */
+}
+
+.mainLists::before {          /*Esto es para que las bullets de las listas tengan color */
+		  content: "\2022"; 
+		  color: #CC0033;
+		  font-weight: bold; 
+		  font-size: 30px;
+		  display: inline-block; 
+		  width: 1em; 
+		  margin-left: -5px; 
+}
+
+/*     -------------  news  -------------    */
+
+#novedades > h2{
+			background-color: #FF6633;
+			color: white;
+			margin: 30px 30px 0px 30px;
+			padding: 10px; 
+			width: 220px;
+			text-align: center;
+}
+
+#banner{
+			background-color: white;
+			border-style: solid;
+			border-color:  #FF6633;
+			border-width: 5px;
+			padding: 30px;
+			width: auto;
+			min-height: 100px;
+			margin: 0px 30px 30px 30px;
+}
+/*     -------------  general details  -------------    */
+
+
+.bigLabel{
+			background-color: #CC0033;
+			color: white;
+			text-align: center;
+			margin: 30px;
+			padding: 10px; 
+}
+
+/*     -------------  activities  -------------    */
+
+#activities{
+			margin: 30px;
+}
+
+.activCls{
+			margin-bottom: 20px;
+			height: auto;
+			padding: 10px;
+}
+
+#activity1, #activity2, #activity3{
+			display: inline-block;
+			padding: 20px;
+}
+
+.activImg{
+			width: 120px;
+			min-height: 120px;
+			background-color: gray;
+			position: absolute;
+}
+
+.pActiv{
+			text-align: justify;
+			min-height: 100px;
+			margin-left: 130px;
+			padding-left: 2%
+}
+
+
+/*     -------------  comments  -------------    */
+
+.comment{
+			margin: 10px 30px 10px 30px;
+			padding: 0% 10% 2% 0%;
+}
+
+#commentSection > p{
+			font-size: 12px;
+			margin: 10px
+}
+
+.fa-user-circle{
+			color: #571845; 
+			margin-left: 30px;
+			padding-top: 20px;
+}
+
+.name{
+			font-size: 14px;
+			font-weight: bold;
+			padding-left: 120px;
+			margin-top: -75px;	
+}
+
+.pComment{
+			text-align: justify;
+			margin-left: 120px;
+			margin-top: 0px;
+
+}
+
+/*     -------------  leave a comment  -------------    */
+
+#LeaveComment{
+			margin: 30px;
+			padding-left: 30px;
+}
+
+#msgComment{
+			width: 98%;
+			padding: 10px;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: #f8f8f8;
+			font-size: 14px;
+			resize: none;
+}
+
+#sendComment{ 
+			float: right;
+			margin: 10px;
+			margin-right: 5%;
+ }
+ .YellowBtn3{
+			background-color: #FFCC33;
+			padding: 0% 5% 0% 5%;
+			font-size: 1.5em;
+			font-family: Helvetica Light, sans-serif;
+			cursor: pointer;
+			border-radius: 5px;
+			margin: 5% 0% 0% 35%;
+		
+}
+.YellowBtn:hover, .YellowBtn2:hover, .YellowBtn3:hover{   
+			background-color: gold; /*  Para que los botones amarillos cambien de color cuando les pasa el mouse encima*/
+}
