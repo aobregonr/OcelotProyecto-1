@@ -28,6 +28,10 @@ a{
 
 
 }
+.registrobtn:hover{
+    background-color: yellow;
+}
+
 .YellowBtn{
     background-color: #FFCC33;
     font-family: Helvetica Light, sans-serif;
@@ -37,6 +41,10 @@ a{
     height:30px;
 
 }
+.YellowBtn:hover{
+    background-color: yellow;
+}
+
 
 #main_nav{
     background-color: #330033;
@@ -73,7 +81,22 @@ li > #salir {
 }
 
 #ModalContent{
-    background-color:  #660033;
+    background-color:  #571845;
     font-family: Helvetica, sans-serif;
     color:white;
+}
+
+#divisionLine{
+    width: auto;
+    height: 1px;
+    font-weight: lighter;
+    background-color: white;
+    margin-top: 20px;
+}
+.registerInfo{
+    font-size: 12px;
+    font-weight: lighter;
+    color: white;
+    padding: 10px;
+
 }
