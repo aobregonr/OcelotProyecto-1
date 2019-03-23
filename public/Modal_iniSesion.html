@@ -33,7 +33,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Modal Iniciar Sesiòn</title>
+    <title>Modal Iniciar Sesión</title>
 </head>
 
 <body>
@@ -55,37 +55,38 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header Inicolor" id="HeaderModal">
-                    <h4 class="modal-title">Iniciar Sesiòn</h4>
+                    <h4 class="modal-title">Iniciar Sesión</h4>
 
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <input type="text" size="30%" placeholder="Correo Electrònico">
+                    <input type="email" size="30%" placeholder="Correo Electrónico">
                     <br>
                     <br>
-                    <input type="text" size="30%" placeholder="Contraseña">
+                    <input type="password" size="30%" placeholder="Contraseña">
                     <br>
                     <br>
                     <input class="registrobtn" size="100%" type="button" value="Ingresar">
                     <br>
                     <br>
-                    <a href="#">¿Olvido su Contraseña?</a>
-                    <p>_______________________________</p>
-
-                    <p>¿Primera vez que ingresa?</p>
                     <form>
-                        <fieldset>
-                            <legend>Seleccione el tipo de Usuario</legend>
-                            <label for="rbtPadre">Padre de Familia</label>
-                            <input type="radio" name="rbtUser" id="rbtPadre">
-                            <br>
-                            <label for="rbtCentro">Centro Educativo</label>
-                            <input type="radio" name="rbtUser" id="rbtCentro">
-                        </fieldset>
+                        <a href="#" id=forgotPsw> ¿Olvidó su contraseña? </a><br>
+                        <div id="divisionLine"></div>
+                        <p class="registerInfo">¿Primera vez que ingresa? 
+                                            <br> Seleccione el tipo de usuario </p>
+    
+                        <div class="radio">
+                            <label><input type="radio" name="optradio" checked> Padre de Familia </label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="optradio"> Centro Educativo </label>
+                        </div>
+                        <br>
+                        <br>
                     </form>
 
-                </div>
+                   
 
                 <!-- Modal footer -->
                 <div class="modal-footer text-center">
