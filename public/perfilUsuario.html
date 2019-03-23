@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Vero Morera">
+		<title>Perfil Usuario</title>
+
+		<!-- La siguiente linea es para que la web sea responsive -->
+		<meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+
+
+		<!-- Referenciar CSS -->
+		<link rel= "stylesheet" type= "text/css" href= "css/PerfilUsuarioStyle.css"> 
+
+		<!-- Referenciar font-awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+		<!--BOOTSTRAP4-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+
+		<header>
+			<nav>
+				<ul id= "main_nav">
+					<li> <a href="#" id= "logo">Educate<strong>CR</strong>.com</a></li>
+					<li> <a href="#" id= "salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<div class= mainSideMenu>
+			<div id= container1>
+				<i class="fas fa-user-circle"></i>
+				<h2 id=username>Rafael Loría</h2>
+			</div>
+
+			<div class="well redFlagsSide"> <h3>Preferencias de búsqueda</h3></div>
+
+			<div class="container">
+				<form>
+					<h3>Niveles </h3>
+					<div class=" form-check">
+						<label class="form-check-label" for="check1">
+							<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Primaria
+						</label>
+					</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check1">
+								<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Secundaria
+						</label>
+						</div>
+						<br>
+
+						<h3>Tipo de Centro </h3>
+						<div class=" form-check">
+							<label class="form-check-label" for="check1">
+								<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Público
+							</label>
+						</div>
+							<div class="form-check">
+								<label class="form-check-label" for="check2">
+									<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something" checked>Privado
+								</label>
+						</div>
+						<br>
+
+						<h3>Características </h3>
+						<div class=" form-check">
+							<label class="form-check-label" for="check1">
+								<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>Bilingue
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check2">
+								<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something"checked>Tecnico
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check2">
+								<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something"checked>Religioso
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check2">
+								<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something"checked>Vocacional
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check2">
+								<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something"checked>Imparte idiomas
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check2">
+								<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something"checked>Ofrece Becas
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="check2">
+								<input type="checkbox" class="form-check-input" id="check2" name="option2" value="something"checked>Bachillerato internacional
+							</label>
+						</div>
+						<br>
+
+					<button id=yellowBtn type="submit" class="btn btn-block YellowBtn">Buscar</button>
+				</form>
+				</div>
+			</div>
+		</div>
+
+
+		<div class= mainProfile>
+
+			<div class="containerMain1">
+				<div class="well redFlagBig"> Colegios cerca de su ubicación </div>
+
+				<div class="mapouter">
+					<div class="gmap_canvas">
+						<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">	
+						</iframe>
+						<span style="font-size:12px;">Werbung: 
+						<a href="https://www.pureblack.de">Pure Black GmbH</a>
+					</div>
+				</div>
+
+				<div class="card-deck">
+				    <div  id= cardColor class="card">
+				      	<div class="card-body text-center">
+				      		<a class="schoolCard" href="#">
+				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados01.png">
+				      		</a>
+				        	<p class="card-text">Colegio Reina de los Angeles</p>
+				      	</div>
+				    </div>
+				    <div id= cardColor class="card">
+				      	<div class="card-body text-center">
+				        	<a class="schoolCard" href="#">
+				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados02.png">
+				      		</a>
+				        	<p class="card-text">Colegio Saint Francis</p>
+				      	</div>
+				    </div>
+				    <div id= cardColor class="card">
+				      	<div class="card-body text-center">
+				        	<a class="schoolCard" href="#">
+				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados03.png">
+				      		</a>
+				        	<p class="card-text">Colegio Saint Paul</p>
+				      	</div>
+				    </div>
+				    <div id= cardColor class="card">
+				      	<div class="card-body text-center">
+				        	<a class="schoolCard" href="#">
+				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados04.png">
+				      		</a>
+				        	<p class="card-text">Colegio Anglo Americano</p>
+				      	</div>
+			    	</div>  
+			    </div>
+			      </div>
+
+
+			<div class="containerMain2">
+					
+					<div class="well redFlagBig"> Citas Agendadas </div>
+
+					<div class="appointmentContainer">
+
+					<div class="container">         
+						<table class="table table-light table-striped table-sm">
+							<thead class="thead-dark">
+								<tr>
+								<th> Centro Educativo</th>
+								<th> Fecha </th>
+								<th> Hora</th>
+								<th> Estado </th>
+								</tr>
+							</thead class="thead-light">
+							<tbody>
+								<tr>
+									<td>Colegio Saint Francis</td>
+									<td>11.5.19</td>
+									<td>10:00am</td>
+									<td>Pendiente</td>
+								</tr>
+								<tr>
+									<td>Colegio Reina de los Angeles</td>
+									<td>12.5.19</td>
+									<td>10:00am</td>
+									<td>Pendiente</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+			 </div>
+
+		</div>
+
+
+	</body>
+</html>
