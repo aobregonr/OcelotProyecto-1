@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/busquedaAvanzadaStyle.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>Búsqueda Avanzada</title>
+  </head>
+  <body>
+    <div class="container-fluid" id="header" height="50px;">
+      <div class="row">
+        <div class="col-10"><a href="#" id="logo">EducateCR.com</a></div>
+        <div class="col-2">Salir <i class="fas fa-sign-out-alt"></i></div>
+      </div>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div class="container-fluid" id="title">
+      <h1>Búsqueda Avanzada</h1>
+    </div>
+    <div class="container-fluid" id="content">
+      <div class="container">
+
+
+      <form class="advancedSearchForm" action="" method="post">
+        <div class="row" id="firstRow">
+          <div class="col-10">
+            <input type="text" name="search" placeholder="Palabra Clave" id="searchBar">
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-lg" id="btnSearch">Buscar</button>
+          </div>
+        </div>
+        <div class="row" id="secondRow">
+         <div class="col">
+           <h2>Nivel</h2>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Primaria</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">Secundaria</label>
+           </div>
+           <h2>Tipo de Centro</h2>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Público</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">Privado</label>
+           </div>
+         </div>
+         <div class="col">
+           <h2>Características</h2>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Bilingüe</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">Técnico</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Religioso</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">No Religioso</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Vocacional</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">Imparte Idiomas</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Ofrece Becas</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">Bachillerato Internacional</label>
+           </div>
+         </div>
+         <div class="col" id="thirdCol">
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Solo Hombres</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+             <label class="custom-control-label" for="customCheck">Solo Mujeres</label>
+           </div>
+           <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+              <label class="custom-control-label" for="customCheck">Mixto</label>
+           </div>
+         </div>
+       </div>
+      </div>
+    </div>
+    <footer class= footerEnd>
+      <p> EducateCR Costa Rica <br>
+      Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+      Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
+      </p>
+    </footer>
+  </body>
+</html>
