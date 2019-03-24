@@ -63,7 +63,7 @@ li > #salir {
 			width: 25%;
 			height:auto;
 			position: absolute;
-			min-height: 1300px;
+			min-height: 1555px;
 			margin-top: -16px;
 }
 
@@ -106,74 +106,64 @@ li > #salir {
 			font-weight: lighter;
 }
 
-/*     -------------  checkbox -------------    */
-
-form{
+.reportes{
+			margin-top: 20px;
+			padding-left: 15px;
 
 }
 
-form > h3{
+.linkReportes{
 			color: white;
-			padding: 10% 5% 0 5%;
-			font-size: 2.5vw;
-}
-
-label{
 			font-size: 1.2vw;
-			padding: 5px;
+			text-decoration-line: underline;
 }
 
-.form-check{
-			color: white;
-			margin-left: 10%;
-			width: 100%
-
-}
-
-#yellowBtn{
-			background-color: #FFCC33;
-			font-family: Helvetica, sans-serif;
-			font-weight: bolder;
-			margin: 30px 5px;
-			font-size: 0.8em;
-
-}
-
-#yellowBtn:hover{
-			background-color: yellow;
-}
 
 
 /*     -------------  perfil principal -------------    */
 .mainProfile{ 
 			width: 75%;
-			margin: 0 29%;	
+			margin: 0 28%;	
  }
-/*     -------------  mapa  -------------    */
 
-.mapouter{
-			position:relative;
-			text-align:center;
-			height:500px;
-			width:50%;
-			margin: 5% 15%;
+/*     -------------  tools -------------    */
+
+.tools{
+			font-size: 5em;
+			text-align: center;
+			padding: 10px;
+			margin-left: -40px;
 }
 
-.lic{
-			position:absolute;
-			z-index:999;
-			bottom:-14px;
-			right:0;
-			font-size:11px;
-			font-family:arial;
-			color:#666;
+.tools > h1{
+			font-family: Josefin Sans, sans-serif;
+			font-size: 40px;
+			font-style: normal;
+			text-align: center;
+			margin: 25px;
+			font-weight: bold;
+			color: black;
 }
 
-.gmap_canvas {
-			overflow:hidden;
-			background:none!important;
-			height:500px;
-			width:600px;
+
+.toolInfo{
+			font-family: Josefin Sans, sans-serif;
+			font-size: 14px;
+}
+
+.toolList{
+			display: inline-block;
+			text-decoration: none;
+}
+
+ #fasTools{
+	
+			color: #FF6633;
+			padding: 20px;
+}
+
+#fasTools:hover{
+			color: orange;
 }
 
 /*     -------------  main containers -------------    */
@@ -194,32 +184,91 @@ label{
 }
 
 
-/*     -------------  centro educativo cards  -------------    */
+/*     -------------  formato de tablas  -------------    */
 
-#cardColor{
-		background-color: #571845;
-
+.containerRegistros, .containerComentarios, .califContainer{
+			margin: 30px;
+			width: 90%;
+			margin-left: 5%;
 }
 
-.schoolPic{
-		width: 100%;
+/*     -------------  registros pendientes  -------------    */
+
+.toolRegistrar{
+			display: inline-block;
+			text-decoration: none;
+			padding-left: 10px;
+			padding-top: 5px;
 }
 
-.card-text{
-		color: white;
-		font-family: Josefin Sans, sans-serif;
-		padding: 10px;
-		font-size: 18px;
+.check, .trash{
+
+			color: black;
+			font-size: 20px;
 }
 
-/*     -------------  citas pendientes  -------------    */
+.check:hover{
 
-.appointmentContainer{
-			margin-top: 20px;
-			width: 100%;
+			color: green;
+}
+.trash:hover{
+
+			color: red;
 }
 
-/*     ------------- footer-------------    */
+
+/*     -------------  ranking pendientes  -------------    */
+
+
+/*     -------------  hover ranking stars -------------    */
+
+form{
+			margin: 0;
+}
+
+input[type="radio"] {
+			display: none;
+}
+
+label{
+			color: grey;
+}
+
+.clasificacion{
+			direction: rtl;
+			unicode-bidi: bidi-override;
+			text-align: center;
+			margin-bottom: -5px;
+}
+
+label:hover,
+label:hover ~ label{
+			color: #FFCC33;  /* esto es para que las estrellas pasen de ser grises a ser amarillas. */
+			cursor: pointer;
+}
+
+input[type="radio"]:checked ~ label{
+			color: #FFCC33;
+}
+
+/*     -------------  moderar comentarios  -------------    */
+
+.edit{
+
+			color: black;
+			font-size: 20px;
+}
+
+.edit:hover{
+
+			color: orange;
+}
+
+.comment{
+			max-width: 450px;
+			text-align: justify;
+}
+
 
 .footerEnd{	
 			padding: 10px;
@@ -228,8 +277,6 @@ label{
 			color: white;
 			font-weight: lighter;
 			font-size: 12px;
-			margin-top: 70px;
+	
 
 }
-
-

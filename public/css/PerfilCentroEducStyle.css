@@ -477,3 +477,15 @@ ul {
 .YellowBtn:hover, .YellowBtn2:hover, .YellowBtn3:hover{   
 			background-color: gold; /*  Para que los botones amarillos cambien de color cuando les pasa el mouse encima*/
 }
+
+
+.footerEnd{	
+			padding: 10px;
+			padding-left: 20px;
+			background-color: #330033;
+			color: white;
+			font-weight: lighter;
+			font-size: 12px;
+			margin-top: 82px;
+
+}
