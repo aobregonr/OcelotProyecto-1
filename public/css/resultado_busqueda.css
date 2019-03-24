@@ -1,0 +1,90 @@
+/* Estilo de la barra de busqueda*/
+#searchBar[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.freeiconspng.com/uploads/search-icon-png-2.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  padding: 12px 20px 12px 40px;
+}
+
+/* Estilo boton Buscar */
+
+
+/* Estilo del encabezado*/
+#header {
+  background-color: #330033;
+  text-decoration: none;
+  margin:auto;
+}
+.col-2{
+  color: white;
+  margin:auto;
+}
+.spacer{
+  height:50px;
+}
+#logo{
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+/*Estilo del Titulo*/
+#title{
+  background-color: #CC0033;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* estilos del cuerpo*/
+/*fail*/
+.container{
+
+  color:#990033;
+  text-align: center;
+  margin: auto;
+}
+#buho{
+  height:400px;
+  width: 400px;
+}
+#errorMessage{
+  font-size: 50px;
+  margin: auto;
+
+}
+/*sucess*/
+#cardColor{
+		background-color: #571845;
+
+}
+
+.schoolPic{
+		width: 100%;
+}
+
+.card-text{
+		color: white;
+		font-family: Josefin Sans, sans-serif;
+		padding: 10px;
+		font-size: 18px;
+}
+
+
+/* Estilo del Pie de Pagina*/
+.footerEnd{
+			padding: 10px;
+			padding-left: 20px;
+      margin-top: 30px;
+			background-color: #330033;
+			color: white;
+			font-weight: lighter;
+			font-size: 12px;
+
+}
