@@ -1,0 +1,72 @@
+h1 {
+  text-align: left;
+  color: white;
+}
+h2{
+  font-size: 20px;
+}
+h3 {
+  font-size: 12px;
+}
+#title{
+  background-color: #CC0033;
+}
+.container{
+  margin-bottom: 10px;
+
+}
+#publicSchools{
+  margin-top: 30px;
+}
+.card-header{
+  background-color: #FF6633 !important;
+
+}
+.card-header a{
+  text-decoration: none;
+  color: white;
+}
+.card-title{
+  color:white;
+  text-align: center;
+}
+
+.schoolCards{
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #571845;
+}
+.card{
+    border: 0;
+}
+#header {
+  background-color: #330033;
+  text-decoration: none;
+  margin:auto;
+}
+.col-2{
+  color: white;
+  margin:auto;
+}
+.spacer{
+  height:50px;
+}
+
+#logo{
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+
+.footerEnd{
+			padding: 10px;
+			padding-left: 20px;
+      margin-top: 30px;
+			background-color: #330033;
+			color: white;
+			font-weight: lighter;
+			font-size: 12px;
+
+}
