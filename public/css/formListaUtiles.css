@@ -1,0 +1,85 @@
+body{
+   margin:0;
+   padding:0;
+   font-family: Helvetica, sans-serif;
+}
+
+/*Header*/
+
+#main_nav {
+    background-color: #330033;
+    height: 50px;
+    list-style-type: none;
+
+}
+
+li>#logo {
+    float: left;
+    font-family: Helvetica, sans-serif;
+    font-size: 28px;
+    font-style: bolder;
+    color: white;
+    padding: 10px 15px 15px 25px;
+    text-decoration: none;
+}
+
+li>#salir {
+    float: right;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    color: white;
+    padding-right: 5%;
+    text-decoration: none;
+}
+
+.fa-sign-out-alt {
+    color: white;
+    padding: 15px;
+    padding-right: 0px;
+    margin-top: 4px;
+}
+
+/* Title */
+
+.titule{
+    background-color: #CC0033;
+}
+
+.titule h1{
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 25px;
+}
+
+/* Form add article*/
+
+.contentList{
+    margin-top: 10px; 
+}
+
+.subTitle{
+    background-color: #FF6633;
+}
+
+.subTitle h3{
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.contentInputs{
+    background-color: #990033;
+    padding: 20px;
+}
+
+.btnAdd{
+    color: #000;
+    font-weight: bold;
+}
+
+.col-centrada {
+    float: none;
+    margin: 0 auto;
+}
