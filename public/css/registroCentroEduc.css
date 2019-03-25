@@ -63,7 +63,7 @@ li > #salir {
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    height: 2150px;
+    height: 2250px;
     margin-left: 100px;
     color: white;
     width: 950px;
@@ -81,6 +81,13 @@ li > #salir {
 #rightSide {
     float: right;
     width: 200px;
+    padding: 5px;
+    border-bottom: 5px;
+    padding-right: 250px;
+}
+
+#centerLocation {
+    width: 450px;
     padding: 5px;
     border-bottom: 5px;
     padding-right: 250px;
@@ -127,9 +134,13 @@ li > #salir {
 
 
 .mainProfile {
-			width: 100%;
-            margin-right: 10%;
-            margin-left: 10%;
+    width: 100%;
+}
+
+.mainProfileTxt {
+width: 100%;
+margin-right: 10%;
+margin-left: 10%;
 }
 
 
@@ -167,12 +178,10 @@ li > #salir {
 }
 
 
-.bigLabel{
+.bigLabel1{
 			background-color: #CC0033;
 			color: white;
-			text-align: center;
-			margin: 30px;
-			padding: 10px; 
+			text-align: justify;
 }
 
  
@@ -181,4 +190,13 @@ li > #salir {
     margin-left: 10%;
     margin-bottom: 20px;
     display: inline-block;
+}
+
+.footerEnd{	
+
+	background-color: #330033;
+	color: white;
+	font-weight: lighter;
+	font-size: 12px;
+
 }
