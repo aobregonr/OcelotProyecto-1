@@ -65,6 +65,16 @@ li > #salir {
     width: 750px;
 }
 
+.containerBig2{
+    background-color: #990033;
+    border-radius: 10px; 
+    padding: 35px;
+    height: 350px;
+    margin-left: 50px;
+    color: white;
+    width: 750px;
+}
+
 .containerSmall1{
     background-color: #990033;
     border-radius: 10px; 
@@ -146,5 +156,4 @@ li > #salir {
 	color: white;
 	font-weight: lighter;
 	font-size: 12px;
-
 }
