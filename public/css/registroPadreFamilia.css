@@ -1,14 +1,10 @@
 /* HEXADECIMAL COLOR PALLETE
-
-
 Morado oscuro:   #330033   exclusivo para el header.
 Morado oscuro 2: #571845   para ventanas modales y otros elementos de la página.
 Magenta:         #990033   para todos los formularios.
 Rojo:            #CC0033   para todos los textos h1
 Naranja:         #FF6633   para todos los  textos h2
 Amarillo:        #FFCC33   para botones principales, estrellas de ranking y otros elementos de la página.
-
-
 */
 
 body,p,h1,h2,h3,h4,h5,h6,ul,ol
@@ -64,11 +60,20 @@ li > #salir {
     border-radius: 10px; 
     padding: 35px;
     height: 750px;
-    margin-left: 100px;
+    margin-left: 50px;
     color: white;
     width: 750px;
 }
 
+.containerSmall1{
+    background-color: #990033;
+    border-radius: 10px; 
+    padding: 45px;
+    height: 450px;
+    margin-left: 100px;
+    color: white;
+    width: 450px;
+}
 
 #leftSide {
     float: left;
@@ -129,12 +134,17 @@ li > #salir {
 }
 
 
-.bigLabel{
+.bigLabel1{
 			background-color: #CC0033;
 			color: white;
-			text-align: center;
+			text-align: justify;
 }
 
+.footerEnd{	
 
+	background-color: #330033;
+	color: white;
+	font-weight: lighter;
+	font-size: 12px;
 
-
+}
