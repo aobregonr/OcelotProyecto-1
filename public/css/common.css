@@ -2,3 +2,23 @@ body{
     margin: 0px;
     padding: 0px;
 }
+
+/* Header */
+
+.main_nav {
+    background-color: #330033;
+    height: 50px;
+    list-style-type: none;
+
+}
+
+.logo {
+    float: left;
+    font-family: Helvetica, sans-serif;
+    font-size: 28px;
+    font-style: bolder;
+    color: white;
+    padding: 10px 15px 15px 25px;
+    text-decoration: none;
+}
+

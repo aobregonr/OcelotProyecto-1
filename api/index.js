@@ -2,34 +2,27 @@
 
 const express = require('express'),
     app = express(),
-    path = require('path'),
-    bodyParser = require('body-parser'),
     morgan = require('morgan'),
     mongoose = require('mongoose');
 
-let db = mongoose.connection,
-        dburl = 'mongodb://127.0.0.1:27017/ocelotsoftware',
-        port = 4000;
+// Database connections
+const URI = 'mongodb://127.0.0.1:27017/ocelotsoftware';
 
-let server = app.listen(port, _server());
+mongoose.connect(URI, {
+        useNewUrlParser: true
+    })
+    .then(db => console.log('DB is connected'))
+    .catch(err => console.log(err));
 
-mongoose.connect(dburl, {
-    useNewUrlParser: true
-});
+// Settings
+app.set('port', process.env.PORT || 4000);
 
-db.on('error', console.error.bind(console, 'Error de conexión: '));
-
-db.once('open', function () {
-    console.log('Base de datos conectada correctamente');
-});
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+// middlewares
 app.use(morgan('dev'));
+app.use(express.json());
+
+// Routes
+app.use('/api', require('./component/users/users.route'));
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -39,14 +32,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-const usuarios = require('./component/users/users.route');
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', express.static('public/public'));
-app.use('/api', usuarios);
-
-module.exports = app;
-
-function _server() {
-    console.log('Back-end corriendo en el puerto ' + port);
-};
+// Starting the server
+app.listen(app.get('port'), () => {
+    console.log('Server on port ', app.get('port'));
+});

@@ -16,6 +16,8 @@ function obtenerDatos(){
         if (usuarioAceptado) {
            // window.location.href = 'libros.html';
            alert('HOLA FUNCIONA!!');
+        } else {
+            alert('Hola error error contrasenna o usuario');
         }
     }
 };

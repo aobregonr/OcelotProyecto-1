@@ -8,22 +8,17 @@ function validar_credenciales(pcorreo, pcontrasenna) {
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',
         async: false,
-        data: {
-            correo: pcorreo,
-            contrasenna: pcontrasenna
-        }
+        data: { correo: pcorreo, contrasenna: pcontrasenna},
     });
 
     peticion.done(function (response) {
         respuesta = response;
         sessionStorage.setItem('conectado', response.success);
-        sessionStorage.setItem('tipo_usuario', response.usuario.tipo);
     });
 
     peticion.fail(function (response) {
         respuesta = response;
     });
 
-    console.log(respuesta);
     return respuesta;
 };

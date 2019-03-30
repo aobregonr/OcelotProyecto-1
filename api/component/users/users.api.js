@@ -5,7 +5,7 @@ const userModel = require('./users.model');
 const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'mantiscenfo@gmail.com',
+        user: 'mantiscenfo@gmail.1com',
         pass: 'mantis2018'
     }
 });
@@ -16,20 +16,19 @@ const transporter = nodeMailer.createTransport({
      }).then(
          function (usuario) {
              if (usuario) {
-                 if (usuario.contrasenna == req.body.contrasenna) {
+                 if (usuario.contrasenna === req.body.contrasenna) {
                      res.json({
-                         success: true,
+                         success: true, 
                          usuario: usuario
                      });
                  } else {
                      res.json({
-                         success: false
+                         success: false,
                      });
                  }
              } else {
                  res.json({
                      success: false,
-                     msg: 'El usuario no existe'
                  });
              }
          }
