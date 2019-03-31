@@ -30,7 +30,7 @@ let schema_registroCentroEduc = mongoose.Schema({
 	email : {type : String, required: false},
 	departamento : {type : String, required: false},
 	telefono : {type : Number, required: false},
-	imgEscudo: {type: String, required : false}
+	escudo: {type: String, required : false}
 
 
 });

@@ -32,7 +32,7 @@ module.exports.registrar = function(req, res){
 		email: req.body.email,
 		departamento: req.body.departamento,
 		telefono: req.body.telefono,
-		imgEscudo: req.body.imgEscudo
+		escudo: req.body.escudo
 
 	});
 
