@@ -13,118 +13,116 @@
 </head>
 <body>
     <header class="row">
-        <div class="col-lg-12 main_nav">
-            <div class="col-lg-4">
-                <a href="" class="logo" >Educate<strong>CR</strong>.com</a>
-            </div>
-            <div class="col-lg-9 float-right">
-                <ul>
-                    <li><i class="fas fa-user nav-link"></i> Bienvenido <a href="">Usuario</a></li>
-                    <li><i class="fas fa-sign-out-alt nav-link"></i> <a href="">Cerrar Sesion</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-9 float-right">
-                <nav>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Ranking Centros Educativos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Busqueda Avanzada</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Todos los Centros Educativos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">FAQS</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+        <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-dark main_nav">
+                <a href="" class="logo">Educate<strong>CR</strong>.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Ranking Centros Educativos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Búsqueda avanzada</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Todos los Centros Educativos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">FAQS</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+        
     </header>
     <section>
          <div class="row">
-            <div class="col-lg-4">
-                <div>
-                    <img src="imgs/home/owl.png" alt="">
+            <div class="col-lg-3">
+                <div class="imgLogo">
+                    <img class="img-response" src="imgs/home/owl.png" alt="">
                 </div>
-                <div>
+                <div class="titleLogin text-center">
                     <p>Iniciar Sesion</p>
                 </div>
-                <div>
+                <div class="frmLogin col-lg-12 text-center">
                     <form>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="txtCorreo" placeholder="e-mail" name="email"
+                            <input type="email" class="form-control" id="txtCorreo" placeholder="Correo Electronico" name="email"
                                 required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="textContrasenna" placeholder="contraseña"
+                            <input type="password" class="form-control" id="textContrasenna" placeholder="Contraseña"
                                 name="pswd" required>
                         </div>
-                        <button id="btnEnviar" type="submit" class="btn btn-block">Enviar</button>
+                        <button id="btnEnviar" type="submit" class="btn btnBlock">Ingresar</button>
                     </form>
                 </div>
-                <div>
+                <div class="frmLogin col-lg-12 text-right">
                     <a href=""> ¿Olvidó su contraseña? </a>
+                    <hr>
                 </div>
-                <div>
+                <div class="frmLogin col-lg-12 ">
                     <p>¿Primera vez que ingresa?</p>
-                    <p>Seleccione el tipo de usuario</p>
+                    <p>Seleccione el tipo de usuario:</p>.
+                    <br>
                     <form>
-                        <div>
-                            <input type="radio"> 
+                        <div class="col-lg-12 text-center">
+                            <input type="radio" name="tipo" value="padrefamilia">
                             <label for="">Padre de Familia</label>
                         </div>
-                        <div>
-                            <input type="radio"> 
+                        <div class="col-lg-12 text-center">
+                            <input type="radio" name="tipo" value="centroeducativo">
                             <label for="">Centro Educativo</label>
                         </div>
-                        <button type="button"> Registro </button>
+                        <div class="col-lg-12 text-center spaceBottom">
+                            <button type="button" class="btn btnBlock"> Registro </button>
+                        </div>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-8">
-                <div class="">
-                    <h1>Buscador de Centros Educativos</h1>
-                    <form>
-                        <div class="form-gruop has-search">
-                            <span class="fa fa-search form-control-feedback"></span>
-                            <input type="text" class="form-control" placeholder="Palabra clave">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" name="" id="">
-                                <option value="" selected>Nivel</option>
-                                <option value="">Escuela</option>
-                                <option value="">Colegio</option>
-                            </select>
-                        </div>
-                        <div>
-                            <button class="btn btn-warning">Buscar</button>
-                        </div>
-                    </form>
+            <div class="col-lg-9">
+                <div class="col-lg-12">
+                    <div class="col-lg-8 col-centrada contentInputs text-center">
+                        <h1>Buscador de <br> Centros Educativos</h1>
+                        <form>
+                            <div class="form-group has-search">
+                                <span class="fa fa-search form-control-feedback"></span>
+                                <input type="text" class="form-control form-control-lg" placeholder="Palabra clave">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control form-control-lg" name="" id="">
+                                    <option value="" selected>Nivel</option>
+                                    <option value="">Escuela</option>
+                                    <option value="">Colegio</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button class="btn">Buscar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
+                <div class="col-lg-8 col-centrada listPdf">
                     <ul>
                         <li><i class="fas fa-file"></i> <a href="#" class="linkReportes"> Ver Todos los Centros Educativos </a></li>
                         <li><i class="fas fa-file"></i> <a href="#" class="linkReportes"> Ver módulo de Reportes </a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div>
+            <div class="col-lg-12 rankingEscuelas">
+                <div class="titleLogin text-center">
                     <h3>Ranking de Centros Educativos</h3>
                 </div>
                 <div>
-                    <h5>Mejores Escuelas Según el MEP</h5>
-                
-                <div class="col-lg-6">
+                    <div class="col-lg-12 text-center subRaking">
+                         <h5>Mejores Escuelas Según el MEP</h5>
+                    </div>
+                <div class="col-lg-6 float-left">
                     <!-- Slideshow container top 10 Escuelas -->
                     <div class="EscuelasSlideshowContainer">
 
@@ -175,7 +173,7 @@
                         <a class="next_Escuelas" onclick="plusSlidesEscPUB(1)">&#10095;</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 float-right">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -300,11 +298,12 @@
                 </div>
                 </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12 rankingColegios">
                 <div>
-                    <h5>Mejores Colegios Según el MEP</h5>
-
-                    <div class="col-lg-6">
+                    <div class="col-lg-12 text-center subRaking">
+                        <h5>Mejores Colegios Según el MEP</h5>
+                    </div>
+                    <div class="col-lg-6 float-left">
                         <!-- Slideshow container top 10 Escuelas -->
                         <div class="ColegiosSlideshowContainer">
 
@@ -355,7 +354,7 @@
                             <a class="next_Colegios" onclick="plusSlidesEscPRI(1)">&#10095;</a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 float-right">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -481,85 +480,136 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <h5> Preguntas Frecuentes</h5>
-                <div id="accordion">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    ¿Qué son los rankings del MEP?
-                                </button>
-                            </h5>
-                        </div>
-
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                    aria-expanded="false" aria-controls="collapseTwo">
-                                    ¿Por qué debo crear una cuenta para ver el contenido de la página?
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    ¿Qué son los módulos de Reportes?
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-                                squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-                                butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-                                nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
+                <div class="titleLogin text-center">
+                     <h5> Preguntas Frecuentes</h5>
                 </div>
+                <div class="col-lg-8 col-centrada">
+                    <!--Accordion wrapper-->
+                    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                        <!-- Accordion card -->
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingOne1">
+                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                    aria-expanded="true" aria-controls="collapseOne1">
+                                    <h5 class="mb-0">
+                                        ¿Qué son los rankings del MEP? <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <!-- Card body -->
+                            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                                data-parent="#accordionEx">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3
+                                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                    nesciunt laborum
+                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                    coffee nulla
+                                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                    anderson
+                                    cred
+                                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                    occaecat
+                                    craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus
+                                    labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+                        <!-- Accordion card -->
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingTwo2">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                    href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                    <h5 class="mb-0">
+                                        ¿Por qué debo crear una cuenta para ver el contenido de la página? <i
+                                            class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+                            <!-- Card body -->
+                            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                data-parent="#accordionEx">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3
+                                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                    nesciunt laborum
+                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                    coffee nulla
+                                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                    anderson
+                                    cred
+                                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                    occaecat
+                                    craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus
+                                    labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+                        <!-- Accordion card -->
+                        <div class="card">
+
+                            <!-- Card header -->
+                            <div class="card-header" role="tab" id="headingThree3">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                    href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                                    <h5 class="mb-0">
+                                        ¿Qué son los módulos de Reportes? <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+                                data-parent="#accordionEx">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3
+                                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                    nesciunt laborum
+                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                                    coffee nulla
+                                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                    anderson
+                                    cred
+                                    nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                                    occaecat
+                                    craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus
+                                    labore sustainable VHS.
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Accordion card -->
+
+                    </div>
+                    <!-- Accordion wrapper -->
+                </div>
+                
             </div>
          </div>
     </section>
     <footer>
         <div class="footerBack">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-8 col-md-6 col-sm-12 float-right">
                     <p>Copyright @ 2019 EducateCR. Todos los derechos reservados.</p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 float-left">
                     <p>Sitio Web diseñado y desarrollado por Ocelot Solutions.</p>
                 </div>
             </div>
@@ -570,5 +620,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/servicio_inicio.js"></script>
     <script src="js/controlador_inicio.js"></script>
+    <script src="js/commons.js"></script>
 </body>
 </html>
