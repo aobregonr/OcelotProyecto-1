@@ -5,7 +5,7 @@
 	<!-- Este titulo se elimina cuando se enlaze a la pagina de incio pues el codigo es solo para la ventana modal -->
 	<title>Registro De Centro Educativo</title>
 	<meta charset="UTF-8">
-	<meta name="author" content="Mario Zeledon S.">
+	<meta name="author" content="Mario Zeledon S. & Verónica Morera C.">
 
 	<!-- La siguiente linea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,261 +47,300 @@
 
 	<div class=mainProfile>
 
-		<h2 class="bigLabel1"> Registro De Centro Educativo </h2>
+		<h2 class="bigLabel"> Registro De Centro Educativo </h2>
 
-		<div class="mainProfile">
+		<div class="instructions">
 			<p>Complete el formulario con sus datos a continuación, y finalice presionando el botón Registrar.</p>
 
-			<p>* La contraseña debe tener un máximo de 8 dígitos, una mayúscula, una minúscula, un carácter especial y
+			<p> La contraseña debe tener un máximo de 8 dígitos, una mayúscula, una minúscula, un carácter especial y
 				un número.</p>
-			<p>* Los campos con * son obligatorios.</p>
+			<p id="redInstructions"><strong>Los campos con * son obligatorios.</strong> </p>
 			<p>
 				<br>
 			</p>
 		</div>
 
-			<div class="containerBig">
+		<div class="containerBig">
+			<form class="needs-validation" novalidate>
 
-				<div id="leftSide">
+			<div id="leftSide">
+			
 					<div id="regData">
-						<label for="txtNombreComercial"></label>
-						<input type="text" id="txtNombreComercial" placeholder="Nombre Comercial" required>
-					</div>
-
-					<div id="regData">
-						<label for="txtCedulaJurídica	"></label>
-						<input type="text" id="txtCedulaJurídica	" placeholder="Cedula Jurídica	" required>
+						<label for="txtNombreComercial"> Nombre Comercial  *</label>
+						<input type="text" class="form-control" id="txtNombreComercial" placeholder="Nombre Comercial" required>
 					</div>
 
 					<div id="regData">
-						<label for="txtTipoCentroEducat "></label>
-						<input type="text" id="txtTipoCentroEducat" placeholder="Tipo de Centro Educativo ">
+						<label for="txtCedulaJuridica"> Cédula Jurídica  *</label>
+						<input type="number" class="form-control" id="txtCedulaJuridica" placeholder="(digite solo números)" required>
+					</div>
+
+					<div class= "options" id="regData">
+						<label for="txtTipoCentroEducat "> Tipo de Centro  *</label>
+							<select class="form-control" id="txtTipoCentroEducat" required>
+		                        <option value="">Tipo de Centro</option>
+		                        <option value="">Privado</option>
+		                        <option value="">Publico</option>
+		                    </select>
 					</div>
 
 					<div id="regData">
-						<label for="txtTeléfonoCtro"></label>
-						<input type="text" id="txtTeléfonoCtro" placeholder="Número de Teléfono" required>
+						<label for="txtTelefonoCtro"> Teléfono Institucional *</label>
+						<input type="number" class="form-control"id="txtTelefonoCtro" placeholder="(digite solo números)" required>
 					</div>
 
 					<div id="regData">
-						<label for="txtFax"></label>
-						<input type="text" id="txtFax" placeholder="Fax">
+						<label for="txtFax"> Fax  </label> <br>
+						<input type="number" class="form-control"id="txtFax" placeholder="(digite solo números)">
 					</div>
 
 					<div id="regData">
-						<label for="txtSitioWeb"></label>
-						<input type="text" id="txtSitioWeb" placeholder="Sitio web asociado">
+						<label for="txtSitioWeb">  Sitio Web </label><br>
+						<input type="url" class="form-control" id="txtSitioWeb" placeholder="Sitio web asociado">
 					</div>
 
 					<div id="regData">
-						<label for="txtFacebookOficial"></label>
-						<input type="text" id="txtFacebookOficial" placeholder="Facebook Oficial" required>
+						<label for="txtFacebookOficial"> Facebook Oficial</label>
+						<input type="url" class="form-control" id="txtFacebookOficial" placeholder="Facebook Oficial">
 					</div>
 
 					<div id="regData">
-						<label for="txtEmailInstit"> </label>
-						<input type="text" id="txtEmailInstit" placeholder="Correo electrónico institucional">
+						<label for="txtEmailInstit"> Email Institucional *</label>
+						<input type="email" class="form-control" id="txtEmailInstit" placeholder="Correo electrónico institucional" required>
 					</div>
 
 					<div id="regData">
-						<label for="txtPassword"></label>
-						<input type="text" id="txtPassword" placeholder="Contraseña" required>
+						<label for="txtPassword"> Contraseña  * </label> <br>
+						<input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" required>
 					</div>
 
 					<div id="regData">
-						<label for="txtPasswordConf"> </label>
-						<input type="text" id="txtPasswordConf" placeholder="Confirmar contraseña" required>
-					</div>
-
-					<div id="regData">
-						<label for="txtAñoFund"> </label>
-						<input type="text" id="txtAñoFund" placeholder="Año de fundación" required>
-					</div>
-
-					<div id="regData">
-						<label for="txtHistRef"> </label>
-						<input type="text" id="txtHistRef" placeholder="Referencia histórica" required>
-					</div>
-
-					<div id="flexbox">
-						<div id="regData">
-							<label for="txtDireccion">Dirección General</label>
-							<div class="addrBox">
-								<input type="text" id="txtProvincia" placeholder="Provincia">
-
-								<label for="txtCantón"></label>
-								<input type="text" id="txtCantón" placeholder="Cantón">
-
-								<label for="txtDistrito"></label>
-								<input type="text" id="txtDistrito" placeholder="Distrito">
-							</div>
-					</div>
-				</div>
-
-					<div id="regData">
-							
-						<textarea class=exactAddrBox id=DirecciónExacta placeholder="Dirección exacta" required> </textarea>
-					</div>
-				</div>
-
-
-
-				<div id="rightSide">
-
-					<div id="regData">
-						<label for="txtNombre"></label>
-						<input type="text" id="txtNombre" placeholder="Nombre" required>
-					</div>
-
-
-					<div id="regData">
-						<label for="txtNombre2"></label>
-						<input type="text" id="txtNombre2" placeholder="Segundo Nombre">
-					</div>
-
-					<div id="regData">
-						<label for="txtApellido"></label>
-						<input type="text" id="txtApellido" placeholder="Apellido" required>
-					</div>
-
-
-					<div id="regData">
-						<label for="txtApellido2"></label>
-						<input type="text" id="txtApellido2" placeholder="Segundo Apellido">
-					</div>
-
-
-					<div id="regData">
-						<select id="sltIdentificación">
-							<option value=""> -- Identificación-- </option>
-							<option value='Cedula Nacional'>Cedula Nacional</option>
-							<option value='Cedula de Residencia'>Cedula de Residencia</option>
-							<option value='Cedula Nacional'>Pasaporte</option>
-						</select>
-					</div>
-
-
-					<div id="regData">
-						<label for="txtNoIdentificación"></label>
-						<input type="text" id="txtNoIdentificación" placeholder="_-____-____" required>
-					</div>
-
-					<div id="regData">
-						<label for="txtEmail"> </label>
-						<input type="text" id="txtEmail" placeholder="Correo electrónico">
-					</div>
-
-
-					<div id="regData">
-						<label for="txtDepartamento"> </label>
-						<input type="text" id="txtDepartamento" placeholder="Departamento">
-					</div>
-
-
-
-					<div id="regData">
-						<label for="txtTeléfonoContact"></label>
-						<input type="text" id="txtTeléfonoContact" placeholder="Número de Teléfono" required>
-					</div>
-
-					<div id="regData">
-						<label for="txtFotografía">Fotografía:</label>
-						<div class="wrap">
-							<i class="fa fa-image" style="font-size: 220px" style="color:black"></i>
-
-							<!-- 	<img class="fit-picture"
-						 src="/media/whatever/pathThingy.jpg"    
-							 alt="Imagen provista por la institución educativa" />  -->
-							 <p>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-								</p>
-						</div>
-					</div>
-				</div>
-				<p>
+						<label for="txtPasswordConf"> Confirmar Contraseña  *</label>
 						<br>
-						<br>
-					</p>
+						<input type="password" class="form-control" id="txtPasswordConf" placeholder="Confirmar contraseña" required>
+					</div>
 
-					<div id="centerLocation"> 
-										
-				<div id="regData">
-					<label for="txtUbicacionGeo"> Ubicacion geográfica</label>
-				
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125759.36571051698!2d-84.18338559168174!3d9.935606974265218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0xe6746a6a9f11b882!2sSan+Jos%C3%A9+Province%2C+San+Jos%C3%A9!5e0!3m2!1sen!2scr!4v1553371678650"
-					width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-				</div>
-			</div>
+					<div id="regData">
+						<label for="txtAnoFund"> Año de Fundación  *</label>
+						<input type="number" class="form-control" id="txtAnoFund" placeholder="Año de fundación" required>
+					</div>
 
-				<div>
-					<br>
-					<br>
-					<h4>Por favor seleccione las caracteristicas que corresponden a su centro educativo </h4>
-				</div>
+					<div id="regData">
+						<label for="txtHistRef"> Referencia Histórica  *</label>
+						<input type="text" class="form-control" id="txtHistRef" placeholder="Referencia histórica" required>
+					</div>
 
-
-					<div id="leftSide">
-
-							<div class=details>
-								<div id=levelsID>
-									<h3>Nivel</h3>
-									<div class=listCheckbox>
-										<form action="/action_page.php">
-											<input type="checkbox" name="Primaria" value="Primaria"> Primaria<br>
-											<input type="checkbox" name="Secundaria" value="Secundaria"> Secundaria<br>
-										</form>
-									</div>
-								</div>
-
-
-								<div id=levelsID>
-									<h3>Tipo de Centro</h3>
-									<div class=listCheckbox>
-										<form action="/action_page.php">
-											<input type="checkbox" name="Público" value="Público"> Público<br>
-											<input type="checkbox" name="Privado" value="Privado"> Privado<br>
-									</div>
-								</div>
-							</div>
-						</div>
-
+					<div id="regData">
+						<label for="">Dirección General  *</label>
 						
-						<div id="rightSide">
+							<label for="txtProvincia"></label>
+							<input type="text" class="form-control" id="txtProvincia" placeholder="Provincia" required>
+			
+							<label for="txtCanton"></label>
+							<input type="text" class="form-control" id="txtCanton" placeholder="Cantón" required>
 
-							<div class=details>
-								<div id=levelsID>
-									<h3>Características</h3>
-									<div class=listCheckbox>
-										<form action="/action_page.php">
-											<input type="checkbox" name="Bilingue" value="Bilingue"> Bilingue<br>
-											<input type="checkbox" name="Técnico" value="Técnico"> Técnico<br>
-											<input type="checkbox" name="Religioso" value="Religioso"> Religioso<br>
-											<input type="checkbox" name="No religioso" value="No religioso"> No religioso<br>
-											<input type="checkbox" name="Vocacional" value="Vocacional">Vocacional<br>
-											<input type="checkbox" name="Imparte Idiomas" value="Imparte Idiomas"> Imparte
-											Idiomas<br>
-											<input type="checkbox" name="Ofrece becas" value="Ofrece becas"> Ofrece becas<br>
-											<input type="checkbox" name="Bachillerato internacional" value="Bachillerato internacional">
-											Bachillerato internacional<br>
-											<input type="checkbox" name="Mixto" value="Mixto"> Mixto<br>
-											<input type="checkbox" name="Sólo varones" value="Sólo varones"> Sólo varones<br>
-											<input type="checkbox" name="Sólo mujeres" value="Sólo mujeres"> Sólo mujeres<br><br>
-									</div>
-								</div>
-							</div>
-						</div>
-
-							<input class=closeBtn type="submit" value="Registrar">
+							<label for="txtDistrito"></label>
+							<input type="text" class="form-control" id="txtDistrito" placeholder="Distrito" required>		
 
 					</div>
+
+					<div class= direccionExacta id="regData">
+						<label for="txtDireccionExacta"> Dirección Exacta   *</label>
+						<input type="text" name="" class="form-control" id=txtDireccionExacta placeholder="Dirección exacta" required>
+					</div>
+				</div>
+
+					<div id="rightSide">
+
+						<div id="regData">
+							<label for="txtNombre"> Nombre del Encargado  *</label>
+							<input type="text" class="form-control" id="txtNombre" placeholder="Nombre" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtNombre2"> Segundo Nombre  </label> <br>
+							<input type="text" class="form-control" id="txtNombre2" placeholder="Segundo Nombre">
+						</div>
+
+						<div id="regData">
+							<label for="txtApellido">  Primer Apellido  * </label> <br>
+							<input type="text" class="form-control" id="txtApellido" placeholder="Apellido" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtApellido2"> Segundo Apellido</label> <br>
+							<input type="text" class="form-control" id="txtApellido2" placeholder="Segundo Apellido">
+						</div>
+
+						<div class= "options" id="regData">
+							<label for="id"> Identificación  *</label>
+							<select class="form-control" id="sltIdentificación" required>
+								<option value=''> Identificación </option>
+								<option value='Cedula Nacional'>Cedula Nacional</option>
+								<option value='Cedula de Residencia'>Cedula de Residencia</option>
+								<option value='Cedula Nacional'>Pasaporte</option>
+							</select>
+						</div>
+
+						<div id="regData">
+							<label for="txtNoIdentificacion"> Número de identificación  *</label>
+							<input type="number" class="form-control"id="txtNoIdentificacion" placeholder="(digite solo números)" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtEmail"> Correo Electrónico  </label><br>
+							<input type="email" class="form-control" id="txtEmail" placeholder="Correo electrónico">
+						</div>
+
+						<div id="regData">
+							<label for="txtDepartamento"> Departamento  </label> <br>
+							<input type="text" class="form-control" id="txtDepartamento" placeholder="Departamento">
+						</div>
+
+						<div id="regData">
+							<label for="txtTelefonoContact"> Teléfono de Contacto  *</label>
+							<input type="tel" class="form-control" id="txtTelefonoContact" placeholder="(digite solo números)" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtFotografía">Escudo del centro educativo  </label>
+				
+				            <figure class="image_holder">
+				                <img src="imgs/escudo.png" alt="escudo centro educativo" id="image_preview">
+				            </figure>  
+			
+				            <button type="button" id="btnSeleccionarImagen" class="imgBtn">Subir Imágen</button>
+				        </div>
+
+					</div>
+					<div id="center">
+						<br>
+						<br>
+						<label for="txtUbicacionGeo"> Ubicación Geográfica del Centro Educativo *</label>
+					<div class="mapArea">
+						<!--<iframe id=map
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125759.36571051698!2d-84.18338559168174!3d9.935606974265218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0xe6746a6a9f11b882!2sSan+Jos%C3%A9+Province%2C+San+Jos%C3%A9!5e0!3m2!1sen!2scr!4v1553371678650"
+					width="250" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+					</div>
+				
+				</div>
+
+				<div id=checkboxArea>
+				<p>Por favor seleccione todas las características que corresponden a su centro educativo: </p>
+
+
+				<div class="leftSideEnd">
+
+					<div class=details>
+						<div id=levelsID>
+
+							<h3>Características</h3>
+							<div class=listCheckbox>
+						
+									<input id=checkBoxID type="checkbox" name="Bilingue" value="Bilingue"> Bilingue<br>
+									<input id=checkBoxID type="checkbox" name="Técnico" value="Técnico"> Técnico<br>
+									<input id=checkBoxID type="checkbox" name="Religioso" value="Religioso"> Religioso<br>
+									<input id=checkBoxID type="checkbox" name="No religioso" value="No religioso"> No religioso<br>
+									<input id=checkBoxID type="checkbox" name="Vocacional" value="Vocacional">Vocacional<br>
+									<input id=checkBoxID type="checkbox" name="Imparte Idiomas" value="Imparte Idiomas"> Imparte
+									Idiomas<br>
+									<input id=checkBoxID type="checkbox" name="Ofrece becas" value="Ofrece becas"> Ofrece becas<br>
+									<input id=checkBoxID type="checkbox" name="Bachillerato internacional" value="Bachillerato internacional">
+									Bachillerato internacional<br>
+									<input id=checkBoxID type="checkbox" name="Mixto" value="Mixto"> Mixto<br>
+									<input id=checkBoxID type="checkbox" name="Sólo varones" value="Sólo varones"> Sólo varones<br>
+									<input id=checkBoxID type="checkbox" name="Sólo mujeres" value="Sólo mujeres"> Sólo mujeres<br><br>
+		
+							</div>
+						</div>
+						<br>
+
+					</div>
+				</div>
+						
+				<div class="rightSideEnd">
+
+					<div class=details>
+						<div id=levelsID>
+
+							<h3>Nivel</h3>
+							<div class=listCheckbox>
+									
+									<input id=checkBoxID type="checkbox" name="Primaria" value="Primaria"> Primaria<br>
+									<input id=checkBoxID type="checkbox" name="Secundaria" value="Secundaria"> Secundaria<br>
+				
+							</div>
+							
+						</div>
+					</div>
+				</div>
 			</div>
 
-</body>
+			<button type="button" id="btn_registrar">Registrar</button>
+		</form>
+
+			</div>
+	</div>
+
+	<table id= "tblCentrosEducativos" class="table table-bordered table-responsive table-hover">
+			<thead>
+				<tr>
+					<th>Nombre Comercial</th>
+					<th>Cédula Jurídica</th>
+					<th>Tipo de Centro</th>
+					<th>Teléfono Institucional</th>
+					<th>Fax</th>
+					<th>Sitio Web</th>
+					<th>Facebook</th>
+					<th>e-mail Institucional</th>
+					<th>contraseña</th>
+					<th>contraseña Confirmada</th>
+					<th>Año Fundación</th>
+					<th>Ref Historica</th>
+					<th>Provincia</th>
+					<th>Cantón</th>
+					<th>Distrito</th>
+					<th>Dirección Exacta</th>
+					<th>Nombre encargado</th>
+					<th>Nombre 2 encargado</th>
+					<th>Apellido encargado</th>
+					<th>Apellido 2 encargado</th>
+					<th>Identificación</th>
+					<th>Cédula</th>
+					<th>e-mail encargado</th>
+					<th>Departamento</th>
+					<th>Teléfono encargado</th>
+					<th>Escudo</th>
+					<th>---- MAPA ---</th>
+					<th>Nivel</th>
+					<th>Características</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+	
+				<footer class= footerEnd>
+					<p> EducateCR Costa Rica <br>
+					Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+					Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
+					</p>
+				</footer>
+
+		<!--REFERENCIAR JQUERY -->
+		 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<!--REFERENCIAR SWEET ALERT -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+		<!--REFERENCIAR JAVASCRIPT -->
+		<script src="js/servicio_registroCentroEducativo.js"></script>
+		<script src="js/controlador_registroCentroEducativo.js"></script>
+
+		<!-- Scripts cloudinary -->
+    	<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    	<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    	<script src="js/servicio_imagen.js"></script>
+
+		</body>
 
 </html>

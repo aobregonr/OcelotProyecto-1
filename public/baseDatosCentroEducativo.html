@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		<title>Base de Datos - Centros Educativos</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="Verónica Morera C.">
+
+		<!-- La siguiente linea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Referencia a CSS -->
+		<link rel="stylesheet" type="text/css" href="css/baseDatosCentroEduc.css">
+
+		<!-- Referenciar font-awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+		<!-- Referencia a js.popper para posicionamiento de elementos-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Referencia a Content Delivery Network de CSS para bootstrap4 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+		<!-- Referencia a Content Delivery Network de libreria JQuery para bootstrap4 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+
+		<header>
+		<nav>
+			<ul id="main_nav">
+				<li> <a href="#" id="logo">Educate<strong>CR</strong>.com</a></li>
+				<li> <a href="#" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<div class=mainProfile>
+
+
+		<div class="container">
+			<h2 class="bigLabel"> Base de datos - Centros Educativos </h2>
+
+			<!-- Tabla de ingreso de centros registrados -->
+		<table id= "tblCentrosEducativos" class="table table-bordered table-responsive table-hover">
+			<thead>
+				<tr>
+					<th>Nombre Comercial</th>
+					<th>Cédula Jurídica</th>
+					<th>Tipo de Centro</th>
+					<th>Teléfono Institucional</th>
+					<th>Fax</th>
+					<th>Sitio Web</th>
+					<th>Facebook</th>
+					<th>e-mail Institucional</th>
+					<th>contraseña</th>
+					<th>contraseña Confirmada</th>
+					<th>Año Fundación</th>
+					<th>Ref Historica</th>
+					<th>Provincia</th>
+					<th>Cantón</th>
+					<th>Distrito</th>
+					<th>Dirección Exacta</th>
+					<th>Nombre encargado</th>
+					<th>Nombre 2 encargado</th>
+					<th>Apellido encargado</th>
+					<th>Apellido 2 encargado</th>
+					<th>Identificación</th>
+					<th>Cédula</th>
+					<th>e-mail encargado</th>
+					<th>Departamento</th>
+					<th>Teléfono encargado</th>
+					<th>Escudo</th>
+					<th>---- MAPA ---</th>
+					<th>Nivel</th>
+					<th>Características</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		</div>
+
+
+	</div>
+
+		<footer class= footerEnd>
+					<p> EducateCR Costa Rica <br>
+					Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+					Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
+					</p>
+				</footer>
+
+		<!--REFERENCIAR JAVASCRIPT (mismos archivos del registro de centro educativo)-->
+		<script src="js/servicio_registroCentroEducativo.js"></script>
+		<script src="js/controlador_registroCentroEducativo.js"></script>
+
+	</body>
+</html>
