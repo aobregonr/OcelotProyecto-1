@@ -83,6 +83,16 @@ li > #salir {
 }
 
 
+thead{
+
+    min-width: 350px;
+}
+
+.imagenTabla{
+    max-height: 200px;
+    max-width: 200px;
+}
+
 /*     ------------- footer-------------    */
 
 .footerEnd{ 
