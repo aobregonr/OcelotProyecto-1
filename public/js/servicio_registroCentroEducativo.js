@@ -3,7 +3,7 @@
 function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCentro, ptelefonoCtro, pfax, psitioWeb,
 									pfacebook, pemailInstit, ppassword, ppasswordConf, panoFund, prefHist, pprovincia,
 									pcanton, pdistrito, pdireccionExacta, pnombre, pnombre2, papellido, papellido2,
-									ptipoID, pIDnumber, pemail, pdepartamento, ptelefono, pimgEscudo){
+									ptipoID, pIDnumber, pemail, pdepartamento, ptelefono, pescudo){
 	let respuesta = '';
     let request = $.ajax({
         url : 'http://localhost:4000/api/registrar_centroEducativo',
@@ -34,7 +34,7 @@ function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCen
 			email: pemail,
 			departamento: pdepartamento,
 			telefono: ptelefono,
-			escudo: pimgEscudo
+			escudo: pescudo
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

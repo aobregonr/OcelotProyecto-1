@@ -12,7 +12,7 @@ $(function() {
     // Upload button event
     uploadButton.on('click', function(e){
         // Initiate upload
-        cloudinary.openUploadWidget({ cloud_name: 'veromorera', upload_preset: 'ocelotapp', tags: ['cgal']},
+        cloudinary.openUploadWidget({ cloud_name: 'veromorera', upload_preset: 'educatecr', tags: ['cgal']},
         function(error, result) {
             if(error) console.log(error);
             // If NO error, log image data to console
