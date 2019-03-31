@@ -59,144 +59,205 @@ li > #salir {
 
 /*     -------------  main Profile  -------------    */
 
-.containerBig{
-    background-color: #990033;
-    border-radius: 10px; 
-    padding: 35px;
-    height: 2250px;
-    margin-left: 100px;
-    color: white;
-    width: 950px;
-}
-
-
-#leftSide {
-    float: left;
-    width: 200px;
-    padding: 5px;
-    border-bottom: 5px;
-    padding-right: 80px;
-}
-
-#rightSide {
-    float: right;
-    width: 200px;
-    padding: 5px;
-    border-bottom: 5px;
-    padding-right: 250px;
-}
-
-#centerLocation {
-    width: 450px;
-    padding: 5px;
-    border-bottom: 5px;
-    padding-right: 250px;
-}
-
-#regData {
-    margin-left: 15%;
-    margin-bottom: 20px;
-    border-radius: 15px;  
-}
-
-
-.addrBox {
-    display: flex; 
-    grid-gap: 2px;
-    flex-flow: nowrap;
-    width: 30%;
-    }
-
-.addrBox :first-child {
-    position: relative;
-    align-self: space-evenly;
-}
-
-#flexbox {
-    position: relative;
-    display: flex;
-    flex-flow: nowrap;
-    height: 70px;
-    column-gap: 1px;
-    width: 70px;
-  }
-
-
-  .exactAddrBox{
-    border-radius: 3px;
-    padding: 10px;
-    width: 250px;
-    margin: 10% 10% 0% 10%;
-    height: auto;
-    font-size: 1em;
-    resize: none;
-}
-
 
 .mainProfile {
     width: 100%;
+    margin: 0 5%;
+
 }
 
-.mainProfileTxt {
-width: 100%;
-margin-right: 10%;
-margin-left: 10%;
+.bigLabel{
+            background-color: #CC0033;
+            color: white;
+            margin: 30px;
+            padding: 10px; 
 }
 
 
 .modal-header, h2 {
     background-color: #CC0033;
     color : white;
+    text-align: left;
+    font-size: 20px;
+    width: 85%;
+}
+
+.instructions{
+    margin: 0 10%;
+
+}
+
+#redInstructions{
+    color: red;
+}
+
+
+
+/*     -------------  formulario  -------------    */
+
+.containerBig{
+    background-color: #990033;
+    border-radius: 10px; 
+    padding: 35px;
+    height: 1900px;
+    color: white;
+    width: 850px;
+    margin: 0 12%;
+}
+
+#regData > input{
+    width: 300px;
+}
+
+
+#leftSide {
+    float: left;
+
+}
+
+#rightSide {
+    position: absolute;
+    margin-left: 400px;
+}
+
+#center{  /* CONTAINER DE MAPA   */
+    position: absolute;
+    margin-top: 970px;
+    margin-left: 410px;
     text-align: center;
-    font-size: 30px;
-    width: 100%;
+    width: 350px;
+    height: 350px;
 }
 
-/*     -------------  general details  -------------    */
-
-    .closeBtn {
-        background-color: #FFCC33;
-        padding: 0% 15% 0% 15%;
-        font-size: 1.6em;
-        font-family: Helvetica Light, sans-serif;
-        color: black;
-        cursor: pointer;
-        border-radius: 5px;
-        margin: 0% 25% 5% 25%;
-    }
- 
-
-.details{
-			margin: 10px ;
+.mapArea{
+    width: 250px;
+    height: 250px;
+    margin: 5px 33px;
+    background-color: gray;
 }
 
+#regData {
+    margin-left: 10%;
+    margin-bottom: 15px;
+    border-radius: 15px;  
+}
+
+
+#txtTipoCentroEducat, #sltIdentificación{
+    width: 155%;
+}
+
+#txtDireccionExacta{
+
+}
+
+
+
+#image_preview{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+.imgBtn{
+    background-color: transparent;
+    margin: -120px 230px;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    width: 40%;
+}
+
+
+/*     -------------  Check box  -------------    */
+
+#checkboxArea{
+    position: absolute;
+    margin-top: 1330px;
+    margin-left: 7%;
+}
 
 .listCheckbox{
-			width: 180px;
-			min-height: 70px;
-			padding: 8%;
+            width: 180px;
 }
 
 
-.bigLabel1{
-			background-color: #CC0033;
-			color: white;
-			text-align: justify;
+.leftSideEnd{
+    float: left;
+}
+.rightSideEnd{
+    float: right;
 }
 
- 
+#checkBoxID{
+    margin-top: 12px;
+}
+/*     -------------  general details  -------------    */
 
-#levelsID {
-    margin-left: 10%;
-    margin-bottom: 20px;
-    display: inline-block;
+
+#btn_registrar {
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-size: 1.6em;
+    font-family: Helvetica Light, sans-serif;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-top: 480px;
 }
 
-.footerEnd{	
-
-	background-color: #330033;
-	color: white;
-	font-weight: lighter;
-	font-size: 12px;
+#btn_registrar:hover {
+    background-color:yellow;
 
 }
+
+.options{
+        width: 65%;
+}
+
+#tblCentrosEducativos{
+    width: 72%;
+    margin: 0 10%;
+    display: none; 
+    visibility: hidden;
+} 
+
+.imagenTabla{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+/*     ------------- footer-------------    */
+
+.footerEnd{ 
+            padding: 10px;
+            padding-left: 20px;
+            background-color: #330033;
+            color: white;
+            font-weight: lighter;
+            font-size: 12px;
+            margin-top: 70px;
+
+}
+
+/*     ------------- modal  -------------    */
+
+.title-class{
+    background-color: #fff;
+    color: #fff;
+}
+
+.confirm-button-class{
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
+
+
+
