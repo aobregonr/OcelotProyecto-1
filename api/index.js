@@ -64,12 +64,14 @@ app.use( function(req, res, next) {
  */
 
 const registroCentro = require('./componentes/registroCentroEducativo/registroCentroEduc.route');
+const userpadrefamilia = require('./componentes/userpadrefamilia/userpadrefamilia.route'); 
 const listaUtilesMep = require('./componentes/listaUtilesMEP/listaUtilesMEP.route');
 const listaUtilesCen = require('./componentes/listaUtilesCentro/listaUtilesCentro.route');
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
  */
 app.use('/api', registroCentro);
+app.use('api', userpadrefamilia);
 app.use('/api', listaUtilesMep);
 app.use('/api', listaUtilesCen);
 app.use('/api', require('./component/users/users.route'));
