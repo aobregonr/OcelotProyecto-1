@@ -3,7 +3,9 @@
 function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCentro, ptelefonoCtro, pfax, psitioWeb,
 									pfacebook, pemailInstit, ppassword, ppasswordConf, panoFund, prefHist, pprovincia,
 									pcanton, pdistrito, pdireccionExacta, pnombre, pnombre2, papellido, papellido2,
-									ptipoID, pIDnumber, pemail, pdepartamento, ptelefono, pescudo){
+									ptipoID, pIDnumber, pemail, pdepartamento, ptelefono, pescudo, 
+                                    pbilingue, ptecnico, preligioso, pnoReligioso, pvocacional, pidiomas, pbecas, 
+                                    pbachilleratoInt, pmixto, pvarones, pmujeres, pprimaria, psecundaria){
 	let respuesta = '';
     let request = $.ajax({
         url : 'http://localhost:4000/api/registrar_centroEducativo',
@@ -34,8 +36,23 @@ function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCen
 			email: pemail,
 			departamento: pdepartamento,
 			telefono: ptelefono,
-			escudo: pescudo
+			escudo: pescudo,
+            //
+            bilingue: pbilingue,
+            tecnico: ptecnico,
+            religioso: preligioso,
+            noReligioso: pnoReligioso,
+            vocacional: pvocacional,
+            idiomas: pidiomas,
+            becas: pbecas,
+            bachilleratoInt: pbachilleratoInt,
+            mixto: pmixto,
+            varones: pvarones,
+            mujeres: pmujeres,
+            primaria: pprimaria,
+            secundaria: psecundaria
         },
+
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
     });
