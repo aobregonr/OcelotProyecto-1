@@ -134,13 +134,22 @@
 						<label for="">Dirección General  *</label>
 						
 							<label for="txtProvincia"></label>
-							<input type="text" class="form-control" id="txtProvincia" placeholder="Provincia" required>
+							<!--<input type="text" class="form-control" id="txtProvincia" placeholder="Provincia" required>-->
+							<select class="form-control" id="txtProvincia">
+			                    <optionvalue="" required>--Selecciones una provincia--</option>
+			                </select>
 			
 							<label for="txtCanton"></label>
-							<input type="text" class="form-control" id="txtCanton" placeholder="Cantón" required>
+							<!--<input type="text" class="form-control" id="txtCanton" placeholder="Cantón" required>-->
+							<select class="form-control" id="txtCanton">
+			                    <option value="" required>--Seleccione un cantón--</option>
+			                </select>
 
 							<label for="txtDistrito"></label>
-							<input type="text" class="form-control" id="txtDistrito" placeholder="Distrito" required>		
+							<!--<input type="text" class="form-control" id="txtDistrito" placeholder="Distrito" required>	-->
+							<select class="form-control"id="txtDistrito">
+			                    <option  value="" required>--Selecciones un distrito--</option>
+			                </select>
 
 					</div>
 
@@ -237,19 +246,19 @@
 							<h3>Características</h3>
 							<div class=listCheckbox>
 						
-									<input id=checkBoxID type="checkbox" name="Bilingue" value="Bilingue"> Bilingue<br>
-									<input id=checkBoxID type="checkbox" name="Técnico" value="Técnico"> Técnico<br>
-									<input id=checkBoxID type="checkbox" name="Religioso" value="Religioso"> Religioso<br>
-									<input id=checkBoxID type="checkbox" name="No religioso" value="No religioso"> No religioso<br>
-									<input id=checkBoxID type="checkbox" name="Vocacional" value="Vocacional">Vocacional<br>
-									<input id=checkBoxID type="checkbox" name="Imparte Idiomas" value="Imparte Idiomas"> Imparte
+									<input class=checkBoxID id= "cbBilingue"type="checkbox" name="Bilingue" value="Bilingue"> Bilingue<br>
+									<input class=checkBoxID id= "cbTecnico"type="checkbox" name="Tecnico" value="Tecnico"> Técnico<br>
+									<input class=checkBoxID id= "cbReligioso"type="checkbox" name="Religioso" value="Religioso"> Religioso<br>
+									<input class=checkBoxID id= "cbNoReligioso"type="checkbox" name="No religioso" value="No religioso"> No religioso<br>
+									<input class=checkBoxID id= "cbVocacional"type="checkbox" name="Vocacional" value="Vocacional">Vocacional<br>
+									<input class=checkBoxID id= "cbIdiomas"type="checkbox" name="Imparte Idiomas" value="Imparte Idiomas"> Imparte
 									Idiomas<br>
-									<input id=checkBoxID type="checkbox" name="Ofrece becas" value="Ofrece becas"> Ofrece becas<br>
-									<input id=checkBoxID type="checkbox" name="Bachillerato internacional" value="Bachillerato internacional">
+									<input class=checkBoxID id= "cbBecas"type="checkbox" name="Ofrece becas" value="Ofrece becas"> Ofrece becas<br>
+									<input class=checkBoxID id= "cbBachilleratoInt"type="checkbox" name="Bachillerato internacional" value="Bachillerato internacional">
 									Bachillerato internacional<br>
-									<input id=checkBoxID type="checkbox" name="Mixto" value="Mixto"> Mixto<br>
-									<input id=checkBoxID type="checkbox" name="Sólo varones" value="Sólo varones"> Sólo varones<br>
-									<input id=checkBoxID type="checkbox" name="Sólo mujeres" value="Sólo mujeres"> Sólo mujeres<br><br>
+									<input class=checkBoxID id= "cbMixto"type="checkbox" name="Mixto" value="Mixto"> Mixto<br>
+									<input class=checkBoxID id= "cbVarones"type="checkbox" name="Solo varones" value="Solo varones"> Sólo varones<br>
+									<input class=checkBoxID id= "cbMujeres"type="checkbox" name="Solo mujeres" value="Solo mujeres"> Sólo mujeres<br><br>
 		
 							</div>
 						</div>
@@ -266,8 +275,8 @@
 							<h3>Nivel</h3>
 							<div class=listCheckbox>
 									
-									<input id=checkBoxID type="checkbox" name="Primaria" value="Primaria"> Primaria<br>
-									<input id=checkBoxID type="checkbox" name="Secundaria" value="Secundaria"> Secundaria<br>
+									<input class=checkBoxID id= "cbPrimaria" type="checkbox" name="Primaria" value="Primaria"> Primaria<br>
+									<input class=checkBoxID id= "cbSecundaria" type="checkbox" name="Secundaria" value="Secundaria"> Secundaria<br>
 				
 							</div>
 							
@@ -312,8 +321,20 @@
 					<th>Teléfono encargado</th>
 					<th>Escudo</th>
 					<th>---- MAPA ---</th>
-					<th>Nivel</th>
-					<th>Características</th>
+					<th>bilingue</th>
+			        <th>tecnico</th> 
+			        <th>religioso</th> 
+			        <th>noReligioso</th>
+			        <th>vocacional</th> 
+			        <th>idiomas</th>
+			        <th>becas</th> 
+			        <th>bachilleratoInt</th>
+			        <th>mixto</th>
+			        <th>varones</th>
+			        <th>mujeres</th>
+			        <th>primaria</th>
+			        <th>secundaria</th>
+
 				</tr>
 			</thead>
 			<tbody>
@@ -340,6 +361,12 @@
     	<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
     	<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     	<script src="js/servicio_imagen.js"></script>
+
+    	<!-- Scripts provincia, canton, distrito-->
+    	<script src="js/provincias.js"></script>
+	    <script src="js/cantones.js"></script>
+	    <script src="js/distritos.js"></script>
+	    <script src="js/controlador_ubicacion.js"></script>
 
 		</body>
 
