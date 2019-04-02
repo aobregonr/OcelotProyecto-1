@@ -32,7 +32,21 @@ module.exports.registrar = function(req, res){
 		email: req.body.email,
 		departamento: req.body.departamento,
 		telefono: req.body.telefono,
-		escudo: req.body.escudo
+		escudo: req.body.escudo,
+		//
+		bilingue: req.body.bilingue,
+        tecnico: req.body.tecnico,
+        religioso: req.body.religioso,
+        noReligioso: req.body.noReligioso,
+        vocacional: req.body.vocacional,
+        idiomas: req.body.idiomas,
+        becas: req.body.becas,
+        bachilleratoInt: req.body.bachilleratoInt,
+        mixto: req.body.mixto,
+        varones: req.body.varones,
+        mujeres: req.body.mujeres,
+        primaria: req.body.primaria,
+        secundaria: req.body.secundaria
 
 	});
 

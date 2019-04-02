@@ -30,7 +30,21 @@ let schema_registroCentroEduc = mongoose.Schema({
 	email : {type : String, required: false},
 	departamento : {type : String, required: false},
 	telefono : {type : Number, required: false},
-	escudo: {type: String, required : false}
+	escudo : {type: String, required : false},
+	//
+	bilingue : {type: Boolean, required : false}, 
+    tecnico : {type: Boolean, required : false},
+    religioso :  {type: Boolean, required : false},
+    noReligioso : {type: Boolean, required : false},
+    vocacional : {type: Boolean, required : false},
+    idiomas : {type: Boolean, required : false},
+    becas :  {type: Boolean, required : false},
+    bachilleratoInt : {type: Boolean, required : false},
+    mixto :  {type: Boolean, required : false},
+    varones :  {type: Boolean, required : false},
+    mujeres : {type: Boolean, required : false},
+    primaria :  {type: Boolean, required : false},
+    secundaria :  {type: Boolean, required : false}
 
 
 });
