@@ -156,4 +156,13 @@ li > #salir {
 	color: white;
 	font-weight: lighter;
 	font-size: 12px;
+
 }
+
+.input_error{
+border: 2px solid #c23616;
+}
+
+#hiddenUserTable{
+    display: none;
+  }
