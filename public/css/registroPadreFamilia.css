@@ -51,118 +51,110 @@ li > #salir {
 			padding-right:0px;
 }
 
+/*     -------------  main Profile  -------------    */
+.mainProfile {
+    width: 100%;
+    margin: 0 5%;
+}
 
+.bigLabel{
+            background-color: #CC0033;
+            color: white;
+            margin: 30px;
+            padding: 10px; 
+}
+
+
+.modal-header, h2 {
+    background-color: #CC0033;
+    color : white;
+    text-align: left;
+    font-size: 20px;
+    width: 85%;
+}
+
+.instructions{
+    margin: 0 10%;
+
+}
+
+#redInstructions{
+    color: red;
+}
 
 /*     -------------  main Profile  -------------    */
-
-.containerBig1{
+.containerBig{
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    height: 750px;
-    margin-left: 50px;
+    height: 900px;
     color: white;
-    width: 750px;
-}
-
-.containerBig2{
-    background-color: #990033;
-    border-radius: 10px; 
-    padding: 35px;
-    height: 350px;
-    margin-left: 50px;
-    color: white;
-    width: 750px;
-}
-
-.containerSmall1{
-    background-color: #990033;
-    border-radius: 10px; 
-    padding: 45px;
-    height: 450px;
-    margin-left: 100px;
-    color: white;
-    width: 450px;
+    width: 850px;
+    margin: 0 12%;
 }
 
 #leftSide {
     float: left;
-    width: 200px;
-    padding: 5px;
-    border-bottom: 5px;
-    padding-right: 80px;
+
 }
 
 #rightSide {
-    float: right;
-    width: 200px;
-    padding: 5px;
-    border-bottom: 5px;
-    padding-right: 250px;
+    position: absolute;
+    margin-left: 400px;
 }
+
 
 #regData {
-    margin-left: 15%;
-    margin-bottom: 10px;
-    border-radius: 15px;  
-}
-
-
-#addrBox1 {
-    float: left;
-    width: 85px;
-    column-gap: 2px; 
-    background: chartreuse;
-}
-
-.upperBox {
-    height: 100px;
-    width: 200px;
-    background: blue;
-  }
-
-.mainProfile {
-			width: 100%;
-}
-
-.mainProfileTxt {
-    width: 100%;
-    margin-right: 10%;
     margin-left: 10%;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+#regData > input{
+    width: 300px;
 }
 
 
-.closeBtn1 {
-    background-color: #FFCC33;
-    padding: 0% 5% 0% 5%;
-    font-size: 1.6em;
-    font-family: Helvetica Light, sans-serif;
-    color: black;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0% 25% 0% 25%;
-}
-
-
-.bigLabel1{
-			background-color: #CC0033;
-			color: white;
-			text-align: justify;
-}
-
-.footerEnd{	
-
-	background-color: #330033;
-	color: white;
-	font-weight: lighter;
-	font-size: 12px;
-
-}
 
 .input_error{
 border: 2px solid #c23616;
 }
 
-#hiddenUserTable{
-    display: none;
-  }
+#tblPadresDeFam{
+    width: 75%;
+    margin: 0 10%;
+    /*display: none; 
+    visibility: hidden;*/
+} 
+
+
+#btn_registrar {
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-size: 1.6em;
+    font-family: Helvetica Light, sans-serif;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 780px;
+    margin-left: -10%;
+}
+
+#btn_registrar:hover {
+    background-color:yellow;
+
+}
+
+/*     ------------- footer-------------    */
+
+.footerEnd{ 
+            padding: 10px;
+            padding-left: 20px;
+            background-color: #330033;
+            color: white;
+            font-weight: lighter;
+            font-size: 12px;
+            margin-top: 70px;
+
+}
