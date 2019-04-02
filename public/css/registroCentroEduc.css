@@ -189,7 +189,7 @@ li > #salir {
     float: right;
 }
 
-#checkBoxID{
+.checkBoxID{
     margin-top: 12px;
 }
 /*     -------------  general details  -------------    */
