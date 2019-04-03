@@ -64,7 +64,7 @@ app.use( function(req, res, next) {
  */
 
 const registroCentro = require('./componentes/registroCentroEducativo/registroCentroEduc.route');
-const userpadrefamilia = require('./componentes/userpadrefamilia/userpadrefamilia.route'); 
+const userpadrefamilia = require('./componentes/userpadrefamilia/userspadrefamilia.route'); 
 const listaUtilesMep = require('./componentes/listaUtilesMEP/listaUtilesMEP.route');
 const listaUtilesCen = require('./componentes/listaUtilesCentro/listaUtilesCentro.route');
 /**
