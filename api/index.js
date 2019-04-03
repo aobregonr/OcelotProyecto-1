@@ -42,7 +42,7 @@ db.once('open', function () {
 /**
  * Le indicamos a express que envíe las respuestas a la carpeta "public"
  */
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 /**
  * Le indicamos a la aplicación que el formato de los datos va a ser JSON
