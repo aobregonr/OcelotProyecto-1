@@ -5,7 +5,7 @@
     <!-- Este titulo se elimina cuando se enlaze a la pagina de incio pues el codigo es solo para la ventana modal -->
     <title>Registro De Padre de Familia</title>
     <meta charset="UTF-8">
-    <meta name="author" content="Mario Zeledon S.">
+    <meta name="author" content="Mario Zeledon S. & Verónica Morera C.">
 
     <!-- La siguiente linea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,7 +79,7 @@
 
                     <div id="regData">
                         <label> Identificación  *</label>
-                        <select class="form-control" id="sltIdentificación">
+                        <select class="form-control" id="sltIdentificacion" required>
                             <option value=""> -- Identificación-- </option>
                             <option value='Cedula Nacional'>Cedula Nacional</option>
                             <option value='Cedula de Residencia'>Cedula de Residencia</option>
@@ -88,23 +88,23 @@
                     </div>
 
                     <div id="regData">
-                        <label for="txtNoIdentificación"> Número de Identificación *</label>
-                        <input type="text" class="form-control" id="txtNoIdentificación" placeholder="Identificación" required>
+                        <label for="txtNoIdentificacion"> Número de Identificación *</label>
+                        <input type="number" class="form-control" id="txtNoIdentificacion" placeholder="Identificación" required>
                     </div>
 
                     <div id="regData">
                         <label for="txtEmail"> Correo Electrónico *</label>
-                        <input type="text" class="form-control" id="txtEmail" placeholder="Correo electrónico">
+                        <input type="text" class="form-control" id="txtEmail" placeholder="Correo electrónico" required>
                     </div>
 
                     <div id="regData">
                         <label for="txtPassword"> Contraseña *</label>
-                        <input type="text" class="form-control" id="txtPassword" placeholder="Contraseña" required>
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" required>
                     </div>
 
                     <div id="regData">
                         <label for="txtPasswordConf"> Confirmar Contraseña *</label>
-                        <input type="text" class="form-control" id="txtPasswordConf" placeholder="Confirmar contraseña" required>
+                        <input type="password" class="form-control" id="txtPasswordConf" placeholder="Confirmar contraseña" required>
                     </div>
                 </div>
 
@@ -126,8 +126,8 @@
                     </div>
 
                     <div id="regData">
-                        <label for="txtTeléfono"> Teléfono </label>
-                        <input type="text" class="form-control" id="txtTeléfono" placeholder="Número de Teléfono" required>
+                        <label for="txtTelefono"> Teléfono </label>
+                        <input type="number" class="form-control" id="txtTelefono" placeholder="Número de Teléfono" required>
                     </div>
 
 
@@ -137,32 +137,32 @@
                         
                             <label for="txtProvincia"></label>
                             <!--<input type="text" class="form-control" id="txtProvincia" placeholder="Provincia" required>-->
-                            <select class="form-control" id="txtProvincia">
-                                <option value="" required>--Selecciones una provincia--</option>
+                            <select class="form-control" id="txtProvincia" required>
+                                <option value="">--Selecciones una provincia--</option>
                             </select>
             
                             <label for="txtCanton"></label>
                             <!--<input type="text" class="form-control" id="txtCanton" placeholder="Cantón" required>-->
-                            <select class="form-control" id="txtCanton">
-                                <option value="" required>--Seleccione un cantón--</option>
+                            <select class="form-control" id="txtCanton" required>
+                                <option value="" >--Seleccione un cantón--</option>
                             </select>
 
                             <label for="txtDistrito"></label>
                             <!--<input type="text" class="form-control" id="txtDistrito" placeholder="Distrito" required>   -->
-                            <select class="form-control"id="txtDistrito">
-                                <option  value="" required>--Selecciones un distrito--</option>
+                            <select class="form-control"id="txtDistrito" required>
+                                <option  value="" >--Selecciones un distrito--</option>
                             </select>
                     </div>
 
 
                     <div id="regData">
                         <label for="txtCantHijos"> Cantidad de Hijos </label>
-                        <input type="number" class="form-control"  id="txtCantHijos" placeholder="Cantidad de hijos" required>
+                        <input type="number" class="form-control"  id="txtCantHijos" placeholder="Cantidad de hijos">
                     </div>
 
                     <div id="regData">
-                        <label for="txtAñoDeNacimiento"> Año de nacimiento de los hijos </label>
-                        <input type="number" class="form-control"  id="txtAñoDeNacimiento" placeholder="Año de Nacimiento" required>
+                        <label for="txtAnoDeNacimiento"> Año de nacimiento de los hijos </label>
+                        <input type="number" class="form-control"  id="txtAnoDeNacimiento" placeholder="Año de Nacimiento">
                     </div>
                 </div>
 
@@ -181,6 +181,7 @@
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Tipo de Identificación</th>
             <th>Identificación</th>
             <th>Correo electrónico</th>
             <th>Contraseña</th>
@@ -212,10 +213,12 @@
 
     
         <!--REFERENCIAR JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!--REFERENCIAR SWEET ALERT -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <!--REFERENCIAR JAVASCRIPT -->
-        <script src="js/servicioRegPadreFam.js"></script>
-        <script src="js/controladorRegPadreFam.js"></script>
+        <script src="js/servicio_registroPadreFamilia.js"></script>
+        <script src="js/controlador_registroPadreFamilia.js"></script>
 
         <!-- Scripts provincia, canton, distrito-->
         <script src="js/provincias.js"></script>
