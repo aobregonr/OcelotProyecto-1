@@ -116,12 +116,12 @@
 		  		<!-- Barra de busqueda -->
 				<div class="form-group has-search">
 					<span class="fa fa-search form-control-feedback"></span>
-					<input type="text" class="form-control" placeholder="Palabra clave">
+					<input type="text" class="form-control" id="txtfil_Word" placeholder="Palabra clave">
 				</div>
 
 				<!-- Dropdown niveles -->
 				<div class="dropdown">
-					<button id=nivel type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+					<button id="stlnivel" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
 					Nivel
 				</button>
 
@@ -134,7 +134,7 @@
 				<br>
 				<br>
 				<br>
-				<button id=yellowBtn type="submit" class="btn btn-block">Buscar</button>			
+				<button id="yellowBtn" type="submit" class="btn btn-block">Buscar</button>			
 			</div>			
 			</div>
 
@@ -617,7 +617,10 @@
 
 
 
-		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_homeBusquedad.js"></script>
+    <script src="js/controlador_homeBusquedad.js"></script>  	
 
 	</body>
 </html>
