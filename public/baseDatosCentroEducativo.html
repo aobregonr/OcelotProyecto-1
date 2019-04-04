@@ -47,6 +47,12 @@
 		<div class="container">
 			<h2 class="bigLabel"> Base de datos - Centros Educativos </h2>
 
+
+			<label for= "txtFiltro"> Filtrar </label>
+			<input class="form-control" type="text" id="txtFiltro">
+			<br>
+
+
 			<!-- Tabla de ingreso de centros registrados -->
 		<table id= "tblCentrosEducativos" class="table table-bordered table-responsive table-hover">
 			<thead>
@@ -62,11 +68,11 @@
 					<th>contraseña</th>
 					<th>contraseña Confirmada</th>
 					<th>Año Fundación</th>
-					<th>Ref Historica</th>
+					<th id='refHistorica'>Ref Historica</th>
 					<th>Provincia</th>
 					<th>Cantón</th>
 					<th>Distrito</th>
-					<th>Dirección Exacta</th>
+					<th id='direccion'>Dirección Exacta</th>
 					<th>Nombre encargado</th>
 					<th>Nombre 2 encargado</th>
 					<th>Apellido encargado</th>
