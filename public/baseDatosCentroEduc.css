@@ -1,0 +1,111 @@
+/* HEXADECIMAL COLOR PALLETE
+
+
+Morado oscuro:   #330033   exclusivo para el header.
+Morado oscuro 2: #571845   para ventanas modales y otros elementos de la página.
+Magenta:         #990033   para todos los formularios.
+Rojo:            #CC0033   para todos los textos h1
+Naranja:         #FF6633   para todos los  textos h2
+Amarillo:        #FFCC33   para botones principales, estrellas de ranking y otros elementos de la página.
+
+
+*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol
+{
+			margin:0;
+			padding:0;
+			font-family: Helvetica, sans-serif;
+}
+
+/*     -------------  header  -------------    */
+
+#main_nav{
+			background-color: #330033;
+			height: 50px;
+			list-style-type: none;
+
+		}
+
+li > #logo {
+			float:left;
+			font-family: Helvetica, sans-serif;
+			font-size: 30px;
+			font-style: bolder;
+			color: white;
+			padding: 10px 15px 15px 25px;
+			text-decoration: none;
+}
+
+li > #salir {
+			float:right;
+			font-family: Helvetica, sans-serif;
+			font-size: 15px;
+			font-style: normal;
+			color: white;
+			padding: 15px 15px 0px 5px;
+			padding-right: 5%;
+			text-decoration: none;
+}
+
+.fa-sign-out-alt {
+			color: white;
+			float:right;
+			padding: 15px;
+			padding-right:0px;
+}
+
+
+
+/*     -------------  main Profile  -------------    */
+
+
+.mainProfile {
+    width: 100%;
+    min-height: 800px;
+
+}
+
+.bigLabel{
+            background-color: #CC0033;
+            color: white;
+            margin: 40px 0px;
+            padding: 10px; 
+}
+
+
+.modal-header, h2 {
+    background-color: #CC0033;
+    color : white;
+    text-align: left;
+    font-size: 20px;
+    width: 100%;
+}
+
+
+thead{
+
+    min-width: 350px;
+}
+
+#refHistorica, #direccion{
+	min-width: 700px;
+}
+
+.imagenTabla{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+/*     ------------- footer-------------    */
+
+.footerEnd{ 
+            padding: 10px;
+            padding-left: 20px;
+            background-color: #330033;
+            color: white;
+            font-weight: lighter;
+            font-size: 12px;
+            margin-top: 70px;
+
+}
