@@ -88,6 +88,10 @@ thead{
     min-width: 350px;
 }
 
+#refHistorica, #direccion{
+	min-width: 700px;
+}
+
 .imagenTabla{
     max-height: 200px;
     max-width: 200px;

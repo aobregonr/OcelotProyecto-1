@@ -219,8 +219,8 @@ li > #salir {
 #tblCentrosEducativos{
     width: 72%;
     margin: 0 10%;
-    display: none; 
-    visibility: hidden;
+    /*display: none; 
+    visibility: hidden;*/
 } 
 
 .imagenTabla{
