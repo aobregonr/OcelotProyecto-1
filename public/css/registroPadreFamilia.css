@@ -124,8 +124,8 @@ border: 2px solid #c23616;
 #tblPadresDeFam{
     width: 75%;
     margin: 0 10%;
-    /*display: none; 
-    visibility: hidden;*/
+    display: none; 
+    visibility: hidden;
 } 
 
 
@@ -158,3 +158,21 @@ border: 2px solid #c23616;
             margin-top: 70px;
 
 }
+/*     ------------- modal  -------------    */
+
+.title-class{
+    background-color: #fff;
+    color: #fff;
+}
+
+.confirm-button-class{
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
+
