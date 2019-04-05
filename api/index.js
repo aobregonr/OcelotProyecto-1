@@ -67,6 +67,8 @@ const registroCentro = require('./componentes/registroCentroEducativo/registroCe
 const registroPadreFamilia = require('./componentes/registroPadreFamilia/registroPadresFam.route'); 
 const listaUtilesMep = require('./componentes/listaUtilesMEP/listaUtilesMEP.route');
 const listaUtilesCen = require('./componentes/listaUtilesCentro/listaUtilesCentro.route');
+const homeBusqueda = require('./componentes/homeBusqueda/homeBusqueda.route');
+
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
  */
@@ -74,6 +76,7 @@ app.use('/api', registroCentro);
 app.use('/api', registroPadreFamilia);
 app.use('/api', listaUtilesMep);
 app.use('/api', listaUtilesCen);
+app.use('/api', homeBusqueda);
 app.use('/api', require('./component/users/users.route'));
 
 
