@@ -1,50 +1,20 @@
 'use strict';
 
-const inputFilter= document.querySelector('·txtfil_Word');
-const sltNivel=document.querySelector('#stlnivel');
-const boton= document.querySelector('#yellowBtn');
-
-obtener_lista_centros();
+const inputFilter= document.querySelector('#txtfil_Word');
+const sltNivel=document.querySelector('#SelNivel');
+const boton= document.querySelector('#btnSearch1');
 
 boton.addEventListener('click' , SearchData);
 
 
 function SearchData(){
-    
-    let ListCen=obtener_lista_centros();
-    let filter=inputFilter.value;
-    let nivel= sltNivel.selectedOptions[0].textContent;
 
-    let tbody = document.querySelector('#tblXXX tbody');
-    tbody.innerHTML = '';
+	let filter=inputFilter.value;
+	let nivel=sltNivel.selectedOptions[0].textContent;
 
-    for(let i = 0; i < ListCen.length; i++){
-
-
-        if((ListCen[i]['tipoDeCentro'].toLowerCase().includes(nivel.toLowerCase()) && (ListCen[i][''].toLowerCase().includes(filter.toLowerCase())){
-            
-            
-            let fila = tbody.insertRow();
-            
-            
-            let celdaTipo = fila.insertCell();
-            let celdaCantidad = fila.insertCell();
-            let celdaDescripcion = fila.insertCell();
-           
-            
-            celdaTipo.innerHTML = listaMEP[i]['tipo_articulo'];
-            celdaCantidad.innerHTML = listaMEP[i]['cantidad'];
-            celdaDescripcion.innerHTML = listaMEP[i]['descripcion'];
-         
-            
-        }else{
-            location.href="../public/resultado_busqueda_fail.html";
-        };
-
-        
- 
-    };
-
-
+// metodo para redireccionar a la pantalla de resultados de la busqueda se 
+// envian los datos por la url en forma de get.
+	let b=filter+","+nivel;
+	window.location.replace("http://localhost:4000/resultado_busqueda_success.html?b="+b);
 };
 
