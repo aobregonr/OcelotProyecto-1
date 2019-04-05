@@ -219,9 +219,18 @@ li > #salir {
 #tblCentrosEducativos{
     width: 72%;
     margin: 0 10%;
-    /*display: none; 
-    visibility: hidden;*/
+    display: none; 
+    visibility: hidden;
 } 
+
+.filtro{
+    display: none; 
+    visibility: hidden;
+}
+
+#refHistorica, #direccion{
+    min-width: 700px;
+}
 
 .imagenTabla{
     max-height: 200px;
