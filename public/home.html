@@ -120,21 +120,19 @@
 				</div>
 
 				<!-- Dropdown niveles -->
-				<div class="dropdown">
-					<button id="stlnivel" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
-					Nivel
-				</button>
-
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Primaria</a>
-					<a class="dropdown-item" href="#">Secundaria</a>
+				<div class="form-group">
+						<select class="form-control" name="" id="SelNivel">
+								<option value="">Nivel</option>
+								<option value="">Escuela</option>
+								<option value="">Colegio</option>
+						</select>
 				</div>
 
 				<a href="#" id=advanceSearch> Búsqueda Avanzada </a>
 				<br>
 				<br>
 				<br>
-				<button id="yellowBtn" type="submit" class="btn btn-block">Buscar</button>			
+				<button class="yellowBtn" id="btnSearch1" type="submit" class="btn btn-block">Buscar</button>			
 			</div>			
 			</div>
 
@@ -618,8 +616,9 @@
 
 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/servicio_homeBusquedad.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+				<script src="js/servicio_homeBusquedad.js"></script>
+		<script src="js/controlador_resultado_busqueda_sucess.js"></script> 
     <script src="js/controlador_homeBusquedad.js"></script>  	
 
 	</body>
