@@ -17,6 +17,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" type="text/css" href="css/baseDatosCentroEduc.css">
     <link rel="stylesheet" href="css/resultado_busqueda.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -38,60 +39,42 @@
     </div>
     <div class="container-fluid" id="content">
       <div class="container">
-        <div class="card-deck">
-				    <div  id= cardColor class="card">
-				      	<div class="card-body text-center">
-				      		<a class="schoolCard" href="#">
-				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados01.png">
-				      		</a>
-				        	<p class="card-text">Colegio Reina de los Angeles</p>
-				      	</div>
-				    </div>
-				    <div id= cardColor class="card">
-				      	<div class="card-body text-center">
-				        	<a class="schoolCard" href="#">
-				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados02.png">
-				      		</a>
-				        	<p class="card-text">Colegio Saint Francis</p>
-				      	</div>
-				    </div>
-				    <div id= cardColor class="card">
-				      	<div class="card-body text-center">
-				        	<a class="schoolCard" href="#">
-				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados03.png">
-				      		</a>
-				        	<p class="card-text">Colegio Saint Paul</p>
-				      	</div>
-				    </div>
-				    <div id= cardColor class="card">
-				      	<div class="card-body text-center">
-				        	<a class="schoolCard" href="#">
-				      			<img class=schoolPic src="imgs/home/topColes/colesPrivados04.png">
-				      		</a>
-				        	<p class="card-text">Colegio Anglo Americano</p>
-				      	</div>
-			    	</div>
+        <div id="cards" class="card-deck">
+				    
+				    
+				    
+				    
 			    </div>
        </div>
       </div>
+      
       <div class="spacer">
 
       </div>
       <div class="spacer">
 
       </div>
-      <div class="spacer">
-
-      </div>
-      <div class="spacer">
-
-      </div>
-      <div class="spacer">
-
-      </div>
-      <div class="spacer">
-
-      </div>
+      <table id= "tblCentros" class="table table-bordered table-responsive table-hover">
+        <thead>
+          <tr>
+            <th>Nombre Comercial</th>
+            <th>Tipo de Centro</th>
+            <th>Teléfono Institucional</th>
+            <th>Fax</th>
+            <th>Sitio Web</th>
+            <th>Facebook</th>
+            <th>e-mail Institucional</th>
+            <th>Año Fundación</th>
+            <th id='direccion'>Dirección Exacta</th>
+            <th>Escudo</th>
+            
+  
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
     <footer class= footerEnd>
       <p> EducateCR Costa Rica <br>
       Copyright 2019 EducateCR. Todos los derechos reservados.<br>
@@ -101,7 +84,9 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  
     <script src="js/servicio_homeBusquedad.js"></script>
-    <script src="js/controlador_homeBusquedad.js"></script>  
+   
+    <script src="js/controlador_resultado_busqueda_sucess.js"></script>  
   </body>
 </html>
