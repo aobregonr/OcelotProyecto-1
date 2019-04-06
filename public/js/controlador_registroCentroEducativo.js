@@ -101,7 +101,7 @@ function obtenerDatos(){
 	//let regExpUrl = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/; //verificar url
 	let regExpEmail = /^\S+@\S+$/; //verificar email
 	let regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; //contrasena 8 digitos minimo, 1 mayuscula, 1 minuscula, 1 caracter especial, 1 numero.
-	let regExpYear = /(?:(?:19|20)[0-9]{2})/; //verificar anio entre 1900 y 2099
+	let regExpYear = /(?:(?:18|20)[0-9]{2})/; //verificar anio entre 1800 y 2099
 
 	//Validar que todos los datos sean Correctos.
 	if(inputNombreComercial.value == ''){
