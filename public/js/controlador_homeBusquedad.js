@@ -32,8 +32,9 @@ function SearchData(){
 
     }else{ 
     // metodo para redireccionar a la pantalla de resultados de la busqueda se 
-	// envian los datos por la url en forma de get.
-	let b=filter+","+nivel;
+    // envian los datos por la url en forma de get.
+    let dato1=filter+" "+nivel;
+	let b=dato1+","+nivel;
 	window.location.replace("http://localhost:4000/resultado_busqueda_success.html?b="+b);}
 
 };
