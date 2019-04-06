@@ -90,15 +90,16 @@ li{
 			margin: 15px;
 }
 
-#yellowBtn{
+.yellowBtn{
 			background-color: #FFCC33;
 			font-family: Helvetica, sans-serif;
 			font-weight: bolder;
 			margin: 5px 0px;
-			font-size: 0.8em;
+			font-size: 1.2em;
+			padding: 10px 50px;
 }
 
-#yellowBtn:hover{
+.yellowBtn:hover{
 			background-color: yellow;
 }
 
@@ -430,3 +431,20 @@ th{
 
 }
 
+/*     ------------- modal  -------------    */
+
+.title-class{
+    background-color: #fff;
+    color: #fff;
+}
+
+.confirm-button-class{
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}

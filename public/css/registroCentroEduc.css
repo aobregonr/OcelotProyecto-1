@@ -223,7 +223,7 @@ li > #salir {
     visibility: hidden;
 } 
 
-.filtro{
+#filterBar{
     display: none; 
     visibility: hidden;
 }
