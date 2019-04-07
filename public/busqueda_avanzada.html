@@ -43,9 +43,9 @@
     </div>
 
     <div class="instructions">
-      <p>Seleccione uno o más <strong>NIVELES</strong>, uno o más <strong>TIPOS DE CENTRO</strong> y una o varias <strong>CARACTERISTICAS.</strong></p>
+      <p>Realice una búsqueda por selección de criterios. </strong></p>
       <br>
-      <p id="redInstructions"><strong> *Niveles, Tipo de Centros y al menos una Característica son requeridos para realizar la búsqueda.</strong> </p>
+      <p id="redInstructions"><strong> *Niveles, Tipo de Centros y al menos una Característica son requeridos para realizar la búsqueda de criterios .</strong> </p>
       <p>
         <br>
       </p>
@@ -57,17 +57,20 @@
 
 
       <form class="advancedSearchForm" action="" method="post">
+
+
+        <!--
         <div class="row" id="firstRow">
           <div class="col-10">
             <input type="text" name="search" placeholder="Palabra Clave" id="txtfil_Word"">
           </div>
-          <div class="col-2">
-            <button type="button" class="btn btn-lg" id="btnSearch">Buscar</button>
-          </div>
-          <div class="col-2">
-            <button type="button" class="btn btn-lg" id="btnNewSearch">Nueva Búsqueda</button>
+           <div class="col-2">
+            <button type="button" class="btn btn-lg" id="btnSearchName">Búsqueda</button>
           </div>
         </div>
+        -->
+
+
         <div class="row" id="secondRow">
          <div class="col">
            <h3>Niveles *</h3>
@@ -144,6 +147,13 @@
          </div>
         </div>
         </form>
+
+        <div class="col">
+            <button type="button" class="btn btn-lg" id="btnSearch">Buscar Por Criterios</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-lg" id="btnNewSearch">Nueva Búsqueda</button>
+          </div>
       </div>
 
        <!--Aqui se generan los cards de busqueda -->
@@ -185,7 +195,6 @@
       <br>
       <br>
 
-    
     
 
     </div>
