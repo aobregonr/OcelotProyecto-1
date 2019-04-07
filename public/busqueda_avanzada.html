@@ -23,19 +23,35 @@
 
     <title>Búsqueda Avanzada</title>
   </head>
-  <body>
-    <div class="container-fluid" id="header" height="50px;">
-      <div class="row">
-        <div class="col-10"><a href="#" id="logo">EducateCR.com</a></div>
-        <div class="col-2">Salir <i class="fas fa-sign-out-alt"></i></div>
-      </div>
-    </div>
-    <div class="spacer">
 
+
+  <body>
+    
+
+    <header>
+      <nav>
+        <ul id="main_nav">
+          <li> <a href="#" id="logo">Educate<strong>CR</strong>.com</a></li>
+          <li> <a href="#" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+        </ul>
+      </nav>
+  </header>
+
+      <div class="mainProfile">
+      <h2 class="bigLabel"> Búsqueda Avanzada </h2>
     </div>
-    <div class="container-fluid" id="title">
-      <h1>Búsqueda Avanzada</h1>
+
+    <div class="instructions">
+      <p>Seleccione uno o más <strong>NIVELES</strong>, uno o más <strong>TIPOS DE CENTRO</strong> y una o varias <strong>CARACTERISTICAS.</strong></p>
+      <br>
+      <p id="redInstructions"><strong> *Niveles, Tipo de Centros y al menos una Característica son requeridos para realizar la búsqueda.</strong> </p>
+      <p>
+        <br>
+      </p>
     </div>
+
+
     <div class="container-fluid" id="content">
       <div class="container">
 
@@ -43,7 +59,7 @@
       <form class="advancedSearchForm" action="" method="post">
         <div class="row" id="firstRow">
           <div class="col-10">
-            <input type="text" name="search" placeholder="Palabra Clave" id="searchBar">
+            <input type="text" name="search" placeholder="Palabra Clave" id="txtfil_Word"">
           </div>
           <div class="col-2">
             <button type="button" class="btn btn-lg" id="btnSearch">Buscar</button>
@@ -51,82 +67,94 @@
         </div>
         <div class="row" id="secondRow">
          <div class="col">
-           <h2>Nivel</h2>
+           <h3>Niveles *</h3>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
+              <input type="checkbox" class="form-check-input" id="cbPrimaria" checked="">
               <label class="form-check-label">Primaria</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
+             <input type="checkbox" class="form-check-input" id="cbSecundaria" checked="">
              <label class="form-check-label">Secundaria</label>
            </div>
-           <h2>Tipo de Centro</h2>
+           <h3 id=tipoDeCentro> Tipos de Centro *</h3>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
-              <label class="form-check-label">Público</label>
+              <input type="checkbox" class="form-check-input" id="cbPublico" checked="">
+              <label class="form-check-label" >Público</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
-             <label class="form-check-label">Privado</label>
+             <input type="checkbox" class="form-check-input" id="cbPrivado" checked="">
+             <label class="form-check-label" >Privado</label>
            </div>
          </div>
          <div class="col">
-           <h2>Características</h2>
+           <h3>Características *</h3>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
-              <label class="form-check-label">Bilingüe</label>
+              <input type="checkbox" class="form-check-input" id="cbDefault" checked="">
+              <label class="form-check-label" >Todas (por defecto)</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
-             <label class="form-check-label">Técnico</label>
+              <input type="checkbox" class="form-check-input" id="cbBilingue">
+              <label class="form-check-label" >Bilingüe</label>
            </div>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
-              <label class="form-check-label">Religioso</label>
+             <input type="checkbox" class="form-check-input" id="cbTecnico">
+             <label class="form-check-label" >Técnico</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
+              <input type="checkbox" class="form-check-input" id="cbReligioso">
+              <label class="form-check-label" >Religioso</label>
+           </div>
+           <div class="form-check">
+             <input type="checkbox" class="form-check-input" id="cbNoReligioso">
              <label class="form-check-label">No Religioso</label>
            </div>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
-              <label class="form-check-label">Vocacional</label>
+              <input type="checkbox" class="form-check-input" id="cbVocacional">
+              <label class="form-check-label" >Vocacional</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
-             <label class="form-check-label">Imparte Idiomas</label>
+             <input type="checkbox" class="form-check-input" id="cbIdiomas">
+             <label class="form-check-label" >Imparte Idiomas</label>
            </div>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
-              <label class="form-check-label">Ofrece Becas</label>
+              <input type="checkbox" class="form-check-input" id="cbBecas">
+              <label class="form-check-label" >Ofrece Becas</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
+             <input type="checkbox" class="form-check-input"  id="cbBachilleratoInternacional">
              <label class="form-check-label">Bachillerato Internacional</label>
            </div>
          </div>
          <div class="col" id="thirdCol">
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
+              <input type="checkbox" class="form-check-input" id="cbVarones">
               <label class="form-check-label">Solo Hombres</label>
            </div>
            <div class="form-check">
-             <input type="checkbox" class="form-check-input" value="">
-             <label class="form-check-label">Solo Mujeres</label>
+             <input type="checkbox" class="form-check-input" id="cbMujeres">
+             <label class="form-check-label" >Solo Mujeres</label>
            </div>
            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="">
-              <label class="form-check-label">Mixto</label>
+              <input type="checkbox" class="form-check-input" id="cbMixto">
+              <label class="form-check-label" >Mixto</label>
            </div>
          </div>
         </div>
         </form>
       </div>
-    </div>
-    <div class="spacer">
 
+       <!--Aqui se generan los cards de busqueda -->
+
+      <div class="container2">
+        <div id="cards" class="card-deck">
+            
+            
+          </div>
+        </div>
     </div>
 
+  
+        <!--tabla de datos--> 
 
     <table id= "tblCentros" class="table table-bordered table-responsive table-hover">
         <thead>
@@ -150,20 +178,12 @@
         </tbody>
       </table>
 
+      <br>
+      <br>
+      <br>
+
     
-    <div class="spacer">
-
-    </div>
-    <div class="spacer">
-
-    </div>
-    <div class="spacer">
-
-    </div>
-    <div class="spacer">
-
-    </div>
-    <div class="spacer">
+    
 
     </div>
     <footer class= footerEnd>
@@ -172,6 +192,9 @@
       Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
       </p>
     </footer>
+
+    <!--REFERENCIAR SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <!--REFERENCIAR JAVASCRIPT -->
     <script src="js/servicio_busquedaAvanzada.js"></script>
