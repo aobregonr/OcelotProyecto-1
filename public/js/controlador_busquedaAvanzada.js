@@ -2,11 +2,12 @@
 
 const inputFilter= document.querySelector('#txtfil_Word');
 
-
-
 //boton 
 const boton= document.querySelector('#btnSearch');
 boton.addEventListener('click' , SearchData);
+
+const boton2= document.querySelector('#btnNewSearch');
+boton2.addEventListener('click' , newSearch);
 
 
 function SearchData(){
@@ -14,8 +15,20 @@ function SearchData(){
 
 
         ShowData();
+        document.getElementById("btnSearch").disabled = true;
+        document.getElementById("btnSearch").style.display = "none";
+        document.getElementById("btnSearch").style.visibility = "hidden";
+        //
+        document.getElementById("btnNewSearch").style.display = "block";
+        document.getElementById("btnNewSearch").style.visibility = "visible";
 
     };
+
+function newSearch(){
+    location.reload();
+
+
+};
 
 
 //_________________________________________________________________________________________________________________________// 
@@ -488,6 +501,3 @@ function ShowData(){
         };
     };
 };    
-   
-
-
