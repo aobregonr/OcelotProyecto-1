@@ -1,9 +1,9 @@
 'use strict';
 
-function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCentro, ptelefonoCtro, pfax, psitioWeb,
+function registrar_centroEducativo(ptipo, pnombreComercial, pcedulaJuridica, ptipoDeCentro, ptelefonoCtro, pfax, psitioWeb,
 									pfacebook, pemailInstit, ppassword, ppasswordConf, panoFund, prefHist, pprovincia,
 									pcanton, pdistrito, pdireccionExacta, pnombre, pnombre2, papellido, papellido2,
-									ptipoID, pIDnumber, pemail, pdepartamento, ptelefono, pescudo, 
+									ptipoID, pIDnumber, pemail, pdepartamento, ptelefono, pext, pescudo, pfoto,
                                     pbilingue, ptecnico, preligioso, pnoReligioso, pvocacional, pidiomas, pbecas, 
                                     pbachilleratoInt, pmixto, pvarones, pmujeres, pprimaria, psecundaria){
 	let respuesta = '';
@@ -11,6 +11,7 @@ function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCen
         url : 'http://localhost:4000/api/registrar_centroEducativo',
         method : "POST",
         data : {
+            tipo: ptipo,
             nombreComercial: pnombreComercial,
 			cedulaJuridica: pcedulaJuridica,
 			tipoDeCentro: ptipoDeCentro,
@@ -36,7 +37,9 @@ function registrar_centroEducativo(pnombreComercial, pcedulaJuridica, ptipoDeCen
 			email: pemail,
 			departamento: pdepartamento,
 			telefono: ptelefono,
+            ext: pext,
 			escudo: pescudo,
+            foto: pfoto,
             //
             bilingue: pbilingue,
             tecnico: ptecnico,

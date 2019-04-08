@@ -24,10 +24,10 @@ form.classList.add('was-validated');
 //-----------------------------------------------------------------------------------//
 
 
-
 const botonRegistrar = document.querySelector('#btn_registrar');
 
 //Estos son los inputs del centro educativo.
+const inputTipo = document.querySelector('#txtTipo');
 const inputNombreComercial = document.querySelector('#txtNombreComercial');
 const inputCedulaJuridica = document.querySelector('#txtCedulaJuridica');
 const inputTipoDeCentro = document.querySelector('#txtTipoCentroEducat');
@@ -54,7 +54,9 @@ const inputIDnumber = document.querySelector('#txtNoIdentificacion');
 const inputEmail = document.querySelector('#txtEmail');
 const inputDepartamento = document.querySelector('#txtDepartamento');
 const inputTelefono = document.querySelector('#txtTelefonoContact');
+const inputExt = document.querySelector('#txtExt');
 const imgEscudo = document.querySelector('#image_preview');
+const imgFoto = document.querySelector('#image_preview2');
 //
 //CHECKBOXES
 const inputBilingue = document.querySelector('#cbBilingue');
@@ -81,7 +83,8 @@ mostrar_lista_centros();
 function obtenerDatos(){
 
 	let bError = false;
-	
+
+	let tipo = inputTipo.selectedOptions[0].textContent;
 	let nombreComercial = inputNombreComercial.value;
 	let cedulaJuridica = Number(inputCedulaJuridica.value);
 	let tipoDeCentro = inputTipoDeCentro.selectedOptions[0].textContent;
@@ -107,7 +110,9 @@ function obtenerDatos(){
 	let email = inputEmail.value;     
 	let departamento = inputDepartamento.value;    
 	let telefono =  Number(inputTelefono.value); 
+	let ext = Number(inputExt.value); 
 	let escudo = imgEscudo.src;
+	let foto = imgFoto.src;
 	//
 	let bilingue = inputBilingue.checked;
 	let tecnico = inputTecnico.checked;
@@ -133,7 +138,7 @@ function obtenerDatos(){
 	let regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; //contrasena 8 digitos minimo, 1 mayuscula, 1 minuscula, 1 caracter especial, 1 numero.
 	let regExpYear = /(?:(?:19|20)[0-9]{2})/; //verificar anio entre 1900 y 2099
 
-	//Validar que todos los datos sean Correctos.
+
 	if(inputNombreComercial.value == ''){
 		bError = true;
 	};
@@ -200,9 +205,9 @@ function obtenerDatos(){
           });
 	
 	}else{
-    registrar_centroEducativo(nombreComercial, cedulaJuridica, tipoDeCentro, telefonoCtro, fax, sitioWeb, facebook, emailInstit,
+    registrar_centroEducativo(tipo, nombreComercial, cedulaJuridica, tipoDeCentro, telefonoCtro, fax, sitioWeb, facebook, emailInstit,
 				    		  password, passwordConf, anoFund, refHist, provincia, canton, distrito, direccionExacta, nombre, nombre2, 
-				    		  apellido, apellido2, tipoID, IDnumber, email, departamento, telefono, escudo, 
+				    		  apellido, apellido2, tipoID, IDnumber, email, departamento, telefono, ext, escudo, foto,
 				    		  bilingue, tecnico, religioso, noReligioso, vocacional, idiomas, becas, bachilleratoInt, mixto, varones,
 				    		  mujeres, primaria, secundaria);
 
@@ -225,6 +230,7 @@ function mostrar_lista_centros(){
 	for(let i = 0; i < lista_centros.length; i++){
 		let fila = tbody.insertRow();
 
+	 	let celdaTipo = fila.insertCell();
 		let celdaNombreComercial = fila.insertCell();
 		let celdaCedulaJuridica = fila.insertCell();
 		let celdaTipodeCentro = fila.insertCell();
@@ -251,7 +257,9 @@ function mostrar_lista_centros(){
 		let celdaEmail = fila.insertCell();
 		let celdaDepartamento = fila.insertCell();
 		let celdaTelefono = fila.insertCell();
+		let celdaExt = fila.insertCell();
 		let celdaEscudo = fila.insertCell();
+		let celdaFoto = fila.insertCell();
 		//
 		let celdaBilingue = fila.insertCell();
 		let celdaTecnico = fila.insertCell();
@@ -268,7 +276,7 @@ function mostrar_lista_centros(){
 		let celdaSecundaria = fila.insertCell();
 
 
-
+		celdaTipo.innerHTML = lista_centros[i]['tipo'];
 		celdaNombreComercial.innerHTML = lista_centros[i]['nombreComercial'];
 		celdaCedulaJuridica.innerHTML = lista_centros[i]['cedulaJuridica'];
 		celdaTipodeCentro.innerHTML = lista_centros[i]['tipoDeCentro'];
@@ -294,6 +302,7 @@ function mostrar_lista_centros(){
 		celdaEmail.innerHTML = lista_centros[i]['email'];
 		celdaDepartamento.innerHTML = lista_centros[i]['departamento'];
 		celdaTelefono.innerHTML = lista_centros[i]['telefono'];
+		celdaExt.innerHTML = lista_centros[i]['ext'];
 
 		let imagen = document.createElement('img');
             imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
@@ -305,7 +314,18 @@ function mostrar_lista_centros(){
             }
 
             celdaEscudo.appendChild(imagen);
-      
+
+        let foto = document.createElement('img');
+            foto.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+            if(lista_centros[i]['foto']){
+                foto.src = lista_centros[i]['foto'];
+            }else{
+                foto.src = 'imgs/user.png';
+            }
+
+            celdaFoto.appendChild(foto);
+
 
         //checkboxes
 		celdaBilingue.innerHTML = lista_centros[i]['bilingue'];
