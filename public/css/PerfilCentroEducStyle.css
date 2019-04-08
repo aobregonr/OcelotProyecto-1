@@ -63,7 +63,7 @@ li > #salir {
 			width: 25%;
 			height:auto;
 			position: absolute;
-			min-height: 2000px;
+			min-height: 2400px;
 			margin-top: -16px;
 }
 
@@ -379,7 +379,7 @@ ul {
 
 /*     -------------  activities  -------------    */
 
-#activities{
+#activities, #faqsMain{
 			margin: 30px;
 }
 
@@ -406,6 +406,73 @@ ul {
 			min-height: 100px;
 			margin-left: 130px;
 			padding-left: 2%
+}
+
+/*     -------------  activities form  -------------    */
+.imgBtn{
+    background-color: transparent;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    width: 40%;
+    margin-left: 15%;
+}
+
+
+.activityContainer{
+	background-color: #990033;
+	padding: 20px;
+	border-radius: 25px;
+	margin-left: 5%;
+	min-height: 500px;
+}
+
+.faqsContainer{
+	background-color: #990033;
+	padding: 20px;
+	border-radius: 25px;
+	margin-left: 5%;
+	min-height: 340px;
+}
+
+#btn_addActivity, #btn_addFaqs{
+	background-color: #FFCC33;
+	padding: 5% 15%;
+	font-size: 1em;
+	font-family: Helvetica Light, sans-serif;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+
+}
+
+#activityImg{
+	margin-left: 10%;
+}
+
+.textActivityForm{
+	color: white;
+	padding: 0 10px;
+}
+
+.tableContainer{
+	width: 100%;
+	margin-top: -170%;
+	margin-left: 120%;
+}
+
+.tableContainer2{
+	width: 100%;
+	margin-top: -110%;
+	margin-left: 120%;
+}
+
+.table{
+	min-width: 500px;
+}
+th{
+	width: 500px;
 }
 
 
@@ -486,6 +553,6 @@ ul {
 			color: white;
 			font-weight: lighter;
 			font-size: 12px;
-			margin-top: 82px;
+			margin-top: 138px;
 
 }
