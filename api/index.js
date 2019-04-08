@@ -63,11 +63,11 @@ app.use( function(req, res, next) {
  * Exportams todas las rutas dentro del index.js
  */
 
-const registroCentro = require('./componentes/registroCentroEducativo/registroCentroEduc.route');
-const registroPadreFamilia = require('./componentes/registroPadreFamilia/registroPadresFam.route'); 
-const listaUtilesMep = require('./componentes/listaUtilesMEP/listaUtilesMEP.route');
-const listaUtilesCen = require('./componentes/listaUtilesCentro/listaUtilesCentro.route');
-const homeBusqueda = require('./componentes/homeBusqueda/homeBusqueda.route');
+const registroCentro = require('./component/users/registroCentroEduc.route');
+const registroPadreFamilia = require('./component/users/registroPadresFam.route'); 
+const listaUtilesMep = require('./component/listaUtilesMEP/listaUtilesMEP.route');
+const listaUtilesCen = require('./component/listaUtilesCentro/listaUtilesCentro.route');
+const homeBusqueda = require('./component/homeBusqueda/homeBusqueda.route');
 
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
