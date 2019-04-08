@@ -53,8 +53,24 @@ const inputTipoID = document.querySelector('#sltIdentificación');
 const inputIDnumber = document.querySelector('#txtNoIdentificacion');
 const inputEmail = document.querySelector('#txtEmail');
 const inputDepartamento = document.querySelector('#txtDepartamento');
-const inputTelefono= document.querySelector('#txtTelefonoContact');
+const inputTelefono = document.querySelector('#txtTelefonoContact');
 const imgEscudo = document.querySelector('#image_preview');
+//
+//CHECKBOXES
+const inputBilingue = document.querySelector('#cbBilingue');
+const inputTecnico = document.querySelector('#cbTecnico');
+const inputReligioso = document.querySelector('#cbReligioso');
+const inputNoReligioso = document.querySelector('#cbNoReligioso');
+const inputVocacional = document.querySelector('#cbVocacional');
+const inputIdiomas = document.querySelector('#cbIdiomas');
+const inputBecas = document.querySelector('#cbBecas');
+const inputBachilleratoInt = document.querySelector('#cbBachilleratoInt');
+const inputMixto = document.querySelector('#cbMixto');
+const inputVarones = document.querySelector('#cbVarones');
+const inputMujeres = document.querySelector('#cbMujeres');
+//
+const inputPrimaria = document.querySelector('#cbPrimaria');
+const inputSecundaria = document.querySelector('#cbSecundaria');
 
 
 let lista_centros = obtener_lista_centros();
@@ -78,9 +94,9 @@ function obtenerDatos(){
 	let passwordConf = inputPasswordConf.value;          
 	let anoFund = Number(inputAnoFund.value);      
 	let refHist = inputHisRef.value;          
-	let provincia = inputProvincia.value;          
-	let canton = inputCanton.value;          
-	let distrito = inputDistrito.value;        
+	let provincia = inputProvincia.selectedOptions[0].textContent;         
+	let canton = inputCanton.selectedOptions[0].textContent;          
+	let distrito = inputDistrito.selectedOptions[0].textContent;      
 	let direccionExacta = inputDireccionExacta.value;
 	let nombre = inputNombre.value;          
 	let nombre2 = inputNombre2.value;     
@@ -92,7 +108,21 @@ function obtenerDatos(){
 	let departamento = inputDepartamento.value;    
 	let telefono =  Number(inputTelefono.value); 
 	let escudo = imgEscudo.src;
-
+	//
+	let bilingue = inputBilingue.checked;
+	let tecnico = inputTecnico.checked;
+	let religioso = inputReligioso.checked;
+	let noReligioso = inputNoReligioso.checked;
+	let vocacional = inputVocacional.checked;
+	let idiomas = inputIdiomas.checked;
+	let becas = inputBecas.checked;
+	let bachilleratoInt = inputBachilleratoInt.checked;
+	let mixto = inputMixto.checked;
+	let varones = inputVarones.checked;
+	let mujeres = inputMujeres.checked;
+	//
+	let primaria = inputPrimaria.checked;
+	let secundaria = inputSecundaria.checked;
 
 
 	//expresiones regulares
@@ -101,7 +131,7 @@ function obtenerDatos(){
 	//let regExpUrl = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/; //verificar url
 	let regExpEmail = /^\S+@\S+$/; //verificar email
 	let regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; //contrasena 8 digitos minimo, 1 mayuscula, 1 minuscula, 1 caracter especial, 1 numero.
-	let regExpYear = /(?:(?:18|20)[0-9]{2})/; //verificar anio entre 1800 y 2099
+	let regExpYear = /(?:(?:19|20)[0-9]{2})/; //verificar anio entre 1900 y 2099
 
 	//Validar que todos los datos sean Correctos.
 	if(inputNombreComercial.value == ''){
@@ -156,7 +186,7 @@ function obtenerDatos(){
 	if(inputTelefono.value == '' || regExpNumeros.test(inputTelefono.value) == false){
 		bError = true;
 	};
-
+	
 	if(bError == true){
         swal.fire({
         	type : 'info',
@@ -168,18 +198,20 @@ function obtenerDatos(){
             text: 'No se pudo registrar el centro educativo, por favor complete los datos pendientes.',
             type: 'warning',
           });
-
+	
 	}else{
     registrar_centroEducativo(nombreComercial, cedulaJuridica, tipoDeCentro, telefonoCtro, fax, sitioWeb, facebook, emailInstit,
 				    		  password, passwordConf, anoFund, refHist, provincia, canton, distrito, direccionExacta, nombre, nombre2, 
-				    		  apellido, apellido2, tipoID, IDnumber, email, departamento, telefono, escudo);
+				    		  apellido, apellido2, tipoID, IDnumber, email, departamento, telefono, escudo, 
+				    		  bilingue, tecnico, religioso, noReligioso, vocacional, idiomas, becas, bachilleratoInt, mixto, varones,
+				    		  mujeres, primaria, secundaria);
 
     lista_centros = obtener_lista_centros();
 
 	}
     mostrar_lista_centros(); 
 	 
-};
+ };
 
 
 botonRegistrar.addEventListener('click', obtenerDatos);
@@ -221,7 +253,20 @@ function mostrar_lista_centros(){
 		let celdaTelefono = fila.insertCell();
 		let celdaEscudo = fila.insertCell();
 		//
-		//let celdaCbOptions = fila.insertCell();
+		let celdaBilingue = fila.insertCell();
+		let celdaTecnico = fila.insertCell();
+		let celdaReligioso = fila.insertCell();
+		let celdaNoReligioso = fila.insertCell();
+		let celdaVocacional = fila.insertCell();
+		let celdaIdiomas = fila.insertCell();
+		let celdaBecas = fila.insertCell();
+		let celdaBachilleratoInt = fila.insertCell();
+		let celdaMixto = fila.insertCell();
+		let celdaVarones= fila.insertCell();
+		let celdaMujeres = fila.insertCell();
+		let celdaPrimaria = fila.insertCell();
+		let celdaSecundaria = fila.insertCell();
+
 
 
 		celdaNombreComercial.innerHTML = lista_centros[i]['nombreComercial'];
@@ -260,8 +305,22 @@ function mostrar_lista_centros(){
             }
 
             celdaEscudo.appendChild(imagen);
-        }
+      
 
-		//celdaCbOptions.innerHTML = lista_centros[i][26];
+        //checkboxes
+		celdaBilingue.innerHTML = lista_centros[i]['bilingue'];
+		celdaTecnico.innerHTML = lista_centros[i]['tecnico'];
+		celdaReligioso.innerHTML = lista_centros[i]['religioso'];
+		celdaNoReligioso.innerHTML = lista_centros[i]['noReligioso'];
+		celdaVocacional.innerHTML = lista_centros[i]['vocacional'];
+		celdaIdiomas.innerHTML = lista_centros[i]['idiomas'];
+		celdaBecas.innerHTML = lista_centros[i]['becas'];
+		celdaBachilleratoInt.innerHTML = lista_centros[i]['bachilleratoInt'];
+		celdaMixto.innerHTML = lista_centros[i]['mixto'];
+		celdaVarones.innerHTML = lista_centros[i]['varones'];
+		celdaMujeres.innerHTML = lista_centros[i]['mujeres'];
+		celdaPrimaria.innerHTML = lista_centros[i]['primaria'];
+		celdaSecundaria.innerHTML = lista_centros[i]['secundaria'];
+  }
 
 	};
