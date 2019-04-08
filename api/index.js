@@ -59,24 +59,15 @@ app.use( function(req, res, next) {
   next();
 });
 
-/**
- * Exportams todas las rutas dentro del index.js
- */
-
-const registroCentro = require('./component/users/registroCentroEduc.route');
-const registroPadreFamilia = require('./component/users/registroPadresFam.route'); 
-const listaUtilesMep = require('./component/listaUtilesMEP/listaUtilesMEP.route');
-const listaUtilesCen = require('./component/listaUtilesCentro/listaUtilesCentro.route');
-const homeBusqueda = require('./component/homeBusqueda/homeBusqueda.route');
 
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
  */
-app.use('/api', registroCentro);
-app.use('/api', registroPadreFamilia);
-app.use('/api', listaUtilesMep);
-app.use('/api', listaUtilesCen);
-app.use('/api', homeBusqueda);
+app.use('/api', require('./component/users/registroCentroEduc.route'));
+app.use('/api', require('./component/users/registroPadresFam.route')); 
+app.use('/api', require('./component/listaUtilesMEP/listaUtilesMEP.route'));
+app.use('/api', require('./component/listaUtilesCentro/listaUtilesCentro.route'));
+app.use('/api', require('./component/homeBusqueda/homeBusqueda.route'));
 app.use('/api', require('./component/users/users.route'));
 
 
