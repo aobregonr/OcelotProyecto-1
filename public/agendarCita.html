@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-    <!-- Este titulo se elimina cuando se enlaze a la pagina de incio pues el codigo es solo para la ventana modal -->
+    
     <title>Agendar Cita</title>
     <meta charset="UTF-8">
     <meta name="author" content="Mario Zeledon S.">
 
-    <!-- La siguiente linea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
+    <!-- La siguiente línea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Referencia a CSS -->
@@ -23,7 +23,7 @@
     <!-- Referencia a Content Delivery Network de CSS para bootstrap4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Referencia a Content Delivery Network de libreria JQuery para bootstrap4 -->
+    <!-- Referencia a Content Delivery Network de librería JQuery para bootstrap4 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
@@ -50,11 +50,13 @@
         <h2 class="bigLabel1"> Agendar Cita</h2>
 
         <div class=mainProfileTxt>
-            <p>Complete el formulario con sus datos a continuación, y finalice presionando el botón Agendar Cita.</p>
-            <p>* Los campos con * son obligatorios.</p>
+            <p>A continuación complete el formulario con sus datos y finalice presionando el botón <strong>Agendar Cita</strong>.</p>
             <p>
                 <br>
             </p>
+            <div class="recordatorio">
+            <p><strong>* Los campos con * son obligatorios. </strong> </p>
+        </div>
 
             <div class="containerBig2">
 
@@ -92,7 +94,7 @@
 
                 <div id="regData">
                     <label for="txtTelefono"></label>
-                    <input type="text" id="txtTelefono" placeholder="Teléfono" required>
+                    <input type="text" id="txtTelefono" placeholder="Teléfono">
                 </div>
                 <p>
                         <br>
