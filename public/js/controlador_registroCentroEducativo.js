@@ -161,7 +161,7 @@ function obtenerDatos(){
 	if(inputPasswordConf.value != inputPassword.value){
 		bError = true;
 	};
-	if(inputAnoFund.value == '' || regExpYear.test(inputAnoFund.value) == false){
+	if(inputAnoFund.value == '' || regExpNumeros.test(inputAnoFund.value) == false){
 		bError = true;
 	};
 
@@ -191,7 +191,7 @@ function obtenerDatos(){
 	if(inputTelefono.value == '' || regExpNumeros.test(inputTelefono.value) == false){
 		bError = true;
 	};
-	
+
 	if(bError == true){
         swal.fire({
         	type : 'info',
