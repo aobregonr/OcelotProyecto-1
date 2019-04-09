@@ -99,7 +99,7 @@ li > #salir {
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    height: 1900px;
+    height: 2250px;
     color: white;
     width: 850px;
     margin: 0 12%;
@@ -112,27 +112,32 @@ li > #salir {
 
 #leftSide {
     float: left;
-
 }
+
 
 #rightSide {
     position: absolute;
     margin-left: 400px;
 }
 
+.hideMe{
+    display: none;
+    visibility: hidden;
+}
+
 #center{  /* CONTAINER DE MAPA   */
-    position: absolute;
-    margin-top: 970px;
-    margin-left: 410px;
+    margin-left: 16%;
+    margin-top: -100%;
     text-align: center;
     width: 350px;
     height: 350px;
+    color: white;
 }
 
 .mapArea{
-    width: 250px;
-    height: 250px;
-    margin: 5px 33px;
+    margin-left: 20px;
+    width: 300px;
+    height: 300px;
     background-color: gray;
 }
 
@@ -145,10 +150,6 @@ li > #salir {
 
 #txtTipoCentroEducat, #sltIdentificación{
     width: 155%;
-}
-
-#txtDireccionExacta{
-
 }
 
 
@@ -173,20 +174,24 @@ li > #salir {
 
 #checkboxArea{
     position: absolute;
-    margin-top: 1330px;
+    margin-top: 20px;
     margin-left: 7%;
+    color: white;
 }
 
 .listCheckbox{
-            width: 180px;
+    width: 180px;
 }
-
 
 .leftSideEnd{
     float: left;
+    color: white;
+    text-align: left;
 }
 .rightSideEnd{
     float: right;
+    color: white;
+    text-align: left;
 }
 
 .checkBoxID{
@@ -203,7 +208,7 @@ li > #salir {
     color: black;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 25%;
+    margin-left: 75%;
     margin-top: 480px;
 }
 
@@ -246,7 +251,7 @@ li > #salir {
             color: white;
             font-weight: lighter;
             font-size: 12px;
-            margin-top: 70px;
+            margin-top: 1000px;
 
 }
 
