@@ -62,13 +62,16 @@ app.use( function(req, res, next) {
 
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
- */
+ */ 
 app.use('/api', require('./component/users/registroCentroEduc.route'));
 app.use('/api', require('./component/users/registroPadresFam.route')); 
 app.use('/api', require('./component/listaUtilesMEP/listaUtilesMEP.route'));
 app.use('/api', require('./component/listaUtilesCentro/listaUtilesCentro.route'));
 app.use('/api', require('./component/homeBusqueda/homeBusqueda.route'));
 app.use('/api', require('./component/users/users.route'));
+//
+app.use('/api', require('./component/perfilCentro/actividades.route'));
+app.use('/api', require('./component/perfilCentro/faqs.route')); 
 
 
 // Se guarda todo lo que se ha realizado
