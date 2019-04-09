@@ -56,7 +56,6 @@
 				un número.</p>
 			<p id="redInstructions"><strong>Los campos con * son obligatorios.</strong> </p>
 			<p>
-				<br>
 			</p>
 		</div>
 
@@ -64,6 +63,13 @@
 			<form class="needs-validation" novalidate>
 
 			<div id="leftSide">
+
+					<div class= "hideMe">
+							<select class="form-control" id="txtTipo" required>
+								<option value="">TipoUsuario</option>
+		                        <option value="CentroEduc">CentroEduc</option>
+		                    </select>
+					</div>
 			
 					<div id="regData">
 						<label for="txtNombreComercial"> Nombre Comercial  *</label>
@@ -212,6 +218,11 @@
 						</div>
 
 						<div id="regData">
+							<label for="txtExt"> Extención Tel. (opcional)</label>
+							<input type="tel" class="form-control" id="txtExt" placeholder="(digite solo números)" required>
+						</div>
+
+						<div id="regData">
 							<label for="image_preview">Escudo del centro educativo  </label>
 				
 				            <figure class="image_holder">
@@ -221,10 +232,20 @@
 				            <button type="button" id="btnSeleccionarImagen" class="imgBtn">Subir Imágen</button>
 				        </div>
 
+				        <div id="regData">
+							<label for="image_preview">Foto del Encargado  </label>
+				
+				            <figure class="image_holder">
+				                <img src="imgs/user.png" alt="foto del encargado" id="image_preview">
+				            </figure>  
+			
+				            <button type="button" id="btnSeleccionarImagen" class="imgBtn">Subir Imágen</button>
+				        </div>
+						</div>
 					</div>
+
 					<div id="center">
-						<br>
-						<br>
+				
 						<label for="txtUbicacionGeo"> Ubicación Geográfica del Centro Educativo *</label>
 					<div class="mapArea">
 						<!--<iframe id=map
@@ -232,7 +253,7 @@
 					width="250" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
 					</div>
 				
-				</div>
+			
 
 				<div id=checkboxArea>
 				<p>Por favor seleccione todas las características que corresponden a su centro educativo: </p>
@@ -289,10 +310,6 @@
 		</form>
 
 			</div>
-	</div>
-	<div id="filterBar">
-	<label for= "txtFiltro"> Filtrar </label>
-			<input type="text" id="txtFiltro">
 	</div>
 
 	<table id= "tblCentrosEducativos" class="table table-bordered table-responsive table-hover">
