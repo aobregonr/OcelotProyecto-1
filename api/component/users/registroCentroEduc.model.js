@@ -4,13 +4,14 @@ const mongoose = require('mongoose');
 
 let schema_registroCentroEduc = mongoose.Schema({
 
+	tipo : {type : String, required: true, unique : false},
 	nombreComercial : {type : String, required: true, unique : true},
 	cedulaJuridica : {type : Number, required: true, unique : true},
 	tipoDeCentro : {type : String, required: true, unique : false},
 	telefonoCtro : {type : Number, required: true},
 	fax : {type : Number, required: false},
-	sitioWeb : {type : String, required: false},
-	facebook : {type : String, required: false},
+	sitioWeb : {type : String, required: false, unique : false},
+	facebook : {type : String, required: false, unique : false},
 	emailInstit : {type : String, required: true},
 	password : {type : String, required: true},
 	passwordConf : {type : String, required: true},

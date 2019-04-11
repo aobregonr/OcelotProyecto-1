@@ -7,6 +7,7 @@ module.exports.registrar = function(req, res){
 
 	let nuevoCentroEduc = new modelo_registroCentro({
 
+		tipo: req.body.tipo,
 		nombreComercial: req.body.nombreComercial,
 		cedulaJuridica: req.body.cedulaJuridica,
 		tipoDeCentro: req.body.tipoDeCentro,
