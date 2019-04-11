@@ -84,7 +84,7 @@ function obtenerDatos(){
 
 	let bError = false;
 
-	let tipo = inputTipo.selectedOptions[0].textContent;
+	let tipo = inputTipo.value;
 	let nombreComercial = inputNombreComercial.value;
 	let cedulaJuridica = Number(inputCedulaJuridica.value);
 	let tipoDeCentro = inputTipoDeCentro.selectedOptions[0].textContent;

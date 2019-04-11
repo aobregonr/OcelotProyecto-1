@@ -4,6 +4,7 @@ const inputFiltro = document.querySelector('#txtFiltro');
 const botonRegistrar = document.querySelector('#btn_registrar');
 
 //Estos son los inputs del centro educativo.
+
 const inputNombreComercial = document.querySelector('#txtNombreComercial');
 const inputCedulaJuridica = document.querySelector('#txtCedulaJuridica');
 const inputTipoDeCentro = document.querySelector('#txtTipoCentroEducat');
@@ -77,6 +78,8 @@ function mostrar_lista_centros(){
 
 			let fila = tbody.insertRow();
 
+			let celdaTipo = fila.insertCell();
+			//
 			let celdaNombreComercial = fila.insertCell();
 			let celdaCedulaJuridica = fila.insertCell();
 			let celdaTipodeCentro = fila.insertCell();
@@ -123,6 +126,7 @@ function mostrar_lista_centros(){
 
 
 
+			celdaTipo.innerHTML = lista_centros[i]['tipo'];
 			celdaNombreComercial.innerHTML = lista_centros[i]['nombreComercial'];
 			celdaCedulaJuridica.innerHTML = lista_centros[i]['cedulaJuridica'];
 			celdaTipodeCentro.innerHTML = lista_centros[i]['tipoDeCentro'];
