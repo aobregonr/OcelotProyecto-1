@@ -5,7 +5,7 @@ let mongoose = require('mongoose');
 
 let schema_registroPadreFamilia = mongoose.Schema({    
     
-    tipo: {type: String, required: true, unique: false},
+    tipo : {type: String, required: true, unique: false},
     nombre : {type: String, required: true},
     apellido : {type: String, required: true},
     tipoID :  {type: String, required: true},

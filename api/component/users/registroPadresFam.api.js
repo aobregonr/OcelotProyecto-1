@@ -6,7 +6,7 @@ module.exports.registrar = function(req, res){
 
     let nuevoPadreFamilia = new modelo_registroPadreFamilia({
 
-        tipo: req.tipo.nombre,
+        tipo: req.body.tipo,
         nombre : req.body.nombre,
         apellido : req.body.apellido,
         tipoID : req.body.tipoID,
