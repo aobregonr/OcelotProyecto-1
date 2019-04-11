@@ -30,7 +30,9 @@ const inputIDnumber = document.querySelector('#txtNoIdentificacion');
 const inputEmail = document.querySelector('#txtEmail');
 const inputDepartamento = document.querySelector('#txtDepartamento');
 const inputTelefono = document.querySelector('#txtTelefonoContact');
+const inputExt = document.querySelector('#txtExt');
 const imgEscudo = document.querySelector('#image_preview');
+const imgFoto = document.querySelector('#image_preview2');
 //
 //CHECKBOXES
 const inputBilingue = document.querySelector('#cbBilingue');
@@ -101,7 +103,9 @@ function mostrar_lista_centros(){
 			let celdaEmail = fila.insertCell();
 			let celdaDepartamento = fila.insertCell();
 			let celdaTelefono = fila.insertCell();
+			let celdaExt = fila.insertCell();
 			let celdaEscudo = fila.insertCell();
+			let celdaFoto = fila.insertCell();
 			//
 			let celdaBilingue = fila.insertCell();
 			let celdaTecnico = fila.insertCell();
@@ -144,6 +148,7 @@ function mostrar_lista_centros(){
 			celdaEmail.innerHTML = lista_centros[i]['email'];
 			celdaDepartamento.innerHTML = lista_centros[i]['departamento'];
 			celdaTelefono.innerHTML = lista_centros[i]['telefono'];
+			celdaExt.innerHTML = lista_centros[i]['ext'];
 
 			let imagen = document.createElement('img');
 	            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
@@ -155,6 +160,17 @@ function mostrar_lista_centros(){
 	            }
 
 	            celdaEscudo.appendChild(imagen);
+
+            let foto = document.createElement('img');
+	            foto.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+	            if(lista_centros[i]['foto']){
+	                foto.src = lista_centros[i]['foto'];
+	            }else{
+	                foto.src = 'imgs/user.png';
+	            }
+
+	            celdaFoto.appendChild(foto);
 	      
 
 	        //checkboxes
