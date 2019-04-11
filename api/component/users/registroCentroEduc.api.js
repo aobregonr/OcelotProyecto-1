@@ -31,8 +31,10 @@ module.exports.registrar = function(req, res){
 		IDnumber: req.body.IDnumber,
 		email: req.body.email,
 		departamento: req.body.departamento,
+		ext: req.body.ext,
 		telefono: req.body.telefono,
 		escudo: req.body.escudo,
+		foto: req.body.foto,
 		//
 		bilingue: req.body.bilingue,
         tecnico: req.body.tecnico,

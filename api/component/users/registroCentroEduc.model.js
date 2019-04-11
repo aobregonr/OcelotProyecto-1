@@ -30,7 +30,9 @@ let schema_registroCentroEduc = mongoose.Schema({
 	email : {type : String, required: false},
 	departamento : {type : String, required: false},
 	telefono : {type : Number, required: false},
+	ext : {type : Number, required: false},
 	escudo : {type: String, required : false},
+	foto : {type: String, required : false},
 	//
 	bilingue : {type: Boolean, required : false}, 
     tecnico : {type: Boolean, required : false},
