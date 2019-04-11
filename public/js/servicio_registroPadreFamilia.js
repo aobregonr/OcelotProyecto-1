@@ -1,6 +1,6 @@
 'use strict';  // Este archivo se encargará de enviar la peticiones del registro de Padres de Familia al back-end.
 
-function registrar_padresFamilia(pnombre, papellido, ptipoID, pidentificacion, pcorreoElectronico, pcontrasena, 
+function registrar_padresFamilia(ptipo, pnombre, papellido, ptipoID, pidentificacion, pcorreoElectronico, pcontrasena, 
                               pconfirmarContrasena, psegundoNombre, psegundoApellido, pnacionalidad, pnumeroTelefono, 
                               pprovincia, pcanton, pdistrito, pcantidadDeHijos, panoDeNacimiento) {
 
@@ -11,6 +11,7 @@ function registrar_padresFamilia(pnombre, papellido, ptipoID, pidentificacion, p
         method : "POST",
         data : {
 
+             tipo : ptipo,
     		 nombre : pnombre,
     		 apellido : papellido,
              tipoID : ptipoID,

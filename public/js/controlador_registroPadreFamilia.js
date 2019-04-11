@@ -24,6 +24,9 @@ form.classList.add('was-validated');
 //
 
 let botonRegistrar = document.querySelector('#btn_registrar');
+
+
+let inputTipo = document.querySelector('#txtTipo');
 let inputNombre = document.querySelector('#txtNombre');
 let inputApellido = document.querySelector('#txtApellido');
 let inputTipoID = document.querySelector('#sltIdentificacion');
@@ -51,6 +54,7 @@ function obtenerDatosPadres(){
 
     let bError = false;
 
+    let tipo = inputTipo.value;
     let nombre = inputNombre.value;
     let apellido = inputApellido.value;
     let tipoID = inputTipoID.selectedOptions[0].textContent;  
@@ -119,7 +123,7 @@ function obtenerDatosPadres(){
           });
 
     }else{
-        registrar_padresFamilia(nombre, apellido, tipoID, identificacion, correoElectronico, contrasena, 
+        registrar_padresFamilia(tipo, nombre, apellido, tipoID, identificacion, correoElectronico, contrasena, 
                      confirmarContrasena, segundoNombre, segundoApellido, nacionalidad, numeroTelefono, 
                      provincia, canton, distrito, cantidadDeHijos, anoDeNacimiento);
 
@@ -140,6 +144,7 @@ function imprimir_lista_PadresDeFamilia() {
     for (let i = 0; i < lista_PadresDeFamilia.length; i++) {
         let fila = tbody.insertRow();
 
+        let celdaTipo = fila.insertCell();
         let celdaNombre = fila.insertCell();
         let celdaApellido = fila.insertCell();
         let celdaTipoID = fila.insertCell();
@@ -160,6 +165,7 @@ function imprimir_lista_PadresDeFamilia() {
         /** 
          *usamos innerHTML para agregar contenido a cada celda. 
         */
+        celdaTipo.innerHTML = lista_PadresDeFamilia[i]['tipo'];
         celdaNombre.innerHTML = lista_PadresDeFamilia[i]['nombre'];
         celdaApellido.innerHTML = lista_PadresDeFamilia[i]['apellido'];
         celdaTipoID.innerHTML = lista_PadresDeFamilia[i]['tipoID'];
