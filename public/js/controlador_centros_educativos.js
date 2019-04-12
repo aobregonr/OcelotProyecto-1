@@ -97,7 +97,7 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
                    midiv.setAttribute("class","card schoolCards");
                    var midiv2 = document.createElement("div");
                    midiv2.setAttribute("id","card2"+i+pUbic);
-                   midiv2.setAttribute("class","card-body");
+                   midiv2.setAttribute("class","card-body text-center");
                    var midiv4 = document.createElement("a");
                    midiv4.setAttribute("id","txtEnl"+i+pUbic);
                    midiv4.setAttribute("class","schoolCard");
@@ -105,7 +105,7 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
                   
                    var imagen2 = document.createElement('img');
                    imagen2.setAttribute("id","imgBus"+i+pUbic);
-                   imagen2.classList.add('card-img-top');
+                   imagen2.classList.add('schoolPic');
                    imagen2.setAttribute("alt","Card image");
                    imagen2.setAttribute("style","with:100%");
                        if(listaCen[i]['escudo']){
@@ -122,5 +122,6 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
                    document.querySelector("#card2"+i+pUbic).appendChild(midiv4);
                    document.querySelector("#txtEnl"+i+pUbic).appendChild(imagen2);
                    document.querySelector("#card"+i+pUbic).appendChild(midiv3);
+
             };
         };
