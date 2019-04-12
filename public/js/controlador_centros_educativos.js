@@ -4,6 +4,8 @@ let varFilter=[];
 let varFilter1=[];
 let varFilter2=[];
 let varFilter3=[];
+let nivel1='primaria';
+let nivel2='secundaria';
 
 
 
@@ -17,21 +19,21 @@ varFilter[0]='Escuela';
 varFilter[1]='publico';
 varFilter1[0]='Escuela';
 varFilter1[1]='privado';
-varFilter2[0]='Colegio';
-varFilter2[1]='privado';
 varFilter3[0]='Colegio';
-varFilter3[1]='publico';
+varFilter3[1]='privado';
+varFilter2[0]='Colegio';
+varFilter2[1]='publico';
 
 
 
 
-ShowData(varFilter,section,1);
-ShowData(varFilter1,section2,2);
-ShowData(varFilter2,section3,3);
-ShowData(varFilter3,section4,4);
+ShowData(varFilter,section,1,nivel1);
+ShowData(varFilter1,section2,2,nivel1);
+ShowData(varFilter2,section3,3,nivel2);
+ShowData(varFilter3,section4,4,nivel2);
 
 
-function ShowData(pvarFilter,psection,pUbic){
+function ShowData(pvarFilter,psection,pUbic,pnivel){
 
     let listaCen=[];
     let listaResul=[];
@@ -51,16 +53,10 @@ function ShowData(pvarFilter,psection,pUbic){
     
                 for(let i = 0; i <listaCen.length; i++){
                  
-                  if (listaCen[i]['nombreComercial'].toLowerCase().includes(pvarFilter[j])){
+                  if ((listaCen[i]['nombreComercial'].toLowerCase().includes(pvarFilter[j]) || (listaCen[i][pnivel]) )&& (listaCen[i]['tipoDeCentro'].toLowerCase().includes(pvarFilter[j]))){
                     listaResul[count]=listaCen[i];
                     count++;
                   };
-                  if (listaCen[i]['tipoDeCentro'].toLowerCase().includes(pvarFilter[j])){
-                    listaResul[count]=listaCen[i];
-                    count++;
-                  };
-                  
-               
                 };
              
     // si listaResul no tiene valores almacenados osea no hubieron coincidencias se mantiene listaCen
@@ -78,7 +74,7 @@ function ShowData(pvarFilter,psection,pUbic){
     
               listaResul=[];   
         
-        //console.log(listaCen);
+       // console.log(listaCen);
     };
     //___________________________________________________________________________________________________________
     
