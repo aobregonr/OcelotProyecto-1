@@ -1,79 +1,9 @@
-/* Estilo de la barra de busqueda*/
-#searchBar[type=text] {
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('https://www.freeiconspng.com/uploads/search-icon-png-2.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  background-size: 25px 25px;
-  padding: 12px 20px 12px 40px;
-}
 
-/* Estilo boton Buscar */
-
-
-/* Estilo del encabezado*/
-#header {
-  background-color: #330033;
-  text-decoration: none;
-  margin:auto;
-}
 .col-2{
   color: white;
   margin:auto;
 }
-#logo{
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-}
 
-/* estilos del cuerpo*/
-
-.mainProfile {
-    width: 100%;
-    margin: 0 5%;
-
-}
-
-/*Estilo del Titulo*/
-
-.bigLabel{
-    background-color: #CC0033;
-    color: white;
-    margin: 30px;
-    padding: 10px; 
-}
-
-h2 {
-    background-color: #CC0033;
-    color : white;
-    text-align: left;
-    font-size: 32px;
-    width: 85%;
-}
-
-
-
-/*fail*/
-.container{
-
-  color:#990033;
-  text-align: center;
-}
-#buho{
-  height:400px;
-  width: 400px;
-}
-#errorMessage{
-  font-size: 50px;
-  margin: auto;
-
-}
 /*sucess*/
 .container{   /*cards holder*/
   margin: 10px 40px;
@@ -114,40 +44,3 @@ h2 {
 }
 
 */
-
-/*tabla*/
-#tblCentros{
- display: none;
-  visibility: hidden;
-}
-
-
-/* Estilo del Pie de Pagina*/
-.footerEnd{
-			padding: 10px;
-			padding-left: 20px;
-      margin-top: 30px;
-			background-color: #330033;
-			color: white;
-			font-weight: lighter;
-			font-size: 12px;
-
-}
-
-/*     ------------- modal  -------------    */
-
-.title-class{
-    background-color: #fff;
-    color: #fff;
-}
-
-.confirm-button-class{
-    background-color: #FFCC33;
-    padding: 0% 15% 0% 15%;
-    font-family: Helvetica Light, sans-serif;
-    font-size: 18px;
-    color: black;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 200px;
-}
