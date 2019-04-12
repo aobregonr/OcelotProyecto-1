@@ -93,6 +93,12 @@ li > #salir {
     margin: 0 12%;
 }
 
+
+.hideMe{
+    display: none;
+    visibility: hidden;
+}
+
 #leftSide {
     float: left;
 
