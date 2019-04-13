@@ -3,7 +3,7 @@
 
 <head>
     <!-- Este titulo se elimina cuando se enlaze a la pagina de incio pues el codigo es solo para la ventana modal -->
-    <title>Registro De Padre de Familia</title>
+    <title>Registro De Super Administrador</title>
     <meta charset="UTF-8">
     <meta name="author" content="Mario Zeledon S.">
 
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Referencia a CSS -->
-    <link rel="stylesheet" type="text/css" href="css/registroPadreFamilia.css">
+    <link rel="stylesheet" type="text/css" href="css/registroSuperAdministrador.css">
 
     <!-- Referenciar font-awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -55,10 +55,14 @@
             <p>* La contraseña debe tener un máximo de 8 dígitos, una mayúscula, una minúscula, un carácter especial y
                 un
                 número.</p>
-            <p>* Los campos con * son obligatorios.</p>
-            <p>
-                <br>
-            </p>
+                <p>
+                    <br>
+                </p>
+                <div class="recordatorio">
+
+            <p id="redInstructions"><strong>Los campos con * son obligatorios.</strong> </p>
+        </div>
+        </div>
 
             <div class="containerSmall1">
 
@@ -103,7 +107,7 @@
                 </div>
 
                 <div id="regData">
-                    <input class=closeBtn1 type="submit" value="Registrar">
+                    <input class=closeBtnAdmin type="submit" value="Registrar">
                 </div>
 
             </div>
