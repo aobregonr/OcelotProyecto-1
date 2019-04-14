@@ -53,7 +53,8 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
     
                 for(let i = 0; i <listaCen.length; i++){
                  
-                  if ((listaCen[i]['nombreComercial'].toLowerCase().includes(pvarFilter[j]) || (listaCen[i][pnivel]) )&& (listaCen[i]['tipoDeCentro'].toLowerCase().includes(pvarFilter[j]))){
+                  if ((listaCen[i]['nombrecomercial'].toLowerCase().includes(pvarFilter[j]) || (listaCen[i][pnivel]) )
+                      && (listaCen[i]['tipodecentro'].toLowerCase().includes(pvarFilter[j]))){
                     listaResul[count]=listaCen[i];
                     count++;
                   };
@@ -116,7 +117,7 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
                    var midiv3 = document.createElement("p");
                    midiv3.setAttribute("id","txtNameCen"+i+pUbic);
                    midiv3.setAttribute("class","card-text");
-                   midiv3.innerHTML = listaCen[i]['nombreComercial'];
+                   midiv3.innerHTML = listaCen[i]['nombrecomercial'];
                    document.querySelector(psection).appendChild(midiv);
                    document.querySelector("#card"+i+pUbic).appendChild(midiv2);
                    document.querySelector("#card2"+i+pUbic).appendChild(midiv4);

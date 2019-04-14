@@ -75,7 +75,7 @@ const inputPrimaria = document.querySelector('#cbPrimaria');
 const inputSecundaria = document.querySelector('#cbSecundaria');
 
 
-let lista_centros = obtener_lista_centros();
+let lista_centros = obtener_lista_usuarios();
 mostrar_lista_centros();  
 
 
@@ -211,15 +211,15 @@ function obtenerDatos(){
           });
 	
 	}else{
-    registrar_centro(tipo, nombrecomercial, cedulajuridica, tipodecentro, telefonoctro, fax, sitioweb, facebook, emailinstit, 
-    				  direccionexacta, anofund, refhist, departamento, ext, escudo, foto, bilingue, tecnico, 
-    				  religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
-    				  secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
-    				  segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
-    				  correo, contrasenna, confirmarcontrasenna
+    registrar_usuario(tipo, nombrecomercial, cedulajuridica, tipodecentro, telefonoctro, fax, sitioweb, facebook, emailinstit, 
+                      direccionexacta, anofund, refhist, departamento, ext, escudo, foto, bilingue, tecnico, 
+                      religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
+                      secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
+                      segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
+                      correo, contrasenna, confirmarcontrasenna
 );
 
-    lista_centros = obtener_lista_centros();
+    lista_centros = obtener_lista_usuarios();
 
 	}
     mostrar_lista_centros(); 

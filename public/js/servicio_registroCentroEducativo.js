@@ -1,6 +1,6 @@
 'use strict';
 
-function registrar_centro(ptipo, pnombrecomercial, pcedulajuridica, ptipodecentro, ptelefonoctro, pfax, psitioweb, pfacebook, pemailinstit, 
+function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecentro, ptelefonoctro, pfax, psitioweb, pfacebook, pemailinstit, 
                       pdireccionexacta, panofund, prefhist, pdepartamento, pext, pescudo, pfoto, pbilingue, ptecnico, 
                       preligioso, pnoreligioso, pvocacional, pidiomas, pbecas, pbachilleratoint, pmixto, pvarones, pmujeres, pprimaria, 
                       psecundaria, ptelefono, pcantidaddehijos, panodenacimiento, ptipoidentificacion, pidentificacion, pnombre, 
@@ -91,9 +91,9 @@ function registrar_centro(ptipo, pnombrecomercial, pcedulajuridica, ptipodecentr
     });
 };
 
-function obtener_lista_centros(){
+function obtener_lista_usuarios(){
 
-    let lista_centros = [];
+    let lista_usuarios = [];
     let request = $.ajax({
         url: 'http://localhost:4000/api/listar_usuario',
         type: 'GET',
@@ -105,13 +105,13 @@ function obtener_lista_centros(){
       });
     
       request.done(function(res){
-        lista_centros = res;
+        lista_usuarios = res;
       });
     
       request.fail(function(){
        
       });
 
-    return lista_centros;
+    return lista_usuarios;
 };
 

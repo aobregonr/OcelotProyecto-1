@@ -100,8 +100,27 @@ function mostrar_lista_usuarios(){
         celdaRefhist.innerHTML = lista_usuarios[i]['refhist'];
         celdaDepartamento.innerHTML = lista_usuarios[i]['departamento'];
         celdaExt.innerHTML = lista_usuarios[i]['ext'];
-        celdaEscudo.innerHTML = lista_usuarios[i]['escudo'];
-        celdaFoto.innerHTML = lista_usuarios[i]['foto'];
+        let imagen = document.createElement('img');
+            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+            if(lista_usuarios[i]['escudo']){
+                imagen.src = lista_usuarios[i]['escudo'];
+            }else{
+                imagen.src = 'imgs/escudo.png';
+            }
+
+            celdaEscudo.appendChild(imagen);
+
+        let foto = document.createElement('img');
+            foto.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+            if(lista_usuarios[i]['foto']){
+                foto.src = lista_usuarios[i]['foto'];
+            }else{
+                foto.src = 'imgs/user.png';
+            }
+
+            celdaFoto.appendChild(foto);
         celdaBilingue.innerHTML = lista_usuarios[i]['bilingue'];
         celdaTecnico.innerHTML = lista_usuarios[i]['tecnico'];
         celdaReligioso.innerHTML = lista_usuarios[i]['religioso'];
