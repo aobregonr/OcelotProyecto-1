@@ -1,7 +1,7 @@
 'use strict';
 
 
-let listaCen=obtener_lista_centros();
+let listaCen=obtener_lista_usuarios();
 let i;
 let j;
 let listaResul=[];
@@ -45,11 +45,11 @@ function ShowData(){
 
             for(i = 0; i <listaCen.length; i++){
              
-              if (listaCen[i]['nombreComercial'].toLowerCase().includes(varFilter[j])){
+              if (listaCen[i]['nombrecomercial'].toLowerCase().includes(varFilter[j])){
                 listaResul[count]=listaCen[i];
                 count++;
               };
-              if (listaCen[i]['tipoDeCentro'].toLowerCase().includes(varFilter[j])){
+              if (listaCen[i]['tipodecentro'].toLowerCase().includes(varFilter[j])){
                 listaResul[count]=listaCen[i];
                 count++;
               };
@@ -57,7 +57,7 @@ function ShowData(){
                 listaResul[count]=listaCen[i];
                 count++;
               };
-              if (listaCen[i]['direccionExacta'].toLowerCase().includes(varFilter[j])){
+              if (listaCen[i]['direccionexacta'].toLowerCase().includes(varFilter[j])){
                 listaResul[count]=listaCen[i];
                 count++;
               };
@@ -117,7 +117,7 @@ function ShowData(){
                var midiv3 = document.createElement("p");
                midiv3.setAttribute("id","txtNameCen"+i);
                midiv3.setAttribute("class","card-text");
-               midiv3.innerHTML = listaCen[i]['nombreComercial'];
+               midiv3.innerHTML = listaCen[i]['nombrecomercial'];
                document.querySelector("#cards").appendChild(midiv);
                document.querySelector("#card"+i).appendChild(midiv2);
                document.querySelector("#card"+i).appendChild(midiv4);
@@ -144,15 +144,15 @@ function ShowData(){
                let celdaDireccionExacta= fila.insertCell();
                let celdaEscudo = fila.insertCell();
                
-               celdaNombreComercial.innerHTML = listaCen[i]['nombreComercial'];
-               celdaTipodeCentro.innerHTML = listaCen[i]['tipoDeCentro'];
-               celdaTelefonoCtro.innerHTML = listaCen[i]['telefonoCtro'];
+               celdaNombreComercial.innerHTML = listaCen[i]['nombrecomercial'];
+               celdaTipodeCentro.innerHTML = listaCen[i]['tipodecentro'];
+               celdaTelefonoCtro.innerHTML = listaCen[i]['telefonoctro'];
                celdaFax.innerHTML = listaCen[i]['fax'];
-               celdaSitioWeb.innerHTML = listaCen[i]['sitioWeb'];
+               celdaSitioWeb.innerHTML = listaCen[i]['sitioweb'];
                celdaFacebook.innerHTML = listaCen[i]['facebook'];
-               celdaEmailInstit.innerHTML = listaCen[i]['emailInstit'];
-               celdaAnoFund.innerHTML = listaCen[i]['anoFund'];
-               celdaDireccionExacta.innerHTML = listaCen[i]['direccionExacta'];
+               celdaEmailInstit.innerHTML = listaCen[i]['emailinstit'];
+               celdaAnoFund.innerHTML = listaCen[i]['anofund'];
+               celdaDireccionExacta.innerHTML = listaCen[i]['direccionexacta'];
                
    
                let imagen = document.createElement('img');
