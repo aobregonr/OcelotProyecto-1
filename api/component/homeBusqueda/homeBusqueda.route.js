@@ -2,12 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const api_registroCentro = require('./homeBusqueda.api');
+const userApi = require('./homeBusqueda.api');
 
 
-router.route('/listar_centroEducativo')
+router.route('/listar_usuario')
 	.get(function(req, res){
-			api_registroCentro.listar(req, res);
+			userApi.listar(req, res);
 		});
 
 
