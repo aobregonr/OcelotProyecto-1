@@ -1,14 +1,14 @@
 'use strict';
 
 
-const modelo_registroCentro = require('../users/registroCentroEduc.model');
+const userModel = require('../users/users.model');
 
 
 module.exports.listar = function(req, res){
-	modelo_registroCentro.find().then(
+	userModel.find().then(
 
-		function(centrosEducativos){
+		function(usuario){
 
-			res.send(centrosEducativos);
+			res.send(usuario);
 		});
 	};
