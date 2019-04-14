@@ -222,12 +222,11 @@ li > #salir {
 }
 
 #tblCentrosEducativos{
-    width: 72%;
-    margin: 0 10%;
+    width: 82%;
+    margin: 80% 10%;
     display: none; 
     visibility: hidden;
 } 
-
 #filterBar{
     display: none; 
     visibility: hidden;
