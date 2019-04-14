@@ -8,6 +8,11 @@ router.route('/registrar_usuario')
         userApi.registrar(req, res);
     });
 
+router.route('/listar_usuario')
+	.get(function(req, res){
+			userApi.listar(req, res);
+		});
+
 router.route('/validar_credenciales')
     .post(function (req, res) {
         userApi.validar(req, res);

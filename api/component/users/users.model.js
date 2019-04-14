@@ -3,62 +3,98 @@
 let mongoose = require('mongoose');
 
 let userSchema = new mongoose.Schema({
-    tipo: {
-        type: String,
-        required: true
+
+    tipo: {type: String, required: true
     },
-    identificacion: {
-        type: Number,
-        unique: true,
-        required: true
+    nombrecomercial: {type : String, required: false, unique : false
     },
-    nombre: {
-        type: String,
-        required: true
+    cedulajuridica: {type : Number, required: false
     },
-    segundonombre: {
-        type: String,
-        required: true
+    tipodecentro: {type : String, required: false
     },
-    apellido: {
-        type: String,
-        required: true
+    telefonoctro: {type : Number, required: false
     },
-    segundoapellido: {
-        type: String,
-        required: true
+    fax: {type : Number, required: false
     },
-    nacionalidad: {
-        type: String,
-        required: true
+    sitioweb: {type : String, required: false, unique : false
     },
-    fechanacimiento: {
-        type: Date,
-        required: true
+    facebook: {type : String, required: false, unique : false
     },
-    provincia: {
-        type: String,
-        required: true
+    emailinstit: {type : String, required: false
     },
-    canton: {
-        type: String,
-        required: true
+    direccionexacta: {type : String, required: false
     },
-    distrito: {
-        type: String,
-        required: true
+    anofund: {type : Number, required: false
     },
-    cantidadhijos: {
-        type: Number,
-        required: true
+    refhist: {type : String, required: false
     },
-    correo: {
-        type: String,
-        required: true
+    departamento: {type : String, required: false
     },
-    contrasenna: {
-        type: String,
-        required: true
+    ext: {type : Number, required: false
+    },
+    escudo: {type: String, required : false
+    },
+    foto: {type: String, required : false
+    },
+    bilingue: {type: Boolean, required : false
+    }, 
+    tecnico: {type: Boolean, required : false
+    },
+    religioso:  {type: Boolean, required : false
+    },
+    noreligioso: {type: Boolean, required : false
+    },
+    vocacional: {type: Boolean, required : false
+    },
+    idiomas: {type: Boolean, required : false
+    },
+    becas:  {type: Boolean, required : false
+    },
+    bachilleratoint: {type: Boolean, required : false
+    },
+    mixto:  {type: Boolean, required : false
+    },
+    varones:  {type: Boolean, required : false
+    },
+    mujeres: {type: Boolean, required : false
+    },
+    primaria:  {type: Boolean, required : false
+    },
+    secundaria:  {type: Boolean, required : false
+    },
+    telefono: {type: Number, required: false
+    },
+    cantidaddehijos: {type: Number, required: false
+    },
+    anodenacimiento: {type: Number, required: false
+    },
+    tipoidentificacion: {type: String, required: true
+    },
+    identificacion: { type: Number, unique: true, required: true
+    },
+    nombre: { type: String, required: true
+    },
+    segundonombre: { type: String, required: false
+    },
+    apellido: {type: String, required: true
+    },
+    segundoapellido: {type: String, required: false
+    },
+    nacionalidad: {type: String, required: false
+    },
+    fechanacimiento: {type: Number, required: false
+    },
+    provincia: {type: String, required: true
+    },
+    canton: {type: String, required: true
+    },
+    distrito: {type: String,required: true
+    },
+    correo: {type: String, required: true
+    },
+    contrasenna: {type: String, required: true
+    },
+    confirmarcontrasenna: {type: String, required: true
     }
 });
 
