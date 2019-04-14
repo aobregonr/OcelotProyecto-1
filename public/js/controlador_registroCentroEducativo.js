@@ -84,50 +84,54 @@ function obtenerDatos(){
 
 	let bError = false;
 
+
 	let tipo = inputTipo.value;
-	let nombreComercial = inputNombreComercial.value;
-	let cedulaJuridica = Number(inputCedulaJuridica.value);
-	let tipoDeCentro = inputTipoDeCentro.selectedOptions[0].textContent;
-	let telefonoCtro = Number(inputTelefonoCtro.value);
-	let fax = Number(inputFax.value);  
-	let sitioWeb = inputSitioWeb.value;   
-	let facebook = inputFacebook.value;     
-	let emailInstit = inputEmailInstit.value;      
-	let password = inputPassword.value;          
-	let passwordConf = inputPasswordConf.value;          
-	let anoFund = Number(inputAnoFund.value);      
-	let refHist = inputHisRef.value;          
-	let provincia = inputProvincia.selectedOptions[0].textContent;         
-	let canton = inputCanton.selectedOptions[0].textContent;          
-	let distrito = inputDistrito.selectedOptions[0].textContent;      
-	let direccionExacta = inputDireccionExacta.value;
-	let nombre = inputNombre.value;          
-	let nombre2 = inputNombre2.value;     
-	let apellido = inputApellido.value;       
-	let apellido2 = inputApellido2.value;       
-	let tipoID = inputTipoID.selectedOptions[0].textContent;      
-	let IDnumber = Number(inputIDnumber.value);        
-	let email = inputEmail.value;     
-	let departamento = inputDepartamento.value;    
-	let telefono =  Number(inputTelefono.value); 
-	let ext = Number(inputExt.value); 
+    let nombrecomercial = inputNombreComercial.value;
+    let cedulajuridica = Number(inputCedulaJuridica.value);
+    let tipodecentro  = inputTipoDeCentro.selectedOptions[0].textContent;
+    let telefonoctro  = Number(inputTelefonoCtro.value);
+    let fax = Number(inputFax.value); 
+    let sitioweb = inputSitioWeb.value;   
+    let facebook = inputFacebook.value;     
+    let emailinstit = inputEmailInstit.value;      
+    let direccionexacta = inputDireccionExacta.value;
+    let anofund =  Number(inputAnoFund.value);     
+    let refhist = inputHisRef.value;
+    let departamento = inputDepartamento.value;   
+    let ext = Number(inputExt.value); 
 	let escudo = imgEscudo.src;
 	let foto = imgFoto.src;
-	//
-	let bilingue = inputBilingue.checked;
+    let bilingue = inputBilingue.checked;
 	let tecnico = inputTecnico.checked;
 	let religioso = inputReligioso.checked;
-	let noReligioso = inputNoReligioso.checked;
+	let noreligioso = inputNoReligioso.checked;
 	let vocacional = inputVocacional.checked;
 	let idiomas = inputIdiomas.checked;
 	let becas = inputBecas.checked;
-	let bachilleratoInt = inputBachilleratoInt.checked;
+	let bachilleratoint = inputBachilleratoInt.checked;
 	let mixto = inputMixto.checked;
 	let varones = inputVarones.checked;
 	let mujeres = inputMujeres.checked;
-	//
 	let primaria = inputPrimaria.checked;
 	let secundaria = inputSecundaria.checked;
+    let telefono = Number(inputTelefono.value);
+    let cantidaddehijos = 0;
+    let anodenacimiento = 0;
+    let tipoidentificacion = inputTipoID.selectedOptions[0].textContent;  
+    let identificacion = Number(inputIDnumber.value);
+    let nombre = inputNombre.value;            
+    let segundonombre = inputNombre2.value; 
+    let apellido = inputApellido.value;
+    let segundoapellido = inputApellido2.value;
+    let nacionalidad = '';
+    let fechanacimiento = 0;
+    let provincia = inputProvincia.selectedOptions[0].textContent;    
+    let canton = inputCanton.selectedOptions[0].textContent;  
+    let distrito = inputDistrito.selectedOptions[0].textContent;            
+    let correo = inputEmail.value;
+    let contrasenna = inputPassword.value;  
+    let confirmarcontrasenna = inputPasswordConf.value;   
+
 
 
 	//expresiones regulares
@@ -207,11 +211,13 @@ function obtenerDatos(){
           });
 	
 	}else{
-    registrar_centroEducativo(tipo, nombreComercial, cedulaJuridica, tipoDeCentro, telefonoCtro, fax, sitioWeb, facebook, emailInstit,
-				    		  password, passwordConf, anoFund, refHist, provincia, canton, distrito, direccionExacta, nombre, nombre2, 
-				    		  apellido, apellido2, tipoID, IDnumber, email, departamento, telefono, ext, escudo, foto,
-				    		  bilingue, tecnico, religioso, noReligioso, vocacional, idiomas, becas, bachilleratoInt, mixto, varones,
-				    		  mujeres, primaria, secundaria);
+    registrar_centro(tipo, nombrecomercial, cedulajuridica, tipodecentro, telefonoctro, fax, sitioweb, facebook, emailinstit, 
+    				  direccionexacta, anofund, refhist, departamento, ext, escudo, foto, bilingue, tecnico, 
+    				  religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
+    				  secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
+    				  segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
+    				  correo, contrasenna, confirmarcontrasenna
+);
 
     lista_centros = obtener_lista_centros();
 
@@ -232,79 +238,72 @@ function mostrar_lista_centros(){
 	for(let i = 0; i < lista_centros.length; i++){
 		let fila = tbody.insertRow();
 
-	 	let celdaTipo = fila.insertCell();
-		let celdaNombreComercial = fila.insertCell();
-		let celdaCedulaJuridica = fila.insertCell();
-		let celdaTipodeCentro = fila.insertCell();
-		let celdaTelefonoCtro = fila.insertCell();
-		let celdaFax = fila.insertCell();
-		let celdaSitioWeb = fila.insertCell();
-		let celdaFacebook = fila.insertCell();
-		let celdaEmailInstit = fila.insertCell();
-		let celdaPassword = fila.insertCell();
-		let celdaPasswordConf = fila.insertCell();
-		let celdaAnoFund = fila.insertCell();
-		let celdaRefHist = fila.insertCell();
-		let celdaProvincia = fila.insertCell();
-		let celdaCanton= fila.insertCell();
-		let celdaDistrito= fila.insertCell();
-		let celdaDireccionExacta= fila.insertCell();
-		//
-		let celdaNombre = fila.insertCell();
-		let celdaNombre2 = fila.insertCell();
-		let celdaApellido = fila.insertCell();
-		let celdaApellido2 = fila.insertCell();
-		let celdatipoID = fila.insertCell();
-		let celdaIDnumber = fila.insertCell();
-		let celdaEmail = fila.insertCell();
-		let celdaDepartamento = fila.insertCell();
-		let celdaTelefono = fila.insertCell();
-		let celdaExt = fila.insertCell();
-		let celdaEscudo = fila.insertCell();
-		let celdaFoto = fila.insertCell();
-		//
-		let celdaBilingue = fila.insertCell();
-		let celdaTecnico = fila.insertCell();
-		let celdaReligioso = fila.insertCell();
-		let celdaNoReligioso = fila.insertCell();
-		let celdaVocacional = fila.insertCell();
-		let celdaIdiomas = fila.insertCell();
-		let celdaBecas = fila.insertCell();
-		let celdaBachilleratoInt = fila.insertCell();
-		let celdaMixto = fila.insertCell();
-		let celdaVarones= fila.insertCell();
-		let celdaMujeres = fila.insertCell();
-		let celdaPrimaria = fila.insertCell();
-		let celdaSecundaria = fila.insertCell();
+
+		let celdaTipo = fila.insertCell();
+        let celdaNombrecomercial = fila.insertCell();
+        let celdaCedulajuridica = fila.insertCell(); 
+        let celdaTipodecentro = fila.insertCell(); 
+        let celdaTelefonoctro = fila.insertCell(); 
+        let celdaFax = fila.insertCell(); 
+        let celdaSitioweb = fila.insertCell();
+        let celdaFacebook = fila.insertCell();
+        let celdaEmailinstit = fila.insertCell();        
+        let celdaDireccionexacta = fila.insertCell(); 
+        let celdaAnofund = fila.insertCell(); 
+        let celdaRefhist = fila.insertCell(); 
+        let celdaDepartamento = fila.insertCell(); 
+        let celdaExt = fila.insertCell(); 
+        let celdaEscudo = fila.insertCell();
+        let celdaFoto = fila.insertCell(); 
+        let celdaBilingue = fila.insertCell();
+        let celdaTecnico = fila.insertCell(); 
+        let celdaReligioso = fila.insertCell();
+        let celdaNoreligioso = fila.insertCell();
+        let celdaVocacional = fila.insertCell();
+        let celdaIdiomas = fila.insertCell();
+        let celdaBecas = fila.insertCell();
+        let celdaBachilleratoint = fila.insertCell(); 
+        let celdaMixto = fila.insertCell(); 
+        let celdaVarones = fila.insertCell(); 
+        let celdaMujeres = fila.insertCell(); 
+        let celdaPrimaria = fila.insertCell(); 
+        let celdaSecundaria = fila.insertCell(); 
+        let celdaTelefono = fila.insertCell(); 
+        let celdaCantidaddehijos = fila.insertCell(); 
+        let celdaAnodenacimiento = fila.insertCell(); 
+        let celdaTipoidentificacion = fila.insertCell(); 
+        let celdaIdentificacion = fila.insertCell(); 
+        let celdaNombre = fila.insertCell(); 
+        let celdaSegundonombre = fila.insertCell();
+        let celdaApellido = fila.insertCell(); 
+        let celdaSegundoapellido = fila.insertCell(); 
+        let celdaNacionalidad = fila.insertCell(); 
+        let celdaFechanacimiento = fila.insertCell(); 
+        let celdaProvincia = fila.insertCell();
+        let celdaCanton = fila.insertCell(); 
+        let celdaDistrito = fila.insertCell();
+        let celdaCorreo = fila.insertCell(); 
+        let celdaContrasenna = fila.insertCell(); 
+        let celdaConfirmarcontrasenna = fila.insertCell();
+
+        //
+
 
 
 		celdaTipo.innerHTML = lista_centros[i]['tipo'];
-		celdaNombreComercial.innerHTML = lista_centros[i]['nombreComercial'];
-		celdaCedulaJuridica.innerHTML = lista_centros[i]['cedulaJuridica'];
-		celdaTipodeCentro.innerHTML = lista_centros[i]['tipoDeCentro'];
-		celdaTelefonoCtro.innerHTML = lista_centros[i]['telefonoCtro'];
-		celdaFax.innerHTML = lista_centros[i]['fax'];
-		celdaSitioWeb.innerHTML = lista_centros[i]['sitioWeb'];
-		celdaFacebook.innerHTML = lista_centros[i]['facebook'];
-		celdaEmailInstit.innerHTML = lista_centros[i]['emailInstit'];
-		celdaPassword.innerHTML = lista_centros[i]['password'];
-		celdaPasswordConf.innerHTML = lista_centros[i]['passwordConf'];
-		celdaAnoFund.innerHTML = lista_centros[i]['anoFund'];
-		celdaRefHist.innerHTML = lista_centros[i]['refHist'];
-		celdaProvincia.innerHTML = lista_centros[i]['provincia'];
-		celdaCanton.innerHTML = lista_centros[i]['canton'];
-		celdaDistrito.innerHTML = lista_centros[i]['distrito'];
-		celdaDireccionExacta.innerHTML = lista_centros[i]['direccionExacta'];
-		celdaNombre.innerHTML = lista_centros[i]['nombre'];
-		celdaNombre2.innerHTML = lista_centros[i]['nombre2'];
-		celdaApellido.innerHTML = lista_centros[i]['apellido'];
-		celdaApellido2.innerHTML = lista_centros[i]['apellido2'];
-		celdatipoID.innerHTML = lista_centros[i]['tipoID'];
-		celdaIDnumber.innerHTML = lista_centros[i]['IDnumber'];
-		celdaEmail.innerHTML = lista_centros[i]['email'];
-		celdaDepartamento.innerHTML = lista_centros[i]['departamento'];
-		celdaTelefono.innerHTML = lista_centros[i]['telefono'];
-		celdaExt.innerHTML = lista_centros[i]['ext'];
+        celdaNombrecomercial.innerHTML = lista_centros[i]['nombrecomercial'];
+        celdaCedulajuridica.innerHTML = lista_centros[i]['cedulajuridica'];
+        celdaTipodecentro.innerHTML = lista_centros[i]['tipodecentro'];
+        celdaTelefonoctro.innerHTML = lista_centros[i]['telefonoctro'];
+        celdaFax.innerHTML = lista_centros[i]['fax'];
+        celdaSitioweb.innerHTML = lista_centros[i]['sitioweb'];
+        celdaFacebook.innerHTML = lista_centros[i]['facebook'];
+        celdaEmailinstit.innerHTML = lista_centros[i]['emailinstit'];
+        celdaDireccionexacta.innerHTML = lista_centros[i]['direccionexacta'];
+        celdaAnofund.innerHTML = lista_centros[i]['anofund'];
+        celdaRefhist.innerHTML = lista_centros[i]['refhist'];
+        celdaDepartamento.innerHTML = lista_centros[i]['departamento'];
+        celdaExt.innerHTML = lista_centros[i]['ext'];
 
 		let imagen = document.createElement('img');
             imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
@@ -328,21 +327,36 @@ function mostrar_lista_centros(){
 
             celdaFoto.appendChild(foto);
 
-
-        //checkboxes
-		celdaBilingue.innerHTML = lista_centros[i]['bilingue'];
-		celdaTecnico.innerHTML = lista_centros[i]['tecnico'];
-		celdaReligioso.innerHTML = lista_centros[i]['religioso'];
-		celdaNoReligioso.innerHTML = lista_centros[i]['noReligioso'];
-		celdaVocacional.innerHTML = lista_centros[i]['vocacional'];
-		celdaIdiomas.innerHTML = lista_centros[i]['idiomas'];
-		celdaBecas.innerHTML = lista_centros[i]['becas'];
-		celdaBachilleratoInt.innerHTML = lista_centros[i]['bachilleratoInt'];
-		celdaMixto.innerHTML = lista_centros[i]['mixto'];
-		celdaVarones.innerHTML = lista_centros[i]['varones'];
-		celdaMujeres.innerHTML = lista_centros[i]['mujeres'];
-		celdaPrimaria.innerHTML = lista_centros[i]['primaria'];
-		celdaSecundaria.innerHTML = lista_centros[i]['secundaria'];
+        celdaBilingue.innerHTML = lista_centros[i]['bilingue'];
+        celdaTecnico.innerHTML = lista_centros[i]['tecnico'];
+        celdaReligioso.innerHTML = lista_centros[i]['religioso'];
+        celdaNoreligioso.innerHTML = lista_centros[i]['noreligioso'];
+        celdaVocacional.innerHTML = lista_centros[i]['vocacional'];
+        celdaIdiomas.innerHTML = lista_centros[i]['idiomas'];
+        celdaBecas.innerHTML = lista_centros[i]['becas'];
+        celdaBachilleratoint.innerHTML = lista_centros[i]['bachilleratoint'];
+        celdaMixto.innerHTML = lista_centros[i]['mixto'];
+        celdaVarones.innerHTML = lista_centros[i]['varones'];
+        celdaMujeres.innerHTML = lista_centros[i]['mujeres'];
+        celdaPrimaria.innerHTML = lista_centros[i]['primaria'];
+        celdaSecundaria.innerHTML = lista_centros[i]['secundaria'];
+        celdaTelefono.innerHTML = lista_centros[i]['telefono'];
+        celdaCantidaddehijos.innerHTML = lista_centros[i]['cantidaddehijos'];
+        celdaAnodenacimiento.innerHTML = lista_centros[i]['anodenacimiento'];
+        celdaTipoidentificacion.innerHTML = lista_centros[i]['tipoidentificacion'];
+        celdaIdentificacion.innerHTML = lista_centros[i]['identificacion'];
+        celdaNombre.innerHTML = lista_centros[i]['nombre'];
+        celdaSegundonombre.innerHTML = lista_centros[i]['segundonombre'];
+        celdaApellido.innerHTML = lista_centros[i]['apellido'];
+        celdaSegundoapellido.innerHTML = lista_centros[i]['segundoapellido'];
+        celdaNacionalidad.innerHTML = lista_centros[i]['nacionalidad'];
+        celdaFechanacimiento.innerHTML = lista_centros[i]['fechanacimiento'];
+        celdaProvincia.innerHTML = lista_centros[i]['provincia'];
+        celdaCanton.innerHTML = lista_centros[i]['canton'];
+        celdaDistrito.innerHTML = lista_centros[i]['distrito'];
+        celdaCorreo.innerHTML = lista_centros[i]['correo'];
+        celdaContrasenna.innerHTML = lista_centros[i]['contrasenna'];
+        celdaConfirmarcontrasenna.innerHTML = lista_centros[i]['confirmarcontrasenna'];
   }
 
 	};
