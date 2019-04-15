@@ -1,6 +1,6 @@
 'use strict';
 
-function validar_credenciales(pcorreo, pcontrasenna) {
+function obtener_perfil(pcorreo, pcontrasenna) {
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/validar_credenciales',
@@ -8,14 +8,16 @@ function validar_credenciales(pcorreo, pcontrasenna) {
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',
         async: false,
-        data: { correo: pcorreo, contrasenna: pcontrasenna},
+        data: {
+            correo: pcorreo,
+            contrasenna: pcontrasenna
+        },
     });
 
     peticion.done(function (response) {
         respuesta = response;
         sessionStorage.setItem('conectado', response.success);
-        sessionStorage.setItem('tipo_usuario', response.usuario.tipo);
-        sessionStorage.setItem('nombre_usuario', response.usuario.nombrecomercial);
+        sessionStorege.setItem('tipo_usuario', response.usuario.tipo);
     });
 
     peticion.fail(function (response) {

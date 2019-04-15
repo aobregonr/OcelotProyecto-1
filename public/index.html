@@ -34,6 +34,7 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#">FAQS</a>
                         </li>
+                        <li class="nav-item active" id="logeado"></li>
                     </ul>
                 </div>
             </nav>
@@ -46,8 +47,8 @@
                 <div class="imgLogo">
                     <img class="img-response" src="imgs/home/owl.png" alt="">
                 </div>
-                <div class="titleLogin text-center">
-                    <p>Iniciar Sesion</p>
+                <div class="titleLogin text-center" id='tituleLogin'>
+                    
                 </div>
                 <div class="frmLogin col-lg-12 text-center">
                     <form>
@@ -92,17 +93,17 @@
                         <form>
                             <div class="form-group has-search">
                                 <span class="fa fa-search form-control-feedback"></span>
-                                <input type="text" class="form-control form-control-lg" placeholder="Palabra clave">
+                                <input type="text" class="form-control form-control-lg" id="txtfil_Word" placeholder="Palabra clave">
                             </div>
                             <div class="form-group">
-                                <select class="form-control form-control-lg" name="" id="">
+                                <select class="form-control form-control-lg" name="" id="SelNivel">
                                     <option value="" selected>Nivel</option>
                                     <option value="">Escuela</option>
                                     <option value="">Colegio</option>
                                 </select>
                             </div>
                             <div class="col-lg-12 text-center">
-                                <button class="btn">Buscar</button>
+                                <button class="btn" id="advanceSearch">Buscar Avanzada</button>
                             </div>
                         </form>
                     </div>
@@ -618,8 +619,12 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador_navinicio.js"></script>
     <script src="js/servicio_inicio.js"></script>
     <script src="js/controlador_inicio.js"></script>
+    <script src="js/servicio_homeBusquedad.js"></script>
+    <script src="js/controlador_resultado_busqueda_sucess.js"></script>
+    <script src="js/controlador_homeBusquedad.js"></script>
     <script src="js/commons.js"></script>
 </body>
 </html>
