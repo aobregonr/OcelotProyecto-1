@@ -14,7 +14,7 @@ function obtenerDatos(){
     if (!errorBlancos) {
         usuarioAceptado = validar_credenciales(correo, contrasenna);
         if (usuarioAceptado.success == true) {
-           window.location.href = '../perfilAdmin.html';
+           window.location.href = 'perfilAdmin.html';
         } else {
             alert('Hola error error contrasenna o usuario');
         }
