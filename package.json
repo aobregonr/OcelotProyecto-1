@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node server.js",
     "dev": "nodemon server/index.js"
   },
   "repository": {
@@ -35,7 +35,6 @@
     "rootpath": "^0.1.2"
   },
   "devDependencies": {
-    "@types/node": "^11.13.4",
     "nodemon": "^1.18.10"
   }
 }
