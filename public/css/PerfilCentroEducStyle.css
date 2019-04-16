@@ -242,7 +242,7 @@ input[type="radio"]:checked ~ label{
 }
 
 
-.fa-file, .fa-file-download{
+.fa-file, .fa-file-upload, .fa-file-download{
 			color: #FF6633;
 			margin: 10% 10% 0% 10%;
 			cursor: pointer;
