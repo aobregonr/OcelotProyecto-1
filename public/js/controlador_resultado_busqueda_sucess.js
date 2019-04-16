@@ -104,7 +104,7 @@ function ShowData(){
                var midiv4 = document.createElement("a");
                midiv4.setAttribute("id","txtEnl"+i);
                midiv4.setAttribute("class","schoolCard");
-               midiv4.setAttribute("href","#");
+               midiv4.setAttribute("href","perfilCentroEduc.html");
               
                var imagen2 = document.createElement('img');
                imagen2.setAttribute("id","imgBus"+i);

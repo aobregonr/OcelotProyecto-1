@@ -29,7 +29,9 @@ function mostrar_lista_usuarios(){
 
 	for(let i = 0; i < lista_usuarios.length; i++){
 
-		if(lista_usuarios[i]['tipo'].toLowerCase().includes(filtro.toLowerCase())){
+		if(lista_usuarios[i]['tipo'].toLowerCase().includes(filtro.toLowerCase())  ||
+        lista_usuarios[i]['nombrecomercial'].toLowerCase().includes(filtro.toLowerCase()) ||
+        lista_usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) ){
 
 			let fila = tbody.insertRow();
 
