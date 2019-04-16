@@ -34,8 +34,8 @@
 		<header>
 			<nav>
 				<ul id= "main_nav">
-					<li> <a href="#" id= "logo">Educate<strong>CR</strong>.com</a></li>
-					<li> <a href="#" id= "salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+					<li> <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a></li>
+					<li> <a href="index.html" id= "salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
 				</ul>
 			</nav>
 		</header>
@@ -53,7 +53,7 @@
 			<div class="container">
 				<div class=reportes>
 
-				<a href="#" class="linkReportes"> Todos los Centros Educativos </a><br>
+				<a href="centros_educativos.html" class="linkReportes"> Todos los Centros Educativos </a><br>
 				<a href="#" class="linkReportes"> Módulo de Reportes </a><br>
 				<a href="#" class="linkReportes"> Bitacora de Actividad </a><br>
 			</div>
@@ -63,13 +63,13 @@
 
 		<div class= mainProfile>
 
-			<div class=tools>
+			<div class=tools data-spy="scroll" data-target=".toolList" data-offset="50">
 
 				<h1>Herramientas de Administración</h1>
 
 				<ul>
 					<li class=toolList>
-						<a href="#">
+						<a href="registroCentroEducativo.html">
 							<i  id=fasTools class="fas fa-plus-circle"></i>
 						</a>
 						<p class=toolInfo> Registrar <br> Centro Educativo</p>
@@ -81,13 +81,13 @@
 						<p class=toolInfo> Eliminar <br> Centro Educativo</p>
 					</li>
 					<li  class=toolList>
-						<a href="#">
+						<a href="#moderarComentarios">
 							<i id=fasTools class="fas fa-comment-slash"></i>
 						</a>
 						<p class=toolInfo> Moderar <br> Comentarios</p>
 					</li >
 					<li class=toolList>
-						<a href="#">
+						<a href="#CalificarPendientes">
 							<i id=fasTools class="fas fa-star"></i>
 						</a>
 						<p class=toolInfo> Calificar <br> Centro Educativo</p>
@@ -167,7 +167,7 @@
 
 			<div class="containerMain2">
 					
-					<div class="well redFlagBig"> Calificación Pendiente </div>
+					<div class="well redFlagBig" id="CalificarPendientes"> Calificación Pendiente </div>
 
 					<div class="califContainer">
 
@@ -227,7 +227,7 @@
 
 
 			 	<div class="containerMain3">
-				<div class="well redFlagBig"> Moderar Comentarios </div>
+				<div class="well redFlagBig" id="moderarComentarios"> Moderar Comentarios </div>
 
 				<div class="containerComentarios">
 						<div class="container">         
@@ -314,7 +314,6 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/controlador_nav.js"></script>
 		<script src="js/servicio_perfiladmin.js"></script>
 		<script src="js/controlador_perfiladmin.js"></script>
 		<script src="js/commons.js"></script>
