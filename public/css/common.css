@@ -1,0 +1,163 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style-type:none; 
+}
+
+/* Header */
+
+.main_nav {
+    background-color: #330033;
+    height: auto;
+    list-style-type: none;
+
+}
+.main_nav li {
+    color: #fff;
+}
+
+li>.salir {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    color: white;
+    padding-right: 5%;
+    text-decoration: none;
+    margin-left: 20px;
+    padding-top: 8px;
+}
+
+.logo {
+    font-family: Helvetica, sans-serif;
+    font-size: 28px;
+    color: white;
+    padding: 10px 15px 15px 25px;
+    text-decoration: none;
+}
+
+/* Login and search */
+
+.imgLogo img {
+    width: 100%;
+}
+
+.titleLogin p,
+.titleLogin h3,
+.titleLogin h5 {
+    color: #fff;
+    background-color: #CC0033;
+    font-weight: bold;
+    padding: 15px 0px;
+}
+
+.frmLogin {
+    background-color: #571845;
+    padding: 10px;
+
+}
+
+.frmLogin button.btnBlock{
+    background-color: #FFCC33;
+    color: #000;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 4px 66px;
+}
+
+.frmLogin a{
+    color: #fff;
+}
+
+.frmLogin hr{
+    color: #fff;
+    border: 1px solid #717171;
+}
+
+.frmLogin p, .frmLogin label{
+    color: #fff;
+}
+
+.spaceBottom {
+    margin-bottom: 30px;
+}
+
+.col-centrada {
+    float: none;
+    margin: 0 auto;
+}
+
+.contentInputs {
+    margin-top: 40px;
+    background-color: #990033;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contentInputs h1{
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.contentInputs button{
+     background-color: #FFCC33;
+     color: #000;
+     font-weight: bold;
+     font-size: 17px;
+     padding: 4px 66px;
+     margin-top: 20px;
+     margin-bottom: 10px;
+}
+
+.listPdf{
+    margin-top: 20px;
+}
+
+
+/* Ranking */
+
+.rankingEscuelas{
+    background-color: #990033;
+}
+
+.rankingColegios{
+    background-color: #FF6633;
+}
+
+.rankingEscuelas table,
+.rankingColegios table{
+    background-color: #fff;
+}
+
+.subRaking h5{
+    color: #fff;
+    margin: 10px 0px;
+}
+
+.card-header{
+    background-color: #fff;
+}
+
+.card-header h5{
+    color: #330033;
+    font-weight: bold;
+}
+
+.card {
+    border-bottom: 1px solid #330033;
+}
+
+/* footer */
+
+footer{
+     background-color: #330033;
+     padding: 10px;
+}
+
+footer p{
+    color: #fff;
+    font-weight: bold;
+}

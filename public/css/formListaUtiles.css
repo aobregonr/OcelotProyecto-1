@@ -1,0 +1,125 @@
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol
+{
+            margin:0;
+            padding:0;
+            font-family: Helvetica, sans-serif;
+}
+
+
+/*     -------------  header  -------------    */
+
+#main_nav{
+            background-color: #330033;
+            height: 50px;
+            list-style-type: none;
+
+        }
+
+li > #logo {
+            float:left;
+            font-family: Helvetica, sans-serif;
+            font-size: 30px;
+            font-style: bolder;
+            color: white;
+            padding: 10px 15px 15px 25px;
+            text-decoration: none;
+}
+
+li > #salir {
+            float:right;
+            font-family: Helvetica, sans-serif;
+            font-size: 15px;
+            font-style: normal;
+            color: white;
+            padding: 15px 15px 0px 5px;
+            padding-right: 5%;
+            text-decoration: none;
+}
+
+.fa-sign-out-alt {
+            color: white;
+            float:right;
+            padding: 15px;
+            padding-right:0px;
+}
+
+
+
+/* Title */
+/*
+.titule{
+    background-color: #CC0033;
+}
+
+.titule h1{
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 25px;
+}
+*/
+
+.mainProfile {
+    width: 100%;
+    margin: 0 5%;
+}
+
+.bigLabel{
+            background-color: #CC0033;
+            color: white;
+            margin: 30px;
+            padding: 10px; 
+}
+
+/* Form add article*/
+
+.contentList{
+    margin-top: 10px; 
+}
+
+.subTitle{
+    background-color: #FF6633;
+}
+
+.subTitle h3{
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.contentInputs{
+    background-color: #990033;
+    padding: 20px;
+}
+
+.btnAdd{
+    color: #000;
+    font-weight: bold;
+}
+
+.col-centrada {
+    float: none;
+    margin: 0 auto;
+}
+
+
+/*     ------------- modal  -------------    */
+
+.title-class{
+    background-color: white;
+    
+}
+
+.confirm-button-class{
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
+
+

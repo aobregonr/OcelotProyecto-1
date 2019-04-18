@@ -1,0 +1,157 @@
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol
+{
+      margin:0;
+      padding:0;
+      font-family: Helvetica, sans-serif;
+}
+
+
+h1 {
+  text-align: left;
+  color: white;
+  font-size: 30px;
+}
+h2{
+  font-size: 20px;
+}
+h3 {
+  font-size: 12px;
+}
+
+
+
+/*     -------------  header  -------------    */
+
+#main_nav{
+      background-color: #330033;
+      height: 50px;
+      list-style-type: none;
+
+    }
+
+li > #logo {
+      float:left;
+      font-family: Helvetica, sans-serif;
+      font-size: 30px;
+      font-style: bolder;
+      color: white;
+      padding: 10px 15px 15px 25px;
+      text-decoration: none;
+}
+
+li > #salir {
+      float:right;
+      font-family: Helvetica, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      color: white;
+      padding: 15px 15px 0px 5px;
+      padding-right: 5%;
+      text-decoration: none;
+}
+
+.fa-sign-out-alt {
+      color: white;
+      float:right;
+      padding: 15px;
+      padding-right:0px;
+}
+
+
+
+/*     -------------  main Profile  -------------    */
+
+
+.mainProfile {
+    width: 100%;
+    margin: 0 5%;
+
+}
+
+.bigLabel{
+            background-color: #CC0033;
+            color: white;
+            margin: 30px;
+            padding: 10px; 
+            width: 86%;
+}
+
+
+#title{
+  background-color: #CC0033;
+}
+.container{
+  margin: 22px 60px;
+  width: 94%;
+}
+
+.card-header{
+  background-color: #FF6633 !important;
+
+}
+.card-header a{
+  text-decoration: none;
+  color: white;
+}
+.card-title{
+  color:white;
+  text-align: center;
+}
+
+.card{ /* espacio entre card y card*/
+  margin: 30px 10px;
+}
+
+.schoolCards{
+    background-color: #571845;
+    padding: 0px 20px 20px 20px;
+    max-height: 350px;
+    min-width: 240px;
+    max-width: 240px;
+    min-height: 350px;
+    color:white;
+}
+.schoolPic{
+    width: 200px;
+    margin-left: -22px;
+    margin-top: 20px;
+}
+
+.card-text{
+    color: white;
+    font-family: Josefin Sans, sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    min-height: 100px;
+    text-align: center;
+}
+
+#header {
+  background-color: #330033;
+  text-decoration: none;
+  margin:auto;
+}
+
+
+.spacer{
+  height:50px;
+}
+
+#logo{
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+
+.footerEnd{
+			padding: 10px;
+			padding-left: 20px;
+      margin-top: 30px;
+			background-color: #330033;
+			color: white;
+			font-weight: lighter;
+			font-size: 12px;
+
+}

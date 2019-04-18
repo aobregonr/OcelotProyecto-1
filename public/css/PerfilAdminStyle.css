@@ -1,0 +1,282 @@
+/* HEXADECIMAL COLOR PALLETE
+
+
+Morado oscuro:   #330033   exclusivo para el header.
+Morado oscuro 2: #571845   para ventanas modales y otros elementos de la página.
+Magenta:         #990033   para todos los formularios.
+Rojo:            #CC0033   para todos los textos h1
+Naranja:         #FF6633   para todos los  textos h2
+Amarillo:        #FFCC33   para botones principales, estrellas de ranking y otros elementos de la página.
+
+
+*/
+
+body,p,h1,h2,h3,h4,h5,h6,ul,ol
+{
+			margin:0;
+			padding:0;
+			font-family: Helvetica, sans-serif;
+}
+
+/*     -------------  header  -------------    */
+
+#main_nav{
+			background-color: #330033;
+			height: 50px;
+			list-style-type: none;
+
+		}
+
+li > #logo {
+			float:left;
+			font-family: Helvetica, sans-serif;
+			font-size: 30px;
+			font-style: bolder;
+			color: white;
+			padding: 10px 15px 15px 25px;
+			text-decoration: none;
+}
+
+li > #salir {
+			float:right;
+			font-family: Helvetica, sans-serif;
+			font-size: 15px;
+			font-style: normal;
+			color: white;
+			padding: 15px 15px 0px 5px;
+			padding-right: 5%;
+			text-decoration: none;
+}
+
+.fa-sign-out-alt {
+			color: white;
+			float:right;
+			padding: 15px;
+			padding-right:0px;
+}
+
+/*     -------------  side menu  -------------    */
+
+
+.mainSideMenu{
+			background-color: #571845; 
+			width: 25%;
+			height:auto;
+			position: absolute;
+			min-height: 1555px;
+			margin-top: -16px;
+}
+
+#container1{
+			width: 100%;
+			height: auto;
+			margin-bottom: 40px;
+}
+
+
+.fa-user-circle{
+			font-size: 18vw;
+			padding: 3%;
+			color: #FF6633;
+			background-color: white;
+			border-radius: 50%;
+			margin:10%;
+}
+
+#username{
+			color: white;
+			text-align: center;
+			font-size: 1.5em;
+}
+
+
+.redFlagsSide{
+			background-color:  #CC0033;
+			height: 100px;
+			width: 100%;
+			max-height: 2em;
+}
+
+.redFlagsSide > h3{
+			color: white;
+			font-family: Helvetica, sans-serif;
+			font-size: 1.6vw;
+			text-align: center;
+			padding: 3px;
+			font-weight: lighter;
+}
+
+.reportes{
+			margin-top: 20px;
+			padding-left: 15px;
+
+}
+
+.linkReportes{
+			color: white;
+			font-size: 1.2vw;
+			text-decoration-line: underline;
+}
+
+
+
+/*     -------------  perfil principal -------------    */
+.mainProfile{ 
+			width: 75%;
+			margin: 0 28%;	
+ }
+
+/*     -------------  tools -------------    */
+
+.tools{
+			font-size: 5em;
+			text-align: center;
+			padding: 10px;
+			margin-left: -40px;
+}
+
+.tools > h1{
+			font-family: Josefin Sans, sans-serif;
+			font-size: 40px;
+			font-style: normal;
+			text-align: center;
+			margin: 25px;
+			font-weight: bold;
+			color: black;
+}
+
+
+.toolInfo{
+			font-family: Josefin Sans, sans-serif;
+			font-size: 14px;
+}
+
+.toolList{
+			display: inline-block;
+			text-decoration: none;
+}
+
+ #fasTools{
+	
+			color: #FF6633;
+			padding: 20px;
+}
+
+#fasTools:hover{
+			color: orange;
+}
+
+/*     -------------  main containers -------------    */
+
+ .containerMain1, .containerMain2 {
+ 			height: auto;
+			width: 90%;
+			margin-top: 60px;
+ }
+
+.redFlagBig{
+			height: auto;
+			background-color:  #CC0033;
+			color: white;
+			font-size: 2em;
+			text-align: center;
+			padding: 10px 0px;
+}
+
+
+/*     -------------  formato de tablas  -------------    */
+
+.containerRegistros, .containerComentarios, .califContainer{
+			margin: 30px;
+			width: 90%;
+			margin-left: 5%;
+}
+
+/*     -------------  registros pendientes  -------------    */
+
+.toolRegistrar{
+			display: inline-block;
+			text-decoration: none;
+			padding-left: 10px;
+			padding-top: 5px;
+}
+
+.check, .trash{
+
+			color: black;
+			font-size: 20px;
+}
+
+.check:hover{
+
+			color: green;
+}
+.trash:hover{
+
+			color: red;
+}
+
+
+/*     -------------  ranking pendientes  -------------    */
+
+
+/*     -------------  hover ranking stars -------------    */
+
+form{
+			margin: 0;
+}
+
+input[type="radio"] {
+			display: none;
+}
+
+label{
+			color: grey;
+}
+
+.clasificacion{
+			direction: rtl;
+			unicode-bidi: bidi-override;
+			text-align: center;
+			margin-bottom: -5px;
+}
+
+label:hover,
+label:hover ~ label{
+			color: #FFCC33;  /* esto es para que las estrellas pasen de ser grises a ser amarillas. */
+			cursor: pointer;
+}
+
+input[type="radio"]:checked ~ label{
+			color: #FFCC33;
+}
+
+/*     -------------  moderar comentarios  -------------    */
+
+.edit{
+
+			color: black;
+			font-size: 20px;
+}
+
+.edit:hover{
+
+			color: orange;
+}
+
+.comment{
+			max-width: 450px;
+			text-align: justify;
+}
+
+
+.footerEnd{	
+			padding: 10px;
+			padding-left: 20px;
+			background-color: #330033;
+			color: white;
+			font-weight: lighter;
+			font-size: 12px;
+	
+
+}
