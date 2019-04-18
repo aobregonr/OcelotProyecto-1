@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="es">
+	<head>
+		<title>Base de Datos -Usuarios</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="Verónica Morera C.">
+
+		<!-- La siguiente linea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Referencia a CSS -->
+		<link rel="stylesheet" type="text/css" href="css/baseDatosCentroEduc.css">
+
+		<!-- Referenciar font-awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+		<!-- Referencia a js.popper para posicionamiento de elementos-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Referencia a Content Delivery Network de CSS para bootstrap4 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+		<!-- Referencia a Content Delivery Network de libreria JQuery para bootstrap4 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+
+		<header>
+		<nav>
+			<ul id="main_nav">
+				<li> <a href="index.html" id="logo">Educate<strong>CR</strong>.com</a></li>
+				<li> <a href="index.html" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<div class=mainProfile>
+
+
+		<div class="container">
+			<h2 class="bigLabel"> Base de datos - Usuarios </h2>
+
+			<input  class="form-control" type="text" id="txtFiltro" placeholder="Filtrar por TIPO o por NOMBRE">
+			<br>
+
+
+			<!-- Tabla de ingreso de centros registrados -->
+		<table id= "tblUsuarios" class="table table-light table-striped table-bordered table-responsive table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th>Tipo de Usuario</th>
+					<th>Nombre Comercial</th>
+					<th>Cédula Jurídica</th>
+					<th>Tipo de Centro</th>
+					<th>Teléfono Institucional</th>
+					<th>Fax</th>
+					<th>Sitio Web</th>
+					<th>Facebook</th>
+					<th>Correo Institucional</th>
+					<th id='direccion'>Dirección Exacta</th>
+					<th>Año Fundación</th>
+					<th id='refHistorica'>Referencia Historica</th>
+					<th>Departamento</th>
+					<th>Tel Ext.</th>
+					<th>Escudo</th>
+					<th>Foto</th>
+					<!--<th>---- MAPA ---</th>-->
+					<th>Bilingue</th>
+			        <th>Técnico</th> 
+			        <th>Religioso</th> 
+			        <th>No Religioso</th>
+			        <th>Vocacional</th> 
+			        <th>Idiomas</th>
+			        <th>Becas</th> 
+			        <th>Bachillerato Internacional</th>
+			        <th>Centro Mixto</th>
+			        <th>Sólo Varones</th>
+			        <th>Sólo Mujeres</th>
+			        <th>Primaria</th>
+			        <th>Secundaria</th>
+					<th>Teléfono</th>
+					<th>Cantidad de Hijos (Padres de familia)</th>
+					<th>Año de Nacimiento (Padres de familia)</th>
+					<th>Identificación</th>
+					<th>Cédula</th>
+					<th>Nombre</th>
+					<th>Segundo nombre</th>
+					<th>Primer apellido</th>
+					<th>Segundo apellido</th>
+					<th>Nacionalidad</th>
+					<th>Fecha de Nacimiento</th>
+					<th>Provincia</th>
+					<th>Cantón</th>
+					<th>Distrito</th>
+					<th>Correo</th>
+					<th>Contraseña</th>
+					<th>Contraseña Confirmada</th>
+					<th>**  Editar  **</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		</div>
+
+
+	</div>
+
+		<footer class= footerEnd>
+					<p> EducateCR Costa Rica <br>
+					Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+					Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
+					</p>
+				</footer>
+
+		<!--REFERENCIAR JAVASCRIPT -->
+		<script src="js/servicio_padreFam.js"></script>
+		<script src="js/servicio_registroCentroEducativo.js"></script>
+		<script src="js/controlador_baseDatos.js"></script>
+
+		<!-- Scripts cloudinary -->
+    	<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    	<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    	<script src="js/servicio_imagen.js"></script>
+
+	</body>
+</html>

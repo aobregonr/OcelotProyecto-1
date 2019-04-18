@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<!-- Este titulo se elimina cuando se enlaze a la pagina de incio pues el codigo es solo para la ventana modal -->
+	<title>Registro De Centro Educativo</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="Mario Zeledon S. & Verónica Morera C.">
+
+	<!-- La siguiente linea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Referencia a CSS -->
+	<link rel="stylesheet" type="text/css" href="css/registroCentroEduc.css">
+
+	<!-- Referenciar font-awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<!-- Referencia a js.popper para posicionamiento de elementos-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Referencia a Content Delivery Network de CSS para bootstrap4 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- Referencia a Content Delivery Network de libreria JQuery para bootstrap4 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<ul id="main_nav">
+				<li> <a href="index.html" id="logo">Educate<strong>CR</strong>.com</a></li>
+				<li> <a href="index.html" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<div class=mainProfile>
+
+		<h2 class="bigLabel"> Registro De Centro Educativo </h2>
+
+		<div class="instructions">
+			<p>Complete el formulario con sus datos a continuación, y finalice presionando el botón Registrar.</p>
+
+			<p> La contraseña debe tener un máximo de 8 dígitos, una mayúscula, una minúscula, un carácter especial y
+				un número.</p>
+                <p>
+                    <br>
+                </p>
+                <div class="recordatorio">
+
+            <p id="redInstructions"><strong>Los campos con * son obligatorios.</strong> </p>
+        </div>
+        </div>
+
+		<div class="containerBig">
+			<form class="needs-validation" novalidate>
+
+			<div id="leftSide">
+
+					<div class= "hideMe">
+						<div id="regData">
+							<label for="txtTipo"> Tipo  *</label>
+							<input type="text" class="form-control" id="txtTipo" value="CentroEducativo" required>
+						</div>
+					</div>
+			
+					<div id="regData">
+						<label for="txtNombreComercial"> Nombre Comercial  *</label>
+						<input type="text" class="form-control" id="txtNombreComercial" placeholder="Nombre Comercial" required>
+					</div>
+
+					<div id="regData">
+						<label for="txtCedulaJuridica"> Cédula Jurídica  *</label>
+						<input type="number" class="form-control" id="txtCedulaJuridica" placeholder="(digite solo números)" required>
+					</div>
+
+					<div class= "options" id="regData">
+						<label for="txtTipoCentroEducat "> Tipo de Centro  *</label>
+							<select class="form-control" id="txtTipoCentroEducat" required>
+		                        <option value="">Tipo de Centro</option>
+		                        <option value="">Privado</option>
+		                        <option value="">Publico</option>
+		                    </select>
+					</div>
+
+					<div id="regData">
+						<label for="txtTelefonoCtro"> Teléfono Institucional *</label>
+						<input type="number" class="form-control"id="txtTelefonoCtro" placeholder="(digite solo números)" required>
+					</div>
+
+					<div id="regData">
+						<label for="txtFax"> Fax  </label> <br>
+						<input type="number" class="form-control"id="txtFax" placeholder="(digite solo números)">
+					</div>
+
+					<div id="regData">
+						<label for="txtSitioWeb">  Sitio Web </label><br>
+						<input type="url" class="form-control" id="txtSitioWeb" placeholder="Sitio web asociado">
+					</div>
+
+					<div id="regData">
+						<label for="txtFacebookOficial"> Facebook Oficial</label>
+						<input type="url" class="form-control" id="txtFacebookOficial" placeholder="Facebook Oficial">
+					</div>
+
+					<div id="regData">
+						<label for="txtEmailInstit"> Email Institucional *</label>
+						<input type="email" class="form-control" id="txtEmailInstit" placeholder="Correo electrónico institucional" required>
+					</div>
+
+					<div id="regData">
+						<label for="txtPassword"> Contraseña  * </label> <br>
+						<input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" required>
+					</div>
+
+					<div id="regData">
+						<label for="txtPasswordConf"> Confirmar Contraseña  *</label>
+						<br>
+						<input type="password" class="form-control" id="txtPasswordConf" placeholder="Confirmar contraseña" required>
+					</div>
+
+					<div id="regData">
+						<label for="txtAnoFund"> Año de Fundación  *</label>
+						<input type="number" class="form-control" id="txtAnoFund" placeholder="Año de fundación" required>
+					</div>
+
+					<div id="regData">
+						<label for="txtHistRef"> Referencia Histórica  *</label>
+						<input type="text" class="form-control" id="txtHistRef" placeholder="Referencia histórica" required>
+					</div>
+
+					<div id="regData">
+						<label for="">Dirección General  *</label>
+						
+							<label for="txtProvincia"></label>
+							<!--<input type="text" class="form-control" id="txtProvincia" placeholder="Provincia" required>-->
+							<select class="form-control" id="txtProvincia">
+			                    <optionvalue="" required>--Selecciones una provincia--</option>
+			                </select>
+			
+							<label for="txtCanton"></label>
+							<!--<input type="text" class="form-control" id="txtCanton" placeholder="Cantón" required>-->
+							<select class="form-control" id="txtCanton">
+			                    <option value="" required>--Seleccione un cantón--</option>
+			                </select>
+
+							<label for="txtDistrito"></label>
+							<!--<input type="text" class="form-control" id="txtDistrito" placeholder="Distrito" required>	-->
+							<select class="form-control"id="txtDistrito">
+			                    <option  value="" required>--Selecciones un distrito--</option>
+			                </select>
+
+					</div>
+
+					<div class= direccionExacta id="regData">
+						<label for="txtDireccionExacta"> Dirección Exacta   *</label>
+						<input type="text" name="" class="form-control" id=txtDireccionExacta placeholder="Dirección exacta" required>
+					</div>
+				</div>
+
+					<div id="rightSide">
+
+						<div id="regData">
+							<label for="txtNombre"> Nombre del Encargado  *</label>
+							<input type="text" class="form-control" id="txtNombre" placeholder="Nombre" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtNombre2"> Segundo Nombre  </label> <br>
+							<input type="text" class="form-control" id="txtNombre2" placeholder="Segundo Nombre">
+						</div>
+
+						<div id="regData">
+							<label for="txtApellido">  Primer Apellido  * </label> <br>
+							<input type="text" class="form-control" id="txtApellido" placeholder="Apellido" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtApellido2"> Segundo Apellido</label> <br>
+							<input type="text" class="form-control" id="txtApellido2" placeholder="Segundo Apellido">
+						</div>
+
+						<div class= "options" id="regData">
+							<label for="id"> Identificación  *</label>
+							<select class="form-control" id="sltIdentificación" required>
+								<option value=''> Identificación </option>
+								<option value='Cedula Nacional'>Cedula Nacional</option>
+								<option value='Cedula de Residencia'>Cedula de Residencia</option>
+								<option value='Cedula Nacional'>Pasaporte</option>
+							</select>
+						</div>
+
+						<div id="regData">
+							<label for="txtNoIdentificacion"> Número de identificación  *</label>
+							<input type="number" class="form-control"id="txtNoIdentificacion" placeholder="(digite solo números)" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtEmail"> Correo Electrónico  </label><br>
+							<input type="email" class="form-control" id="txtEmail" placeholder="Correo electrónico">
+						</div>
+
+						<div id="regData">
+							<label for="txtDepartamento"> Departamento  </label> <br>
+							<input type="text" class="form-control" id="txtDepartamento" placeholder="Departamento">
+						</div>
+
+						<div id="regData">
+							<label for="txtTelefonoContact"> Teléfono de Contacto  *</label>
+							<input type="number" class="form-control" id="txtTelefonoContact" placeholder="(digite solo números)" required>
+						</div>
+
+						<div id="regData">
+							<label for="txtExt"> Extención Tel. (opcional)</label>
+							<input type="number" class="form-control" id="txtExt" placeholder="(digite solo números)">
+						</div>
+
+						<div id="regData">
+							<label for="image_preview">Escudo del centro educativo  </label>
+				
+				            <figure class="image_holder">
+				                <img src="imgs/escudo.png" alt="escudo centro educativo" id="image_preview">
+				            </figure>  
+			
+				            <button type="button" id="btnSeleccionarImagen" class="imgBtn">Subir Imágen</button>
+				        </div>
+
+				        <div id="regData">
+							<label for="image_preview2">Foto del Encargado  </label>
+				
+				            <figure class="image_holder">
+				                <img src="imgs/user.png" alt="foto del encargado" id="image_preview2">
+				            </figure>  
+			
+				            <button type="button" id="btnSeleccionarImagen2" class="imgBtn">Subir Imágen</button>
+				        </div>
+						</div>
+					</div>
+
+					<div id="center">
+				
+						<label for="txtUbicacionGeo"> Ubicación Geográfica del Centro Educativo *</label>
+					<div class="mapArea">
+						<!--<iframe id=map
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125759.36571051698!2d-84.18338559168174!3d9.935606974265218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0xe6746a6a9f11b882!2sSan+Jos%C3%A9+Province%2C+San+Jos%C3%A9!5e0!3m2!1sen!2scr!4v1553371678650"
+					width="250" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+					</div>
+				
+			
+
+				<div id=checkboxArea>
+				<p>Por favor seleccione todas las características que corresponden a su centro educativo: </p>
+
+
+				<div class="leftSideEnd">
+
+					<div class=details>
+						<div id=levelsID>
+
+							<h3>Características</h3>
+							<div class=listCheckbox>
+						
+									<input class=checkBoxID id= "cbBilingue"type="checkbox" name="Bilingue" value="Bilingue"> Bilingue<br>
+									<input class=checkBoxID id= "cbTecnico"type="checkbox" name="Tecnico" value="Tecnico"> Técnico<br>
+									<input class=checkBoxID id= "cbReligioso"type="checkbox" name="Religioso" value="Religioso"> Religioso<br>
+									<input class=checkBoxID id= "cbNoReligioso"type="checkbox" name="No religioso" value="No religioso"> No religioso<br>
+									<input class=checkBoxID id= "cbVocacional"type="checkbox" name="Vocacional" value="Vocacional">Vocacional<br>
+									<input class=checkBoxID id= "cbIdiomas"type="checkbox" name="Imparte Idiomas" value="Imparte Idiomas"> Imparte
+									Idiomas<br>
+									<input class=checkBoxID id= "cbBecas"type="checkbox" name="Ofrece becas" value="Ofrece becas"> Ofrece becas<br>
+									<input class=checkBoxID id= "cbBachilleratoInt"type="checkbox" name="Bachillerato internacional" value="Bachillerato internacional">
+									Bachillerato internacional<br>
+									<input class=checkBoxID id= "cbMixto"type="checkbox" name="Mixto" value="Mixto"> Mixto<br>
+									<input class=checkBoxID id= "cbVarones"type="checkbox" name="Solo varones" value="Solo varones"> Sólo varones<br>
+									<input class=checkBoxID id= "cbMujeres"type="checkbox" name="Solo mujeres" value="Solo mujeres"> Sólo mujeres<br><br>
+		
+							</div>
+						</div>
+						<br>
+
+					</div>
+				</div>
+						
+				<div class="rightSideEnd">
+
+					<div class=details>
+						<div id=levelsID>
+
+							<h3>Nivel</h3>
+							<div class=listCheckbox>
+									
+									<input class=checkBoxID id= "cbPrimaria" type="checkbox" name="Primaria" value="Primaria"> Primaria<br>
+									<input class=checkBoxID id= "cbSecundaria" type="checkbox" name="Secundaria" value="Secundaria"> Secundaria<br>
+				
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" id="btn_registrar">Registrar</button>
+		</form>
+
+			</div>
+	</div>
+
+	<table id= "tblCentrosEducativos" class="table table-bordered table-responsive table-hover">
+			<thead>
+				<tr>
+					<th>Nombre Comercial</th>
+					<th>Cédula Jurídica</th>
+					<th>Tipo de Centro</th>
+					<th>Teléfono Institucional</th>
+					<th>Fax</th>
+					<th>Sitio Web</th>
+					<th>Facebook</th>
+					<th>e-mail Institucional</th>
+					<th>contraseña</th>
+					<th>contraseña Confirmada</th>
+					<th>Año Fundación</th>
+					<th>Ref Historica</th>
+					<th>Provincia</th>
+					<th>Cantón</th>
+					<th>Distrito</th>
+					<th>Dirección Exacta</th>
+					<th>Nombre encargado</th>
+					<th>Nombre 2 encargado</th>
+					<th>Apellido encargado</th>
+					<th>Apellido 2 encargado</th>
+					<th>Identificación</th>
+					<th>Cédula</th>
+					<th>e-mail encargado</th>
+					<th>Departamento</th>
+					<th>Teléfono encargado</th>
+					<th>Tel Ext.</th>
+					<th>Escudo</th>
+					<th>Foto</th>
+					<!--<th>---- MAPA ---</th>-->
+					<th>bilingue</th>
+			        <th>tecnico</th> 
+			        <th>religioso</th> 
+			        <th>noReligioso</th>
+			        <th>vocacional</th> 
+			        <th>idiomas</th>
+			        <th>becas</th> 
+			        <th>bachilleratoInt</th>
+			        <th>mixto</th>
+			        <th>varones</th>
+			        <th>mujeres</th>
+			        <th>primaria</th>
+			        <th>secundaria</th>
+
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+	
+				<footer class= footerEnd>
+					<p> EducateCR Costa Rica <br>
+					Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+					Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
+					</p>
+				</footer>
+
+		<!--REFERENCIAR JQUERY -->
+		 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<!--REFERENCIAR SWEET ALERT -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+		<!--REFERENCIAR JAVASCRIPT -->
+		<script src="js/servicio_registroCentroEducativo.js"></script>
+		<script src="js/controlador_registroCentroEducativo.js"></script>
+
+		<!-- Scripts cloudinary -->
+    	<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    	<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    	<script src="js/servicio_imagen.js"></script>
+
+    	<!-- Scripts provincia, canton, distrito-->
+    	<script src="js/provincias.js"></script>
+	    <script src="js/cantones.js"></script>
+	    <script src="js/distritos.js"></script>
+	    <script src="js/controlador_ubicacion.js"></script>
+
+		</body>
+
+</html>

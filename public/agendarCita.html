@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    <title>Agendar Cita</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mario Zeledon S.">
+
+    <!-- La siguiente línea es para que la pagina se ajuste al tamaño de la pantalla y define el nivel de zoom inicial cuando carga la página. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Referencia a CSS -->
+    <link rel="stylesheet" type="text/css" href="css/agendarCita.css">
+
+    <!-- Referenciar font-awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Referencia a js.popper para posicionamiento de elementos-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Referencia a Content Delivery Network de CSS para bootstrap4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Referencia a Content Delivery Network de librería JQuery para bootstrap4 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul id="main_nav">
+                <li> <a href="index.html" id="logo">Educate<strong>CR</strong>.com</a></li>
+                <li> <a href="index.html" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class=mainProfile>
+
+        <h2 class="bigLabel1"> Agendar Cita</h2>
+
+        <div class=mainProfileTxt>
+            <p>A continuación complete el formulario con sus datos y finalice presionando el botón <strong>Agendar Cita</strong>.</p>
+            <p>
+                <br>
+            </p>
+            <div class="recordatorio">
+            <p><strong>* Los campos con * son obligatorios. </strong> </p>
+        </div>
+
+            <div class="containerBig2">
+
+            <div id="leftSide">
+
+                <div id="regData">
+                    <label for="txtFecha"></label>
+                    <input type="date" id="txtFecha" placeholder="Fecha" required>
+                </div>
+
+                <div id="regData">
+                    <label for="txtNombre"></label>
+                    <input type="text" id="txtNombre" placeholder="Nombre" required>
+                </div>
+            
+                <div id="regData">
+                        <label for="txtEmail"> </label>
+                        <input type="text" id="txtEmail" placeholder="Correo electrónico">
+                    </div>    
+
+            </div>
+
+
+            <div id="rightSide">
+
+                    <div id="regData">
+                            <label for="txtHora"></label>
+                            <input type="text" id="txtHora" placeholder="Hora">
+                        </div>
+
+                <div id="regData">
+                    <label for="txtApellido"></label>
+                    <input type="text" id="txtApellido" placeholder="Apellido">
+                </div>
+
+                <div id="regData">
+                    <label for="txtTelefono"></label>
+                    <input type="text" id="txtTelefono" placeholder="Teléfono">
+                </div>
+                <p>
+                        <br>
+                    </p>
+            </div>
+
+                <div id="regData">
+                    <input class=closeBtn1 type="submit" value="Agendar Cita">
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <p>
+            <br>
+        </p>
+
+        <footer class=footerEnd>
+            <p> EducateCR Costa Rica <br>
+                Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+                Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot
+                        Solutions</strong></a>
+            </p>
+        </footer>
+        
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/servicio_agendarcita.js"></script>
+        <script src="js/controlador_agendarcita.js"></script>
+        <script src="js/commons.js"></script>
+
+</body>
+
+
+</html>
