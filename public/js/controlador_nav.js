@@ -1,6 +1,6 @@
 'use strict';
 
-let conectado = sessionStorage.getItem('conectado');
+//let conectado = sessionStorage.getItem('conectado');
 let tipoUsuario = sessionStorage.getItem('tipo_usuario');
 
 if(conectado){
@@ -16,16 +16,12 @@ if(conectado){
         break;
     }
 } else {
-   
-    window.location.href = 'index.html';   //aqui lo que quiero es que en vez de devolver al home, salte a la ventana de inicio de sesion modal.
+
+   window.location.href = 'index.html';   
+    $("#iniSesion").modal()
+    //aqui lo que quiero es que en vez de devolver al home, salte a la ventana de inicio de sesion modal.
     //accesoRestringido();
 
-}
-
-
-function cerrar_sesion(){
-    sessionStorage.clear();
-    window.location.href - 'index.html';
 }
 
 
