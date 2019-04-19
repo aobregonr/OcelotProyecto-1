@@ -1,42 +1,18 @@
-body{
-    margin: 0px;
-    padding: 0px;
+body,p,h1,h2,h3,h4,h5,h6,ul,ol
+{
+    margin:0;
+    padding:0;
+    font-family: Helvetica, sans-serif;
 }
 
 li {
     list-style-type:none; 
-}
-
-/* Header */
-
-.main_nav {
-    background-color: #330033;
-    height: auto;
-    list-style-type: none;
-
-}
-.main_nav li {
-    color: #fff;
-}
-
-li>.salir {
     font-family: Helvetica, sans-serif;
-    font-size: 15px;
-    font-style: normal;
     color: white;
-    padding-right: 5%;
     text-decoration: none;
-    margin-left: 20px;
-    padding-top: 8px;
+    padding-left: 10px;
 }
 
-.logo {
-    font-family: Helvetica, sans-serif;
-    font-size: 28px;
-    color: white;
-    padding: 10px 15px 15px 25px;
-    text-decoration: none;
-}
 
 /* Login and search */
 
@@ -66,6 +42,7 @@ li>.salir {
     font-size: 17px;
     padding: 4px 66px;
 }
+
 
 .frmLogin a{
     color: #fff;
@@ -150,6 +127,12 @@ li>.salir {
     border-bottom: 1px solid #330033;
 }
 
+
+/*faqs*/
+.mb-0{
+    text-align: left;
+}
+
 /* footer */
 
 footer{
@@ -159,5 +142,10 @@ footer{
 
 footer p{
     color: #fff;
-    font-weight: bold;
+    font-size: 14px;
+}
+
+#landingPage{
+    color: #fff;
+    font-size: 16px;
 }

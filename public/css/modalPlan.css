@@ -16,71 +16,38 @@ form,legend{
     text-align: center;
 }
 a{
-    text-align: right;
+    text-align: center;
 }
 
-.registrobtn{
+
+#btnIngresarModal, #btnRegistroModal{
     background-color: #FFCC33;
     font-family: Helvetica Light, sans-serif;
     cursor: pointer;
     border-radius: 5px;
     width:270px;
-    height:30px;
-    font-size: 20px;
+    height:auto;
+    font-size: 18px;
+    font-weight: bold;
 
 
 }
-.registrobtn:hover{
+#btnIngresarModal:hover, #btnRegistroModal:hover{
     background-color: yellow;
 }
 
-.YellowBtn{
-    background-color: #FFCC33;
-    font-family: Helvetica Light, sans-serif;
-    cursor: pointer;
-    border-radius: 5px;
-    width:270px;
-    height:30px;
-
-}
-.YellowBtn:hover{
-    background-color: yellow;
+#forgotPsw{
+    font-size: 14px;
 }
 
-
-#main_nav{
-    background-color: #330033;
-    height: 50px;
-    list-style-type: none;
-
-}
-li > #logo {
-    float:left;
-    font-family: Helvetica, sans-serif;
-    font-size: 28px;
-    font-style: bolder;
-    color: white;
-    padding: 10px 15px 15px 25px;
-    text-decoration: none;
+#forgotPsw:hover{
+    color: #FFCC33;
 }
 
-li > #salir {
-    float:right;
-    font-family: Helvetica, sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    color: white;
-    padding: 15px 15px 0px 5px;
-    padding-right: 5%;
-    text-decoration: none;
+.radio{
+    text-align: left;
 }
 
-.fa-sign-out-alt {
-    color: white;
-    float:right;
-    padding: 15px;
-    padding-right:0px;
-}
 
 #ModalContent{
     background-color:  #571845;
@@ -97,8 +64,9 @@ li > #salir {
     margin-top: 20px;
 }
 .registerInfo{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: lighter;
     color: white;
     padding: 10px;
+    text-align: left;
 }
