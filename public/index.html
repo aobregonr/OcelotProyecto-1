@@ -7,6 +7,7 @@
     <title>EducateCR.com</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/homeStyle.css"> 
+    <link rel="stylesheet" href="css/modalPlan.css">      
 
     <link rel="stylesheet" href="fonts/css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -19,8 +20,8 @@
     
     <header class="row"  data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg navbar-dark main_nav">
-                <a href="index.html" class="logo">Educate<strong>CR</strong>.com</a>
+            <nav class="navbar navbar-expand-lg navbar-dark main_nav" id="navPrincipal">
+                <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,13 +40,25 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="#faqs">FAQS</a>
                         </li>
-                        <li class="nav-item active" id="logeado"></li>
+                        <li class="nav-item active" id="invitado">
+                            <a class="nav-link" href="#"><i class='fas fa-user'></i>   Invitado (Iniciar Sesión)</a>
+                        </li>
+                        <li class="nav-item active hide" id="logeado">
+                        </li>
+                        <li class="nav-item active " id="cerrarsesion">
+                            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i>   Cerrar Sesión</a>
+                        </li>
+                     
+              
                     </ul>
                 </div>
             </nav>
-        </div>
-        
+        </div>    
     </header>
+
+
+
+
     <section>
          <div class="row">
             <div class="col-lg-3">
@@ -63,11 +76,11 @@
                         <div class="form-group">
                              <input type="password" class="form-control" id="txtContrasenna" placeholder="Contraseña" required>
                         </div>
-                        <button type="button" id="btnIngresar" class="btn btnBlock">Ingresar</button>
+                            <button type="button" id="btnIngresar" class="btn btnBlock">Ingresar</button>
                     </form>
                 </div>
                 <div class="frmLogin col-lg-12 text-right">
-                    <a href=""> ¿Olvidó su contraseña? </a>
+                    <a id= "forgotPasw" href=""> ¿Olvidó su contraseña? </a>
                     <hr>
                 </div>
                 <div class="frmLogin col-lg-12 ">
@@ -491,10 +504,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="titleLogin text-center" id="faqs">
-                     <h5> Preguntas Frecuentes</h5>
+
+                <div class="col-lg-12" id="faqs">
+                <div class="titleLogin text-center">
+                    <h3>Preguntas Frecuentes</h3>
                 </div>
+                <div>
+
+
                 <div class="col-lg-10 col-centrada">
                     <!--Accordion wrapper-->
                     <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -615,27 +632,78 @@
             </div>
          </div>
     </section>
+
+
     <footer>
         <div class="footerBack">
             <div class="row">
                 <div class="col-lg-8 col-md-6 col-sm-12 float-right">
-                    <p>Copyright @ 2019 EducateCR. Todos los derechos reservados.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 float-left">
-                    <p>Sitio Web diseñado y desarrollado por Ocelot Solutions.</p>
+                    <p> EducateCR Costa Rica <br><br>
+                    Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+                    Sitio Web diseñado y desarrolado por <a href="#" class="landingPage"><strong>Ocelot Solutions</strong></a>
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/jquery-3.3.1.js"></script>
+
+
+
+        <!-- MODAL INICIO DE SESION -->
+    <div class="modal fade" id="iniSesion">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content" id="ModalContent">
+
+                <!-- Modal Header -->
+                <div class="modal-header Inicolor" id="HeaderModal">
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="email" class="form-control"id="txtCorreoModal" placeholder="Correo Electrónico" required>
+                    <br>
+                    <input type="password" class="form-control" id="txtContrasennaModal" placeholder="Contraseña" required>
+                    <br>
+                     <button type="button" id="btnIngresarModal" class="btn btnBlock">Ingresar</button>
+                    <br>
+                    <br>
+                        <a href="#" id=forgotPsw> ¿Olvidó su contraseña? </a><br>
+                        <div id="divisionLine"></div>
+                        <p class="registerInfo">¿Primera vez que ingresa? 
+                                            <br> Seleccione el tipo de usuario </p>
+                        <form>
+                            <div>
+                                <input type="radio" name="tipo" value="padrefamilia">
+                                <label for="">Padre de Familia</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="tipo" value="centroeducativo">
+                                <label for="">Centro Educativo</label>
+                            </div>
+                        </form>
+                <!-- Modal footer -->
+                <div class="modal-footer text-center">
+                    <button id="btnRegistroModal" type="button" class="btn btnBlock"> Registro </button>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!--Iniciar-Cerrar sesion -->
     <script src="js/controlador_navinicio.js"></script>
-    <script src="js/controlador_nav.js"></script>  <!-- esta es para restringir acceso-->
+     <!--<script src="js/controlador_nav.js"></script> --> <!-- esta es para restringir acceso-->
     <script src="js/servicio_inicio.js"></script>
     <script src="js/controlador_inicio.js"></script>
     <!--Busqueda JS -->
@@ -644,6 +712,8 @@
     <script src="js/controlador_homeBusquedad.js"></script> 
     <!--Escuelas JS -->
     <script src="js/commons.js"></script>
+
+     
 
 </body>
 </html>
