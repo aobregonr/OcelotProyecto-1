@@ -47,10 +47,10 @@
 
 			<div id= container1>
 
-				<img class=schoolLogo src="imgs/home/topColes/colesPrivados02.png" alt="Escudo del Colegio">
+				<img id="imgCentro" class=schoolLogo src="" alt="Escudo del Colegio">
 				<ul>
-					<li> <i class="fab fa-facebook fa-2x"></i> </li>
-					<li> <i class="fas fa-globe fa-2x"></i> </li>
+					<li > <i id="facLink" class="fab fa-facebook fa-2x"></i> </li>
+					<li> <i id="webLink" class="fas fa-globe fa-2x"></i> </li>
 
 				</ul>
 			</div>
@@ -136,9 +136,9 @@
 		<div class= mainProfile> 
 
 
-			<h1> Colegio Saint Francis </h1>
+			<h1 id="etNombre"> Colegio Saint Francis </h1>
 
-			<p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+			<p id="PaRef"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
 
 
 			<div class=details>
@@ -146,9 +146,9 @@
 					<h2 class= smallLabel> Niveles </h2>
 					<div class= list>
 						<ul>
-							<li class= mainLists> Preescolar </li>
-							<li class= mainLists> Primaria </li>
-							<li class= mainLists> Secundaria </li>
+							<li id ="listBil3" class= mainLists></li>
+							<li id ="listBil4" class= mainLists></li>
+							<li id ="listBil5" class= mainLists></li>
 						</ul>
 					</div>
 				</div>
@@ -157,9 +157,9 @@
 					<h2 class= smallLabel> Idiomas </h2>
 					<div class= list>
 						<ul>
-							<li class= mainLists> Bilingue </li>
-							<li class= mainLists> Imparte otros idiomas </li>
-							<br>
+							<li id ="listBil6" class= mainLists></li>
+							<li id ="listBil1" class= mainLists></li>
+							<li id ="listBil2" class= mainLists></li>
 						</ul>
 					</div>
 				</div>
@@ -168,9 +168,9 @@
 					<h2 class= smallLabel> Detalles </h2>
 					<div class= list>
 						<ul>
-							<li class= mainLists> Mixto </li>
-							<li class= mainLists> Vocacional </li>
-							<li class= mainLists> Privado </li>
+							<li id ="listBil7" class= mainLists> Mixto </li>
+							<li id ="listBil8" class= mainLists> Vocacional </li>
+							<li id ="listBil9" class= mainLists> Privado </li>
 						</ul>
 					</div>
 				</div>
@@ -334,7 +334,10 @@
          <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!--REFERENCIAR SWEET ALERT -->
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 		<script src="js/controlador_nav.js"></script>
+		<script src="js/controlador_perfilCentroEducEdit.js"></script>
+
         <!--REFERENCIAR JAVASCRIPT -->
         <script src="js/servicio_actividades.js"></script>
         <script src="js/controlador_actividades.js"></script>
