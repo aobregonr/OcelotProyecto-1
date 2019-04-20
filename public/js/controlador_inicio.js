@@ -44,6 +44,7 @@ function obtenerDatos(){
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
+                    sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
                     window.location.href = 'perfilUsuario.html';
                 }else{
                     swal.fire({
