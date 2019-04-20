@@ -1,6 +1,6 @@
 'use strict';
 
-//let conectado = sessionStorage.getItem('conectado');
+let conectado = sessionStorage.getItem('conectado');
 let tipoUsuario = sessionStorage.getItem('tipo_usuario');
 
 if(conectado){
@@ -9,7 +9,8 @@ if(conectado){
 
         break;
         case 'CentroEducativo':
-
+         
+        
         break;
         case 'PadreFam':
 
