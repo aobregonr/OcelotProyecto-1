@@ -76,11 +76,12 @@ li > #salir {
 
 .fa-user-circle{
 			font-size: 18vw;
-			padding: 3%;
+			padding: 1%;
 			color: #FF6633;
 			background-color: white;
 			border-radius: 50%;
 			margin:10%;
+			width: 80%;
 }
 
 #username{
