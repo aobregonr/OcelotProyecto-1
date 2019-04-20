@@ -16,6 +16,8 @@ function validar_credenciales(pcorreo, pcontrasenna) {
 
     peticion.done(function (response) {
         respuesta = response;
+       
+        
         sessionStorage.setItem('conectado', response.success);
 
        
