@@ -92,6 +92,10 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
     
                  let tcards = document.querySelector(psection);
                   // tcards.innerHTML = '';
+
+                  let dato1=(listaCen[i]['_id']);
+                  let dir="perfilCentroEduc.html?b="+dato1;
+                  
                   
                    var midiv = document.createElement("div");
                    midiv.setAttribute("id","card"+i+pUbic);
@@ -102,8 +106,10 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
                    var midiv4 = document.createElement("a");
                    midiv4.setAttribute("id","txtEnl"+i+pUbic);
                    midiv4.setAttribute("class","schoolCard");
-                   midiv4.setAttribute("href","perfilCentroEduc.html");
-                  
+                   midiv4.setAttribute("href",dir);
+
+
+                   
                    var imagen2 = document.createElement('img');
                    imagen2.setAttribute("id","imgBus"+i+pUbic);
                    imagen2.classList.add('schoolPic');
