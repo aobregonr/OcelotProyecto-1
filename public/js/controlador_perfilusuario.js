@@ -1,5 +1,15 @@
 'use strict';
 
+let nombre_usuario=sessionStorage.getItem('nombre_usuario');
+let apellido_usuario=sessionStorage.getItem('apellido_usuario');
+let foto_usuario=sessionStorage.getItem('foto_usuario');
+
+
+let img=document.querySelector('#fotoUs');
+img.setAttribute("src", foto_usuario);
+let h2Nombre= document.querySelector('#username');
+h2Nombre.innerHTML=nombre_usuario+" "+apellido_usuario;
+
 let listaCen=obtener_lista_centros();
 
 let tbody = document.querySelector('#tblCentros tbody');
