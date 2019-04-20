@@ -1,9 +1,5 @@
 'use strict';
 
-//let datos_usuario=[];
-//let datos_usuario=sessionStorage.getItem('sitioweb_usuario');
-//let nombre=sessionStorage.getItem('nombre_usuario');
-//console.log(datos_usuario);
 
 
 let escudo_usuario=sessionStorage.getItem('escudo_usuario');
