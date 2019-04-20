@@ -15,6 +15,8 @@ let listaCen=obtener_lista_centros();
 let tbody = document.querySelector('#tblCentros tbody');
 tbody.innerHTML = '';
 let fila = tbody.insertRow();
+let dato1=(listaCen[i]['_id']);
+let dir="perfilCentroEduc.html?b="+dato1;
 
 let celdaTipo = fila.insertCell();
 let celdaNombrecomercial = fila.insertCell();
@@ -118,7 +120,7 @@ let celdaSecundaria = fila.insertCell();
     var midiv4 = document.createElement("a");
     midiv4.setAttribute("id","txtEnl"+i);
     midiv4.setAttribute("class","schoolCard");
-    midiv4.setAttribute("href","perfilCentroEduc.html");
+    midiv4.setAttribute("href",dir);
    
     var imagen2 = document.createElement('img');
     imagen2.setAttribute("id","imgBus"+i);
