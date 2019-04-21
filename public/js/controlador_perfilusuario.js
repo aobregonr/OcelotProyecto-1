@@ -15,8 +15,7 @@ let listaCen=obtener_lista_centros();
 let tbody = document.querySelector('#tblCentros tbody');
 tbody.innerHTML = '';
 let fila = tbody.insertRow();
-let dato1=(listaCen[i]['_id']);
-let dir="perfilCentroEduc.html?b="+dato1;
+
 
 let celdaTipo = fila.insertCell();
 let celdaNombrecomercial = fila.insertCell();
@@ -108,6 +107,9 @@ let celdaSecundaria = fila.insertCell();
  if( 
     listaCen[i]['tipo'] == 'CentroEducativo'){
 
+        
+let dato1=(listaCen[i]['_id']);
+let dir="perfilCentroEduc.html?b="+dato1;
     /*metodo para la creacion de cada card para mostrar los resultados de la busqueda
     nota: usar un for para realizarlos de manera automatica y de una vez agregar los datos basicos
     la ref. los llevaria a cada centro educativo buscado.*/
