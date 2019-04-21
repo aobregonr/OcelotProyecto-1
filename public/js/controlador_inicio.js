@@ -160,6 +160,18 @@ function obtenerDatosModal(){
                 sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
                 sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial); 
 
+                sessionStorage.setItem('sitioweb_usuario', usuarioAceptado.usuario.sitioweb);
+                sessionStorage.setItem('escudo_usuario', usuarioAceptado.usuario.escudo);
+                sessionStorage.setItem('ref_usuario', usuarioAceptado.usuario.refhist);
+                sessionStorage.setItem('fb_usuario', usuarioAceptado.usuario.facebook);
+                sessionStorage.setItem('bilingue_usuario', usuarioAceptado.usuario.bilingue);
+                sessionStorage.setItem('idiomas_usuario', usuarioAceptado.usuario.idiomas);
+                sessionStorage.setItem('primaria_usuario', usuarioAceptado.usuario.primaria);
+                sessionStorage.setItem('secundaria_usuario', usuarioAceptado.usuario.secundaria);
+                sessionStorage.setItem('tecnico_usuario', usuarioAceptado.usuario.tecnico);
+                sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
+                sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
+                sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
               
 
                 //tavo, aqui podes pedir mas datos del centro educ.
@@ -170,7 +182,7 @@ function obtenerDatosModal(){
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
-                    
+                    sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
                     
 
                     //tavo, aqui podes pedir mas datos del padre de familia.
