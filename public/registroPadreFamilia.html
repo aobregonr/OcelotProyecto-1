@@ -116,6 +116,20 @@
                         <label for="txtPasswordConf"> Confirmar Contraseña *</label>
                         <input type="password" class="form-control" id="txtPasswordConf" placeholder="Confirmar contraseña" required>
                     </div>
+
+
+                     <div id="regData">
+                    <label for="image_preview2">Foto de Perfil (opcional) </label>
+        
+                    <figure class="image_holder">
+                        <img src="imgs/user.png" alt="foto del encargado" id="image_preview2">
+                    </figure>  
+    
+                    <button type="button" id="btnSeleccionarImagen2" class="imgBtn">Subir Imágen</button>
+                </div>
+
+
+
                 </div>
 
 
@@ -178,6 +192,8 @@
 
 
 
+
+
                 <div id="regData">
                 <button type="button" id="btn_registrar" >Registar</button>
                 </div>
@@ -235,6 +251,11 @@
         <script src="js/cantones.js"></script>
         <script src="js/distritos.js"></script>
         <script src="js/controlador_ubicacion.js"></script>
+
+        <!-- Scripts cloudinary -->
+        <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+        <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+        <script src="js/servicio_imagen.js"></script>
 
 </body>
 
