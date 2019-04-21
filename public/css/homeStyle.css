@@ -29,11 +29,23 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 .navbar-nav{
 			margin-left: 6%;
 			margin-top: 10px;
-			font-size: 14px;
+			font-size: 16px;
+			text-align: center;
 }
 
 .navbarUp{
 			float: right;
+}
+
+.headerlink{
+	color: white;
+	padding-left:10px; 
+	text-decoration: none;
+}
+
+.headerlink:hover{
+	color: lavender;
+	text-decoration: none;
 }
 
 
@@ -58,6 +70,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 /*Esto es para restringir accesos por tipos de usuarios    */
 .hide{
 	display: none;
+	/*visibility: hidden;*/
 }
 
 /*     -------------  body  -------------    */
@@ -103,8 +116,6 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 .yellowBtn:hover, #btnIngresar:hover, #btnRegistro:hover{
 			background-color: yellow;
 }
-
-
 
 
 #forgotPsw{
@@ -200,7 +211,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 #advanceSearch{
 	color: white;
-	margin-left: 50px;
+	margin-left: 20px;
 }
 
 /*     ------------- Reportes -------------    */

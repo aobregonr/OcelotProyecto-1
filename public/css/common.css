@@ -8,13 +8,9 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 li {
     list-style-type:none; 
     font-family: Helvetica, sans-serif;
-    color: black;
+    color: white;
     text-decoration: none;
     padding-left: 10px;
-}
-
-#facLink,#webLink{
-    font-size: 15px;
 }
 
 
