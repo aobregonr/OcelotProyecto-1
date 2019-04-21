@@ -107,7 +107,7 @@
 
 					<div class="containerRegistros">
 						<div class="container">         
-							<table class="table table-light table-striped table-responsive-sm">
+							<table class="table table-light table-striped table-responsive-sm table-hover">
 								<thead class="thead-dark">
 									<tr>
 									<th> Centro Educativo</th>
@@ -167,59 +167,244 @@
 
 			<div class="containerMain2">
 					
-					<div class="well redFlagBig" id="CalificarPendientes"> Calificación Pendiente </div>
+
+					<div class="well redFlagBig" id="CalificarPendientes"> Rúbrica de Evaluación de Centros Educativos (MEP) </div>
+					<br>
+
+					
+
+
+				 <div class="rubricaContainer">
+
+						<div class="container">         
+							<table class="table table-light table-striped table-responsive-sm table-hover" id=tablaCriterios>
+								<thead class="thead-dark">
+									<tr>
+									<th> Criterios de Evaluación</th>
+									<th> Descripción </th>
+									<th> Puntos </th>
+									
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Infraestructura</td>
+										<td>
+											<ul>
+												<li>Instalaciones en buen estado.</li>
+												<li>Servicios sanitarios separados por género, aseados y seguros.</li>
+												<li>Rampas para personas con discapacidad.</li>
+												<li>Zonas recreativas (gimnasio, áreas verdes).</li>
+												<li>Biblioteca</li>
+											</ul>
+										</td>
+										<td>10</td>
+									</tr>
+									<tr>
+										<td>Equipo y utilería</td>
+										<td>
+											<ul>
+												<li>Escritorio de profesores en buen estado.</li>
+												<li>Pupitres en buen estado, genéricos y/o para diestros y zurdos.</li>
+												<li>Pizarras (con pilots o tiza, borrador, otros).</li>
+												<li>Equipo tecnológico en buen estado.</li>
+												<li>Utiles varios (equipo de educación física, libros en biblioteca,  material de apoyo, etc.).</li>
+												<li>Alarmas y timbres funcionales.</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Personal administrativo</td>
+										<td>
+											<ul>
+												<li>Recursos Humanos (RRHH).</li>
+												<li>Oficina o departamento de admisiones.</li>
+												<li>Junta Directiva completa.</li>
+												<li>Personal de seguridad.</li>
+												<li>Personal Miscelaneo.</li>
+												<li>Profesional de psicología, nutricionista, enfermero. (opcional)</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Personal docente</td>
+										<td>
+											<ul>
+												<li>Profesores capacitados en pedagogía.</li>
+												<li>Títulos universitarios relacionados con la materia que imparten.</li>
+												<li>Vocación.</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Planes de Estudio</td>
+										<td>
+											<ul>
+												<li>Cumplen con requisitos del MEP.</li>
+												<li>Se imparte al menos un idioma aparte del castellano.</li>
+												<li>Se imparten guías de educación sexual.</li>
+												<li>Se imparten talleres de D.A.R.E</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Actividades Extracurriculares</td>
+										<td>
+											<ul>
+												<li>Clubes de arte y cultura.</li>
+												<li>Clubes, talleres, actividades deportivas.</li>
+												<li>Apreciación musical, bandas, rondallas, coros. </li>
+												<li>Escuela para Padres de Familia.</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Experiencia de vida estudiantil</td>
+										<td>
+											<ul>
+												<li>Terapia de lenguaje</li>
+												<li>Detección y tratamiento de Transtornos de Comportamiento</li>
+												<li>Adecuación curricular para estudiantes con perfiles que lo requieran. </li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Comedor o Soda</td>
+										<td>
+											<ul>
+												<li>Programas de alimentación sana.</li>
+												<li>Permisos del Ministerio de Salud al día.</li>
+												<li>Seguimiento de estudiantes en condición marginal.</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Area de enfermería</td>
+										<td>
+											<ul>
+												<li>Equipo de primeros auxilios.</li>
+												<li>Medicamentos básicos de venta libre.</li>
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td>Planes de Emergencia</td>
+										<td>
+											<ul>
+												<li>Salidas de emergencia</li>
+												<li>Extintores en buen estado y material de apoyo.</li>
+												<li>Simulacros de emergencia</li>
+												<li>Rutas de evacuación</li>
+
+											</ul>
+										</td>
+										<td>10</td>
+
+									</tr>
+									<tr>
+										<td><strong> PUNTAJE TOTAL</strong></td>
+										<td><strong> --------------------------------------------------</strong></td>
+										<td> <strong>100</strong></td>
+
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+			 </div>
+
+
+
+			 		<div class="well redFlagBig" id="CalificarPendientes"> Calificación Pendiente </div>
+
+
+			 		<p id=InstruccionesCalif>Intrucciones: Ingrese la calificación del 1 al 10 en cada criterio. 
+		 			<br>
+			 		Para ver la calificación presione el ojo.
+			 		Para registrar la calificación presione el check.
+			 		</p>
+					<!--Tabla calificar-->
 
 					<div class="califContainer">
 
 						<div class="container">         
-							<table class="table table-light table-striped table-responsive-sm">
+							<table class="table table-light table-striped table-responsive table-hover" id="tablaCalif">
 								<thead class="thead-dark">
 									<tr>
-									<th> Centro Educativo</th>
-									<th> Ranking del MEP </th>
+									<th class="thCalif"> Centro Educativo</th>
+									<th class="thCalif"> Infraestructura </th>
+									<th class="thCalif"> Equipo y Utilería </th>
+									<th class="thCalif"> Personal Administrativo </th>
+									<th class="thCalif"> Personal Docente </th>
+									<th class="thCalif"> Actividades Extracurriculares</th>
+									<th class="thCalif"> Planes de Estudio </th>
+									<th class="thCalif"> Experiencia de Vida Estudiantil</th>
+									<th class="thCalif"> Comedor o Soda </th>
+									<th class="thCalif"> Area de enfermería </th>
+									<th class="thCalif"> Planes de Emergencia</th>
+									<th class="thCalif"> Ranking del MEP </th>
+									<th class="thCalif"> Calificación Numérica</th>
+									<th class="thCalif"> Ver / Registrar Resultado</th>
 									</tr>
 								</thead class="thead-light">
 								<tbody>
 									<tr>
 										<td>Colegio Saint Francis</td>
+										<td><select class="selectNum" id="infraestructuraSelect"></select></td>
+										<td><select class="selectNum" id="equipoSelect"></select></td>
+										<td><select class="selectNum" id="administrativosSelect"></select></td>
+										<td><select class="selectNum" id="docentesSelect"></select></td>
+										<td><select class="selectNum" id="actividadesSelect"></select></td>
+										<td><select class="selectNum" id="planEstudioSelect"></select></td>
+										<td><select class="selectNum" id="experienciaSelect"></select></td>
+										<td><select class="selectNum" id="comedorSelect"></select></td>
+										<td><select class="selectNum" id="enfermeriaSelect"></select></td>
+										<td><select class="selectNum" id="emergenciaSelect"></select></td>
+										
+
 										<td>
 											<form>
 												<p class="clasificacion" > 
-													<input id="radio1" type="radio" name="stars" value="5">
-													<label for="radio1"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio2" type="radio" name="stars" value="4">
-													<label for="radio2"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio3" type="radio" name="stars" value="3">
-													<label for="radio3"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio4" type="radio" name="stars" value="2">
-													<label for="radio4"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio5" type="radio" name="stars" value="1">
-													<label for="radio5"><i class="fas fa-star fa-1x"></i></label>
+
+
+													<label id="radio5" for=""><i class="fas fa-star fa-1x"></i></label>
+													<label id="radio4" for=""><i class="fas fa-star fa-1x"></i></label>
+													<label id="radio3" for=""><i class="fas fa-star fa-1x"></i></label>
+													<label id="radio2" for=""><i class="fas fa-star fa-1x"></i></label>
+													<label id="radio1" for=""><i class="fas fa-star fa-1x"></i></label>
 												</p>
 											</form>
 										</td>
-
-									</tr>
-									<tr>
-										<td>Colegio Reina de los Angeles</td>
 										<td>
-											<form>
-												<p class="clasificacion" > 
-													<input id="radio1" type="radio" name="stars" value="5">
-													<label for="radio1"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio2" type="radio" name="stars" value="4">
-													<label for="radio2"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio3" type="radio" name="stars" value="3">
-													<label for="radio3"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio4" type="radio" name="stars" value="2">
-													<label for="radio4"><i class="fas fa-star fa-1x"></i></label>
-													<input id="radio5" type="radio" name="stars" value="1">
-													<label for="radio5"><i class="fas fa-star fa-1x"></i></label>
-												</p>
-											</form>
+											
+										</td>
+
+										<td>
+											<i id="verRanking" class="fas fa-eye"></i>
+											<i id="enviarRanking"class="fas fa-check-circle check"></i>
+					
 										</td>
 
 									</tr>
+									
 								</tbody>
 							</table>
 						</div>
@@ -316,7 +501,10 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/servicio_perfiladmin.js"></script>
 		<script src="js/controlador_perfiladmin.js"></script>
-		<script src="js/commons.js"></script>
+
+		<!--importar la base de datos de usuarios-->
+		<script src="js/servicio_registroCentroEducativo.js"></script>
+		<script src="js/controlador_baseDatos.js"></script>
 
 	</body>
 </html>
