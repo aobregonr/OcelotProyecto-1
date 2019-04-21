@@ -8,7 +8,7 @@ for(var i = 1; i<11; i++ ) {
     options += "<option value="+i+">"+i+"</option>";
 };
 
-
+/*
 //Asignar valores a la tabla.
 document.getElementById('infraestructuraSelect').innerHTML = options;
 document.getElementById('equipoSelect').innerHTML = options;
@@ -72,31 +72,78 @@ function rankingStars(){
 
 
 };
-
+*/
 const botonRanking = document.querySelector('#verRanking');
-botonRanking.addEventListener('click', rankingStars);
+//botonRanking.addEventListener('click', rankingStars);
 
 
 //asignar la nota numérica a la celda correspondiente
+let lista_centros = obtener_lista_usuarios();
+mostrar_lista_centros();  
 
 
-function mostrar_lista_usuarios(){
 
-	let tbody = document.querySelector('#tblUsuarios tbody');
-    tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
-    let filtro = inputFiltro.value;
-
-	
+function mostrar_lista_centros(){
+	let tbody = document.querySelector('#tablaCalif tbody');
 	tbody.innerHTML = ''; 
 
-	for(let i = 0; i < lista_usuarios.length; i++){
+	for(let i = 0; i < lista_centros.length; i++){
+		let fila = tbody.insertRow();
 
-		if(lista_usuarios[i]['tipo'].toLowerCase().includes(filtro.toLowerCase())  ||
-        lista_usuarios[i]['nombrecomercial'].toLowerCase().includes(filtro.toLowerCase()) ||
-        lista_usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) ){
+		if (lista_centros[i]['tipo'] == 'CentroEducativo'){ //solo muestra centros educativos
 
-        let fila = tbody.insertRow();
+	        let celdaNombrecomercial = fila.insertCell();
+	        let celdaEscudo = fila.insertCell();
+	        let celdaInfraestructura = fila.insertCell();
+			let celdaEquipo = fila.insertCell();
+			let celdaAdministrativo =fila.insertCell();
+			let celdaDocente = fila.insertCell();
+			let celdaActividades =fila.insertCell();
+			let celdaEstudio = fila.insertCell();
+			let celdaExperiencia= fila.insertCell();
+			let celdaComedor = fila.insertCell();
+			let celdaEnfermeria = fila.insertCell();
+			let celdaEmergencia = fila.insertCell();
+			let celdaRankingMEP = fila.insertCell();
+			let celdaCalifNum = fila.insertCell();
+			let celdaRankingPadres = fila.insertCell();
 
 
-document.getElementById("tablaCalif").rows[1].cells[12].innerHTML = notaTotal; //esto hay q cambiarlo, porq debe funcionar con cualquier row, no solo con el primero. 
+	        celdaNombrecomercial.innerHTML = lista_centros[i]['nombrecomercial'];
+
+			let imagen = document.createElement('img');
+	            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+	            if(lista_centros[i]['escudo']){
+	                imagen.src = lista_centros[i]['escudo'];
+	            }else{
+	                imagen.src = 'imgs/escudo.png';
+	            }
+
+	            celdaEscudo.appendChild(imagen);
+			  }
+
+		  	celdaInfraestructura.innerHTML = options; 
+			celdaEquipo.innerHTML = options; 
+			celdaAdministrativo.innerHTML = options; 
+			celdaDocente.innerHTML = options; 
+			celdaActividades.innerHTML = options; 
+			celdaEstudio.innerHTML = options; 		
+			celdaExperiencia.innerHTML = options; 
+			celdaComedor.innerHTML = options; 
+			celdaEnfermeria.innerHTML = options; 
+			celdaEmergencia.innerHTML = options; 
+			celdaRankingMEP.innerHTML = lista_centros[i]['rankingmep']
+			celdaCalifNum.innerHTML = lista_centros[i]['califNum']
+			celdaRankingPadres.innerHTML = lista_centros[i]['rankingpadres']
+
+
+
+
+  	};
+
+	};
+
+
+//document.getElementById("tablaCalif").rows[1].cells[12].innerHTML = notaTotal; //esto hay q cambiarlo, porq debe funcionar con cualquier row, no solo con el primero. 
 	
