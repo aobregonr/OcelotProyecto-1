@@ -34,6 +34,7 @@ let inputIdentificacion = document.querySelector('#txtNoIdentificacion');
 let inputCorreoElectronico = document.querySelector('#txtEmail');
 let inputContrasena = document.querySelector('#txtPassword');
 let inputConfirmarContrasena = document.querySelector('#txtPasswordConf');
+let imgFoto = document.querySelector('#image_preview2');
 let inputSegundoNombre = document.querySelector('#txtNombre2');
 let inputSegundoApellido = document.querySelector('#txtApellido2');
 let inputNacionalidad = document.querySelector('#txtNacionalidad');
@@ -69,7 +70,7 @@ function obtenerDatosPadres(){
     let departamento = '';
     let ext = 0;
     let escudo = '';
-    let foto = '' ;
+    let foto = imgFoto.src;
     let bilingue = false;
     let tecnico = false;          
     let religioso = false; 

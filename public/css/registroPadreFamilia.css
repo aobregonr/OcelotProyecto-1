@@ -87,7 +87,7 @@ li > #salir {
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    height: 900px;
+    height: 1000px;
     color: white;
     width: 850px;
     margin: 0 12%;
@@ -135,6 +135,23 @@ border: 2px solid #c23616;
 } 
 
 
+#image_preview2{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+.imgBtn{
+    background-color: transparent;
+    margin: -130px 220px;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    width: 8%;
+}
+
+
+
 #btn_registrar {
     background-color: #FFCC33;
     padding: 0% 15% 0% 15%;
@@ -143,7 +160,7 @@ border: 2px solid #c23616;
     color: black;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 780px;
+    margin-top: 880px;
     margin-left: -10%;
 }
 
