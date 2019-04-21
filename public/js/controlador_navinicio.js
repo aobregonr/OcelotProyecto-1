@@ -1,6 +1,7 @@
 'use strict';
 
-let enlaces = document.querySelectorAll('#navPrincipal a');
+
+//let enlaces = document.querySelectorAll('#navPrincipal a');
 let conectado = sessionStorage.getItem('conectado');
 let tipoUsuario = sessionStorage.getItem('tipo_usuario');
 let nombreUsuario = sessionStorage.getItem('nombre_usuario');
@@ -17,7 +18,6 @@ if (conectado) {
     document.querySelector('#tituleLogin').innerHTML = " <p>Iniciar Sesión</p> "
     document.querySelector('#cerrarsesion').classList.add('hide'); //esconder cerrar sesion mientras user invitado este activo.
 }
-
 
 
 //iniciar sesion modal
@@ -45,39 +45,85 @@ botonCerrarSesion.addEventListener('click', cerrar_sesion);
 
 // validaciones acorde al usuario
 
+//elementos que deben ser ocultos o restringidos dependiendo del usuario:
+const navBusqueda = document.getElementById("navBusqueda"); //nav busqueda avanzada
+const navCentros =  document.getElementById("navCentros"); //nad todos los colegios
+const btnRegistro = document.getElementById("btnRegistro"); // boton registrar (disable cuando inicio sesion padre o centro)
+const radioPadre = document.getElementById("radPadre"); 
+const radioCentro = document.getElementById("radCentro"); //los radio buttons (deben estar disable cuando ya se inicio sesion padre o centro)
+const btnBusquedaSimple = document.getElementById("btnSearch1"); //busqueda simple boton.
+const advanceSearch = document.getElementById("advanceSearch"); //busqueda avanzada link dentro de busqueda simple. 
+const linkCentros = document.getElementById("linkCentros"); //link bajo la busqueda simple de todos los centros
+const linkCentrosLi = document.getElementById("linkCentrosLi"); 
+const linkReportes = document.getElementById("linkReportes"); //link bajo la busqueda simple de reportes
+const olvidoContrasenna = document.querySelector('#forgotPasw');
+const olvidoContrasennaModal = document.querySelector('#forgotPswModal');
+
+
 
 if(conectado){
     switch(tipoUsuario){
         case 'admin':
 
         //poner el nombre del admin en el header
-        document.querySelector('#logeado').innerHTML = '<a class="nav-link" href="perfilAdmin.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + ' '+ apellidoUsuario + ' (Admin)' + '</a>'; //perfil admin
+        document.querySelector('#logeado').innerHTML = '<a class="headerlink" href="perfilAdmin.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + ' '+ apellidoUsuario + ' (Admin)' + '</a>'; //perfil admin
+
+        //restringir
+        radioPadre.disabled = true;
+        radioCentro.disabled = true;
+        btnRegistro.disabled = true;
+        olvidoContrasenna.classList.add('hide'); 
 
         break;
+
         case 'CentroEducativo':
 
         //poner el nombre del centro en el header
-        document.querySelector('#logeado').innerHTML = '<a class="nav-link" href="perfilCentroEducEdit.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + '</a>'; //perfil del centro
+        document.querySelector('#logeado').innerHTML = '<a class="headerlink" href="perfilCentroEducEdit.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + '</a>'; //perfil del centro
 
-
-        //esto aun no sirve
-        enlaces[2].classList.add('hide');  //ocultar busqueda avanzada
-        enlaces[3].classList.add('hide');  //ocultar todos los colegios
+        //restringir
+        navBusqueda.classList.add('hide');  //ocultar busqueda avanzada
+        navCentros.classList.add('hide');  //ocultar todos los colegios
+        radioPadre.disabled = true;
+        radioCentro.disabled = true;
+        btnRegistro.disabled = true;
+        linkCentros.classList.add('hide'); 
+        linkCentrosLi.classList.add('hide'); 
+        olvidoContrasenna.classList.add('hide'); 
+        advanceSearch.href = '#';
+        advanceSearch.addEventListener('click', accesoRestringido);
+        btnBusquedaSimple.disabled = true;
 
         break;
+
         case 'PadreFam':
 
         //poner el nombre del padre de fam en el header
-        document.querySelector('#logeado').innerHTML = '<a class="nav-link" href="perfilUsuario.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + ' '+ apellidoUsuario + '</a>'; //perfil padre fam
+        document.querySelector('#logeado').innerHTML = '<a class="headerlink" href="perfilUsuario.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + ' '+ apellidoUsuario + '</a>'; //perfil padre fam
+
+        //restringir
+        radioPadre.disabled = true;
+        radioCentro.disabled = true;
+        btnRegistro.disabled = true;
+        olvidoContrasenna.classList.add('hide'); 
 
         break;
     }
+
 } else {
 
-   //window.location.href = 'index.html';   
-    //aqui lo que quiero es que en vez de devolver al home, salte a la ventana de inicio de sesion modal.
-    //accesoRestringido();
-
+    //usuario no registrado (acceso restringido)
+    navBusqueda.href = '#';
+    navBusqueda.addEventListener('click', accesoRestringido);
+    navCentros.href = '#';
+    navCentros.addEventListener('click', accesoRestringido);
+    linkCentros.href = '#';
+    linkCentros.addEventListener('click', accesoRestringido);
+    linkReportes.href = '#';
+    linkReportes.addEventListener('click', accesoRestringido);
+    advanceSearch.href = '#';
+    advanceSearch.addEventListener('click', accesoRestringido);
+    btnBusquedaSimple.disabled = true;
 }
 
 
@@ -89,6 +135,28 @@ function accesoRestringido(){
             title: 'title-class',
             confirmButton: 'confirm-button-class'},
             title: 'Acceso Restringido',
-            text: 'Por favor inicie sesión.',
+            text: 'Su usuario no tiene permiso para ingresar a esta sección del sitio.',
           });
 }
+
+
+function forgotPass(){
+
+    Swal.fire({
+      title: 'Recuperar contraseña',
+      text: 'Le enviaremos un correo electrónico con su contraseña. Ingrese su correo registrado a continuación:',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Enviar',
+      showLoaderOnConfirm: true,
+
+      //aqui falta que realmente mande el estupido correo. 
+    });
+};
+
+
+olvidoContrasenna.addEventListener('click', forgotPass);
+olvidoContrasennaModal.addEventListener('click', forgotPass);
