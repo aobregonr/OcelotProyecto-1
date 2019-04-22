@@ -1,15 +1,16 @@
 'use strict';
-//const nodeMailer = require('nodemailer');
+const nodeMailer = require('nodemailer');
 const userModel = require('./users.model');
 
-/*
+
 const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'mantiscenfo@gmail.1com',
-        pass: 'mantis2018'
+        user: 'educatecr.ocelot@gmail.com',
+        pass: 'Educatecr3*'
     }
-});*/
+});
+
 
 module.exports.registrar = function(req, res){
 
@@ -62,7 +63,10 @@ module.exports.registrar = function(req, res){
         correo: req.body.correo,
         contrasenna: req.body.contrasenna,
         confirmarcontrasenna: req.body.confirmarcontrasenna,
-
+        rankingmep: req.body.rankingmep,
+        califnum: req.body.califnum,
+        rankingpadres: req.body.rankingpadres,
+        codigoverif: req.body.codigoverif
 
     });
 
@@ -70,6 +74,61 @@ module.exports.registrar = function(req, res){
         if(error){
             res.json({success : false, msg: 'No se pudo registrar el usuario, ocurrió el siguiente error ' + error});
         }else{
+
+            let mailOptions = {
+                from: 'veromc1692@gmail.com',
+                to : nuevoUsuario.correo,
+                subject : 'Bienvenido a EducateCR',
+                html: `<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+
+  <div id="MainPurple" style="background-color: #571845; width: 520px; height: 510px;">
+        <h1 style="font-weight: normal;color: #fff; padding: 15px; font-family: Helvetica, sans-serif;" id="title">Educate<strong>CR</strong>.com</h1>
+
+        <div style="padding: 0px 20px;">
+            <div style="padding: 2px 20px; background-color: #fff; border-radius: 10px; height: 400px;">
+
+                 <h1 style="font-family:Helvetica, sans-serif; font-size: 24px;">¡Hola, ${nuevoUsuario.nombre}!</h1>
+
+            <p style="font-family:Helvetica, sans-serif; font-size: 14px;">¡Bienvenido/a al buscador de Centros Educativos<br> más completo y accesible de Costa Rica! </p>
+
+     
+            <div style="padding-left: 15px;">
+            <div style="background-color: #990033;border-radius: 5px;width: 200px;max-height: 130px;" id="codeContainer">
+                <h2 style="color: #FFF; font-family: Josefin Sans, sans-serif; font-weight: normal; padding: 15px;font-size: 16px;text-align: center;"> Su código de verificación es:</h2>
+            <div style="padding-left: 50px;">
+                <p style=" color:#fff; font-family:Helvetica, sans-serif; font-size: 20px; text-align: center; width: 100px;"> 28CE5D</p>
+            </div>
+            <img style="padding-left: 310px;" src="https://res.cloudinary.com/veromorera/image/upload/v1555893463/buhoBuscador.png"
+         alt="buhoBuscador" height="120px" width="120px">
+
+               
+      </div>
+        </div>
+          <p style=" padding-top: 80px;color: gray; font-size: 12px; font-family:Helvetica, sans-serif;">EducateCR.com © 2019<br>Es una aplicación web móvil diseñada por Ocelot Solutions</p>
+
+        </div>
+</div>
+
+</body>
+
+</html>
+`
+            };
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    console.log(error);
+                }else{
+                    console.log('Correo enviado' + info.response);
+                }
+            })
             res.json({success : true, msg: 'El usuario fue registrado con éxito'}); 
         }
     });     

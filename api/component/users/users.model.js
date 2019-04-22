@@ -95,7 +95,16 @@ let userSchema = new mongoose.Schema({
     contrasenna: {type: String, required: true
     },
     confirmarcontrasenna: {type: String, required: true
+    },
+    rankingmep: {type : Number, required: false
+    },
+    califnum: {type : Number, required: false
+    },
+    rankingpadres: {type : Number, required: false
+    },
+    codigoverif: {type : String, required: false
     }
+
 });
 
 module.exports = mongoose.model('User', userSchema);
