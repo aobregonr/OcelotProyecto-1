@@ -79,6 +79,26 @@ let lista_centros = obtener_lista_usuarios();
 mostrar_lista_centros();  
 
 
+//---------------------------------------------------------------------------//
+//     generar codigo verificacion
+//---------------------------------------------------------------------------//
+
+var letras = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I');
+var numeros = new Array('1', '2', '3', '4', '5', '6', '7', '8', '9');
+
+var letra1 = letras[Math.floor(Math.random()*letras.length)];
+var numero1 = numeros[Math.floor(Math.random()*numeros.length)];
+var letra2 = letras[Math.floor(Math.random()*letras.length)];
+var numero2 = numeros[Math.floor(Math.random()*numeros.length)];
+var letra3 = letras[Math.floor(Math.random()*letras.length)];
+var numero3 = numeros[Math.floor(Math.random()*numeros.length)];
+
+
+var codigoVerif = letra1 + numero1 + letra2 + numero2 + letra3 + numero3;
+
+//---------------------------------------------------------------------------//
+
+
 
 function obtenerDatos(){
 
@@ -131,6 +151,11 @@ function obtenerDatos(){
     let correo = inputEmail.value;
     let contrasenna = inputPassword.value;  
     let confirmarcontrasenna = inputPasswordConf.value;   
+    let rankingmep = 5;
+    let califnum = 0;
+    let rankingpadres = 5;
+    let califanno = 2019;
+    let codigoverif = codigoVerif;
 
 
 
@@ -216,7 +241,7 @@ function obtenerDatos(){
                       religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
                       secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
                       segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
-                      correo, contrasenna, confirmarcontrasenna
+                      correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, codigoverif
 );
 
     lista_centros = obtener_lista_usuarios();

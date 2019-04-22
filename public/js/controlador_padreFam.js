@@ -45,9 +45,29 @@ let inputDistrito = document.querySelector('#txtDistrito');
 let inputCantidadDeHijos = document.querySelector('#txtCantHijos');
 let inputAnoDeNacimiento = document.querySelector('#txtAnoDeNacimiento');
 
-
 let lista_PadresDeFamilia = obtener_lista_usuarios();
 imprimir_lista_PadresDeFamilia();  
+
+
+
+//---------------------------------------------------------------------------//
+//     generar codigo verificacion
+//---------------------------------------------------------------------------//
+
+var letras = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I');
+var numeros = new Array('1', '2', '3', '4', '5', '6', '7', '8', '9');
+
+var letra1 = letras[Math.floor(Math.random()*letras.length)];
+var numero1 = numeros[Math.floor(Math.random()*numeros.length)];
+var letra2 = letras[Math.floor(Math.random()*letras.length)];
+var numero2 = numeros[Math.floor(Math.random()*numeros.length)];
+var letra3 = letras[Math.floor(Math.random()*letras.length)];
+var numero3 = numeros[Math.floor(Math.random()*numeros.length)];
+
+
+var codigoVerif = letra1 + numero1 + letra2 + numero2 + letra3 + numero3;
+
+//---------------------------------------------------------------------------//
 
 
 
@@ -101,8 +121,11 @@ function obtenerDatosPadres(){
     let correo = inputCorreoElectronico.value;
     let contrasenna = inputContrasena.value;
     let confirmarcontrasenna = inputConfirmarContrasena.value;
-
-
+    let rankingmep = 0;
+    let califnum = null;
+    let rankingpadres = 0;
+    let califanno = 0;
+    let codigoverif = codigoVerif;
 
 
     //expresiones regulares
@@ -160,7 +183,7 @@ function obtenerDatosPadres(){
                       religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
                       secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
                       segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
-                      correo, contrasenna, confirmarcontrasenna
+                      correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, codigoverif
 );
 
     lista_PadresDeFamilia = obtener_lista_usuarios();

@@ -5,7 +5,7 @@ function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecent
                       preligioso, pnoreligioso, pvocacional, pidiomas, pbecas, pbachilleratoint, pmixto, pvarones, pmujeres, pprimaria, 
                       psecundaria, ptelefono, pcantidaddehijos, panodenacimiento, ptipoidentificacion, pidentificacion, pnombre, 
                       psegundonombre, papellido, psegundoapellido, pnacionalidad, pfechanacimiento, pprovincia, pcanton, pdistrito, 
-                      pcorreo, pcontrasenna, pconfirmarcontrasenna){
+                      pcorreo, pcontrasenna, pconfirmarcontrasenna, prankingmep, pcalifnum, prankingpadres, pcalifanno, pcodigoverif){
     let respuesta = '';
     let request = $.ajax({
         url : 'http://localhost:4000/api/registrar_usuario',
@@ -56,7 +56,13 @@ function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecent
             distrito: pdistrito,
             correo: pcorreo,
             contrasenna: pcontrasenna,
-            confirmarcontrasenna: pconfirmarcontrasenna
+            confirmarcontrasenna: pconfirmarcontrasenna,
+            rankingmep: prankingmep,
+            califnum: pcalifnum,
+            rankingpadres: prankingpadres,
+            califanno: pcalifanno,
+            codigoverif: pcodigoverif
+
         },
 
         dataType : "json",
