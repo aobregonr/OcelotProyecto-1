@@ -21,8 +21,11 @@ var url = window.location.href;
 
     console.log(listaRe);
 
+let identCentro = '';
 
     for (let j=0; j< listaRe.length;j++){
+let id_usuario = listaRe[j]['_id'];
+identCentro = id_usuario;
 let escudo_usuario=listaRe[j]['escudo'];
 let nombre_usuario=listaRe[j]['nombrecomercial'];
 let referenciaH_usuario=listaRe[j]['refhist'];
@@ -109,3 +112,13 @@ if (vocacional_usuario==true){
 let tipoDeCentro=document.querySelector('#listBil9');
     tipoDeCentro.innerHTML=tipoDeCentro_usuario;
 };
+
+const botonAgendar = document.querySelector('#btnAgendar');
+
+function redireccionarAgendarCita(){
+    let url = 'agendarCita.html?b=';
+    let res = url.concat(identCentro);
+    window.location.href = res;
+}
+
+botonAgendar.addEventListener('click', redireccionarAgendarCita);
