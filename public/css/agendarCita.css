@@ -69,7 +69,6 @@ li > #salir {
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    height: 350px;
     margin-left: 50px;
     color: white;
     width: 750px;
@@ -144,7 +143,7 @@ li > #salir {
     color: black;
     cursor: pointer;
     border-radius: 5px;
-    margin: 0% 25% 0% 25%;
+    margin: 2% 25% 0% 25%;
 }
 
 

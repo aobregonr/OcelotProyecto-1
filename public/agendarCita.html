@@ -29,8 +29,6 @@
     <!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-
 </head>
 
 <body>
@@ -59,56 +57,42 @@
         </div>
 
             <div class="containerBig2">
-
-            <div id="leftSide">
-
-                <div id="regData">
-                    <label for="txtFecha"></label>
-                    <input type="date" id="txtFecha" placeholder="Fecha" required>
-                </div>
-
-                <div id="regData">
-                    <label for="txtNombre"></label>
-                    <input type="text" id="txtNombre" placeholder="Nombre" required>
-                </div>
-            
-                <div id="regData">
-                        <label for="txtEmail"> </label>
-                        <input type="text" id="txtEmail" placeholder="Correo electrónico">
-                    </div>    
-
-            </div>
-
-
-            <div id="rightSide">
-
-                    <div id="regData">
-                            <label for="txtHora"></label>
-                            <input type="text" id="txtHora" placeholder="Hora">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="date" class="form-control" id="textFecha" placeholder="Fecha" required>
                         </div>
-
-                <div id="regData">
-                    <label for="txtApellido"></label>
-                    <input type="text" id="txtApellido" placeholder="Apellido">
-                </div>
-
-                <div id="regData">
-                    <label for="txtTelefono"></label>
-                    <input type="text" id="txtTelefono" placeholder="Teléfono">
-                </div>
-                <p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="textNombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="textEmail" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="time" class="form-control" id="textHora" placeholder="Hora" min="8:00" max="17:00" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="textApellido" placeholder="Apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="textTelefono" placeholder="Telefono" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <textarea name="" class="form-control" id="textDescripcion" placeholder="Descripcion" cols="30" rows="5"></textarea>
+                    </div>
+                    <p>
                         <br>
                     </p>
-            </div>
-
-                <div id="regData">
-                    <input class=closeBtn1 type="submit" value="Agendar Cita">
+                    <div class="col-lg-12">
+                        <div id="regData">
+                            <input class=closeBtn1 type="submit" value="Agendar Cita">
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
-
-
         </div>
         <p>
             <br>
