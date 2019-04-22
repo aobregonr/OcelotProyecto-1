@@ -338,8 +338,8 @@
 
 			 		<p id=InstruccionesCalif>Intrucciones: Ingrese la calificación del 1 al 10 en cada criterio. 
 		 			<br>
-			 		Para ver la calificación presione el ojo.
-			 		Para registrar la calificación presione el check.
+			 		Para ver el ranking y la nota numérica presione el ojo. (puede modificar datos y volver a presionarlo). <br>
+			 		Para registrar el ranking presione el check.
 			 		</p>
 					<!--Tabla calificar-->
 
@@ -349,7 +349,8 @@
 							<table class="table table-light table-striped table-responsive table-hover" id="tablaCalif">
 								<thead class="thead-dark">
 									<tr>
-									<th class="thCalif"> Centro Educativo</th>
+									<th class="thCalif" id=test> Centro Educativo</th>
+									<th class="thCalif"> Escudo</th>
 									<th class="thCalif"> Infraestructura </th>
 									<th class="thCalif"> Equipo y Utilería </th>
 									<th class="thCalif"> Personal Administrativo </th>
@@ -362,53 +363,42 @@
 									<th class="thCalif"> Planes de Emergencia</th>
 									<th class="thCalif"> Ranking del MEP </th>
 									<th class="thCalif"> Calificación Numérica</th>
+									<th class="thCalif"> Año de Calificación</th>
 									<th class="thCalif"> Ver / Registrar Resultado</th>
 									</tr>
 								</thead class="thead-light">
 								<tbody>
-									<tr>
-										<td>Colegio Saint Francis</td>
-										<td><select class="selectNum" id="infraestructuraSelect"></select></td>
-										<td><select class="selectNum" id="equipoSelect"></select></td>
-										<td><select class="selectNum" id="administrativosSelect"></select></td>
-										<td><select class="selectNum" id="docentesSelect"></select></td>
-										<td><select class="selectNum" id="actividadesSelect"></select></td>
-										<td><select class="selectNum" id="planEstudioSelect"></select></td>
-										<td><select class="selectNum" id="experienciaSelect"></select></td>
-										<td><select class="selectNum" id="comedorSelect"></select></td>
-										<td><select class="selectNum" id="enfermeriaSelect"></select></td>
-										<td><select class="selectNum" id="emergenciaSelect"></select></td>
-										
-
-										<td>
-											<form>
-												<p class="clasificacion" > 
-
-
-													<label id="radio5" for=""><i class="fas fa-star fa-1x"></i></label>
-													<label id="radio4" for=""><i class="fas fa-star fa-1x"></i></label>
-													<label id="radio3" for=""><i class="fas fa-star fa-1x"></i></label>
-													<label id="radio2" for=""><i class="fas fa-star fa-1x"></i></label>
-													<label id="radio1" for=""><i class="fas fa-star fa-1x"></i></label>
-												</p>
-											</form>
-										</td>
-										<td>
-											
-										</td>
-
-										<td>
-											<i id="verRanking" class="fas fa-eye"></i>
-											<i id="enviarRanking"class="fas fa-check-circle check"></i>
-					
-										</td>
-
-									</tr>
-									
+									<!--datos se llenan dinamicamente con JS-->
 								</tbody>
 							</table>
 						</div>
 			 </div>
+
+			 		<p>----------------------------------------------------------------------------------------------------</p>
+
+			 			<!--TABLA TEST DE RANKING-->
+
+			 			<div class="container">         
+							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingMEP">
+								<thead class="thead-dark">
+									<tr>
+									<th class="thCalif" id=test> Centro Educativo</th>
+									<th class="thCalif"> Escudo</th>
+									<th class="thCalif"> Ranking del MEP </th>
+									<th class="thCalif"> Calificación Numérica</th>
+									<th class="thCalif"> Año de Calificación</th>
+									</tr>
+								</thead class="thead-light">
+								<tbody>
+									<!--datos se llenan dinamicamente con JS-->
+								</tbody>
+							</table>
+						</div>
+
+
+
+
+
 
 
 			 	<div class="containerMain3">
@@ -499,12 +489,16 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/servicio_registroCentroEducativo.js"></script> <!--para obtener la lista de centros y escudos-->
 		<script src="js/servicio_perfiladmin.js"></script>
 		<script src="js/controlador_perfiladmin.js"></script>
 
-		<!--importar la base de datos de usuarios-->
-		<script src="js/servicio_registroCentroEducativo.js"></script>
-		<script src="js/controlador_baseDatos.js"></script>
+		 <!--REFERENCIAR SWEET ALERT -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
+
+
 
 	</body>
 </html>
