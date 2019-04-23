@@ -16,13 +16,13 @@ let section4='#collapseFour';
 
 
 varFilter[0]='Escuela';
-varFilter[1]='publico';
+varFilter[1]='público';
 varFilter1[0]='Escuela';
 varFilter1[1]='privado';
 varFilter3[0]='Colegio';
 varFilter3[1]='privado';
 varFilter2[0]='Colegio';
-varFilter2[1]='publico';
+varFilter2[1]='público';
 
 
 

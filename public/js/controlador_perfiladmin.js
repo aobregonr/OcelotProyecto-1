@@ -10,6 +10,53 @@ let lista_ranking = obtener_rankingMEP(); //obtener centros educativos rankeados
 obtener_ranking();
 mostrar_rankingMep();
 
+aprobar_centrosEducativos();
+
+
+function aprobar_centrosEducativos(){
+	let tbody = document.querySelector('#tablaAprobarCentros tbody');
+	tbody.innerHTML = '';
+
+
+	for(let i = 0; i < lista_centros.length; i++){
+		let fila = tbody.insertRow();
+
+		//solo muestra centros educativos pendientes de aprobacion.
+		if (lista_centros[i]['tipo'] == 'CentroEducativo' && lista_centros[i]['estado'] == 'pendiente'){ 
+
+	        let celdaNombrecomercial = fila.insertCell();
+	        let celdaEscudo = fila.insertCell();
+	        let celdaCedulajuridica = fila.insertCell();
+	        let celdaTipoCentro = fila.insertCell();
+			let celdaAnoFund =fila.insertCell();
+			let celdaEstado = fila.insertCell();
+			let celdaHerramientas =fila.insertCell();
+
+		//----------------------------------------------------------------------------------------//
+
+	        celdaNombrecomercial.innerHTML = lista_centros[i]['nombrecomercial'];
+
+			let imagen = document.createElement('img');
+	            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+	            if(lista_centros[i]['escudo']){
+	                imagen.src = lista_centros[i]['escudo'];
+	            }else{
+	                imagen.src = 'imgs/escudo.png';
+	            }
+
+	            celdaEscudo.appendChild(imagen);
+
+            celdaCedulajuridica.innerHTML = lista_centros[i]['cedulajuridica'];
+            celdaTipoCentro.innerHTML = lista_centros[i]['tipodecentro'];
+            celdaAnoFund.innerHTML = lista_centros[i]['anofund'];
+            celdaEstado.innerHTML = lista_centros[i]['estado'];
+
+
+		//----------------------------------------------------------------------------------------//
+
+}
+}};
 
 function obtener_ranking(){
 
@@ -280,3 +327,5 @@ function mostrar_rankingMep(){
 	};
 
 };
+
+

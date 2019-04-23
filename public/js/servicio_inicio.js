@@ -31,10 +31,10 @@ function validar_credenciales(pcorreo, pcontrasenna) {
 };
 
 
-function autenticar_codigo(pid, pcodigoverif, pcodigoautenticar) {
+function autenticar_codigo(pid, pcodigoverif, pcodigoautenticar, pestado) {
     let respuesta = '';
     let peticion = $.ajax({
-        url: 'http://localhost:4000/api/modificar_codigoautenticar',
+        url: 'http://localhost:4000/api/modificar_usuario',
         type: 'post',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',
@@ -42,7 +42,8 @@ function autenticar_codigo(pid, pcodigoverif, pcodigoautenticar) {
         data: { 
             id: pid, 
             codigoverif: pcodigoverif,
-            codigoautenticar: pcodigoautenticar
+            codigoautenticar: pcodigoautenticar,
+            estado: pestado
         },
     });
 

@@ -23,10 +23,9 @@ function obtenerDatos(){
             window.location.href = 'perfilAdmin.html';
 
         }else{
-            if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
+            if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && (usuarioAceptado.usuario.estado == 'activo') && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
                 sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
                 sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial);
-
                 sessionStorage.setItem('sitioweb_usuario', usuarioAceptado.usuario.sitioweb);
                 sessionStorage.setItem('escudo_usuario', usuarioAceptado.usuario.escudo);
                 sessionStorage.setItem('ref_usuario', usuarioAceptado.usuario.refhist);
@@ -42,10 +41,11 @@ function obtenerDatos(){
 
                 window.location.href = 'perfilCentroEducEdit.html';
 
-                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+                //cuando el centro educativo ya fue aprobado por el admin pero no ha sido validado por ellos mismos.
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && (usuarioAceptado.usuario.estado == 'activo') && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
                 
                 Swal.fire({
-                    title: 'Debe validar su cuenta.',
+                    title: 'Su cuenta ha sido aprobada. Debe validar su cuenta.',
                     text: 'Ingrese el código de verificación que enviamos a su correo electrónico.',
                     input: 'text',
                     inputValue: '',
@@ -62,7 +62,7 @@ function obtenerDatos(){
                             usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
 
                             //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
-                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar, usuarioAceptado.usuario.estado);
    
                             //iniciar sesion normal
                             
@@ -87,6 +87,14 @@ function obtenerDatos(){
                         }
                     }
                 })
+                //cuando el centro aun no ha sido aprobado por el admin. (es decir estado pendinte)
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.estado == 'pendiente') && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+                
+                Swal.fire({
+                    title: 'Su cuenta está pendiente de aprobación.',
+                    text: 'En un máximo de 72 horas tendrá acceso a su cuenta. Agradecemos el tiempo de espera.'
+                })
+                            
             }else{
                 if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
@@ -115,7 +123,7 @@ function obtenerDatos(){
                             usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
 
                             //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
-                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar, usuarioAceptado.usuario.estado);
    
                             //iniciar sesion normal
                             
@@ -235,8 +243,11 @@ function obtenerDatosModal(){
             
 
             window.location.href = 'perfilAdmin.html';
+
+
+
         }else{
-            if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
+            if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && (usuarioAceptado.usuario.estado == 'activo') && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
                 sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
                 sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial); 
 
@@ -253,13 +264,14 @@ function obtenerDatosModal(){
                 sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
               
-
                 window.location.href = 'perfilCentroEducEdit.html';
 
-                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+
+                //cuando el centro educativo ya fue aprobado por el admin pero no ha sido validado por ellos mismos.
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && (usuarioAceptado.usuario.estado == 'activo') && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
                 
                 Swal.fire({
-                    title: 'Debe validar su cuenta.',
+                    title: 'Su cuenta ha sido aprobada. Debe validar su cuenta.',
                     text: 'Ingrese el código de verificación que enviamos a su correo electrónico.',
                     input: 'text',
                     inputValue: '',
@@ -276,7 +288,7 @@ function obtenerDatosModal(){
                             usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
 
                             //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
-                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar, usuarioAceptado.usuario.estado);
    
                             //iniciar sesion normal
                             
@@ -301,6 +313,14 @@ function obtenerDatosModal(){
                         }
                     }
                 })
+                //cuando el centro aun no ha sido aprobado por el admin. (es decir, estado pendinte)
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.estado == 'pendiente') && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ 
+                
+                Swal.fire({
+                    title: 'Su cuenta está pendiente de aprobación.',
+                    text: 'En un máximo de 72 horas tendrá acceso a su cuenta. Agradecemos el tiempo de espera.'
+                })
+
             }else{
                 if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
@@ -331,7 +351,7 @@ function obtenerDatosModal(){
                             usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
 
                             //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
-                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar, usuarioAceptado.usuario.estado);
    
                             //iniciar sesion normal
                             

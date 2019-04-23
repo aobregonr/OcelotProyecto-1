@@ -86,6 +86,8 @@ function mostrar_lista_usuarios(){
         let celdaRankingpadres = fila.insertCell();
         let celdaCalifAnno = fila.insertCell();
         let celdaCodigoverif = fila.insertCell();
+        let celdaCodigoautenticar = fila.insertCell();
+        let celdaEstado = fila.insertCell();
 
 
         /** 
@@ -241,6 +243,8 @@ function mostrar_lista_usuarios(){
         celdaRankingpadres.innerHTML = lista_usuarios[i]['rankingpadres'];
         celdaCalifAnno.innerHTML = lista_usuarios[i]['califanno'];
         celdaCodigoverif.innerHTML = lista_usuarios[i]['codigoverif'];
+        celdaCodigoautenticar.innerHTML = lista_usuarios[i]['codigoautenticar'];
+        celdaEstado.innerHTML = lista_usuarios[i]['estado'];
 
     	}
 	}

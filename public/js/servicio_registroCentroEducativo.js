@@ -5,7 +5,7 @@ function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecent
                       preligioso, pnoreligioso, pvocacional, pidiomas, pbecas, pbachilleratoint, pmixto, pvarones, pmujeres, pprimaria, 
                       psecundaria, ptelefono, pcantidaddehijos, panodenacimiento, ptipoidentificacion, pidentificacion, pnombre, 
                       psegundonombre, papellido, psegundoapellido, pnacionalidad, pfechanacimiento, pprovincia, pcanton, pdistrito, 
-                      pcorreo, pcontrasenna, pconfirmarcontrasenna, prankingmep, pcalifnum, prankingpadres, pcalifanno, pcodigoverif, pcodigoautenticar){
+                      pcorreo, pcontrasenna, pconfirmarcontrasenna, prankingmep, pcalifnum, prankingpadres, pcalifanno, pcodigoverif, pcodigoautenticar, pestado){
     let respuesta = '';
     let request = $.ajax({
         url : 'http://localhost:4000/api/registrar_usuario',
@@ -62,7 +62,8 @@ function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecent
             rankingpadres: prankingpadres,
             califanno: pcalifanno,
             codigoverif: pcodigoverif,
-            codigoautenticar: pcodigoautenticar
+            codigoautenticar: pcodigoautenticar,
+            estado: pestado
         },
 
         dataType : "json",
@@ -78,7 +79,7 @@ function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecent
 			title: 'title-class',
 			confirmButton: 'confirm-button-class'},
             title : '¡Atención!',
-            text : res.msg + '. Le enviamos un código de verificación al correo.'
+            text : res.msg + '. Le enviamos un código de verificación al correo. El centro educativo debe ser primero aprobado por el Administrador de la página.'
         });
 
     });

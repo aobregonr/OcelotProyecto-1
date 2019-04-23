@@ -234,7 +234,7 @@ function ShowData(){
                     //si es secundaria publica
                     (listaCen[i]['tipo'] == 'CentroEducativo' &&
                     listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&
                     document.getElementById("cbDefault").checked == true) ||  
                   
                     // si es primaria privada
@@ -246,7 +246,7 @@ function ShowData(){
                     // si es primaria publica
                     (listaCen[i]['tipo'] == 'CentroEducativo' &&
                     listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&
                      document.getElementById("cbDefault").checked == true) ){
 
                     midiv.style.visibility = "visible";
@@ -263,7 +263,7 @@ function ShowData(){
                      listaCen[i]['bilingue'] == true && document.getElementById("cbBilingue").checked) ||
                     //si es secundaria publica bilingue
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['bilingue'] == true && document.getElementById("cbBilingue").checked) ||
                     // si es primaria privada bilingue
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -271,7 +271,7 @@ function ShowData(){
                      listaCen[i]['bilingue'] == true && document.getElementById("cbBilingue").checked) || 
                     // si es primaria publica bilingue
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['bilingue'] == true && document.getElementById("cbBilingue").checked) ){
 
                     midiv.style.visibility = "visible";
@@ -286,7 +286,7 @@ function ShowData(){
                      listaCen[i]['tecnico'] == true && document.getElementById("cbTecnico").checked) ||
                     //si es secundaria publica tecnico
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['tecnico'] == true && document.getElementById("cbTecnico").checked) ||
                     // si es primaria privada tecnico
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -294,7 +294,7 @@ function ShowData(){
                      listaCen[i]['tecnico'] == true && document.getElementById("cbTecnico").checked) || 
                     // si es primaria publica tecnico
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['tecnico'] == true && document.getElementById("cbTecnico").checked) ){
 
                 
@@ -310,7 +310,7 @@ function ShowData(){
                      listaCen[i]['religioso'] == true && document.getElementById("cbReligioso").checked) ||
                     //si es secundaria publica religioso
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['religioso'] == true && document.getElementById("cbReligioso").checked) ||
                     // si es primaria privada religioso
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -318,7 +318,7 @@ function ShowData(){
                      listaCen[i]['religioso'] == true && document.getElementById("cbReligioso").checked) || 
                     // si es primaria publica religioso
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['religioso'] == true && document.getElementById("cbReligioso").checked) ){
 
                 
@@ -334,7 +334,7 @@ function ShowData(){
                      listaCen[i]['noreligioso'] == true && document.getElementById("cbNoReligioso").checked) ||
                     //si es secundaria publica noReligioso
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['noreligioso'] == true && document.getElementById("cbNoReligioso").checked) ||
                     // si es primaria privada noReligioso
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -342,7 +342,7 @@ function ShowData(){
                      listaCen[i]['noreligioso'] == true && document.getElementById("cbNoReligioso").checked) || 
                     // si es primaria publica noReligioso
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['noreligioso'] == true && document.getElementById("cbNoReligioso").checked) ){
 
                 
@@ -358,7 +358,7 @@ function ShowData(){
                      listaCen[i]['vocacional'] == true && document.getElementById("cbVocacional").checked) ||
                     //si es secundaria publica vocacional
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['vocacional'] == true && document.getElementById("cbVocacional").checked) ||
                     // si es primaria privada vocacional
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -366,7 +366,7 @@ function ShowData(){
                      listaCen[i]['vocacional'] == true && document.getElementById("cbVocacional").checked) || 
                     // si es primaria publica vocacional
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['vocacional'] == true && document.getElementById("cbVocacional").checked) ){
 
                 
@@ -382,7 +382,7 @@ function ShowData(){
                      listaCen[i]['idiomas'] == true && document.getElementById("cbIdiomas").checked) ||
                     //si es secundaria publica idiomas
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['idiomas'] == true && document.getElementById("cbIdiomas").checked) ||
                     // si es primaria privada idiomas
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -390,7 +390,7 @@ function ShowData(){
                      listaCen[i]['idiomas'] == true && document.getElementById("cbIdiomas").checked) || 
                     // si es primaria publica idiomas
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['idiomas'] == true && document.getElementById("cbIdiomas").checked) ){
 
                 
@@ -406,7 +406,7 @@ function ShowData(){
                      listaCen[i]['becas'] == true && document.getElementById("cbBecas").checked) ||
                     //si es secundaria publica becas
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['becas'] == true && document.getElementById("cbBecas").checked) ||
                     // si es primaria privada becas
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -414,7 +414,7 @@ function ShowData(){
                      listaCen[i]['becas'] == true && document.getElementById("cbBecas").checked) || 
                     // si es primaria publica becas
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['becas'] == true && document.getElementById("cbBecas").checked) ){
 
                 
@@ -430,7 +430,7 @@ function ShowData(){
                      listaCen[i]['bachilleratoint'] == true && document.getElementById("cbBachilleratoInternacional").checked) ||
                     //si es secundaria publica bachilleratoInt
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['bachilleratoint'] == true && document.getElementById("cbBachilleratoInternacional").checked) ||
                     // si es primaria privada bachilleratoInt
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -438,7 +438,7 @@ function ShowData(){
                      listaCen[i]['bachilleratoint'] == true && document.getElementById("cbBachilleratoInternacional").checked) || 
                     // si es primaria publica bachilleratoInt
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['bachilleratoint'] == true && document.getElementById("cbBachilleratoInternacional").checked) ){
 
                 
@@ -454,7 +454,7 @@ function ShowData(){
                      listaCen[i]['mixto'] == true && document.getElementById("cbMixto").checked) ||
                     //si es secundaria publica mixto
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['mixto'] == true && document.getElementById("cbMixto").checked) ||
                     // si es primaria privada mixto
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -462,7 +462,7 @@ function ShowData(){
                      listaCen[i]['mixto'] == true && document.getElementById("cbMixto").checked) || 
                     // si es primaria publica mixto
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['mixto'] == true && document.getElementById("cbMixto").checked) ){
 
                 
@@ -478,7 +478,7 @@ function ShowData(){
                      listaCen[i]['varones'] == true && document.getElementById("cbVarones").checked) ||
                     //si es secundaria publica varones
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['varones'] == true && document.getElementById("cbVarones").checked) ||
                     // si es primaria privada varones
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -486,7 +486,7 @@ function ShowData(){
                      listaCen[i]['varones'] == true && document.getElementById("cbVarones").checked) || 
                     // si es primaria publica varones
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['varones'] == true && document.getElementById("cbVarones").checked) ){
 
                 
@@ -502,7 +502,7 @@ function ShowData(){
                      listaCen[i]['mujeres'] == true && document.getElementById("cbMujeres").checked) ||
                     //si es secundaria publica mujeres
                     (listaCen[i]['secundaria'] == true && document.getElementById("cbSecundaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked &&  
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked &&  
                      listaCen[i]['mujeres'] == true && document.getElementById("cbMujeres").checked) ||
                     // si es primaria privada mujeres
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
@@ -510,7 +510,7 @@ function ShowData(){
                      listaCen[i]['mujeres'] == true && document.getElementById("cbMujeres").checked) || 
                     // si es primaria publica mujeres
                     (listaCen[i]['primaria'] == true && document.getElementById("cbPrimaria").checked &&
-                     listaCen[i]['tipodecentro'] == 'Publico' && document.getElementById("cbPublico").checked && 
+                     listaCen[i]['tipodecentro'] == 'Público' && document.getElementById("cbPublico").checked && 
                      listaCen[i]['mujeres'] == true && document.getElementById("cbMujeres").checked) ){
 
                 

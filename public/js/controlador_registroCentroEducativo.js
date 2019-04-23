@@ -157,6 +157,7 @@ function obtenerDatos(){
     let califanno = 2019;
     let codigoverif = codigoVerif;
     let codigoautenticar = '';
+    let estado = 'pendiente';
 
 
 
@@ -242,7 +243,8 @@ function obtenerDatos(){
                       religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
                       secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
                       segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
-                      correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, codigoverif, codigoautenticar
+                      correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, 
+                      codigoverif, codigoautenticar, estado
 );
 
     lista_centros = obtener_lista_usuarios();
