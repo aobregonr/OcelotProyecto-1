@@ -126,6 +126,7 @@ function obtenerDatosPadres(){
     let rankingpadres = 0;
     let califanno = 0;
     let codigoverif = codigoVerif;
+    let codigoautenticar = '';
 
 
     //expresiones regulares
@@ -183,7 +184,7 @@ function obtenerDatosPadres(){
                       religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
                       secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
                       segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
-                      correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, codigoverif
+                      correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, codigoverif, codigoautenticar
 );
 
     lista_PadresDeFamilia = obtener_lista_usuarios();

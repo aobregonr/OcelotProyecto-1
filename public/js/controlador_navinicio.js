@@ -149,9 +149,8 @@ function forgotPass(){
       inputAttributes: {
         autocapitalize: 'off'
       },
-      showCancelButton: true,
-      confirmButtonText: 'Enviar',
-      showLoaderOnConfirm: true,
+      confirmButtonText: 'Enviar'
+
 
       //aqui falta que realmente mande el estupido correo. 
     });

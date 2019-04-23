@@ -15,13 +15,15 @@ function obtenerDatos(){
 
     if (!errorBlancos) {
         usuarioAceptado = validar_credenciales(correo, contrasenna);
-        if (usuarioAceptado.success == true && usuarioAceptado.usuario.tipo == 'admin') {  // verifica si es admin
+
+        if (usuarioAceptado.success == true &&  usuarioAceptado.usuario.tipo == 'admin') {  // verifica si es admin
             sessionStorage.setItem('tipo_usuario', 'admin');
             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre);
             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
             window.location.href = 'perfilAdmin.html';
+
         }else{
-            if (usuarioAceptado.success == true && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
+            if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
                 sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
                 sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial);
 
@@ -39,13 +41,94 @@ function obtenerDatos(){
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
 
                 window.location.href = 'perfilCentroEducEdit.html';
+
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+                
+                Swal.fire({
+                    title: 'Debe validar su cuenta.',
+                    text: 'Ingrese el código de verificación que enviamos a su correo electrónico.',
+                    input: 'text',
+                    inputValue: '',
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value) {
+                          return 'Digite el código'
+
+                        } else if (value != usuarioAceptado.usuario.codigoverif){
+                            return 'Código incorrecto'
+
+                        } else{
+                            //decirle al codigo autenticar que agarre el valor del verificar (el q se manda al correo)
+                            usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
+
+                            //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+   
+                            //iniciar sesion normal
+                            
+                            sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
+                            sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial);
+
+                            sessionStorage.setItem('sitioweb_usuario', usuarioAceptado.usuario.sitioweb);
+                            sessionStorage.setItem('escudo_usuario', usuarioAceptado.usuario.escudo);
+                            sessionStorage.setItem('ref_usuario', usuarioAceptado.usuario.refhist);
+                            sessionStorage.setItem('fb_usuario', usuarioAceptado.usuario.facebook);
+                            sessionStorage.setItem('bilingue_usuario', usuarioAceptado.usuario.bilingue);
+                            sessionStorage.setItem('idiomas_usuario', usuarioAceptado.usuario.idiomas);
+                            sessionStorage.setItem('primaria_usuario', usuarioAceptado.usuario.primaria);
+                            sessionStorage.setItem('secundaria_usuario', usuarioAceptado.usuario.secundaria);
+                            sessionStorage.setItem('tecnico_usuario', usuarioAceptado.usuario.tecnico);
+                            sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
+                            sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
+                            sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+
+                            window.location.href = 'perfilCentroEducEdit.html';
+                            
+                        }
+                    }
+                })
             }else{
-                if (usuarioAceptado.success == true && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
+                if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                     sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
                     window.location.href = 'perfilUsuario.html';
+
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+                
+                Swal.fire({
+                    title: 'Debe validar su cuenta.',
+                    text: 'Ingrese el código de verificación que enviamos a su correo electrónico.',
+                    input: 'text',
+                    inputValue: '',
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value) {
+                          return 'Digite el código'
+
+                        } else if (value != usuarioAceptado.usuario.codigoverif){
+                            return 'Código incorrecto'
+
+                        } else{
+                            //decirle al codigo autenticar que agarre el valor del verificar (el q se manda al correo)
+                            usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
+
+                            //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+   
+                            //iniciar sesion normal
+                            
+                            sessionStorage.setItem('tipo_usuario', 'PadreFam');
+                            sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
+                            sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
+                            sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+                            window.location.href = 'perfilUsuario.html';
+                            
+                        }
+                    }
+                })
+
                 }else{
                     swal.fire({
                                 type : 'warning',
@@ -150,13 +233,10 @@ function obtenerDatosModal(){
             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre);
             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
             
-          
-
-            //tavo, aqui podes pedir mas datos del admin.
 
             window.location.href = 'perfilAdmin.html';
         }else{
-            if (usuarioAceptado.success == true && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
+            if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){   //verifica si es centro
                 sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
                 sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial); 
 
@@ -174,20 +254,97 @@ function obtenerDatosModal(){
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
               
 
-                //tavo, aqui podes pedir mas datos del centro educ.
-
                 window.location.href = 'perfilCentroEducEdit.html';
+
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'CentroEducativo'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+                
+                Swal.fire({
+                    title: 'Debe validar su cuenta.',
+                    text: 'Ingrese el código de verificación que enviamos a su correo electrónico.',
+                    input: 'text',
+                    inputValue: '',
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value) {
+                          return 'Digite el código'
+
+                        } else if (value != usuarioAceptado.usuario.codigoverif){
+                            return 'Código incorrecto'
+
+                        } else{
+                            //decirle al codigo autenticar que agarre el valor del verificar (el q se manda al correo)
+                            usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
+
+                            //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+   
+                            //iniciar sesion normal
+                            
+                            sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
+                            sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial);
+
+                            sessionStorage.setItem('sitioweb_usuario', usuarioAceptado.usuario.sitioweb);
+                            sessionStorage.setItem('escudo_usuario', usuarioAceptado.usuario.escudo);
+                            sessionStorage.setItem('ref_usuario', usuarioAceptado.usuario.refhist);
+                            sessionStorage.setItem('fb_usuario', usuarioAceptado.usuario.facebook);
+                            sessionStorage.setItem('bilingue_usuario', usuarioAceptado.usuario.bilingue);
+                            sessionStorage.setItem('idiomas_usuario', usuarioAceptado.usuario.idiomas);
+                            sessionStorage.setItem('primaria_usuario', usuarioAceptado.usuario.primaria);
+                            sessionStorage.setItem('secundaria_usuario', usuarioAceptado.usuario.secundaria);
+                            sessionStorage.setItem('tecnico_usuario', usuarioAceptado.usuario.tecnico);
+                            sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
+                            sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
+                            sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+
+                            window.location.href = 'perfilCentroEducEdit.html';
+                            
+                        }
+                    }
+                })
             }else{
-                if (usuarioAceptado.success == true && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
+                if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                     sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
                     
 
-                    //tavo, aqui podes pedir mas datos del padre de familia.
-
                     window.location.href = 'perfilUsuario.html';
+
+                }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
+                
+                Swal.fire({
+                    title: 'Debe validar su cuenta.',
+                    text: 'Ingrese el código de verificación que enviamos a su correo electrónico.',
+                    input: 'text',
+                    inputValue: '',
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value) {
+                          return 'Digite el código'
+
+                        } else if (value != usuarioAceptado.usuario.codigoverif){
+                            return 'Código incorrecto'
+
+                        } else{
+                            //decirle al codigo autenticar que agarre el valor del verificar (el q se manda al correo)
+                            usuarioAceptado.usuario.codigoautenticar = usuarioAceptado.usuario.codigoverif;
+
+                            //actualizar el valor del codigo autenticar en la base de datos... para que solo se haga verificacion de usuario 1 vez y no siempre
+                            autenticar_codigo(usuarioAceptado.usuario._id, usuarioAceptado.usuario.codigoverif, usuarioAceptado.usuario.codigoautenticar);
+   
+                            //iniciar sesion normal
+                            
+                            sessionStorage.setItem('tipo_usuario', 'PadreFam');
+                            sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
+                            sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
+                            sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+                            window.location.href = 'perfilUsuario.html';
+                            
+                        }
+                    }
+                })
+
                 }else{
                     swal.fire({
                                 type : 'warning',

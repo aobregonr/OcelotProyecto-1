@@ -20,8 +20,6 @@ if(conectado){
 
    window.location.href = 'index.html';   
     $("#iniSesion").modal()
-    //aqui lo que quiero es que en vez de devolver al home, salte a la ventana de inicio de sesion modal.
-    //accesoRestringido();
 
 }
 
