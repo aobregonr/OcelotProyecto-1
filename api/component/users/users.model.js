@@ -103,6 +103,8 @@ let userSchema = new mongoose.Schema({
     rankingpadres: {type : Number, required: false
     },
     codigoverif: {type : String, required: false
+    },
+    codigoautenticar: {type : String, required: false
     }
 
 });

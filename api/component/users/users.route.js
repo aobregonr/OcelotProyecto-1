@@ -18,4 +18,18 @@ router.route('/validar_credenciales')
         userApi.validar(req, res);
     });
 
+
+router.route('/buscar_usuario')
+    .post(function (req, res) {
+        userApi.buscarUsuario(req, res);
+    });
+
+router.route('/modificar_codigoautenticar')
+    .post(function (req, res) {
+        userApi.autenticar_codigo_verificacion(req, res);
+    });
+
+
+
+
 module.exports = router;

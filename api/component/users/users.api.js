@@ -66,7 +66,8 @@ module.exports.registrar = function(req, res){
         rankingmep: req.body.rankingmep,
         califnum: req.body.califnum,
         rankingpadres: req.body.rankingpadres,
-        codigoverif: req.body.codigoverif
+        codigoverif: req.body.codigoverif,
+        codigoautenticar: req.body.codigoautenticar
 
     });
 
@@ -80,47 +81,46 @@ module.exports.registrar = function(req, res){
                 to : nuevoUsuario.correo,
                 subject : 'Bienvenido a EducateCR',
                 html: `<!DOCTYPE html>
-<html lang="es">
+                        <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
+                        <head>
+                            <meta charset="UTF-8">
 
-</head>
+                        </head>
 
-<body>
+                        <body>
 
-  <div id="MainPurple" style="background-color: #571845; width: 520px; height: 510px;">
-        <h1 style="font-weight: normal;color: #fff; padding: 15px; font-family: Helvetica, sans-serif;" id="title">Educate<strong>CR</strong>.com</h1>
+                          <div id="MainPurple" style="background-color: #571845; width: 520px; height: 510px;">
+                                <h1 style="font-weight: normal;color: #fff; padding: 15px; font-family: Helvetica, sans-serif;" id="title">Educate<strong>CR</strong>.com</h1>
 
-        <div style="padding: 0px 20px;">
-            <div style="padding: 2px 20px; background-color: #fff; border-radius: 10px; height: 400px;">
+                                <div style="padding: 0px 20px;">
+                                    <div style="padding: 2px 20px; background-color: #fff; border-radius: 10px; height: 400px;">
 
-                 <h1 style="font-family:Helvetica, sans-serif; font-size: 24px;">¡Hola, ${nuevoUsuario.nombre}!</h1>
+                                         <h1 style="font-family:Helvetica, sans-serif; font-size: 24px;">¡Hola, ${nuevoUsuario.nombre}!</h1>
 
-            <p style="font-family:Helvetica, sans-serif; font-size: 14px;">¡Bienvenido/a al buscador de Centros Educativos<br> más completo y accesible de Costa Rica! </p>
+                                    <p style="font-family:Helvetica, sans-serif; font-size: 14px;">¡Bienvenido/a al buscador de Centros Educativos<br> más completo y accesible de Costa Rica! </p>
 
-     
-            <div style="padding-left: 15px;">
-            <div style="background-color: #990033;border-radius: 5px;width: 200px;max-height: 130px;" id="codeContainer">
-                <h2 style="color: #FFF; font-family: Josefin Sans, sans-serif; font-weight: normal; padding: 15px;font-size: 16px;text-align: center;"> Su código de verificación es:</h2>
-            <div style="padding-left: 50px;">
-                <p style=" color:#fff; font-family:Helvetica, sans-serif; font-size: 20px; text-align: center; width: 100px;"> 28CE5D</p>
-            </div>
-            <img style="padding-left: 310px;" src="https://res.cloudinary.com/veromorera/image/upload/v1555893463/buhoBuscador.png"
-         alt="buhoBuscador" height="120px" width="120px">
+                             
+                                    <div style="padding-left: 15px;">
+                                    <div style="background-color: #990033;border-radius: 5px;width: 200px;max-height: 130px;" id="codeContainer">
+                                        <h2 style="color: #FFF; font-family: Josefin Sans, sans-serif; font-weight: normal; padding: 15px;font-size: 16px;text-align: center;"> Su código de verificación es:</h2>
+                                    <div style="padding-left: 50px;">
+                                        <p style=" color:#fff; font-family:Helvetica, sans-serif; font-size: 20px; text-align: center; width: 100px;"> ${nuevoUsuario.codigoverif}</p>
+                                    </div>
+                                    <img style="padding-left: 310px;" src="https://res.cloudinary.com/veromorera/image/upload/v1555893463/buhoBuscador.png"
+                                 alt="buhoBuscador" height="120px" width="120px">
 
-               
-      </div>
-        </div>
-          <p style=" padding-top: 80px;color: gray; font-size: 12px; font-family:Helvetica, sans-serif;">EducateCR.com © 2019<br>Es una aplicación web móvil diseñada por Ocelot Solutions</p>
+                                       
+                              </div>
+                                </div>
+                                  <p style=" padding-top: 80px;color: gray; font-size: 12px; font-family:Helvetica, sans-serif;">EducateCR.com © 2019<br>Es una aplicación web diseñada por Ocelot Solutions</p>
 
-        </div>
-</div>
+                                </div>
+                        </div>
 
-</body>
+                        </body>
 
-</html>
-`
+                        </html>`
             };
             transporter.sendMail(mailOptions, function(error, info){
                 if(error){
@@ -173,3 +173,26 @@ module.exports.listar = function(req, res){
          }
      )
  };
+
+/*esta no es necesaria, esa solo para buscar... pero queda por si se ocupa luego
+module.exports.buscarUsuario = function (req, res) {
+  userModel.findById({_id: req.body.id}).then(
+    function (usuario) {
+      res.send(usuario);
+    });
+
+};
+*/
+
+//esta es para modificar el codigo de verificacion, pero asi como esta, se puede modificar cualquier dato
+module.exports.autenticar_codigo_verificacion = function (req, res) {
+  userModel.findByIdAndUpdate(req.body.id, { $set: req.body},
+    function (error, usuario) {
+      if(error){
+        res.json({success : false, msg: 'No se pudo modificar el código de autentificación, ocurrió el siguiente error ' + error});
+      }else{
+        res.json({success : true, msg: 'El código de autentificación fue modificado con éxito'}); 
+      }
+    });
+
+};
