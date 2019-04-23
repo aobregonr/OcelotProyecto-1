@@ -16,44 +16,93 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 /*     -------------  header  -------------    */
 
-#main_nav{
-			background-color: #330033;
-			height: 50px;
-			list-style-type: none;
+/*     -------------  header  -------------    */
 
-		}
 
-li > #logo {
-			float:left;
-			font-family: Helvetica, sans-serif;
-			font-size: 30px;
-			font-style: bolder;
-			color: white;
-			padding: 10px 15px 15px 25px;
-			text-decoration: none;
+.navbar-dark{
+    background-color: #330033;
 }
 
-li > #salir {
-			float:right;
-			font-family: Helvetica, sans-serif;
-			font-size: 15px;
-			font-style: normal;
-			color: white;
-			padding: 15px 15px 0px 5px;
-			padding-right: 5%;
-			text-decoration: none;
+
+.navbar-nav{
+    margin-left: 6%;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.fa-sign-out-alt {
-			color: white;
-			float:right;
-			padding: 15px;
-			padding-right:0px;
+.navbarUp{
+    float: right;
 }
+
+.headerlink{
+color: white;
+padding-left:10px; 
+text-decoration: none;
+}
+
+.headerlink:hover{
+color: lavender;
+text-decoration: none;
+}
+
+
+#logo {
+    font-family: Helvetica, sans-serif;
+    font-size: 30px;
+    font-style: bolder;
+    color: white;
+    text-decoration: none;
+
+}
+
+#tituleLogin{
+background-color:  #CC0033 ;
+padding: 5px;
+color: white;
+font-size: 22px;
+font-family: Helvetica, sans-serif;
+font-style: bolder;
+
+}
+/*Esto es para restringir accesos por tipos de usuarios    */
+.hide{
+display: none;
+/*visibility: hidden;*/
+}
+
 
 
 
 /*     -------------  main Profile  -------------    */
+
+#addrBox1 {
+    float: left;
+    width: 85px;
+    column-gap: 2px; 
+    background: chartreuse;
+}
+
+
+.bigLabel{
+    background-color: #CC0033;
+    color: white;
+    width: 85%;
+    margin: 5%;
+    padding: 2%; 
+}
+
+.btnAgendar {
+    background-color: #FFCC33;
+    padding: 0% 5% 0% 5%;
+    font-size: 1.6em;
+    font-family: Helvetica Light, sans-serif;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 2% 25% 0% 25%;
+}
+
 
 .containerBig1{
     background-color: #990033;
@@ -74,9 +123,6 @@ li > #salir {
     width: 750px;
 }
 
-.recordatorio{
-    margin-left: 50px;
-}
 
 .containerSmall1{
     background-color: #990033;
@@ -88,6 +134,16 @@ li > #salir {
     width: 450px;
 }
 
+
+
+#hiddenUserTable{
+display: none;
+}
+
+.input_error{
+border: 2px solid #c23616;
+}
+
 #leftSide {
     float: left;
     width: 200px;
@@ -95,6 +151,19 @@ li > #salir {
     border-bottom: 5px;
     padding-right: 80px;
 }
+
+.mainProfile {
+    width: 100%;
+    margin: 0 5%;
+}
+
+
+
+.mainProfileTxt {
+width: 100%;
+margin: 0 10%;
+}
+
 
 #rightSide {
     float: right;
@@ -104,6 +173,17 @@ li > #salir {
     padding-right: 250px;
 }
 
+
+.recordatorio{
+    margin-left: 50px;
+}
+
+
+#redInstructions{
+    color: red;
+}
+
+
 #regData {
     margin-left: 15%;
     margin-bottom: 10px;
@@ -111,63 +191,23 @@ li > #salir {
 }
 
 
-#addrBox1 {
-    float: left;
-    width: 85px;
-    column-gap: 2px; 
-    background: chartreuse;
-}
-
 .upperBox {
     height: 100px;
     width: 200px;
     background: blue;
   }
 
-.mainProfile {
-            width: 100%;
-            margin: 0 5%;
-}
 
-.mainProfileTxt {
-    width: 100%;
-    margin: 0 5%;
-}
+  /*     ------------- footer-------------    */
 
-
-.closeBtn1 {
-    background-color: #FFCC33;
-    padding: 0% 5% 0% 5%;
-    font-size: 1.6em;
-    font-family: Helvetica Light, sans-serif;
-    color: black;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 2% 25% 0% 25%;
-}
-
-
-.bigLabel1{
-			background-color: #CC0033;
-			color: white;
-			text-align: justify;
-}
-
-.footerEnd{	
-    
+  .footerEnd{ 
     padding: 10px;
     padding-left: 20px;
-	background-color: #330033;
-	color: white;
-	font-weight: lighter;
-	font-size: 12px;
-    margin-top: 70px;
+    background-color: #330033;
+    color: white;
+    font-weight: lighter;
+    font-size: 12px;
+    margin-top: 500px;
 }
 
-.input_error{
-border: 2px solid #c23616;
-}
 
-#hiddenUserTable{
-    display: none;
-  }
