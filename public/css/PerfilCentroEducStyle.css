@@ -68,6 +68,19 @@ li > #salir {
 
 }
 
+
+
+.mainSideMenuEdit{
+			background-color: #571845; 
+			width: 25%;
+			height:100%;
+			position: absolute;
+			min-height: 3200px;
+			margin-top: -16px;
+
+}
+
+
 #container1{
 			width: 100%;
 			height: auto;
@@ -90,6 +103,17 @@ li > #salir {
 .fa-facebook:hover, .fa-globe:hover { 
 			color: orange; /*  Para que los fontawesome cambien de color cuando les pasa el mouse encima*/
 }
+
+
+#linksOficiales{
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+
+
 
 .redFlagsSide{
 			background-color:  #CC0033;
@@ -181,6 +205,15 @@ input[type="radio"]:checked ~ label{
 			padding-top: 10%;
 			width: 60%;
 }
+
+
+#pcitas{
+		color: white;
+		text-align: center;
+		margin: 10px;
+}
+
+/*--------------------------------*/
 
 .YellowBtn{
 			background-color: #FFCC33;
@@ -501,6 +534,22 @@ th{
 }
 
 
+/*     -------------  Agendar citas  -------------    */
+
+#tblCitas{
+
+
+}
+
+.tableContainer3{
+	width: 90%;
+	display: inline-block; 
+	margin-left: 50px;
+}
+
+
+
+
 /*     -------------  comments  -------------    */
 
 .comment{
@@ -578,6 +627,6 @@ th{
 			color: white;
 			font-weight: lighter;
 			font-size: 12px;
-			margin-top: 138px;
+			margin-top: 322px;
 
 }
