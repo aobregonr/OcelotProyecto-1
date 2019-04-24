@@ -63,7 +63,7 @@ li > #salir {
 			width: 25%;
 			height:auto;
 			position: absolute;
-			min-height: 1555px;
+			min-height: 2000px;
 			margin-top: -16px;
 }
 
@@ -83,12 +83,17 @@ li > #salir {
 			margin:10%;
 }
 
-#username{
+#username, #admin{
 			color: white;
 			text-align: center;
 			font-size: 1.5em;
 }
 
+
+#fotoAdmin{
+			max-width: 260px;
+
+}
 
 .redFlagsSide{
 			background-color:  #CC0033;
@@ -202,11 +207,18 @@ li > #salir {
 
 #tablaCalif{
 	display: block;
-	height: 250px;
+	height: 300px;
 	overflow-y: scroll;
 }
 
-.thCalif{
+#tablaAprobarCentros{
+	display: block;
+	height: 300px;
+	overflow-y: scroll;
+}
+
+
+.thCalif, .thAprob{
 	min-width: 200px;
 	text-align: center;
 }
@@ -215,12 +227,25 @@ th{
 	min-width: 100px;
 }
 
-.selectNum{
+
+.aprovIcon{
+	margin: 30px;
+}
+
+
+
+#mySelect0, #mySelect1, #mySelect2, #mySelect3, #mySelect4, #mySelect5, #mySelect6, #mySelect7, #mySelect8, #mySelect9, #mySelectAnno{
 	margin-left: 20%;
 	width: 100px;
 }
 
+/*--------tabla dinamica-----------*/
 
+.imagenTabla{
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 30px;
+}
 
 
 /*     -------------  registros pendientes  -------------    */
@@ -235,7 +260,7 @@ th{
 .check, .trash, .fa-eye{
 
 			color: black;
-			font-size: 20px;
+			font-size: 24px;
 }
 
 .check:hover{
@@ -264,23 +289,13 @@ th{
 
 /*     -------------  hover ranking stars -------------    */
 
-form{
-			margin: 0;
+.fa-star{
+	padding: 10px;
+	color: gray;
 }
 
-input[type="radio"] {
-			display: none;
-}
-
-label{
-			color: grey;
-}
-
-.clasificacion{
-			direction: rtl;
-			unicode-bidi: bidi-override;
-			text-align: center;
-			margin-bottom: -5px;
+.starsCls{
+	margin-left: 10px;
 }
 
 /* esto es para que las estrellas pasen de ser grises a ser amarillas. */

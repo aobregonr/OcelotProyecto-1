@@ -1,8 +1,25 @@
 'use strict';
 
+//recibir datos dinámicos del admin
+let nombre_usuario=sessionStorage.getItem('nombre_usuario');
+let apellido_usuario=sessionStorage.getItem('apellido_usuario');
+let foto_usuario=sessionStorage.getItem('foto_usuario');
+//
+let id_usuario=sessionStorage.getItem('id_usuario');
+let codigoverif=sessionStorage.getItem('id_codigoverif');
+let codigoautenticar=sessionStorage.getItem('id_codigoautenticar');
+
+let img=document.querySelector('#fotoAdmin');
+img.setAttribute("src", foto_usuario);
+let h2Nombre= document.querySelector('#username');
+h2Nombre.innerHTML=nombre_usuario+" "+apellido_usuario;
+
+console.log(id_usuario, codigoverif, codigoautenticar) //////ESTO AUN NO SIRVEEEEEE!
+//---------------------------------------------------------//
 
 let botonRanking = '';
 let botonRegistrarRanking = '';
+let botonAprobarCentro = ''
 
 let lista_centros = obtener_lista_usuarios(); //obtener centros educ
 let lista_ranking = obtener_rankingMEP(); //obtener centros educativos rankeados por admin
@@ -12,6 +29,13 @@ mostrar_rankingMep();
 
 aprobar_centrosEducativos();
 
+//esta funcion es para pasar de pendiente a aprobado.
+function activarPendientes(){
+
+	codigoautenticar = 'activo';
+	autenticar_codigo(id_usuario, codigoverif, codigoautenticar);
+
+};
 
 function aprobar_centrosEducativos(){
 	let tbody = document.querySelector('#tablaAprobarCentros tbody');
@@ -26,7 +50,6 @@ function aprobar_centrosEducativos(){
 
 	        let celdaNombrecomercial = fila.insertCell();
 	        let celdaEscudo = fila.insertCell();
-	        let celdaCedulajuridica = fila.insertCell();
 	        let celdaTipoCentro = fila.insertCell();
 			let celdaAnoFund =fila.insertCell();
 			let celdaEstado = fila.insertCell();
@@ -47,16 +70,19 @@ function aprobar_centrosEducativos(){
 
 	            celdaEscudo.appendChild(imagen);
 
-            celdaCedulajuridica.innerHTML = lista_centros[i]['cedulajuridica'];
             celdaTipoCentro.innerHTML = lista_centros[i]['tipodecentro'];
             celdaAnoFund.innerHTML = lista_centros[i]['anofund'];
             celdaEstado.innerHTML = lista_centros[i]['estado'];
+			celdaHerramientas.innerHTML = '<i id="aprobarCentro'+i+'" class="fas fa-check-circle check aprovIcon"></i><i id="rechazarCentro'+i+'"class="fas fa-trash-alt trash rejectIcon"></i>'
 
 
-		//----------------------------------------------------------------------------------------//
-
+			//----------------------------------------------------------------------------------------//
+			botonAprobarCentro = document.querySelector('#aprobarCentro'+i );
 }
-}};
+}
+
+botonAprobarCentro.addEventListener('click', activarPendientes());
+};
 
 function obtener_ranking(){
 

@@ -20,6 +20,8 @@ function obtenerDatos(){
             sessionStorage.setItem('tipo_usuario', 'admin');
             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre);
             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
+            sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+
             window.location.href = 'perfilAdmin.html';
 
         }else{
@@ -38,6 +40,10 @@ function obtenerDatos(){
                 sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                 sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                //
+                sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
+                sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
+                sessionStorage.setItem('id_codigoautenticar', usuarioAceptado.usuario.codigoautenticar);
 
                 window.location.href = 'perfilCentroEducEdit.html';
 
@@ -81,6 +87,10 @@ function obtenerDatos(){
                             sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                             sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                             sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                            //
+                            sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
+                            sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
+                            sessionStorage.setItem('id_codigoautenticar', usuarioAceptado.usuario.codigoautenticar);
 
                             window.location.href = 'perfilCentroEducEdit.html';
                             
@@ -240,6 +250,7 @@ function obtenerDatosModal(){
             sessionStorage.setItem('tipo_usuario', 'admin');
             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre);
             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
+            sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
             
 
             window.location.href = 'perfilAdmin.html';
@@ -263,6 +274,10 @@ function obtenerDatosModal(){
                 sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                 sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                //
+                sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
+                sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
+                sessionStorage.setItem('id_codigoautenticar', usuarioAceptado.usuario.codigoautenticar);
               
                 window.location.href = 'perfilCentroEducEdit.html';
 
@@ -307,6 +322,10 @@ function obtenerDatosModal(){
                             sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                             sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                             sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                            //
+                            sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
+                            sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
+                            sessionStorage.setItem('id_codigoautenticar', usuarioAceptado.usuario.codigoautenticar);
 
                             window.location.href = 'perfilCentroEducEdit.html';
                             

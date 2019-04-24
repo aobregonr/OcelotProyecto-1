@@ -67,7 +67,8 @@ module.exports.registrar = function(req, res){
         califnum: req.body.califnum,
         rankingpadres: req.body.rankingpadres,
         codigoverif: req.body.codigoverif,
-        codigoautenticar: req.body.codigoautenticar
+        codigoautenticar: req.body.codigoautenticar,
+        estado: req.body.estado
 
     });
 
@@ -174,7 +175,7 @@ module.exports.listar = function(req, res){
      )
  };
 
-/*esta no es necesaria, esa solo para buscar... pero queda por si se ocupa luego
+/*esta no es necesaria, esa solo para buscar... pero queda por si se ocupa luego*/
 module.exports.buscarUsuario = function (req, res) {
   userModel.findById({_id: req.body.id}).then(
     function (usuario) {
@@ -182,10 +183,10 @@ module.exports.buscarUsuario = function (req, res) {
     });
 
 };
-*/
+
 
 //esta es para modificar el codigo de verificacion, pero asi como esta, se puede modificar cualquier dato
-module.exports.autenticar_codigo_verificacion = function (req, res) {
+module.exports.autenticar_usuario = function (req, res) {
   userModel.findByIdAndUpdate(req.body.id, { $set: req.body},
     function (error, usuario) {
       if(error){

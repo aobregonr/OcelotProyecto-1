@@ -24,9 +24,9 @@ router.route('/buscar_usuario')
         userApi.buscarUsuario(req, res);
     });
 
-router.route('/modificar_codigoautenticar')
+router.route('/modificar_usuario')
     .post(function (req, res) {
-        userApi.autenticar_codigo_verificacion(req, res);
+        userApi.autenticar_usuario(req, res);
     });
 
 
