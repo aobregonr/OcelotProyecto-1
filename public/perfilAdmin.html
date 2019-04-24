@@ -11,6 +11,7 @@
 
 		<!-- Referenciar CSS -->
 		<link rel= "stylesheet" type= "text/css" href= "css/PerfilAdminStyle.css"> 
+	    <link rel="stylesheet" href="css/common.css">
 
 		<!-- Referenciar font-awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -349,7 +350,7 @@
 									<th class="thCalif"> Planes de Emergencia</th>
 									<th class="thCalif"> Ranking del MEP </th>
 									<th class="thCalif"> Calificación Numérica</th>
-									<th class="thCalif"> Año de Calificación</th>
+									<!--<th class="thCalif"> Año de Calificación</th>-->
 									<th class="thCalif"> Ver / Registrar Resultado</th>
 									</tr>
 								</thead class="thead-light">
@@ -360,11 +361,9 @@
 						</div>
 			 </div>
 
-			 		<p>----------------------------------------------------------------------------------------------------</p>
-
 			 			<!--TABLA TEST DE RANKING-->
 
-			 			<div class="container">         
+			 			<div class="container hide">         
 							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingMEP">
 								<thead class="thead-dark">
 									<tr>
@@ -372,7 +371,7 @@
 									<th class="thCalif"> Escudo</th>
 									<th class="thCalif"> Ranking del MEP </th>
 									<th class="thCalif"> Calificación Numérica</th>
-									<th class="thCalif"> Año de Calificación</th>
+									<!--<th class="thCalif"> Año de Calificación</th>-->
 									</tr>
 								</thead class="thead-light">
 								<tbody>
@@ -465,23 +464,30 @@
 		</div>
 		
 
-			<footer class= footerEnd>
-			<p> EducateCR Costa Rica <br>
-			Copyright 2019 EducateCR. Todos los derechos reservados.<br>
-			Sitio Web diseñado y desarrolado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
-			</p>
-		</footer>
+			<footer>
+        <div class="footerBack">
+            <div class="row">
+                <div class="col-lg-8 col-md-6 col-sm-12 float-right">
+                    <p> EducateCR Costa Rica <br><br>
+                    Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+                    Sitio Web diseñado y desarrolado por <a href="ocelot.html" class="landingPage"><strong>Ocelot Solutions</strong></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 		
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-	    <script src="js/servicio_inicio.js"></script>
+		  <script src="js/servicio_inicio.js"></script>
 		<script src="js/servicio_registroCentroEducativo.js"></script> <!--para obtener la lista de centros y escudos-->
 		<script src="js/servicio_perfiladmin.js"></script>
 		<script src="js/controlador_perfiladmin.js"></script>
-    <!--Iniciar-Cerrar sesion -->
-    <script src="js/controlador_navinicio.js"></script>
-     <!--<script src="js/controlador_nav.js"></script> --> <!-- esta es para restringir acceso-->
+     <!--Iniciar-Cerrar sesion -->
+     <script src="js/controlador_nav.js"></script> <!-- esta es para restringir acceso-->
+    <script src="js/servicio_inicio.js"></script>
+
 
 		 <!--REFERENCIAR SWEET ALERT -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
