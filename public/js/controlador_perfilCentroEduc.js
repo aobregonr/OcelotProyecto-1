@@ -240,9 +240,44 @@ function obtener_comentario(){
             type: 'success',
             title: 'Gracias sus comentarios son valiosos para nosotros!',
             text: 'Su comentario:  "'+msg+'"   esta pendiente de aprobación...'
-            
-          });
+           });
+
+           let commentsList = document.querySelector('#comments_var');
+           var midiv1 = document.createElement("div");
+           midiv1.setAttribute("id","commentin");
+           midiv1.setAttribute("class","comment");
+                    var midiv2 = document.createElement("i");
+                    midiv2.setAttribute("id","imgPa");                    
+                    midiv2.setAttribute("class","fas fa-user-circle fa-5x");
+                    
+                   
+                    let foto=sessionStorage.getItem('foto_usuario')
+                    var imagen2 = document.createElement('img');
+                    imagen2.setAttribute("id","imgpadre");
+                    imagen2.setAttribute("class","fas fa-user-circle fa-5x");
+                    imagen2.src = foto;
+
+                var midiv3 = document.createElement("p");
+                midiv3.setAttribute("class","name");
+                let padre=sessionStorage.getItem('nombre_usuario');
+                let padre_apellido=sessionStorage.getItem('apellido_usuario');
+                midiv3.innerHTML= padre+" "+padre_apellido;                
+                console.log(sessionStorage.getItem('nombre_usuario'));
+
+                var midiv4 = document.createElement("p");
+                midiv4.setAttribute("class","pComment");
+                midiv4.innerHTML=msg;
+
+
+                document.querySelector("#comments_var").appendChild(midiv1);
+                document.querySelector("#commentin").appendChild(imagen2);
+                document.querySelector("#imgpadre").appendChild(midiv2);
+                document.querySelector("#commentin").appendChild(midiv3);
+                document.querySelector("#commentin").appendChild(midiv4);
+                
           input_msg.value='';
+
+
     }else{
         Swal.fire({
             type: 'warning',
