@@ -435,8 +435,12 @@ th{
 			background-color: #330033;
 			color: white;
 			font-weight: lighter;
-			font-size: 12px;
 
+}
+
+.landingPage{
+	color: white;
+	font-size: 16px;
 }
 
 /*     ------------- modal  -------------    */
