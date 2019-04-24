@@ -1,0 +1,103 @@
+body{
+  background-color: #DCDCDC;
+  
+}
+
+
+.mainContainer{
+  height: 1670px;
+  background-color: white;
+  margin: 30px 70px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#btnContacto{
+  background-color: #669933;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 20px;
+  position: absolute;
+  float: left;
+  margin-top: -100px;
+  margin-left: 38%;
+  cursor: pointer;
+}
+
+#btnContacto:hover{
+  background-color: #99CC33;
+}
+
+.mainLabels{
+  background-color: #669933;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 28px;
+  text-align: center;
+  padding: 3%;
+}
+
+#logo{
+  max-width: 210px;
+  margin: 2% 40%
+}
+
+#mainImg{
+  width: 90%;
+  margin: 0% 5%;
+}
+
+.centerText{
+  text-align: center;
+  margin: 10px 60px;
+  font-family: Helvetica, sans-serif;
+}
+
+p{
+  font-size: 18px;
+}
+
+
+ul{
+  list-style-type: none;
+  text-decoration: none;
+}
+li{
+  margin: 0px;
+    display: inline-block;
+
+}
+
+.serviciosImg{
+  max-width: 50%;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Opacity #2 */
+.serviciosImg:hover{
+  opacity: .7;
+}
+
+.cliente1Img{
+  max-width: 10%;
+  margin-left: 50px;
+    opacity: .8;
+}
+.cliente2Img{
+  max-width: 40%;
+  margin-left: 50px;
+  opacity: .8;
+}
+
+.footer{
+   background-color: #669933;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 1% 5%;
+  margin-top: 60px;
+  text-align: left;
+}
