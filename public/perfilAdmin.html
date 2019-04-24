@@ -31,14 +31,38 @@
 
 	<body>
 
-		<header>
-			<nav>
-				<ul id= "main_nav">
-					<li> <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a></li>
-					<li> <a href="index.html" id= "salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
-				</ul>
-			</nav>
-		</header>
+		<header class="row"  data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-dark main_nav" id="navPrincipal">
+                <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class= "headerlink" href="#ranking">Ranking Centros Educativos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "headerlink" id="navBusqueda"  href="busqueda_avanzada.html">Búsqueda avanzada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "headerlink" id="navCentros" href="centros_educativos.html">Todos los Centros Educativos</a>
+                        </li>
+                        <li class="nav-item" id="invitado">
+                            <a class= "headerlink"  href="#"><i class='fas fa-user'></i>   Invitado (Iniciar Sesión)</a>
+                        </li>
+                        <li class="nav-item hide" id="logeado">
+                        </li>
+                        <li class="nav-item " id="cerrarsesion">
+                            <a class= "headerlink" href="#"><i class="fas fa-sign-out-alt"></i>   Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>    
+    </header>
 
 
 			<div class= mainSideMenu>
@@ -298,7 +322,7 @@
 			 		<div class="well redFlagBig" id="CalificarPendientes"> Calificación Pendiente </div>
 
 
-			 		<p id=InstruccionesCalif>Intrucciones: Ingrese la calificación del 1 al 10 en cada criterio. 
+			 		<p id=InstruccionesCalif>Instrucciones: Ingrese la calificación del 1 al 10 en cada criterio. 
 		 			<br>
 			 		Para ver el ranking y la nota numérica presione el ojo. (puede modificar datos y volver a presionarlo). <br>
 			 		Para registrar el ranking presione el check.
@@ -451,10 +475,13 @@
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+	    <script src="js/servicio_inicio.js"></script>
 		<script src="js/servicio_registroCentroEducativo.js"></script> <!--para obtener la lista de centros y escudos-->
 		<script src="js/servicio_perfiladmin.js"></script>
-		<script src="js/servicio_inicio.js"></script>
 		<script src="js/controlador_perfiladmin.js"></script>
+    <!--Iniciar-Cerrar sesion -->
+    <script src="js/controlador_navinicio.js"></script>
+     <!--<script src="js/controlador_nav.js"></script> --> <!-- esta es para restringir acceso-->
 
 		 <!--REFERENCIAR SWEET ALERT -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

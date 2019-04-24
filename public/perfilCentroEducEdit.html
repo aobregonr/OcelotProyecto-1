@@ -43,17 +43,16 @@
 			</nav>
 		</header>
 
-		<div class= mainSideMenu> 
+		<div class= mainSideMenuEdit> 
 
 			<div id= container1>
 
 				<img id="imgCentro" class=schoolLogo src="" alt="Escudo del Colegio">
-				<ul>
-					<li > <i id="facLink" class="fab fa-facebook fa-2x"></i> </li>
-					<li> <i id="webLink" class="fas fa-globe fa-2x"></i> </li>
 
-				</ul>
-			</div>
+					<ul>
+						<li><i id="facLink" onclick="fb()" class="fab fa-facebook fa-2x"><text id=linksOficiales>Facebook</text></i> </li>
+						<li> <i id="webLink" onclick="sitioweb()" class="fas fa-globe fa-2x"><text id=linksOficiales>Sitio Web</text></i> </li>
+					</ul>
 
 
 			<div class= redFlagsSide id=ranking> 
@@ -71,20 +70,15 @@
 							<i id= starMEP1 class="fas fa-star fa-2x"></i>
 						</p>
 
-						<p id=description> ¡Califíquenos! </p>
+						<p id=description> Calificación de Padres de Familia </p>
 		
 
 						<p class="clasificacion" > 
-							<input id="radio1" type="radio" name="stars" value="5">
-							<label for="radio1"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio2" type="radio" name="stars" value="4">
-							<label for="radio2"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio3" type="radio" name="stars" value="3">
-							<label for="radio3"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio4" type="radio" name="stars" value="2">
-							<label for="radio4"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio5" type="radio" name="stars" value="1">
-							<label for="radio5"><i class="fas fa-star fa-2x"></i></label>
+							<i id= starMEP5 class="fas fa-star fa-2x"></i>
+							<i id= starMEP4 class="fas fa-star fa-2x"></i>
+							<i id= starMEP3 class="fas fa-star fa-2x"></i>
+							<i id= starMEP2 class="fas fa-star fa-2x"></i>
+							<i id= starMEP1 class="fas fa-star fa-2x"></i>
 						</p>
 					</form>
 				</div>
@@ -96,19 +90,31 @@
 
 				<div id= container3>
 					<img id=calendar src="imgs/perfilCentro/calendario.png" alt="calendario">
-	
+
+					<p id=pcitas> Ver <strong>CITAS PENDIENTES</strong> en la sección 
+						inferior de la página</p>
+							<br><br>
 				</div>
 			</div>
 
 
 			<div class= redFlagsSide id=contact> 
-				<h3> ---- </h3>
+				<h3> Reportes </h3>
+
+				<div id=container4>
+					<ul>
+						<li> <a href="perfilCentroEducEdit.html"><i class="fas fa-file fa-3x"></i></a> </li>
+						<li><p class= pLists> Ver módulo de reportes </p></li>
+						<li> <a href="#"><i class="fas fa-file fa-3x"></i></a> </li>
+						<li><p class= pLists> Reporte de visitas </p></li>
+					</ul>
+				</div>
 
 			</div>
 
 
 			<div class= redFlagsSide id=schoolList> 
-				<h3> Lista de Utiles Escolares </h3>
+				<h3> Lista de útiles escolares </h3>
 
 				<div id=container5>
 					<ul>
@@ -225,8 +231,8 @@
                     <!--TABLA ACTIVIDADES-->
                     <div class=tableContainer>
 
-	                    <table id= "tblActivities" class="table table-bordered table-responsive table-hover">
-							<thead>
+	                    <table id= "tblActivities" class="table table-light table-striped table-responsive-sm table-hover">
+							<thead class="thead-dark">
 								<tr>
 									<th>Actividad </th>
 									<th>Imagen</th>
@@ -273,8 +279,8 @@
                     <!--TABLA ACTIVIDADES-->
                     <div class=tableContainer2>
 
-	                    <table id= "tblFaqs" class="table table-bordered table-responsive table-hover">
-							<thead>
+	                    <table id= "tblFaqs" class="table table-light table-striped table-responsive-sm table-hover">
+							<thead class="thead-dark">
 								<tr>
 									<th>Pregunta </th>
 									<th>Respuesta</th>
@@ -313,10 +319,39 @@
 				</div>
 
 				<br><br>
-
-
-			
 			</div>
+
+
+
+
+			<!--Citas agendadas-->
+			<h2 class= bigLabel> Citas Agendadas </h2>
+
+
+			<div id=citasMain>
+
+                 
+                    <!--TABLA CITAS-->
+                    <div class=tableContainer3>
+
+	                    <table id= "tblCitas" class="table table-light table-striped table-responsive-sm table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th>Solicitante </th>
+									<th>Fecha</th>
+									<th>Hora</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+			</div>
+
+
+
 		
 		</div> <!-- esto cierra mainProfile-->
 		
