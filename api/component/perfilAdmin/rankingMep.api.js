@@ -18,7 +18,7 @@ module.exports.registar=function(req,res){
     rankingMepNew.save(
         function (error){
             if (error){
-                res.json({ success: false, msg: 'No se pudo registrar ranking'});
+                res.json({ success: false, msg: 'No se pudo registrar ranking' + error});
             }else{
                 res.json({ success: true, msg: 'Ranking MEP registrado exitosamente'});
             }

@@ -8,7 +8,7 @@ let schema_rankingMep= mongoose.Schema({
 	escudo:  {type: String, required: true},
 	rankingmep: {type: String, required: true},
 	califnum: {type: Number, required: true},
-	califanno: {type: Number, required: true, unique: true},
+	califanno: {type: Number, required: true},
 });
 
 
