@@ -5,21 +5,13 @@ let nombre_usuario=sessionStorage.getItem('nombre_usuario');
 let apellido_usuario=sessionStorage.getItem('apellido_usuario');
 let foto_usuario=sessionStorage.getItem('foto_usuario');
 //
-let id_usuario=sessionStorage.getItem('id_usuario');
-let codigoverif=sessionStorage.getItem('id_codigoverif');
-let codigoautenticar=sessionStorage.getItem('id_codigoautenticar');
 
 let img=document.querySelector('#fotoAdmin');
 img.setAttribute("src", foto_usuario);
 let h2Nombre= document.querySelector('#username');
 h2Nombre.innerHTML=nombre_usuario+" "+apellido_usuario;
 
-console.log(id_usuario, codigoverif, codigoautenticar) //////ESTO AUN NO SIRVEEEEEE!
 //---------------------------------------------------------//
-
-let botonRanking = '';
-let botonRegistrarRanking = '';
-let botonAprobarCentro = ''
 
 let lista_centros = obtener_lista_usuarios(); //obtener centros educ
 let lista_ranking = obtener_rankingMEP(); //obtener centros educativos rankeados por admin
@@ -30,12 +22,9 @@ mostrar_rankingMep();
 aprobar_centrosEducativos();
 
 //esta funcion es para pasar de pendiente a aprobado.
-function activarPendientes(){
+//estos son los valores que pide la funcion del backend por defecto. 
 
-	codigoautenticar = 'activo';
-	autenticar_codigo(id_usuario, codigoverif, codigoautenticar);
 
-};
 
 function aprobar_centrosEducativos(){
 	let tbody = document.querySelector('#tablaAprobarCentros tbody');
@@ -73,15 +62,37 @@ function aprobar_centrosEducativos(){
             celdaTipoCentro.innerHTML = lista_centros[i]['tipodecentro'];
             celdaAnoFund.innerHTML = lista_centros[i]['anofund'];
             celdaEstado.innerHTML = lista_centros[i]['estado'];
-			celdaHerramientas.innerHTML = '<i id="aprobarCentro'+i+'" class="fas fa-check-circle check aprovIcon"></i><i id="rechazarCentro'+i+'"class="fas fa-trash-alt trash rejectIcon"></i>'
 
+            //boton activar centro
 
-			//----------------------------------------------------------------------------------------//
-			botonAprobarCentro = document.querySelector('#aprobarCentro'+i );
-}
-}
+            let botonActivar = document.createElement('a');
+            botonActivar.classList.add('fas');
+            botonActivar.classList.add('fa-check-circle');
+            botonActivar.classList.add('check'); //es para hacer hover a otro color
+            botonActivar.classList.add('aprovIcon'); //es para dar espacio
 
-botonAprobarCentro.addEventListener('click', activarPendientes());
+            //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
+            botonActivar.dataset._id = lista_centros[i]['_id'];
+
+            //boton rechazar centro
+            let botonEliminarCentro = document.createElement('a');
+            botonEliminarCentro.classList.add('fas');
+            botonEliminarCentro.classList.add('fa-trash-alt');
+            botonEliminarCentro.classList.add('trash'); //es para hacer hover a otro color
+            botonEliminarCentro.classList.add('rejectIcon'); //es para dar espacio
+
+            //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
+            botonEliminarCentro.dataset._id = lista_centros[i]['_id'];
+
+            //insertar los botones dinamicamente 
+            celdaHerramientas.appendChild(botonActivar);
+            celdaHerramientas.appendChild(botonEliminarCentro);
+
+            //agregar las funciones a los botones
+            botonActivar.addEventListener('click', activarCentroPendiente);
+
+		}
+	}
 };
 
 function obtener_ranking(){
@@ -89,12 +100,10 @@ function obtener_ranking(){
 	let tbody = document.querySelector('#tablaCalif tbody');
 	tbody.innerHTML = ''; 
 
-
-
 	for(let i = 0; i < lista_centros.length; i++){
 		let fila = tbody.insertRow();
 
-		if (lista_centros[i]['tipo'] == 'CentroEducativo'){ //solo muestra centros educativos
+		if (lista_centros[i]['tipo'] == 'CentroEducativo' && lista_centros[i]['califnum'] == 0){ //solo muestra centros educativos
 
 	        let celdaNombrecomercial = fila.insertCell();
 	        let celdaEscudo = fila.insertCell();
@@ -110,8 +119,10 @@ function obtener_ranking(){
 			let celdaEmergencia = fila.insertCell();
 			let celdaRankingMEP = fila.insertCell();
 			let celdaCalifNum = fila.insertCell();
-			let celdaCalifanno = fila.insertCell();
+			celdaCalifNum.setAttribute("id", lista_centros[i]['_id'] + '_califNum'); //tiene un id para que se pueda llamar en la funcion de ranking
+			//let celdaCalifanno = fila.insertCell();
 			let celdaOpciones = fila.insertCell();
+
 	//----------------------------------------------------------------------------------------//
 
 	        celdaNombrecomercial.innerHTML = lista_centros[i]['nombrecomercial'];
@@ -132,7 +143,6 @@ function obtener_ranking(){
 		 	let celdasCalif = [celdaInfraestructura, celdaEquipo, celdaAdministrativo, celdaDocente, celdaActividades, 
 	 				    	   celdaEstudio, celdaExperiencia, celdaComedor, celdaEnfermeria, celdaEmergencia];
 
-
 	   		for(let n=0; n< celdasCalif.length; n++){
 
 				//Crear un array de numeros de calificacion
@@ -140,9 +150,10 @@ function obtener_ranking(){
 
 				//Insertar el un select en las celdas de calificacion.
 				var selectList = document.createElement("select");
-				selectList.setAttribute("id", "mySelect"+n);
+				selectList.classList.add('rubroscalif');
+				selectList.setAttribute("id", lista_centros[i]['_id'] + n);
 				celdasCalif[n].appendChild(selectList);
-			
+
 
 				//Meter el array como opciones en el select.
 				for (var j = 0; j < numeros.length; j++) {
@@ -160,16 +171,19 @@ function obtener_ranking(){
 
 			if (lista_centros[i]['rankingmep'] == 5){
 
-				for(let i = 1; i<6; i++ ) {
-					stars += "<i id='star" + i +"' class='fas fa-star fa-1x'>"; //generar estrellas grises
+				for(let s = 1; s<6; s++ ) {
+
+					stars += "<i id='star" + s + '_' + lista_centros[i]['_id'] + "' class='fas fa-star fa-1x'>"; //generar estrellas grises
 				};
 
 				celdaRankingMEP.innerHTML = stars; //llenar la celda con estrellas
+
 			};
 
 	//----------------------------------------------------------------------------------------//
+	/*
 			//Crear un array de anios de calificacion
-			var annos = ["2017","2018","2019"];
+			var annos = ["2019","2018","2017"];
 
 			//Insertar el un select en las celdas de calificacion.
 			var selectList = document.createElement("select");
@@ -187,146 +201,198 @@ function obtener_ranking(){
 	  		//obtener el valor del annio de cada celda
 			let indexCalifanno = document.getElementById("mySelectAnno").selectedIndex; //obtener el index del select, en la casilla especifica de infraestructura
 	  		let califAnnoV = Number(celdaCalifanno.getElementsByTagName("option")[indexCalifanno].value); //obtener el value de ese index (como numero entero).
-		  		
+		  */		
+	  		let califAnnoV = '2019';
 	//----------------------------------------------------------------------------------------//
 
-			celdaOpciones.innerHTML = '<i id="verRanking'+i+'" class="fas fa-eye"></i><i id="enviarRanking'+i+'" class="fas fa-check-circle check"></i>'
-			
+			 //boton ver calificacion y ranking
+            let botonVerRanking = document.createElement('a');
+            botonVerRanking.classList.add('fas');
+            botonVerRanking.classList.add('fa-eye');
 
-			botonRanking = document.querySelector('#verRanking'+i); //se le pone la i para q agarre el ID de cada ojito en cada celda. 
-			botonRegistrarRanking = document.querySelector('#enviarRanking'+(i-2)); //se le pone la i para q agarre el ID de cada check en cada celda. 
+            //boton registrar calificacion y ranking
+            let botonEnviarRanking = document.createElement('a');
+            botonEnviarRanking.classList.add('fas');
+            botonEnviarRanking.classList.add('fa-check-circle');
+            botonEnviarRanking.classList.add('check');
+
+            //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
+            botonVerRanking.dataset._id = lista_centros[i]['_id'];
+            botonEnviarRanking.dataset._id = lista_centros[i]['_id'];
+
+            //insertar los botones dinamicamente 
+            celdaOpciones.appendChild(botonVerRanking);
+            celdaOpciones.appendChild(botonEnviarRanking);
+
+            //agregar las funciones a los botones
+            botonVerRanking.addEventListener('click', rankingStars); //define la cantidad de estrellas y la calif
+            botonEnviarRanking.addEventListener('click', registrar_ranking); //guarda la info de ranking y nota en una tabla. 
 
 
-			function rankingStars(){
+            let califActual = lista_centros[i]['califnum'];
 
-				//obtener el valor numerico de cada celda... que HP mierda mas dificil...
+            function registrar_ranking(){
 
-				let indexinfraestructura = document.getElementById("mySelect0").selectedIndex; //obtener el index del select, en la casilla especifica de infraestructura
-				let infraestructura = Number(celdaInfraestructura.getElementsByTagName("option")[indexinfraestructura].value); //obtener el value de ese index (como numero entero).
+            	let id = this.dataset._id;
+
+				let nombrecomercial = celdaNombrecomercial.innerHTML;
+				let escudo = celdaEscudo.innerHTML;
+				let rankingmep = celdaRankingMEP.innerHTML;
+				let califnum = celdaCalifNum.innerHTML;
+				let califanno = califAnnoV;
+
+
 				
-				let indexequipo = document.getElementById("mySelect1").selectedIndex;
-				let equipo = Number(celdaEquipo.getElementsByTagName("option")[indexequipo].value);
-				
-				let indexadministrativo = document.getElementById("mySelect2").selectedIndex;
-				let administrativo = Number(celdaAdministrativo.getElementsByTagName("option")[indexadministrativo].value);
+				let califNueva = califnum;
+				califActual = califNueva;
 
-				let indexdocente = document.getElementById("mySelect3").selectedIndex;
-				let docente	= Number(celdaDocente.getElementsByTagName("option")[indexdocente].value);
-
-				let indexactividades = document.getElementById("mySelect4").selectedIndex;
-				let actividades	= Number(celdaActividades.getElementsByTagName("option")[indexactividades].value);
-
-				let indexestudio = document.getElementById("mySelect5").selectedIndex;
-				let estudio	= Number(celdaEstudio.getElementsByTagName("option")[indexestudio].value);
-
-				let indexexperiencia = document.getElementById("mySelect5").selectedIndex;
-				let experiencia	= Number(celdaExperiencia.getElementsByTagName("option")[indexexperiencia].value);
-
-				let indexcomedor = document.getElementById("mySelect7").selectedIndex;
-				let comedor	= Number(celdaComedor.getElementsByTagName("option")[indexcomedor].value);
-
-				let indexenfermeria = document.getElementById("mySelect8").selectedIndex;
-				let enfermeria = Number(celdaEnfermeria.getElementsByTagName("option")[indexenfermeria].value);
-
-				let indexemergencia = document.getElementById("mySelect9").selectedIndex;
-				let emergencia = Number(celdaEmergencia.getElementsByTagName("option")[indexemergencia].value);
+				console.log(califActual)
 
 
-				//obtener la nota total numerica de la rubrica.
-				let notaTotal = ( infraestructura + equipo + administrativo + docente + actividades +
-								  estudio + experiencia + comedor + enfermeria + emergencia); 
-
-				//se divide entre 10 para tener el valor del 1 al 10 de nota y posteriormente del 1 al 5 estrellas.
-				let notaPromedio = notaTotal / 10; 
-
-				//se divide entre 2 para sacar la cantidad de estrellas
-				let rankingNumber = Math.trunc(notaPromedio / 2); 
-
-				//obtener las estrellas
-				const estrella1 =  document.getElementById('star1'); 
-				const estrella2 =  document.getElementById('star2'); 
-				const estrella3 =  document.getElementById('star3'); 
-				const estrella4 =  document.getElementById('star4'); 
-				const estrella5 =  document.getElementById('star5'); 
-
-				//hacer una lista de las estrellas
-				let estrellas = [estrella1, estrella2, estrella3, estrella4, estrella5];
-
-				//loopear entre ellas para asignarles color
-				for(let i = 0; i < estrellas.length; i++){
+				let bError = false;
 
 
-					if (i <= (rankingNumber - 1)){   // le puse -1 al ranking porque la cuenta de estrellas empieza desde 0, el ranking empieza en 1, entonces para compensar, le quito 1.
-						estrellas[i].style.color = "orange"; 
-					}
-					if (rankingNumber == 0){   // si la calificacion es 0, la calificacion minima es 1 estrella.
-						estrellas[0].style.color = "orange"; 
-					}
+				if(califnum.value == ''){
+					bError = true;
 				};
 
-				let newRanking = celdaRankingMEP.innerHTML; //guardar el dato de estrellas con ranking.
+				if(bError == true){
+				swal.fire({
+					type : 'info',
+				    buttonsStyling: false,
+					customClass: {
+					title: 'title-class',
+					confirmButton: 'confirm-button-class'},
+				    title: 'Registro incorrecto',
+				    text: 'No se pudo registrar ranking, por favor presione el boton de ver ranking.',
+				    type: 'warning',
+				  });
 
-				celdaCalifNum.innerHTML = notaTotal;
+				}else{
 
-				return [newRanking, notaTotal];	
-				console.log(botonRanking)		
-			};
+					//registrar el ranking en base de datos exclusiva
+					registro_rankingMEP(nombrecomercial, escudo, rankingmep, califnum, califanno);
 
-			botonRanking.addEventListener('click', rankingStars);
-		//botonRegistrarRanking.addEventListener('click', registrar_ranking);	
+					//modificar el estatus de la nota del cole en la base de datos completa
+					modificar_califNumerica(id, califActual);
 
+					//reload de la tabla para esconder el ya registrado
+					lista_centros = obtener_lista_usuarios();
+					obtener_ranking();
+
+					//reload de la tabla con rankings (va a estar oculta peeeeero...)
+					mostrar_rankingMep();
+
+				};
+
+				};
+
+		};
+	};
 };
 
 
-};
-};
-	//----------------------------------------------------------------------------------------//
-				
+function rankingStars(){
+
+		let id = this.dataset._id;
+
+		//obtener el valor numerico de cada celda... que HP mierda mas dificil...
+
+		let indexinfra = document.getElementById(id+ "0"); //id de casilla infraestructura
+		let infraestructura = Number(indexinfra.options[indexinfra.selectedIndex].text); //obtener el value de ese index (como numero entero).
+		
+
+		let indexequipo = document.getElementById(id+ "1");
+		let equipo = Number(indexequipo.options[indexequipo.selectedIndex].text);
+		
+		let indexadministrativo = document.getElementById(id+ "2");
+		let administrativo = Number(indexadministrativo.options[indexadministrativo.selectedIndex].text);
+
+		let indexdocente = document.getElementById(id+ "3");
+		let docente	= Number(indexdocente.options[indexdocente.selectedIndex].text);
+
+		let indexactividades = document.getElementById(id+ "4");
+		let actividades	= Number(indexactividades.options[indexactividades.selectedIndex].text);
+
+		let indexestudio = document.getElementById(id+ "5");
+		let estudio	= Number(indexestudio.options[indexestudio.selectedIndex].text);
+
+		let indexexperiencia = document.getElementById(id+ "6");
+		let experiencia	= Number(indexexperiencia.options[indexexperiencia.selectedIndex].text);
+
+		let indexcomedor = document.getElementById(id+ "7");
+		let comedor	= Number(indexcomedor.options[indexcomedor.selectedIndex].text);
+
+		let indexenfermeria = document.getElementById(id+ "8");
+		let enfermeria = Number(indexenfermeria.options[indexenfermeria.selectedIndex].text);
+
+		let indexemergencia = document.getElementById(id+ "9");
+		let emergencia = Number(indexemergencia.options[indexemergencia.selectedIndex].text);
 
 
+		//obtener la nota total numerica de la rubrica.
+		let notaTotal = ( infraestructura + equipo + administrativo + docente + actividades +
+						  estudio + experiencia + comedor + enfermeria + emergencia); 
 
-//REGISTRAR RANKING
+		//se divide entre 10 para tener el valor del 1 al 10 de nota y posteriormente del 1 al 5 estrellas.
+		//let notaPromedio = notaTotal / 10; 
 
-function registrar_ranking(){
+		//se divide entre 2 para sacar la cantidad de estrellas
+		//let rankingNumber = Math.trunc(notaPromedio / 2); 
 
-	let nombrecomercial = celdaNombrecomercial.innerHTML;
-	let escudo = celdaEscudo.innerHTML;
-	let rankingmep = rankingStars()[0];
-	let califnum = rankingStars()[1];
-	let califanno = califAnnoV;
+		//obtener las estrellas
+		const estrella1 =  document.getElementById("star1_" + id); 
+		const estrella2 =  document.getElementById("star2_" + id); 
+		const estrella3 =  document.getElementById("star3_" + id); 
+		const estrella4 =  document.getElementById("star4_" + id); 
+		const estrella5 =  document.getElementById("star5_" + id); 
+
+		//hacer una lista de las estrellas
+		let estrellas = [estrella1, estrella2, estrella3, estrella4, estrella5];
 
 
-	let bError = false;
+		//loopear entre ellas para asignarles color
+		for(let i = 0; i < estrellas.length; i++){
 
 
-	if(califnum.value == ''){
-		bError = true;
+			if (notaTotal >= 0 && notaTotal <= 35){   
+				estrellas[0].style.color = "orange"; 
+			}
+			else if (notaTotal >= 36 && notaTotal <= 55){  
+				estrellas[0].style.color = "orange"; 
+				estrellas[1].style.color = "orange"; 
+			}
+			else if (notaTotal >= 56 && notaTotal <= 75){  
+				estrellas[0].style.color = "orange"; 
+				estrellas[1].style.color = "orange"; 
+				estrellas[2].style.color = "orange"; 
+			}
+			else if (notaTotal >= 76 && notaTotal <= 89){  
+				estrellas[0].style.color = "orange"; 
+				estrellas[1].style.color = "orange"; 
+				estrellas[2].style.color = "orange"; 
+				estrellas[3].style.color = "orange"; 
+			}
+			else if (notaTotal >= 90 && notaTotal <= 100){  
+				estrellas[0].style.color = "orange"; 
+				estrellas[1].style.color = "orange"; 
+				estrellas[2].style.color = "orange"; 
+				estrellas[3].style.color = "orange";
+				estrellas[4].style.color = "orange"; 
+			}
+		};
+
+		//let newRanking = celdaRankingMEP.innerHTML; //guardar el dato de estrellas con ranking.
+
+		let celdaCalif = document.getElementById(id + '_califNum');
+		celdaCalif.innerHTML = notaTotal;
+			
 	};
 
-	if(bError == true){
-	swal.fire({
-		type : 'info',
-	    buttonsStyling: false,
-		customClass: {
-		title: 'title-class',
-		confirmButton: 'confirm-button-class'},
-	    title: 'Registro incorrecto',
-	    text: 'No se pudo registrar ranking, por favor presione el boton de ver ranking.',
-	    type: 'warning',
-	  });
-
-	}else{
-	registro_rankingMEP(nombrecomercial, escudo, rankingmep, califnum, califanno)
-
-
-	};
-	return[nombrecomercial, escudo, rankingmep, califnum, califanno];
-	console.log(registrar_ranking);
-
-	};
 
 
 
+//esta tiene que estar oculta
 
 function mostrar_rankingMep(){
 	let tbody = document.querySelector('#tblRankingMEP tbody');
@@ -340,7 +406,7 @@ function mostrar_rankingMep(){
         let celdaEscudo = fila.insertCell();
         let celdaRankingmep = fila.insertCell(); 
         let celdaCalifnum = fila.insertCell(); 
-        let celdaCalifanno = fila.insertCell(); 
+        //let celdaCalifanno = fila.insertCell(); 
    
         //
 
@@ -348,10 +414,41 @@ function mostrar_rankingMep(){
         celdaEscudo.innerHTML =lista_rankingMep[i]['escudo'];
         celdaRankingmep.innerHTML = lista_rankingMep[i]['rankingmep'];
       	celdaCalifnum.innerHTML = lista_rankingMep[i]['califnum'];
-      	celdaCalifanno.innerHTML = lista_rankingMep[i]['califanno'];
+      	//celdaCalifanno.innerHTML = lista_rankingMep[i]['califanno'];
 
 	};
 
 };
 
+function activarCentroPendiente(){
+		//binding epico increible!! <3  (this)
+		//sirve para enlazar la funcion con el contexto que la llama. 
+		let id = this.dataset._id;
+		let usuario = obtener_usuario_por_id(id);
+		let estado = usuario.estado;
 
+		estado = 'activo'; //hacer que el estado ahora sea activo.
+
+
+		console.log(id, estado);
+		activar_centro(id,  estado);
+
+		//dar un mensaje de confirmacion
+		 swal.fire({
+        	type : 'info',
+            buttonsStyling: false,
+			customClass: {
+			title: 'title-class',
+			confirmButton: 'confirm-button-class'},
+            text: 'El centro educativo ha sido aprobado con éxito.',
+          });
+
+		//refresca la tabla... hay q probar esto
+		lista_centros = obtener_lista_usuarios();
+		aprobar_centrosEducativos();
+
+	};
+
+
+
+		
