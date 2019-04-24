@@ -23,10 +23,23 @@ let h1Nombre= document.querySelector('#etNombre');
 h1Nombre.innerHTML=nombre_usuario;
 let refHist= document.querySelector('#PaRef');
 refHist.innerHTML=referenciaH_usuario;
-let faceLink= document.querySelector('#facLink');
-faceLink.innerHTML="<br>" +facebook_usuario;
-let sitioweb= document.querySelector('#webLink');
-sitioweb.innerHTML="<br>" +sitioweb_usuario;
+
+
+
+//ingresar al fb del centro
+function fb(){
+    let faceLink= document.querySelector('#facLink');
+    window.location.href =facebook_usuario;
+} 
+
+
+//ingresar al sitio oficial del centro
+
+function sitioweb(){
+    let sitioweb= document.querySelector('#webLink');
+    window.location.href =sitioweb_usuario;
+}
+
 
 console.log(bilingue_usuario);
 console.log(idiomas_usuario);
