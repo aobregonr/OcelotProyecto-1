@@ -12,3 +12,5 @@ router.route('/listar_agendaCita')
     .get(function (req, res) {
         userApi.listar(req, res);
     });
+
+module.exports = router;
