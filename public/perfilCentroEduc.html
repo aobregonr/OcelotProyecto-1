@@ -196,113 +196,34 @@
 
 			<h2 class= bigLabel> Actividades </h2>
 
-			<div id=activities>
-
-				<div class= activCls id= activity1>
-					<ul>
-						<li><img class=activImg src="" alt= "actividad1"></li>
-						<li><p class=pActiv >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li>
-					</ul>
-				</div>
-
-				<div class= activCls id= activity2>
-					<ul>
-						<li><img class=activImg src="" alt= "actividad2"></li>
-						<li><p class=pActiv>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li>
-					</ul>
-				</div>
-
-				<div class= activCls id= activity3>
-					<ul>
-						<li><img class=activImg src="" alt= "actividad3"></li>
-						<li><p class=pActiv>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></li>
-					</ul>
-				</div>
+			<div class="col-lg-10 col-centrada">
+				
+				<table id= "tblActivities" class="table table-bordered table-responsive table-hover">
+					<thead>
+						<tr>
+							<th>Actividad </th>
+							<th>Imagen</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
 			</div>
 
+		
 
 				<!--PREGUNTAS FRECUENTES-->
 			<h2 class= bigLabel> Preguntas Frecuentes </h2>
+			<div class="col-lg-10 col-centrada">
+				<!--Accordion wrapper-->
+				<div id="faqCards" class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+				  
 
-                <div class="col-lg-10 col-centrada">
-                    <!--Accordion wrapper-->
-                    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-                        <!-- Accordion card -->
-                        <div class="card">
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingOne1">
-                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
-                                    aria-expanded="true" aria-controls="collapseOne1">
-                                    <h5 class="mb-0">
-                                        ¿A donde puedo pedir más información? <i class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-                            <!-- Card body -->
-                            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
-                                data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad
-                                    squid.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card -->
-                        <!-- Accordion card -->
-                        <div class="card">
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingTwo2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
-                                    href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-                                    <h5 class="mb-0">
-                                        ¿Dónde estámos ubicados? <i
-                                            class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-                            <!-- Card body -->
-                            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-                                data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad
-                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                    nesciunt laborum
-                                    eiusmod. 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card -->
-                        <!-- Accordion card -->
-                        <div class="card">
+				</div>
+				<!-- Accordion wrapper -->
+			</div>
 
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingThree3">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
-                                    href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
-                                    <h5 class="mb-0">
-                                        ¿Cuál es el costo de matrícula del presente año? <i class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <!-- Card body -->
-                            <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
-                                data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad
-                                    squid. 
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Accordion card -->
-
-                    </div>
-                    <!-- Accordion wrapper -->
-                </div>
 
 			<div id= commentSection>
 				
@@ -343,9 +264,9 @@
 		</footer>
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/servicio_centroEduc.js"></script>
-		<script src="js/controlador_centroEduc.js"></script>
+		
 
 		<script src="js/servicio_perfilCentroEduc.js"></script>
 		<script src="js/controlador_perfilCentroEduc.js"></script>
