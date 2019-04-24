@@ -566,7 +566,10 @@ th{
 			margin-left: 30px;
 			padding-top: 20px;
 }
-
+#imgpadre{
+	max-width: 90px;
+	max-height: 90px;
+}
 .name{
 			font-size: 14px;
 			font-weight: bold;
