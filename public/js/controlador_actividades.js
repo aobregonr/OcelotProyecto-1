@@ -75,6 +75,7 @@ botonRegActividad.addEventListener('click', obtenerDatos);
 
 // Funcion que mostrará los datos dentro de la tabla de Padres de Familia.
 function imprimir_listaActividades() {  
+    
     let tbody = document.querySelector('#tblActivities tbody');
     tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
 
