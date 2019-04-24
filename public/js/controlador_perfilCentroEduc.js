@@ -5,6 +5,12 @@
 var url = window.location.href;
     var b = url.substring(url.indexOf("=")+1);
     console.log(b);
+// ___________________________________________________________________________
+const boton_comentario = document.querySelector('#sendComment');
+const input_msg = document.querySelector('#msgComment');
+
+boton_comentario.addEventListener('click', obtener_comentario);
+//_______________________________________________________________________________
 
 
     let listaCen=[];
@@ -133,3 +139,117 @@ function redireccionarAgendarCita(){
 }
 
 botonAgendar.addEventListener('click', redireccionarAgendarCita);
+
+let listaActiv=[];
+listaActiv = obtener_actividad();
+
+imprimir_listaActividades();
+
+function imprimir_listaActividades() {  
+    
+    let tbody = document.querySelector('#tblActivities tbody');
+    tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
+
+    for (let i = 0; i < listaActiv.length; i++) {
+        let fila = tbody.insertRow();
+
+        let celdaActividad = fila.insertCell();
+        let celdaImagen= fila.insertCell();
+        //
+        celdaActividad.innerHTML = listaActiv[i]['actividad'];
+        let imagen = document.createElement('img');
+            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+
+            if(listaActiv[i]['imagen']){
+                imagen.src = listaActiv[i]['imagen'];
+            }else{
+                imagen.src = 'imgs/actividad.png';
+            }
+
+            celdaImagen.appendChild(imagen);
+
+
+    }
+};
+
+
+let listaFaqs=[];
+listaFaqs = obtener_faq();
+
+imprimir_listaFaqs();
+
+function imprimir_listaFaqs() {  
+    
+    for (let i = 0; i < listaFaqs.length; i++) {
+        
+        let faqcards = document.querySelector('#faqCards');
+        // faqcards.innerHTML = '';
+        var midiv1 = document.createElement("div");
+        midiv1.setAttribute("id","card"+i);
+        midiv1.setAttribute("class","card");
+         var midiv = document.createElement("div");
+         midiv.setAttribute("id","heading"+i);
+         midiv.setAttribute("class","card header");
+         midiv.setAttribute("role","tab");
+            var midiv4 = document.createElement("a");
+            midiv4.setAttribute("data-toggle","collapse");
+            midiv4.setAttribute("id","a"+i);
+            midiv4.setAttribute("data-parent","#accordionEx");
+            midiv4.setAttribute("href","#collapse"+i);
+            midiv4.setAttribute("aria-expanded","true");
+            midiv4.setAttribute("aria-controls","collapse"+i);
+                var midiv5 = document.createElement("h5");
+                midiv5.setAttribute("class","mb-0");
+                midiv5.setAttribute("id","h5"+i);
+                midiv5.innerHTML = listaFaqs[i]['pregunta'];
+                    var midiv6 = document.createElement("i");
+                    midiv6.setAttribute("class","fas fa-angle-down ");
+
+                    document.querySelector("#faqCards").appendChild(midiv1);
+                    document.querySelector("#card"+i).appendChild(midiv);
+                    document.querySelector("#heading"+i).appendChild(midiv4);
+                    document.querySelector("#a"+i).appendChild(midiv5);
+                    document.querySelector("#h5"+i).appendChild(midiv6);
+        
+        
+             var midiv2 = document.createElement("div");
+             midiv2.setAttribute("id","collapse"+i);
+             midiv2.setAttribute("class","collapse show");
+             midiv2.setAttribute("role","tabpanel"); 
+             midiv2.setAttribute("aria-labelledby","heading"+i);
+             midiv2.setAttribute("data-parent","#accordionEx");
+                    var midiv3 = document.createElement("div");
+                    midiv3.setAttribute("class","card-body");
+                    midiv3.innerHTML = listaFaqs[i]['respuesta'];
+
+                    document.querySelector("#card"+i).appendChild(midiv2);
+                    document.querySelector("#collapse"+i).appendChild(midiv3);
+                       
+                  
+
+    }
+};
+
+
+function obtener_comentario(){
+
+    let msg = input_msg.value;
+
+    if (msg!=''){
+        Swal.fire({
+            type: 'success',
+            title: 'Gracias sus comentarios son valiosos para nosotros!',
+            text: 'Su comentario:  "'+msg+'"   esta pendiente de aprobación...'
+            
+          });
+          input_msg.value='';
+    }else{
+        Swal.fire({
+            type: 'warning',
+            title: 'Favor ingrese un comentario en el espacio asignado!',
+            text: 'Gracias su opinión es importante para nosotros...'
+            
+          });
+    }
+
+};
