@@ -105,7 +105,8 @@ let userSchema = new mongoose.Schema({
     codigoverif: {type : String, required: false
     },
     codigoautenticar: {type : String, required: false
-    }
+    },
+    estado: {type : String, required: false}
 
 });
 
