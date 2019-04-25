@@ -8,6 +8,17 @@
  const inputTelefono = document.querySelector('#textTelefono');
  const inputDescripcion = document.querySelector('#textDescripcion');
  const botonRegistrar = document.querySelector('#btnAgendar');
+ const identUsuario = sessionStorage.getItem('id_usuario');
+
+
+ function getParameterByName(name) {
+     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+     let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+         results = regex.exec(location.search);
+     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+ }
+
+ let identCentroEducativo = getParameterByName('b');
 
 function registrarCita(){
     let fecha = inputFecha.value;
@@ -17,9 +28,11 @@ function registrarCita(){
     let apellido = inputApellido.value;
     let telefono = inputTelefono.value;
     let descripcion = inputDescripcion.value;
+    let identificadorUsuario = identUsuario;
+    let identificadorCentroEducativo = identCentroEducativo;
     
     agendarCita(fecha, nombre, email, hora, apellido,
-        telefono, descripcion);
+        telefono, descripcion, identificadorUsuario, identificadorCentroEducativo);
         
 }
 

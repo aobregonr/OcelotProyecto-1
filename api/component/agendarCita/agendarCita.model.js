@@ -31,6 +31,18 @@ let agentSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    descripcion: {
+        type: String,
+        required: false
+    },
+    identCentroEducativo: {
+        type: String,
+        required: true
+    },
+    identPadresFamilia: {
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('AgentCita', agentSchema);

@@ -1,10 +1,8 @@
-'use strict';
-
 const inputCorreo = document.querySelector('#txtCorreo');
 const inputContrasenna = document.querySelector('#txtContrasenna');
 const botonIngresar = document.querySelector('#btnIngresar');
 const botonRegistro = document.querySelector('#btnRegistro');
-
+const botonCerrarSesion = document.querySelector('#cerrarsesion');
 
 function obtenerDatos(){
     let correo = inputCorreo.value;
@@ -15,12 +13,13 @@ function obtenerDatos(){
 
     if (!errorBlancos) {
         usuarioAceptado = validar_credenciales(correo, contrasenna);
-
+        
         if (usuarioAceptado.success == true &&  usuarioAceptado.usuario.tipo == 'admin') {  // verifica si es admin
             sessionStorage.setItem('tipo_usuario', 'admin');
             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre);
             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
             sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+            sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
 
             window.location.href = 'perfilAdmin.html';
 
@@ -223,10 +222,14 @@ function reenviarRegistro(){
     }
 }
 
+function cerrarSesion(){
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+}
 
 botonIngresar.addEventListener('click', obtenerDatos);
 botonRegistro.addEventListener('click', reenviarRegistro);
-
+botonCerrarSesion.addEventListener('click'. cerrarSesion);
 
 
 

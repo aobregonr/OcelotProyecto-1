@@ -29,20 +29,6 @@ function iniciarsesionModal(){
     $("#iniSesion").modal()};
 
 botonIniciarSesion.addEventListener('click', iniciarsesionModal);
-
-
-
-// cerrar sesion
-const botonCerrarSesion = document.querySelector('#cerrarsesion');
-
-function cerrar_sesion() {
-    sessionStorage.clear();
-    window.location.href = 'index.html';
-};
-
-botonCerrarSesion.addEventListener('click', cerrar_sesion);
-
-
 // validaciones acorde al usuario
 
 //elementos que deben ser ocultos o restringidos dependiendo del usuario:
