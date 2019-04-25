@@ -12,6 +12,7 @@
 
     <!-- Referencia a CSS -->
     <link rel="stylesheet" type="text/css" href="css/agendarCita.css">
+    <link rel="stylesheet" href="css/common.css">
 
     <!-- Referenciar font-awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -34,55 +35,53 @@
 <body>
 
         <header class="row"  data-spy="scroll" data-target=".navbar" data-offset="50">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark main_nav" id="navPrincipal">
-                        <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class= "headerlink" href="#ranking">Ranking Centros Educativos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class= "headerlink" id="navBusqueda"  href="busqueda_avanzada.html">Búsqueda avanzada</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class= "headerlink" id="navCentros" href="centros_educativos.html">Todos los Centros Educativos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class= "headerlink" href="#faqs">FAQS</a>
-                                </li>
-                                <li class="nav-item" id="invitado">
-                                    <a class= "headerlink"  href="#"><i class='fas fa-user'></i>   Invitado (Iniciar Sesión)</a>
-                                </li>
-                                <li class="nav-item hide" id="logeado">
-                                </li>
-                                <li class="nav-item " id="cerrarsesion">
-                                    <a class= "headerlink" href="#"><i class="fas fa-sign-out-alt"></i>   Cerrar Sesión</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>    
-            </header>
+        <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-dark main_nav" id="navPrincipal">
+                <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class= "headerlink" href="moduloReportes.html">Ranking Centros Educativos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "headerlink" id="navBusqueda"  href="busqueda_avanzada.html">Búsqueda avanzada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "headerlink" id="navCentros" href="centros_educativos.html">Todos los Centros Educativos</a>
+                        </li>
+                        <li class="nav-item" id="invitado">
+                            <a class= "headerlink"  href="#"><i class='fas fa-user'></i>   Invitado (Iniciar Sesión)</a>
+                        </li>
+                        <li class="nav-item" id="logeado">
+                        </li>
+                        <li class="nav-item " id="cerrarsesion">
+                            <a class= "headerlink" href="#"><i class="fas fa-sign-out-alt" ></i>   Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>    
+    </header>
+
 
     <div class=mainProfile>
 
-        <h2 class="bigLabel"> Agendar Cita</h2>
+        <h2 class="bigLabel"> Agendar Cita </h2>
 
-        <div class=mainProfileTxt>
-            <p>A continuación complete el formulario con sus datos y finalice presionando el botón <strong>Agendar
-                    Cita</strong>.</p>
-            <p>
-                <br>
-            </p>
-            <div class="recordatorio">
+        <div class="instructions">
+           A continuación complete el formulario con sus datos y finalice presionando el botón <strong>Agendar Cita</strong>.</p>
+                    <br>
+                </p>
+                <div class="recordatorio">
 
-                <p id="redInstructions"><strong>Los campos con * son obligatorios.</strong> </p>
-            </div>
+            <p id="redInstructions"><strong>Los campos con * son obligatorios.</strong> </p>
+        </div>
+        </div>
+
 
             <div class="containerBig2">
                 <div class="row">
@@ -132,27 +131,34 @@
                 </div>
             </div>
         </div>
-        <p>
-            <br>
-        </p>
+        <br><br><br><br><br><br>
+
     </div>
-        <footer class= footerEnd>
-                <p> EducateCR Costa Rica <br>
-                Copyright 2019 EducateCR. Todos los derechos reservados.<br>
-                Sitio Web diseñado y desarrollado por <a href="#" class="registerInfo"><strong>Ocelot Solutions</strong></a>
-                </p>
-            </footer>
+
+
+        <footer>
+        <div class="footerBack">
+            <div class="row">
+                <div class="col-lg-8 col-md-6 col-sm-12 float-right">
+                    <p> EducateCR Costa Rica <br><br>
+                    Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+                    Sitio Web diseñado y desarrolado por <a href="ocelot.html" class="landingPage"><strong>Ocelot Solutions</strong></a>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </footer>
+
 
 
         <script src="js/jquery-3.3.1.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/servicio_inicio.js"></script>
-        <script src="js/controlador_inicio.js"></script>
+       <!-- <script src="js/controlador_inicio.js"></script> -->
         <script src="js/controlador_nav.js"></script>
         <script src="js/servicio_agendarcita.js"></script>
         <script src="js/controlador_agendarcita.js"></script>
-        <script src="js/commons.js"></script>
 
 </body>
 

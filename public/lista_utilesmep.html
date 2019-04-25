@@ -9,18 +9,42 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/formListaUtiles.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
    
 
-    <header>
-        <nav>
-            <ul id="main_nav">
-                <li> <a href="index.html" id="logo">Educate<strong>CR</strong>.com</a></li>
-                <li> <a href="index.html" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
-
-            </ul>
-        </nav>
+    <header class="row"  data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-dark main_nav" id="navPrincipal">
+                <a href="index.html" id= "logo">Educate<strong>CR</strong>.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class= "headerlink" href="moduloReportes.html">Ranking Centros Educativos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "headerlink" id="navBusqueda"  href="busqueda_avanzada.html">Búsqueda avanzada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class= "headerlink" id="navCentros" href="centros_educativos.html">Todos los Centros Educativos</a>
+                        </li>
+                        <li class="nav-item" id="invitado">
+                            <a class= "headerlink"  href="#"><i class='fas fa-user'></i>   Invitado (Iniciar Sesión)</a>
+                        </li>
+                        <li class="nav-item" id="logeado">
+                        </li>
+                        <li class="nav-item " id="cerrarsesion">
+                            <a class= "headerlink" href="#"><i class="fas fa-sign-out-alt" ></i>   Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>    
     </header>
     <section>
 
@@ -73,6 +97,27 @@
             </div>
         </div>
     </section>
+
+
+    <br><br><br><br><br><br>
+
+
+    <footer>
+        <div class="footerBack">
+            <div class="row">
+                <div class="col-lg-8 col-md-6 col-sm-12 float-right">
+                    <p> EducateCR Costa Rica <br><br>
+                    Copyright 2019 EducateCR. Todos los derechos reservados.<br>
+                    Sitio Web diseñado y desarrolado por <a href="ocelot.html" class="landingPage"><strong>Ocelot Solutions</strong></a>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </footer>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/servicio_inicio.js"></script>
