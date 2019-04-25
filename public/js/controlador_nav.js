@@ -2,6 +2,14 @@
 
 let conectado = sessionStorage.getItem('conectado');
 let tipoUsuario = sessionStorage.getItem('tipo_usuario');
+const botonCerrarSesion = document.querySelector('#cerrarsesion');
+
+function cerrarSesion() {
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+}
+
+botonCerrarSesion.addEventListener('click'.cerrarSesion);
 
 if(conectado){
     switch(tipoUsuario){

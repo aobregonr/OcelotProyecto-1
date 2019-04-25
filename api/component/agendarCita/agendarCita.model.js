@@ -31,10 +31,6 @@ let agentSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    descripcion: {
-        type: String,
-        required: false
-    },
     identCentroEducativo: {
         type: String,
         required: true
@@ -45,4 +41,4 @@ let agentSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('AgentCita', agentSchema);
+module.exports = mongoose.model('AgendarCita', agentSchema);

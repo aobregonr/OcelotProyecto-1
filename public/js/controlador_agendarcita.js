@@ -10,7 +10,6 @@
  const botonRegistrar = document.querySelector('#btnAgendar');
  const identUsuario = sessionStorage.getItem('id_usuario');
 
-
  function getParameterByName(name) {
      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
      let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -31,8 +30,16 @@ function registrarCita(){
     let identificadorUsuario = identUsuario;
     let identificadorCentroEducativo = identCentroEducativo;
     
-    agendarCita(fecha, nombre, email, hora, apellido,
-        telefono, descripcion, identificadorUsuario, identificadorCentroEducativo);
+    agendarCita(
+        fecha, 
+        nombre, 
+        email, 
+        hora, 
+        apellido,
+        telefono, 
+        descripcion, 
+        identificadorUsuario, 
+        identificadorCentroEducativo);
         
 }
 
