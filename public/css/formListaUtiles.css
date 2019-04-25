@@ -9,56 +9,51 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 /*     -------------  header  -------------    */
 
-#main_nav{
-            background-color: #330033;
-            height: 50px;
-            list-style-type: none;
 
-        }
-
-li > #logo {
-            float:left;
-            font-family: Helvetica, sans-serif;
-            font-size: 30px;
-            font-style: bolder;
-            color: white;
-            padding: 10px 15px 15px 25px;
-            text-decoration: none;
-}
-
-li > #salir {
-            float:right;
-            font-family: Helvetica, sans-serif;
-            font-size: 15px;
-            font-style: normal;
-            color: white;
-            padding: 15px 15px 0px 5px;
-            padding-right: 5%;
-            text-decoration: none;
-}
-
-.fa-sign-out-alt {
-            color: white;
-            float:right;
-            padding: 15px;
-            padding-right:0px;
+.navbar-dark{
+    background-color: #330033;
 }
 
 
-
-/* Title */
-/*
-.titule{
-    background-color: #CC0033;
+.navbar-nav{
+    margin-left: 6%;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
 }
 
-.titule h1{
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    font-size: 25px;
+.navbarUp{
+    float: right;
 }
-*/
+
+.headerlink{
+color: white;
+padding-left:10px; 
+text-decoration: none;
+}
+
+.headerlink:hover{
+color: lavender;
+text-decoration: none;
+}
+
+
+#logo {
+    font-family: Helvetica, sans-serif;
+    font-size: 30px;
+    font-style: bolder;
+    color: white;
+    text-decoration: none;
+
+}
+
+
+/*Esto es para restringir accesos por tipos de usuarios    */
+.hide{
+display: none;
+/*visibility: hidden;*/
+}
+/*---------------------------------------------*/
 
 .mainProfile {
     width: 100%;
@@ -70,6 +65,7 @@ li > #salir {
             color: white;
             margin: 30px;
             padding: 10px; 
+            width: 85%;
 }
 
 /* Form add article*/
