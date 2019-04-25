@@ -27,10 +27,6 @@ if (conectado) {
         //restringir
         navBusqueda.classList.add('hide');  //ocultar busqueda avanzada
         navCentros.classList.add('hide');  //ocultar todos los colegios
-        linkCentros.classList.add('hide'); 
-        linkCentrosLi.classList.add('hide'); 
-        olvidoContrasenna.classList.add('hide'); 
-        advanceSearch.href = '#';
 
         break;
 
@@ -38,9 +34,6 @@ if (conectado) {
 
         //poner el nombre del padre de fam en el header
         document.querySelector('#logeado').innerHTML = '<a class="headerlink" href="perfilUsuario.html"><i class="fas fa-user"></i>'+' ' + nombreUsuario + ' '+ apellidoUsuario + '</a>'; //perfil padre fam
-
-        //restringir
-        olvidoContrasenna.classList.add('hide'); 
 
         break;
     }
