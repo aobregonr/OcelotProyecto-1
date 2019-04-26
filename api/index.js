@@ -69,11 +69,13 @@ app.use('/api', require('./component/listaUtilesCentro/listaUtilesCentro.route')
 app.use('/api', require('./component/homeBusqueda/homeBusqueda.route'));
 app.use('/api', require('./component/users/users.route'));
 //
+app.use('/api', require('./component/perfilAdmin/rankingMep.route')); 
+//
 app.use('/api', require('./component/perfilCentro/actividades.route'));
 app.use('/api', require('./component/perfilCentro/faqs.route')); 
-app.use('/api', require('./component/perfilAdmin/rankingMep.route')); 
 app.use('/api', require('./component/perfilCentro/comentarios.route'));
 app.use('/api', require('./component/perfilCentro/novedades.route'));
+app.use('/api', require('./component/perfilCentro/rankingPF.route'));
 
 
 // Se guarda todo lo que se ha realizado
