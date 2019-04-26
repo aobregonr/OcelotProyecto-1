@@ -2,13 +2,12 @@
 
 
 let id= sessionStorage.getItem('id_usuario');
-let botonAddNews = document.querySelector('#btnSeleccionarNovedad');
 let botonRegNews = document.querySelector('#btnRegistrarNovedad');
-let inputImagenNews = document.querySelector('#newsfeed_img');
+let inputImagenNews = document.querySelector('#image_preview2');
 
 
 let listaNovedades = obtener_novedad();
-//imprimir_listaNovedades();  
+imprimir_listaNovedades();  
 
 
 
@@ -16,12 +15,12 @@ function obtenerDatos(){
 
     let bError = false;
 
-    let imagen = inputImagen.src;
+    let imagen = inputImagenNews.src;
 
 
     //Validar que todos los datos sean Correctos.
 
-    if(inputImagen.value == ''){
+    if(inputImagenNews.src == null){
         bError = true;
     };
 
@@ -50,26 +49,38 @@ function obtenerDatos(){
 
 botonRegNews.addEventListener('click', obtenerDatos);
 
-// Funcion que mostrará los datos dentro de la tabla de Padres de Familia.
-/*
+// Funcion que mostrará los datos dentro de la tabla de novedades
+
 function imprimir_listaNovedades() {  
     
     let tbody = document.querySelector('#tblNewsfeed tbody');
-    tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
+    tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evita duplicados
 
     for (let i = 0; i < listaNovedades.length; i++) {
 
-        if (listaNovedades[i]['cod']==id){
+        if (listaNovedades[i]['id']==id){
+
 
             let fila = tbody.insertRow();
     
             let celdaImagen= fila.insertCell();
             //
-            celdaimagen.innerHTML = listaNovedades[i]['imagen'];
+            let imagen = document.createElement('img');
+                imagen.classList.add('imagenNews'); //para definir el tamano de la imagen
+    
+                if(listaNovedades[i]['imagen']){
+                    imagen.src = listaNovedades[i]['imagen'];
+                }else{
+                    imagen.src = '';
+                }
+    
+                celdaImagen.appendChild(imagen);
+
+
+
         };
      
 
 
     }
 };
-*/

@@ -329,3 +329,44 @@ function imprimirComentarios(){
     };
 
 }
+
+
+let listaNovedades = obtener_novedad();
+imprimir_listaNovedades();  
+
+
+
+function imprimir_listaNovedades() {  
+    
+    let tbody = document.querySelector('#tblNewsfeed tbody');
+    tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evita duplicados
+
+    for (let i = 0; i < listaNovedades.length; i++) {
+
+        if (listaNovedades[i]['id']==b){
+
+
+            let fila = tbody.insertRow();
+    
+            let celdaImagen= fila.insertCell();
+            //
+            let imagen = document.createElement('img');
+                imagen.classList.add('imagenNews'); //para definir el tamano de la imagen
+    
+                if(listaNovedades[i]['imagen']){
+                    imagen.src = listaNovedades[i]['imagen'];
+                }else{
+                    imagen.src = '';
+                }
+    
+                celdaImagen.appendChild(imagen);
+
+
+
+        };
+     
+
+
+    }
+};
+

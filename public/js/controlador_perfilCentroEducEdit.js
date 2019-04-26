@@ -42,9 +42,6 @@ function sitioweb(){
 }
 
 
-console.log(bilingue_usuario);
-console.log(idiomas_usuario);
-
 if (bilingue_usuario=='true'){
     let bilingue=document.querySelector('#listBil1');
     bilingue.innerHTML="Bilingue";

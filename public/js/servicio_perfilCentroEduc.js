@@ -69,3 +69,27 @@ function obtener_faq(){
     
   return listaFAQS;
 };
+
+
+function obtener_novedad(){
+    let listaNovedades = [];
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/listar_novedades',
+        type: 'get',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+        }
+      });
+    
+      peticion.done(function(novedad){
+        listaNovedades = novedad;
+      });
+    
+      peticion.fail(function(){
+       
+      });
+      
+    return listaNovedades;
+};

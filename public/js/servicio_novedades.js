@@ -2,12 +2,12 @@
 
 
 
-function registrar_novedad( pcod, pimagen){
+function registrar_novedad( pid, pimagen){
     let request= $.ajax({
         url: 'http://localhost:4000/api/registrar_novedades',
         method: "POST",
         data: {
-            cod: pcod,
+            id: pid,
             imagen: pimagen
 
         },
@@ -17,8 +17,8 @@ function registrar_novedad( pcod, pimagen){
 
     request.done(function(res){
         swal.fire({
-            type: 'success',
-            title: 'Proceso realizado de manera optima',
+            type: 'info',
+            title: 'Atención',
             text: res.msg
         });
     });
@@ -45,8 +45,8 @@ function obtener_novedad(){
         }
       });
     
-      peticion.done(function(listaNovedades){
-        listaNovedades = listaNovedades;
+      peticion.done(function(novedad){
+        listaNovedades = novedad;
       });
     
       peticion.fail(function(){
