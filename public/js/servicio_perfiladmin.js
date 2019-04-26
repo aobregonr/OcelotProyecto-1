@@ -149,3 +149,54 @@ function modificar_califNumerica(pid, pcalifnum) {
 
     return respuesta;
 };
+
+
+function eliminar_centro(pid){
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/eliminar_centro',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: { 
+            id: pid, 
+        },
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+       
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+    return respuesta;
+};
+
+function eliminar_comentario(pid){
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/eliminar_comentario',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: { 
+            id: pid, 
+        },
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+       
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+    return respuesta;
+};
