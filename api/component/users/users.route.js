@@ -29,7 +29,12 @@ router.route('/modificar_usuario')
         userApi.autenticar_usuario(req, res);
     });
 
-
+router.route('/eliminar_centro')
+.post(
+    function(req , res){
+        userApi.eliminar_centro(req, res);
+    }
+);
 
 
 module.exports = router;

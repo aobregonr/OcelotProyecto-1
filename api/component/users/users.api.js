@@ -265,3 +265,15 @@ module.exports.autenticar_usuario = function (req, res) {
     });
 
 };
+
+module.exports.eliminar_centro = function(req, res){
+    userModel.findByIdAndRemove(req.body.id,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar el Centro educativo. Ocurrió el siguiente error ' + error});
+            }else{
+                res.json({success: true ,msg: 'El Centro educativo se eliminó con éxito'}); 
+            }
+        }
+    )
+};

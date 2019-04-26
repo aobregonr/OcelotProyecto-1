@@ -16,5 +16,6 @@ router.route('/listar_rankingMep')
                 api_rankingMep.listar(req,res);
             }
         );
+
         
 module.exports = router;
