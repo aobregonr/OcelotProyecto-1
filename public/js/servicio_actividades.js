@@ -2,11 +2,14 @@
 
 
 
-function registrar_actividad( pactividad, pimagen){
+
+
+function registrar_actividad( pcod,pactividad, pimagen){
     let request= $.ajax({
         url: 'http://localhost:4000/api/registrar_actividades',
         method: "POST",
         data: {
+            cod : pcod,
             actividad: pactividad,
             imagen: pimagen
 
