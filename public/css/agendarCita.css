@@ -14,7 +14,6 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 			font-family: Helvetica, sans-serif;
 }
 
-/*     -------------  header  -------------    */
 
 /*     -------------  header  -------------    */
 
@@ -56,15 +55,7 @@ text-decoration: none;
 
 }
 
-#tituleLogin{
-background-color:  #CC0033 ;
-padding: 5px;
-color: white;
-font-size: 22px;
-font-family: Helvetica, sans-serif;
-font-style: bolder;
 
-}
 /*Esto es para restringir accesos por tipos de usuarios    */
 .hide{
 display: none;
@@ -72,9 +63,40 @@ display: none;
 }
 
 
-
-
 /*     -------------  main Profile  -------------    */
+.mainProfile {
+    width: 100%;
+    margin: 0 5%;
+}
+
+.bigLabel{
+            background-color: #CC0033;
+            color: white;
+            margin: 30px;
+            padding: 10px; 
+}
+
+
+.modal-header, h2 {
+    background-color: #CC0033;
+    color : white;
+    text-align: left;
+    font-size: 20px;
+    width: 85%;
+}
+
+.instructions{
+    margin: 0 10%;
+
+}
+
+#redInstructions{
+    color: red;
+}
+
+
+
+
 
 #addrBox1 {
     float: left;
@@ -83,42 +105,24 @@ display: none;
     background: chartreuse;
 }
 
-
-.bigLabel{
-    background-color: #CC0033;
-    color: white;
-    width: 85%;
-    margin: 5%;
-    padding: 2%; 
-}
-
 .btnAgendar {
     background-color: #FFCC33;
     padding: 0% 5% 0% 5%;
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-family: Helvetica Light, sans-serif;
     color: black;
     cursor: pointer;
     border-radius: 5px;
-    margin: 2% 25% 0% 25%;
+    margin: 5% 24%;
 }
 
 
-.containerBig1{
-    background-color: #990033;
-    border-radius: 10px; 
-    padding: 35px;
-    height: 750px;
-    margin-left: 50px;
-    color: white;
-    width: 750px;
-}
 
 .containerBig2{
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    margin-left: 50px;
+    margin-left: 15%;
     color: white;
     width: 750px;
 }

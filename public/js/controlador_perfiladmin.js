@@ -90,6 +90,8 @@ function aprobar_centrosEducativos(){
 
             //agregar las funciones a los botones
             botonActivar.addEventListener('click', activarCentroPendiente);
+            botonEliminarCentro.addEventListener('click', eliminarCentroPendiente);
+
 
 		}
 	}
@@ -215,6 +217,7 @@ function obtener_ranking(){
             botonEnviarRanking.classList.add('fas');
             botonEnviarRanking.classList.add('fa-check-circle');
             botonEnviarRanking.classList.add('check');
+            botonEnviarRanking.classList.add('aprovIcon');
 
             //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
             botonVerRanking.dataset._id = lista_centros[i]['_id'];
@@ -387,10 +390,7 @@ function rankingStars(){
 		let celdaCalif = document.getElementById(id + '_califNum');
 		celdaCalif.innerHTML = notaTotal;
 			
-	};
-
-
-
+};
 
 //esta tiene que estar oculta
 
@@ -443,12 +443,56 @@ function activarCentroPendiente(){
             text: 'El centro educativo ha sido aprobado con éxito.',
           });
 
-		//refresca la tabla... hay q probar esto
+		//refresca la tabla
 		lista_centros = obtener_lista_usuarios();
 		aprobar_centrosEducativos();
 
-	};
+};
+
+function eliminarCentroPendiente(){
+	//binding epico increible!! <3  (this)
+		//sirve para enlazar la funcion con el contexto que la llama. 
+		let id = this.dataset._id;
+		let usuario = obtener_usuario_por_id(id);
+
+		console.log(id);
+		eliminar_centro(id);
+
+		//dar un mensaje de confirmacion
+		 swal.fire({
+        	type : 'info',
+            buttonsStyling: false,
+			customClass: {
+			title: 'title-class',
+			confirmButton: 'confirm-button-class'},
+            text: 'El centro educativo se ha eliminado con éxito.',
+          });
+
+		//refresca la tabla
+		lista_centros = obtener_lista_usuarios();
+		aprobar_centrosEducativos();
+};
 
 
+/*
+function eliminar_comentario(){
+		let id = this.dataset._id;
 
-		
+		console.log(id);
+		eliminar_comentario(id);
+
+		//dar un mensaje de confirmacion
+		 swal.fire({
+        	type : 'info',
+            buttonsStyling: false,
+			customClass: {
+			title: 'title-class',
+			confirmButton: 'confirm-button-class'},
+            text: 'El comentario ha sido aprobado con éxito.',
+          });
+
+		//refresca la tabla de comentarios...
+
+};
+
+*/	

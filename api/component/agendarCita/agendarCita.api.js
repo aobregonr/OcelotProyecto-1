@@ -12,8 +12,9 @@ module.exports.registrar = function(req, res){
         hora: req.body.hora,
         telefono: req.body.telefono,
         descripcion: req.body.descripcion,
-        identificadorUsuario: req.body.identificadorUsuario,
-        identificadorCentroEducativo: req.body.identificadorCentroEducativo
+        identCentroEducativo: req.body.identCentroEducativo,
+        identPadresFamilia: req.body.identPadresFamilia
+
     });
 
     nuevaCita.save(function(error){

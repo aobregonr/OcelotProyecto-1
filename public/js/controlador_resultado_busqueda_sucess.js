@@ -87,6 +87,8 @@ function ShowData(){
 
     for(i = 0; i <listaCen.length; i++){
 
+      if( listaCen[i]['tipo'] == 'CentroEducativo'){
+
 //__________________________________________________________________________________________________________
         
             /*metodo para la creacion de cada card para mostrar los resultados de la busqueda
@@ -168,6 +170,7 @@ function ShowData(){
    
                    celdaEscudo.appendChild(imagen);  
                 };
+            }
 
 };
 

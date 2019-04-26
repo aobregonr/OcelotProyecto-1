@@ -81,10 +81,10 @@ function mostrar_lista_usuarios(){
         let celdaCorreo = fila.insertCell(); 
         let celdaContrasenna = fila.insertCell(); 
         let celdaConfirmarcontrasenna = fila.insertCell();
-        let celdaRankingmep = fila.insertCell();
+        //let celdaRankingmep = fila.insertCell();
         let celdaCalifnum= fila.insertCell();
-        let celdaRankingpadres = fila.insertCell();
-        let celdaCalifAnno = fila.insertCell();
+        //let celdaRankingpadres = fila.insertCell();
+        //let celdaCalifAnno = fila.insertCell();
         let celdaCodigoverif = fila.insertCell();
         let celdaCodigoautenticar = fila.insertCell();
         let celdaEstado = fila.insertCell();
@@ -238,10 +238,10 @@ function mostrar_lista_usuarios(){
         celdaCorreo.innerHTML = lista_usuarios[i]['correo'];
         celdaContrasenna.innerHTML = lista_usuarios[i]['contrasenna'];
         celdaConfirmarcontrasenna.innerHTML = lista_usuarios[i]['confirmarcontrasenna'];
-        celdaRankingmep.innerHTML = lista_usuarios[i]['rankingmep'];
+        //celdaRankingmep.innerHTML = lista_usuarios[i]['rankingmep'];
         celdaCalifnum.innerHTML = lista_usuarios[i]['califnum'];
-        celdaRankingpadres.innerHTML = lista_usuarios[i]['rankingpadres'];
-        celdaCalifAnno.innerHTML = lista_usuarios[i]['califanno'];
+        //celdaRankingpadres.innerHTML = lista_usuarios[i]['rankingpadres'];
+        //celdaCalifAnno.innerHTML = lista_usuarios[i]['califanno'];
         celdaCodigoverif.innerHTML = lista_usuarios[i]['codigoverif'];
         celdaCodigoautenticar.innerHTML = lista_usuarios[i]['codigoautenticar'];
         celdaEstado.innerHTML = lista_usuarios[i]['estado'];

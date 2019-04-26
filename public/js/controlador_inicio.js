@@ -229,7 +229,7 @@ function cerrarSesion(){
 
 botonIngresar.addEventListener('click', obtenerDatos);
 botonRegistro.addEventListener('click', reenviarRegistro);
-botonCerrarSesion.addEventListener('click'. cerrarSesion);
+botonCerrarSesion.addEventListener('click', cerrarSesion);
 
 
 

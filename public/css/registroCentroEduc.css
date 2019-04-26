@@ -243,14 +243,12 @@ li > #salir {
 
 /*     ------------- footer-------------    */
 
-.footerEnd{ 
-            padding: 10px;
-            padding-left: 20px;
-            background-color: #330033;
-            color: white;
-            font-weight: lighter;
-            font-size: 12px;
-            margin-top: 1000px;
+
+.spacer{
+    margin-top: 1100px;
+}
+.footerBack{ 
+     
 
 }
 

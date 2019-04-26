@@ -20,3 +20,27 @@ function agendarCita(pFecha, pNombre, pEmail, pHora, pApellido, pTelefono, pDecr
     });
 
 };
+
+function listarCitas(){
+
+    let lista_citas = [];
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/listar_agendaCita',
+        type: 'GET',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+        }
+      });
+    
+      request.done(function(res){
+        lista_citas = res;
+      });
+    
+      request.fail(function(){
+       
+      });
+
+    return lista_citas;
+};
