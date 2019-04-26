@@ -46,14 +46,27 @@ let tecnico_usuario=listaRe[j]['tecnico'];
 let mixto_usuario=listaRe[j]['mixto'];
 let vocacional_usuario=listaRe[j]['vocacional'];
 let tipoDeCentro_usuario=listaRe[j]['tipodecentro'];
+//
+let telefono_centro = listaRe[j]['telefonoctro'];
+let email_centro = listaRe[j]['emailinstit'];
+let direccion_centro = listaRe[j]['direccionexacta'];
 
 
+//agregar nombre, escudo
 let img=document.querySelector('#imgEsc');
 img.setAttribute("src", escudo_usuario);
 let h1Nombre= document.querySelector('#etNombre');
 h1Nombre.innerHTML=nombre_usuario;
 let refHist= document.querySelector('#PaRef');
 refHist.innerHTML=referenciaH_usuario;
+
+//agregar info de contacto
+let phone = document.querySelector('#contactPhone');
+phone.innerHTML = telefono_centro;
+let email = document.querySelector('#contactEmail');
+email.innerHTML = email_centro;
+let adress = document.querySelector('#contactAdress');
+adress.innerHTML = direccion_centro;
 
 //ingresar al fb del centro
 function fb(){
@@ -129,6 +142,11 @@ if (vocacional_usuario==true){
 let tipoDeCentro=document.querySelector('#listBil9');
     tipoDeCentro.innerHTML=tipoDeCentro_usuario;
 };
+
+
+
+
+
 
 const botonAgendar = document.querySelector('#btnAgendar');
 
