@@ -31,10 +31,6 @@ let agentSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    descripcion: {
-        type: String,
-        required: false
-    },
     identCentroEducativo: {
         type: String,
         required: true
