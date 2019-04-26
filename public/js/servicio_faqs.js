@@ -2,11 +2,12 @@
 
 
 
-function registrar_faq( ppregunta, prespuesta){
+function registrar_faq(pcod, ppregunta, prespuesta){
     let request= $.ajax({
         url: 'http://localhost:4000/api/registrar_faqs',
         method: "POST",
         data: {
+            cod : pcod,
             pregunta: ppregunta,
             respuesta: prespuesta
 
