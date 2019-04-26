@@ -176,6 +176,7 @@ function eliminar_centro(pid){
     return respuesta;
 };
 
+/*
 function eliminar_comentario(pid){
     let respuesta = '';
     let peticion = $.ajax({
@@ -200,3 +201,5 @@ function eliminar_comentario(pid){
 
     return respuesta;
 };
+
+*/

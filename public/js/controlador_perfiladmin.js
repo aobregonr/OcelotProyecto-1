@@ -455,7 +455,6 @@ function eliminarCentroPendiente(){
 		let id = this.dataset._id;
 		let usuario = obtener_usuario_por_id(id);
 
-		console.log(id);
 		eliminar_centro(id);
 
 		//dar un mensaje de confirmacion

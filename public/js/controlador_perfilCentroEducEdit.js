@@ -103,3 +103,55 @@ if (vocacional_usuario=='true'){
 };
 let tipoDeCentro=document.querySelector('#listBil9');
     tipoDeCentro.innerHTML=tipoDeCentro_usuario;
+
+
+
+
+function imprimirComentarios(){
+    
+
+    for (let h=0; h< comentarios.length; h++){
+
+        if (comentarios[h]['cod']==b){
+
+            let commentsList = document.querySelector('#comments_var');
+            var midiv1 = document.createElement("div");
+            midiv1.setAttribute("id","commentin");
+            midiv1.setAttribute("class","comment");
+                     var midiv2 = document.createElement("i");
+                     midiv2.setAttribute("id","imgPa");                    
+                     midiv2.setAttribute("class","fas fa-user-circle fa-5x");
+                     
+                    
+                     let foto= comentarios[h]['foto'];
+                     var imagen2 = document.createElement('img');
+                     imagen2.setAttribute("id","imgpadre");
+                     imagen2.setAttribute("class","fas fa-user-circle fa-5x");
+                     imagen2.src = foto;
+    
+                 var midiv3 = document.createElement("p");
+                 midiv3.setAttribute("class","name");
+                 let padre=comentarios[h]['padre'];
+                
+                 midiv3.innerHTML= padre;                
+                 
+    
+                 var midiv4 = document.createElement("p");
+                 midiv4.setAttribute("class","pComment");
+                 midiv4.innerHTML=comentarios[h]['comentario'];
+    
+    
+                 document.querySelector("#comments_var").appendChild(midiv1);
+                 document.querySelector("#commentin").appendChild(imagen2);
+                 document.querySelector("#imgpadre").appendChild(midiv2);
+                 document.querySelector("#commentin").appendChild(midiv3);
+                 document.querySelector("#commentin").appendChild(midiv4);
+        };
+
+       
+
+
+
+    };
+
+}
