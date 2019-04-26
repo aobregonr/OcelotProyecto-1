@@ -23,6 +23,7 @@ form.classList.add('was-validated');
 
 //
 
+cod= sessionStorage.getItem('id_usuario');
 let botonRegFaqs = document.querySelector('#btn_addFaqs');
 
 let inputPregunta = document.querySelector('#txtPregunta');
@@ -66,7 +67,7 @@ function obtenerDatos(){
           });
 
     }else{
-        registrar_faq(pregunta, respuesta);
+        registrar_faq(cod,pregunta, respuesta);
 
     listaFaqs = obtener_faq();
     }
@@ -83,13 +84,17 @@ function imprimir_listaFaqs() {
     tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
 
     for (let i = 0; i < listaFaqs.length; i++) {
-        let fila = tbody.insertRow();
 
-        let celdaPregunta = fila.insertCell();
-        let celdaRespuesta= fila.insertCell();
-        //
-        celdaPregunta.innerHTML = listaFaqs[i]['pregunta'];
-        celdaRespuesta.innerHTML = listaFaqs[i]['respuesta'];
+        if (listaFaqs[i]['cod']==cod){
+
+            let fila = tbody.insertRow();
+    
+            let celdaPregunta = fila.insertCell();
+            let celdaRespuesta= fila.insertCell();
+            //
+            celdaPregunta.innerHTML = listaFaqs[i]['pregunta'];
+            celdaRespuesta.innerHTML = listaFaqs[i]['respuesta'];
+        };
      
 
 
