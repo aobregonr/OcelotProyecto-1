@@ -6,6 +6,7 @@ const modeloActividades = require('../perfilCentro/actividades.model');
 
 module.exports.registar=function(req,res){
     let actividadesNew= new modeloActividades({
+        cod : req.body.cod,
         actividad : req.body.actividad,
         imagen : req.body.imagen,
     });
