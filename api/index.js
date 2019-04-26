@@ -73,6 +73,7 @@ app.use('/api', require('./component/perfilCentro/actividades.route'));
 app.use('/api', require('./component/perfilCentro/faqs.route')); 
 app.use('/api', require('./component/perfilAdmin/rankingMep.route')); 
 app.use('/api', require('./component/perfilCentro/comentarios.route'));
+app.use('/api', require('./component/perfilCentro/novedades.route'));
 
 
 // Se guarda todo lo que se ha realizado
