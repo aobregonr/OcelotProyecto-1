@@ -240,29 +240,22 @@ input[type="radio"]:checked ~ label{
 		
 }
 
-#container4 {
- 			width: 100%;
-			height: auto;
-			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
-			background-color: #571845; 
- }
+
 
 #contact{
-			margin-top: 100%
+			margin-top: 100%;
 }
 
-.contactForm{
-			border-radius: 10px;
-			padding: 10px;
-			width: 80%;
-			margin: 10% 10% 0% 10%;
-			height: auto;
-			font-size: 1em;
-			resize: none;
+.contact{
+		color: white;
+		margin: 10px 30px;
+		font-size: 18px;
+		font-weight: bold;
 }
-
-#msgContact{
-			margin-top: 5%;
+.contact2{
+		color: white;
+		margin: 5px 30px;
+		text-align: justify;
 }
 
 #schoolList{
@@ -274,7 +267,7 @@ input[type="radio"]:checked ~ label{
 			height: auto;
 			font-size: 1.2vw;  /* ESTO ES PARA HACER LOS FONT-AWESOME RESPONSIVE!!!*/
 			display: inline-block;
-			margin-top: 5px;
+			margin-top: 30px;
 			background-color: #571845; 
 }
 
