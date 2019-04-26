@@ -6,7 +6,7 @@ const modeloNovedades = require('../perfilCentro/novedades.model');
 
 module.exports.registar=function(req,res){
     let novedadesNew= new modeloNovedades({
-        cod : req.body.cod,
+        id : req.body.id,
         imagen : req.body.imagen,
     });
     novedadesNew.save(

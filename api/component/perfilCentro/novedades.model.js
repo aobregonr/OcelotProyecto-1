@@ -3,7 +3,7 @@
 const mongoose= require('mongoose');
 
 let schema_novedades= mongoose.Schema({
-	cod : {type: String, required: true},
+	id : {type: String, required: true},
     imagen : {type: String,required:true}
 });
 
