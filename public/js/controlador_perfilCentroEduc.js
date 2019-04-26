@@ -140,6 +140,8 @@ function redireccionarAgendarCita(){
 
 botonAgendar.addEventListener('click', redireccionarAgendarCita);
 
+
+
 let listaActiv=[];
 listaActiv = obtener_actividad();
 
@@ -151,22 +153,26 @@ function imprimir_listaActividades() {
     tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
 
     for (let i = 0; i < listaActiv.length; i++) {
-        let fila = tbody.insertRow();
 
-        let celdaActividad = fila.insertCell();
-        let celdaImagen= fila.insertCell();
-        //
-        celdaActividad.innerHTML = listaActiv[i]['actividad'];
-        let imagen = document.createElement('img');
-            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+        if (listaActiv[i]['cod']==b){
 
-            if(listaActiv[i]['imagen']){
-                imagen.src = listaActiv[i]['imagen'];
-            }else{
-                imagen.src = 'imgs/actividad.png';
-            }
-
-            celdaImagen.appendChild(imagen);
+            let fila = tbody.insertRow();
+    
+            let celdaActividad = fila.insertCell();
+            let celdaImagen= fila.insertCell();
+            //
+            celdaActividad.innerHTML = listaActiv[i]['actividad'];
+            let imagen = document.createElement('img');
+                imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+    
+                if(listaActiv[i]['imagen']){
+                    imagen.src = listaActiv[i]['imagen'];
+                }else{
+                    imagen.src = 'imgs/actividad.png';
+                }
+    
+                celdaImagen.appendChild(imagen);
+        };
 
 
     }
@@ -182,53 +188,58 @@ function imprimir_listaFaqs() {
     
     for (let i = 0; i < listaFaqs.length; i++) {
         
-        let faqcards = document.querySelector('#faqCards');
-        // faqcards.innerHTML = '';
-        var midiv1 = document.createElement("div");
-        midiv1.setAttribute("id","card"+i);
-        midiv1.setAttribute("class","card");
-         var midiv = document.createElement("div");
-         midiv.setAttribute("id","heading"+i);
-         midiv.setAttribute("class","card header");
-         midiv.setAttribute("role","tab");
-            var midiv4 = document.createElement("a");
-            midiv4.setAttribute("data-toggle","collapse");
-            midiv4.setAttribute("id","a"+i);
-            midiv4.setAttribute("data-parent","#accordionEx");
-            midiv4.setAttribute("href","#collapse"+i);
-            midiv4.setAttribute("aria-expanded","true");
-            midiv4.setAttribute("aria-controls","collapse"+i);
-                var midiv5 = document.createElement("h5");
-                midiv5.setAttribute("class","mb-0");
-                midiv5.setAttribute("id","h5"+i);
-                midiv5.innerHTML = listaFaqs[i]['pregunta'];
-                    var midiv6 = document.createElement("i");
-                    midiv6.setAttribute("class","fas fa-angle-down ");
+        if (listaFaqs[i]['cod']==b){
 
-                    document.querySelector("#faqCards").appendChild(midiv1);
-                    document.querySelector("#card"+i).appendChild(midiv);
-                    document.querySelector("#heading"+i).appendChild(midiv4);
-                    document.querySelector("#a"+i).appendChild(midiv5);
-                    document.querySelector("#h5"+i).appendChild(midiv6);
-        
-        
-             var midiv2 = document.createElement("div");
-             midiv2.setAttribute("id","collapse"+i);
-             midiv2.setAttribute("class","collapse show");
-             midiv2.setAttribute("role","tabpanel"); 
-             midiv2.setAttribute("aria-labelledby","heading"+i);
-             midiv2.setAttribute("data-parent","#accordionEx");
-                    var midiv3 = document.createElement("div");
-                    midiv3.setAttribute("class","card-body");
-                    midiv3.innerHTML = listaFaqs[i]['respuesta'];
 
-                    document.querySelector("#card"+i).appendChild(midiv2);
-                    document.querySelector("#collapse"+i).appendChild(midiv3);
+            let faqcards = document.querySelector('#faqCards');
+            // faqcards.innerHTML = '';
+            var midiv1 = document.createElement("div");
+            midiv1.setAttribute("id","card"+i);
+            midiv1.setAttribute("class","card");
+             var midiv = document.createElement("div");
+             midiv.setAttribute("id","heading"+i);
+             midiv.setAttribute("class","card header");
+             midiv.setAttribute("role","tab");
+                var midiv4 = document.createElement("a");
+                midiv4.setAttribute("data-toggle","collapse");
+                midiv4.setAttribute("id","a"+i);
+                midiv4.setAttribute("data-parent","#accordionEx");
+                midiv4.setAttribute("href","#collapse"+i);
+                midiv4.setAttribute("aria-expanded","true");
+                midiv4.setAttribute("aria-controls","collapse"+i);
+                    var midiv5 = document.createElement("h5");
+                    midiv5.setAttribute("class","mb-0");
+                    midiv5.setAttribute("id","h5"+i);
+                    midiv5.innerHTML = listaFaqs[i]['pregunta'];
+                        var midiv6 = document.createElement("i");
+                        midiv6.setAttribute("class","fas fa-angle-down ");
+    
+                        document.querySelector("#faqCards").appendChild(midiv1);
+                        document.querySelector("#card"+i).appendChild(midiv);
+                        document.querySelector("#heading"+i).appendChild(midiv4);
+                        document.querySelector("#a"+i).appendChild(midiv5);
+                        document.querySelector("#h5"+i).appendChild(midiv6);
+            
+            
+                 var midiv2 = document.createElement("div");
+                 midiv2.setAttribute("id","collapse"+i);
+                 midiv2.setAttribute("class","collapse show");
+                 midiv2.setAttribute("role","tabpanel"); 
+                 midiv2.setAttribute("aria-labelledby","heading"+i);
+                 midiv2.setAttribute("data-parent","#accordionEx");
+                        var midiv3 = document.createElement("div");
+                        midiv3.setAttribute("class","card-body");
+                        midiv3.innerHTML = listaFaqs[i]['respuesta'];
+    
+                        document.querySelector("#card"+i).appendChild(midiv2);
+                        document.querySelector("#collapse"+i).appendChild(midiv3);
+        };
                        
                   
 
-    }
+    };
 };
+
 
 
 function obtener_comentario(){
@@ -242,38 +253,13 @@ function obtener_comentario(){
             text: 'Su comentario:  "'+msg+'"   esta pendiente de aprobación...'
            });
 
-           let commentsList = document.querySelector('#comments_var');
-           var midiv1 = document.createElement("div");
-           midiv1.setAttribute("id","commentin");
-           midiv1.setAttribute("class","comment");
-                    var midiv2 = document.createElement("i");
-                    midiv2.setAttribute("id","imgPa");                    
-                    midiv2.setAttribute("class","fas fa-user-circle fa-5x");
-                    
-                   
-                    let foto=sessionStorage.getItem('foto_usuario')
-                    var imagen2 = document.createElement('img');
-                    imagen2.setAttribute("id","imgpadre");
-                    imagen2.setAttribute("class","fas fa-user-circle fa-5x");
-                    imagen2.src = foto;
+           let cod1=b;
+           let padre=sessionStorage.getItem('nombre_usuario');
+           let padre_apellido=sessionStorage.getItem('apellido_usuario');
+           let foto=sessionStorage.getItem('foto_usuario')
+           let comentario=msg;
 
-                var midiv3 = document.createElement("p");
-                midiv3.setAttribute("class","name");
-                let padre=sessionStorage.getItem('nombre_usuario');
-                let padre_apellido=sessionStorage.getItem('apellido_usuario');
-                midiv3.innerHTML= padre+" "+padre_apellido;                
-                console.log(sessionStorage.getItem('nombre_usuario'));
-
-                var midiv4 = document.createElement("p");
-                midiv4.setAttribute("class","pComment");
-                midiv4.innerHTML=msg;
-
-
-                document.querySelector("#comments_var").appendChild(midiv1);
-                document.querySelector("#commentin").appendChild(imagen2);
-                document.querySelector("#imgpadre").appendChild(midiv2);
-                document.querySelector("#commentin").appendChild(midiv3);
-                document.querySelector("#commentin").appendChild(midiv4);
+           registrar_comentario( cod1,(padre+" "+padre_apellido), foto, comentario)
                 
           input_msg.value='';
 
@@ -288,3 +274,58 @@ function obtener_comentario(){
     }
 
 };
+
+let comentarios=[];
+comentarios= obtener_comentarios();
+console.log(comentarios);
+
+imprimirComentarios();
+
+function imprimirComentarios(){
+    
+
+    for (let h=0; h< comentarios.length; h++){
+
+        if (comentarios[h]['cod']==b){
+
+            let commentsList = document.querySelector('#comments_var');
+            var midiv1 = document.createElement("div");
+            midiv1.setAttribute("id","commentin");
+            midiv1.setAttribute("class","comment");
+                     var midiv2 = document.createElement("i");
+                     midiv2.setAttribute("id","imgPa");                    
+                     midiv2.setAttribute("class","fas fa-user-circle fa-5x");
+                     
+                    
+                     let foto= comentarios[h]['foto'];
+                     var imagen2 = document.createElement('img');
+                     imagen2.setAttribute("id","imgpadre");
+                     imagen2.setAttribute("class","fas fa-user-circle fa-5x");
+                     imagen2.src = foto;
+    
+                 var midiv3 = document.createElement("p");
+                 midiv3.setAttribute("class","name");
+                 let padre=comentarios[h]['padre'];
+                
+                 midiv3.innerHTML= padre;                
+                 
+    
+                 var midiv4 = document.createElement("p");
+                 midiv4.setAttribute("class","pComment");
+                 midiv4.innerHTML=comentarios[h]['comentario'];
+    
+    
+                 document.querySelector("#comments_var").appendChild(midiv1);
+                 document.querySelector("#commentin").appendChild(imagen2);
+                 document.querySelector("#imgpadre").appendChild(midiv2);
+                 document.querySelector("#commentin").appendChild(midiv3);
+                 document.querySelector("#commentin").appendChild(midiv4);
+        };
+
+       
+
+
+
+    };
+
+}
