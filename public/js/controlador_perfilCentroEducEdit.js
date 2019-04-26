@@ -17,6 +17,7 @@ let vocacional_usuario=sessionStorage.getItem('vocacional_usuario');
 let tipoDeCentro_usuario=sessionStorage.getItem('tipoDeCentro_usuario');
 
 
+
 let img=document.querySelector('#imgCentro');
 img.setAttribute("src", escudo_usuario);
 let h1Nombre= document.querySelector('#etNombre');
