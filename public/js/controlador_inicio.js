@@ -40,6 +40,10 @@ function obtenerDatos(){
                 sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
                 //
+                sessionStorage.setItem('telefono_centro', usuarioAceptado.usuario.telefonoctro);
+                sessionStorage.setItem('email_centro', usuarioAceptado.usuario.emailinstit);
+                sessionStorage.setItem('direccion_centro', usuarioAceptado.usuario.direccionexacta);
+                //
                 sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
                 sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
                 sessionStorage.setItem('id_codigoautenticar', usuarioAceptado.usuario.codigoautenticar);
@@ -86,6 +90,10 @@ function obtenerDatos(){
                             sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                             sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                             sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                            //
+                            sessionStorage.setItem('telefono_centro', usuarioAceptado.usuario.telefonoctro);
+                            sessionStorage.setItem('email_centro', usuarioAceptado.usuario.emailinstit);
+                            sessionStorage.setItem('direccion_centro', usuarioAceptado.usuario.direccionexacta);
                             //
                             sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
                             sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
@@ -278,6 +286,10 @@ function obtenerDatosModal(){
                 sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                 sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
                 //
+                sessionStorage.setItem('telefono_centro', usuarioAceptado.usuario.telefonoctro);
+                sessionStorage.setItem('email_centro', usuarioAceptado.usuario.emailinstit);
+                sessionStorage.setItem('direccion_centro', usuarioAceptado.usuario.direccionexacta);
+                //
                 sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
                 sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
                 sessionStorage.setItem('id_codigoautenticar', usuarioAceptado.usuario.codigoautenticar);
@@ -325,6 +337,10 @@ function obtenerDatosModal(){
                             sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                             sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                             sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                            //
+                            sessionStorage.setItem('telefono_centro', usuarioAceptado.usuario.telefonoctro);
+                            sessionStorage.setItem('email_centro', usuarioAceptado.usuario.emailinstit);
+                            sessionStorage.setItem('direccion_centro', usuarioAceptado.usuario.direccionexacta);
                             //
                             sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id);
                             sessionStorage.setItem('id_codigoverif', usuarioAceptado.usuario.codigoverif);
