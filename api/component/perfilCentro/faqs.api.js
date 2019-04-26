@@ -6,6 +6,7 @@ const modeloFaqs = require('../perfilCentro/faqs.model');
 
 module.exports.registar=function(req,res){
     let faqsNew= new modeloFaqs({
+        cod : req.body.cod,
         pregunta : req.body.pregunta,
         respuesta : req.body.respuesta,
     });
