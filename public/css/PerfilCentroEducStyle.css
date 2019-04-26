@@ -375,8 +375,7 @@ i.fa-file:hover, .fa-file-download:hover {
 }
 
 #levelsID, #languagesID, #detailsID {
-			margin-left: 10%;
-			margin-bottom: 20px;
+			margin-left: 7%;
 			display: inline-block;
 }
 
@@ -385,8 +384,8 @@ i.fa-file:hover, .fa-file-download:hover {
 			border-style: solid;
 			border-color:  #CC0033;
 			border-width: 5px;
-			width: 180px;
-			min-height: 170px;
+			width: 220px;
+			min-height: 200px;
 			padding: 8%;
 }
 
@@ -394,7 +393,7 @@ i.fa-file:hover, .fa-file-download:hover {
 			background-color: #CC0033;
 			color: white;
 			text-align: center;
-			width: 180px;
+			width: 220px;
 			height: 50px;
 			margin: 0px;
 			padding-top: 20px;
@@ -430,10 +429,30 @@ ul {
 			border-style: solid;
 			border-color:  #FF6633;
 			border-width: 5px;
-			padding: 30px;
 			width: auto;
+			padding: 10px;
+			margin: 0px 30px;
 			min-height: 100px;
-			margin: 0px 30px 30px 30px;
+}
+
+
+.imagenNews{
+	max-width: 870px;
+}
+
+.imgBtnNews{
+	color: #000;
+	margin-top: -40px;
+	margin-left: 270px;
+	float: left;
+	background-color: transparent;
+}
+.imgBtnNews2{
+	color: #000;
+	margin-top: -40px;
+	margin-left: 400px;
+	float: left;
+	background-color: transparent;
 }
 /*     -------------  general details  -------------    */
 
