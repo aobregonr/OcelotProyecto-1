@@ -22,7 +22,8 @@ form.classList.add('was-validated');
 })();
 
 //
-
+let cod=sessionStorage.getItem('id_usuario');
+console.log(cod);
 let botonRegActividad = document.querySelector('#btn_addActivity');
 
 let inputActividad = document.querySelector('#txtActividad');
@@ -40,7 +41,7 @@ function obtenerDatos(){
 
     let actividad = inputActividad.value;
     let imagen = inputImagen.src;
-
+   
 
     //Validar que todos los datos sean Correctos.
 
@@ -62,7 +63,7 @@ function obtenerDatos(){
           });
 
     }else{
-        registrar_actividad(actividad, imagen);
+        registrar_actividad(cod,actividad, imagen);
 
     listaActiv = obtener_actividad();
     }
@@ -80,23 +81,27 @@ function imprimir_listaActividades() {
     tbody.innerHTML = '';  //asegura que la tabla está vacía antes de imprimir y evtita duplicados
 
     for (let i = 0; i < listaActiv.length; i++) {
-        let fila = tbody.insertRow();
 
-        let celdaActividad = fila.insertCell();
-        let celdaImagen= fila.insertCell();
-        //
-        celdaActividad.innerHTML = listaActiv[i]['actividad'];
-        let imagen = document.createElement('img');
-            imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+        if (listaActiv[i]['cod']==cod){
 
-            if(listaActiv[i]['imagen']){
-                imagen.src = listaActiv[i]['imagen'];
-            }else{
-                imagen.src = 'imgs/actividad.png';
-            }
+            let fila = tbody.insertRow();
+    
+            let celdaActividad = fila.insertCell();
+            let celdaImagen= fila.insertCell();
+            //
+            celdaActividad.innerHTML = listaActiv[i]['actividad'];
+            let imagen = document.createElement('img');
+                imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
+    
+                if(listaActiv[i]['imagen']){
+                    imagen.src = listaActiv[i]['imagen'];
+                }else{
+                    imagen.src = 'imgs/actividad.png';
+                }
+    
+                celdaImagen.appendChild(imagen);
 
-            celdaImagen.appendChild(imagen);
+        };    
 
-
-    }
+    };
 };
