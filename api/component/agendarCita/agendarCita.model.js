@@ -41,4 +41,4 @@ let agentSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('AgentCita', agentSchema);
+module.exports = mongoose.model('AgendarCita', agentSchema);

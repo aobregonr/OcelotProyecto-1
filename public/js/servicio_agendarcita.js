@@ -1,6 +1,6 @@
 'use strict';
 
-function agendarCita(pFecha, pNombre, pEmail, pHora, pApellido, pTelefono, pDecripcion){
+function agendarCita(pFecha, pNombre, pEmail, pHora, pApellido, pTelefono, pDecripcion, pIdentificadorUsuario, pIdentificadorCentroEducativo){
     let request = $.ajax({
         url: 'http://localhost:4000/api/registrar_agendaCita',
             method: "POST",
@@ -11,7 +11,9 @@ function agendarCita(pFecha, pNombre, pEmail, pHora, pApellido, pTelefono, pDecr
                 hora: pHora,
                 apellido: pApellido,
                 telefono: pTelefono,
-                descripcion: pDecripcion
+                descripcion: pDecripcion,
+                identificadorUsuario: pIdentificadorUsuario,
+                identificadorCentroEducativo: pIdentificadorCentroEducativo
             },
             dataType: "json",
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8'

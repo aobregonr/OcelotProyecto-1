@@ -35,7 +35,6 @@ form.classList.add('was-validated');
  const botonRegistrar = document.querySelector('#btnAgendar');
  const identUsuario = sessionStorage.getItem('id_usuario');
 
-
  function getParameterByName(name) {
      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
      let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
