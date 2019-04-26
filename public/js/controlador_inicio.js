@@ -312,7 +312,7 @@ function obtenerDatosModal(){
                             
                             sessionStorage.setItem('tipo_usuario', 'CentroEducativo');
                             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombrecomercial);
-
+                            sessionStorage.setItem('id', usuarioAceptado.usuario._id);
                             sessionStorage.setItem('sitioweb_usuario', usuarioAceptado.usuario.sitioweb);
                             sessionStorage.setItem('escudo_usuario', usuarioAceptado.usuario.escudo);
                             sessionStorage.setItem('ref_usuario', usuarioAceptado.usuario.refhist);
