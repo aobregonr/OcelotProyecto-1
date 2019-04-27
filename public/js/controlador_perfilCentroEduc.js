@@ -379,12 +379,77 @@ function imprimir_listaNovedades() {
     
                 celdaImagen.appendChild(imagen);
 
-
-
         };
-     
-
 
     }
 };
 
+let botonCalificar = document.querySelector('#btnRegRanking')
+let star1 = document.querySelector('#radio5');
+let star2 = document.querySelector('#radio4');
+let star3 = document.querySelector('#radio3');
+let star4 = document.querySelector('#radio2');
+let star5 = document.querySelector('#radio1');
+
+function registrarRankingPadres(){
+
+    if id_usuario
+    document.getElementById("myBtn").disabled = true;
+    //variable que guarda la calificacion de las estrellas.
+    let estrellas = '';
+
+    //establecer el ranking.
+    if (star1.checked == true){
+        console.log("1 estrella marcada");
+        estrellas = 1;
+    }
+    else if (star2.checked == true ){
+        console.log("2 estrellas marcadas")
+        estrellas = 2;
+    }
+    else if (star3.checked == true ){
+        console.log("3 estrellas marcadas")
+        estrellas = 3;
+    }
+    else if (star4.checked == true ){
+        console.log("4 estrellas marcadas")
+        estrellas = 4;
+    }
+    else if (star5.checked == true ){
+        console.log("5 estrellas marcadas")
+        estrellas = 5;
+    }
+
+
+    //registrar_rankingPF( pid, pimagen)
+
+}
+
+botonCalificar.addEventListener('click', registrarRankingPadres)
+
+
+function mostrar_rankingPF(){
+    let tbody = document.querySelector('#tblRankingPF tbody');
+    let lista_rankingMep = obtener_rankingMEP();
+    tbody.innerHTML = ''; 
+
+    for(let i = 0; i < lista_rankingMep.length; i++){
+        let fila = tbody.insertRow();
+
+        let celdaNombrecomercial = fila.insertCell();
+        let celdaEscudo = fila.insertCell();
+        let celdaRankingmep = fila.insertCell(); 
+        let celdaCalifnum = fila.insertCell(); 
+        //let celdaCalifanno = fila.insertCell(); 
+   
+        //
+
+        celdaNombrecomercial.innerHTML = lista_rankingMep[i]['nombrecomercial'];
+        celdaEscudo.innerHTML =lista_rankingMep[i]['escudo'];
+        celdaRankingmep.innerHTML = lista_rankingMep[i]['rankingmep'];
+        celdaCalifnum.innerHTML = lista_rankingMep[i]['califnum'];
+        //celdaCalifanno.innerHTML = lista_rankingMep[i]['califanno'];
+
+    };
+
+};

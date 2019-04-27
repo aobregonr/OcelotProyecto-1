@@ -128,18 +128,20 @@ function accesoRestringido(){
 
 function forgotPass(){
 
-    Swal.fire({
-      title: 'Recuperar contraseña',
-      text: 'Le enviaremos un correo electrónico con su contraseña. Ingrese su correo registrado a continuación:',
-      input: 'text',
-      inputAttributes: {
-        autocapitalize: 'off'
-      },
-      confirmButtonText: 'Enviar'
+swal.fire({
+    title: 'Recuperar Contraseña',
+              text: "Le enviaremos un correo con su contraseña. Por favor ingrese su correo registrado.",                   
+              input: 'email',
+              inputValue: "",
+              confirmButtonText: 'Submit',
+              confirmButtonText: 'Send'
+            }).then(function (email) {  
+                console.log(email[0])
+               // recuperar_contrasena(email)
+                
+            });
 
 
-      //aqui falta que realmente mande el estupido correo. 
-    });
 };
 
 

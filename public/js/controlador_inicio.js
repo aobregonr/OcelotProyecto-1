@@ -457,5 +457,3 @@ function validarModal(pcorreo, pcontrasenna) {
 botonIngresarModal.addEventListener('click', obtenerDatosModal);
 botonRegistroModal.addEventListener('click', reenviarRegistro);
 
-
-

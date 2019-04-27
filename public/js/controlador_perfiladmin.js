@@ -211,6 +211,7 @@ function obtener_ranking(){
             let botonVerRanking = document.createElement('a');
             botonVerRanking.classList.add('fas');
             botonVerRanking.classList.add('fa-eye');
+            botonVerRanking.classList.add('viewIcon');
 
             //boton registrar calificacion y ranking
             let botonEnviarRanking = document.createElement('a');

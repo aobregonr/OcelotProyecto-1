@@ -59,3 +59,28 @@ function autenticar_codigo(pid, pcodigoverif, pcodigoautenticar, pestado) {
     return respuesta;
 };
 
+function recuperar_contrasena(pcorreo){
+
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/olvido_contrasena',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: { 
+             correo: pcorreo
+        },
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+       
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+    return respuesta;
+};
