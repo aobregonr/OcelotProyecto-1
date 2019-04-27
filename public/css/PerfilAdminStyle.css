@@ -250,9 +250,27 @@ th{
 
 .aprovIcon{
 	margin: 30px;
+	cursor: pointer;
+}
+.aprovIcon:hover { 
+	color: green !important; 
 }
 
+.rejectIcon{
+	cursor: pointer;
+}
+.rejectIcon:hover { 
+	color: red !important; 
+}
 
+.viewIcon{
+	cursor: pointer;
+}
+
+.viewIcon:hover{
+	cursor: pointer;
+	color: orange !important; 
+}
 
 .rubroscalif{
 	margin-left: 20%;

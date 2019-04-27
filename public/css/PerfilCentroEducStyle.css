@@ -191,6 +191,20 @@ input[type="radio"]:checked ~ label{
 			color: #FFCC33;
 }
 
+.registerBtn{
+	background-color: #FFCC33;
+	padding: 0% 15% 0% 15%;
+	font-size: 1.3em;
+	font-family: Helvetica Light, sans-serif;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 0% 24%;
+}
+
+.registerBtn:hover{
+	background-color: yellow;
+}
+
 /*     -------------  calendar -------------    */
 
 #container3{
@@ -664,7 +678,7 @@ th{
 		
 }
 .YellowBtn:hover, .YellowBtn2:hover, .YellowBtn3:hover{   
-			background-color: gold; /*  Para que los botones amarillos cambien de color cuando les pasa el mouse encima*/
+			background-color: yellow; /*  Para que los botones amarillos cambien de color cuando les pasa el mouse encima*/
 }
 
 
