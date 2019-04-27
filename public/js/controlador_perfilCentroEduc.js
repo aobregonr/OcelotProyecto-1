@@ -391,6 +391,7 @@ let star3 = document.querySelector('#radio3');
 let star4 = document.querySelector('#radio2');
 let star5 = document.querySelector('#radio1');
 
+/*
 function registrarRankingPadres(){
 
     if id_usuario
@@ -426,7 +427,7 @@ function registrarRankingPadres(){
 }
 
 botonCalificar.addEventListener('click', registrarRankingPadres)
-
+*/
 
 function mostrar_rankingPF(){
     let tbody = document.querySelector('#tblRankingPF tbody');
