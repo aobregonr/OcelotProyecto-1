@@ -644,6 +644,36 @@
 
 
 
+   <!-- The Modal -->
+            <div class="modal fade" id="passTemp">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" id="ModalContent">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header" id="HeaderModal">
+                            <h4 class="modal-title">Recuperar Contraseña</h4>
+
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body text-center">
+                            <p>Le enviaremos su contraseña al correo registrado</p>
+                            <input type="email" id="txtEmailRecover" size="30%" placeholder="Ingrese su correo electrónico">
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+
+                            <input class=YellowBtn id="BtnForgotPasw" type="button" data-dismiss="modal" value=" Enviar " 
+                            onclick="enviarContrasena()">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
 
         <!-- MODAL INICIO DE SESION -->
     <div class="modal fade" id="iniSesion">
@@ -665,7 +695,7 @@
                      <button type="button" id="btnIngresarModal" class="btn btnBlock">Ingresar</button>
                     <br>
                     <br>
-                        <a href="#" id=forgotPswModal> ¿Olvidó su contraseña? </a><br>
+                        <!--<a href="#" id=forgotPswModal> ¿Olvidó su contraseña? </a><br>-->
                         <div id="divisionLine"></div>
                         <p class="registerInfo">¿Primera vez que ingresa? 
                                             <br> Seleccione el tipo de usuario </p>
@@ -684,6 +714,11 @@
                     <button id="btnRegistroModal" type="button" class="btn btnBlock"> Registro </button>
 
 
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
                 <!-- MODAL VERIFICACION -->
@@ -716,16 +751,6 @@
             </div>
 
 
-
-
-
-
-
-                </div>
-
-            </div>
-        </div>
-    </div>
 
         <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
