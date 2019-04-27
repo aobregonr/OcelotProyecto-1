@@ -126,23 +126,21 @@ function accesoRestringido(){
 }
 
 
+const email = document.querySelector('#txtEmailRecover');
+const botonEnviarContrasena = document.querySelector('#BtnForgotPasw');
+
+
 function forgotPass(){
 
-swal.fire({
-    title: 'Recuperar Contraseña',
-              text: "Le enviaremos un correo con su contraseña. Por favor ingrese su correo registrado.",                   
-              input: 'email',
-              inputValue: "",
-              confirmButtonText: 'Submit',
-              confirmButtonText: 'Send'
-            }).then(function (email) {  
-                console.log(email[0])
-               // recuperar_contrasena(email)
-                
-            });
-
-
+    $("#passTemp").modal()
 };
+
+function enviarContrasena(){
+
+    let inputEmail = email.value;
+    recuperar_contrasena(inputEmail);
+
+}
 
 
 olvidoContrasenna.addEventListener('click', forgotPass);
