@@ -460,3 +460,15 @@ th{
     border-radius: 5px;
     width: 200px;
 }
+
+
+#BtnForgotPasw{
+	background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
