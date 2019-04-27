@@ -30,6 +30,10 @@
 	<!-- Referencia a Content Delivery Network de JavaScript para bootstrap4 -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+
+</head>
+
 
     <header class="row"  data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="col-lg-12">
@@ -91,16 +95,16 @@
 
 							<br>
 							<input  class="form-control" type="text" id="txtFiltro" placeholder="Filtrar por NOMBRE">
-						
+			
 
 								<div class="container">         
 							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingMEP">
-								<thead class="thead-dark">
+								<thead class="thead-dark sortable">
 									<tr>
 									<th class="thCalif" id=centroName> Centro Educativo</th>
 									<th class="thCalif"> Escudo</th>
 									<th class="thCalif"> Ranking del MEP </th>
-									<th class="thCalif"> Calificación Numérica</th>
+									<th class="thCalif" data-tsorter="numeric"> Calificación Numérica</th>
 									<!--<th class="thCalif"> Año de Calificación</th>-->
 									</tr>
 								</thead class="thead-light">
@@ -109,6 +113,9 @@
 								</tbody>
 							</table>
 						</div>
+						
+							<div id="container"></div>
+
 
 				
 						</div>
@@ -119,26 +126,29 @@
 		</div>
 
 		<div class="container-fluid" id="content">
-			<div class="container" id="modReportes">
-				<div class="card">
-					<div class="card-header">
-						<a class="card-link" data-toggle="collapse" href="#collapse2" id="section">
-							<h4 class="bigLabel2"> Calificaciones de Padres de Familia </h4>
-						</a>
-					</div>
+					<div class="container" id="modRankingMEP">
+						<div class="card">
+							<div class="card-header">
+								<a class="card-link" data-toggle="collapse" href="#collapse3" id="section">
+						<h4 class="bigLabel2"> Calificaciones de Padres de Familia </h4>
+					</a>
+				</div>
+				<div class="card-deck collapse" id="collapse3">
+					<div class="MEPscoreTable">
+						<div class="card-body">
 
-					<br>
+
+							<br>
 							<input  class="form-control" type="text" id="txtFiltro" placeholder="Filtrar por NOMBRE">
-						
+			
 
 								<div class="container">         
-							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingMEP">
-								<thead class="thead-dark">
+							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingPF">
+								<thead class="thead-dark sortable">
 									<tr>
 									<th class="thCalif" id=centroName> Centro Educativo</th>
 									<th class="thCalif"> Escudo</th>
-									<th class="thCalif"> Ranking del MEP </th>
-									<th class="thCalif"> Calificación Numérica</th>
+									<th class="thCalif"> Ranking de Padres </th>
 									</tr>
 								</thead class="thead-light">
 								<tbody>
@@ -146,16 +156,15 @@
 								</tbody>
 							</table>
 						</div>
+						
+							<div id="container"></div>
 
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-	</div>
-
+	</div> </div>
 		<br><br>
       <h1 class="bigLabel encSecundarios"> Ranking de los mejores centros educativos según el MEP </h1>
 
@@ -561,6 +570,10 @@
 		<script src="js/servicio_registroCentroEducativo.js"></script> <!--para obtener la lista de centros y escudos-->
 	<script src="js/servicio_perfiladmin.js"></script>
 	<script src="js/controlador_moduloReportes.js"></script>
+	<!--sort lib-->
+
+	<script src="js/tsorter.min.js" type="text/javascript"></script>
+	
 	
 
 
