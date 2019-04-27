@@ -144,4 +144,4 @@ function enviarContrasena(){
 
 
 olvidoContrasenna.addEventListener('click', forgotPass);
-olvidoContrasennaModal.addEventListener('click', forgotPass);
+//olvidoContrasennaModal.addEventListener('click', forgotPass);
