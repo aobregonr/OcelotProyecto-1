@@ -18,6 +18,11 @@ router.route('/validar_credenciales')
         userApi.validar(req, res);
     });
 
+router.route('/olvido_contrasena')
+    .post(function (req, res) {
+        userApi.olvidoContrasenna(req, res);
+    });
+
 
 router.route('/buscar_usuario')
     .post(function (req, res) {
