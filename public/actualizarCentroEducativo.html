@@ -3,7 +3,7 @@
 
 <head>
 	<!-- Este titulo se elimina cuando se enlaze a la pagina de incio pues el codigo es solo para la ventana modal -->
-	<title>Registro De Centro Educativo</title>
+	<title>Actualizar Centro Educativo</title>
 	<meta charset="UTF-8">
 	<meta name="author" content="Mario Zeledon S. & Verónica Morera C.">
 
@@ -48,7 +48,7 @@
 
 	<div class=mainProfile>
 
-		<h2 class="bigLabel"> Registro De Centro Educativo </h2>
+		<h2 class="bigLabel"> Actualizar Centro Educativo </h2>
 
 		<div class="instructions">
 			<p>Complete el formulario con sus datos a continuación, y finalice presionando el botón Registrar.</p>
@@ -195,9 +195,9 @@
 						<div class= "options" id="regData">
 							<label for="id"> Identificación  *</label>
 							<select class="form-control" id="sltIdentificación" required>
-								<option value=''> Identificación </option>
-								<option value='Cedula Nacional'>Cedula Nacional</option>
-								<option value='Cedula de Residencia'>Cedula de Residencia</option>
+								<option value='0'> Identificación </option>
+								<option value='1'>Cedula Nacional</option>
+								<option value='2'>Cedula de Residencia</option>
 								<option value='Cedula Nacional'>Pasaporte</option>
 							</select>
 						</div>
@@ -252,6 +252,7 @@
 
 					<div id="center">
 
+
 				<div id=checkboxArea>
 				<p>Por favor seleccione todas las características que corresponden a su centro educativo: </p>
 
@@ -303,7 +304,7 @@
 				</div>
 			</div>
 
-			<button type="button" id="btn_registrar">Registrar</button>
+			<button type="button" id="btn_registrar">Actualizar</button>
 		</form>
 
 			</div>
@@ -385,7 +386,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 		<!--REFERENCIAR JAVASCRIPT -->
 		<script src="js/servicio_registroCentroEducativo.js"></script>
-		<script src="js/controlador_registroCentroEducativo.js"></script>
+		
 
 		<!-- Scripts cloudinary -->
     	<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
@@ -400,6 +401,8 @@
 
 	    <script src="js/servicio_inicio.js"></script>
 		<script src="js/controlador_nav.js"></script>  <!--restringir accesos-->
+
+		<script src="js/controlador_actualizarCentroEducativo.js"></script>
 
 		</body>
 
