@@ -99,7 +99,7 @@ li > #salir {
     background-color: #990033;
     border-radius: 10px; 
     padding: 35px;
-    height: 2250px;
+    height: 1950px;
     color: white;
     width: 850px;
     margin: 0 12%;
@@ -126,8 +126,8 @@ li > #salir {
 }
 
 #center{  /* CONTAINER DE MAPA   */
-    margin-left: 16%;
-    margin-top: -100%;
+    margin-left: 14%;
+    margin-top: -43%;
     text-align: center;
     width: 350px;
     height: 350px;
@@ -208,7 +208,7 @@ li > #salir {
     color: black;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 75%;
+    margin-left: 84%;
     margin-top: 480px;
 }
 
@@ -245,7 +245,7 @@ li > #salir {
 
 
 .spacer{
-    margin-top: 1100px;
+    margin-top: 400px;
 }
 .footerBack{ 
      

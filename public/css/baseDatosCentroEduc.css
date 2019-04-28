@@ -124,3 +124,16 @@ th{
             margin-top: 70px;
 
 }
+
+.editIcon{
+	cursor: pointer;
+	font-size: 100px;
+	margin:60px 80px;
+	text-decoration-line: none;
+	color: black;
+}
+
+.editIcon:hover { 
+	color: orange !important; 
+	text-decoration-line: none;
+}
