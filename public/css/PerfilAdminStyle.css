@@ -83,7 +83,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 			width: 25%;
 			height:auto;
 			position: absolute;
-			min-height: 2340px;
+			min-height: 2462px;
  
 }
 
@@ -245,6 +245,12 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 th{
 	min-width: 100px;
+}
+
+#tblComentariosPF{
+	display: block;
+	height: 400px;
+	overflow-y: scroll;
 }
 
 
