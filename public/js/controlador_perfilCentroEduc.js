@@ -16,6 +16,7 @@ boton_comentario.addEventListener('click', obtener_comentario);
     let listaCen=[];
     let listaRe=[];
     listaCen=obtener_lista_centros();
+   
     
     for(let i = 0; i <listaCen.length; i++){
         let count=0;
