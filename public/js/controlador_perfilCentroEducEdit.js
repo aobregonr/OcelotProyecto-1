@@ -102,7 +102,12 @@ let tipoDeCentro=document.querySelector('#listBil9');
     tipoDeCentro.innerHTML=tipoDeCentro_usuario;
 
 
-
+    let comentarios=[];
+    comentarios= obtener_comentarios();
+    console.log(comentarios);
+    
+    let b=sessionStorage.getItem('id_usuario');
+    imprimirComentarios();
 
 function imprimirComentarios(){
     
