@@ -88,6 +88,7 @@ function mostrar_lista_usuarios(){
         let celdaCodigoverif = fila.insertCell();
         let celdaCodigoautenticar = fila.insertCell();
         let celdaEstado = fila.insertCell();
+        let celdaConfig = fila.insertCell();
 
 
         /** 
@@ -246,7 +247,23 @@ function mostrar_lista_usuarios(){
         celdaCodigoautenticar.innerHTML = lista_usuarios[i]['codigoautenticar'];
         celdaEstado.innerHTML = lista_usuarios[i]['estado'];
 
+       
+
+        //boton de editar.
+        let botonEditar = document.createElement('a');
+        botonEditar.classList.add('fas');
+        botonEditar.classList.add('fa-edit');
+        botonEditar.classList.add('editIcon');
+        botonEditar.dataset._id = lista_usuarios[i]['_id'];
+
+        let idUser = botonEditar.dataset._id;
+        botonEditar.href = `actualizarCentroEducativo.html?id_usuario=${lista_usuarios[i]['_id']}`;
+
+        celdaConfig.appendChild(botonEditar);
+
+
     	}
 	}
 
 };
+
