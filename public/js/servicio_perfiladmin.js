@@ -203,3 +203,26 @@ function eliminar_comentario(pid){
 };
 
 */
+
+function obtener_comentarios(){
+    let listaComment = [];
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/listar_comment',
+        type: 'get',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+        }
+      });
+    
+      peticion.done(function(comment){
+        listaComment = comment;
+      });
+    
+      peticion.fail(function(){
+       
+      });
+      
+    return listaComment;
+};
