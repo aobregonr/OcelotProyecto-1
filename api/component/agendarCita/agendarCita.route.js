@@ -8,9 +8,14 @@ router.route('/registrar_agendaCita')
         userApi.registrar(req, res);
     });
 
-router.route('/listar_agendaCita')
+router.route('/listar_agendaUsuario')
     .get(function (req, res) {
-        userApi.listar(req, res);
+        userApi.listarPadre(req, res);
+    });
+
+router.route('/listar_agendaCentro')
+    .get(function (req, res) {
+        userApi.listarCentro(req, res);
     });
 
 module.exports = router;
