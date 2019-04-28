@@ -147,20 +147,22 @@ function obtener_usuario_por_id(pid){
 };
 
 
-function actualizar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecentro, ptelefonoctro, pfax, psitioweb, pfacebook, pemailinstit, 
+function actualizar_usuario(pid, ptipo, pnombrecomercial, pcedulajuridica, ptipodecentro, ptelefonoctro, pfax, psitioweb, pfacebook, pemailinstit, 
                       pdireccionexacta, panofund, prefhist, pdepartamento, pext, pescudo, pfoto, pbilingue, ptecnico, 
                       preligioso, pnoreligioso, pvocacional, pidiomas, pbecas, pbachilleratoint, pmixto, pvarones, pmujeres, pprimaria, 
                       psecundaria, ptelefono, pcantidaddehijos, panodenacimiento, ptipoidentificacion, pidentificacion, pnombre, 
                       psegundonombre, papellido, psegundoapellido, pnacionalidad, pfechanacimiento, pprovincia, pcanton, pdistrito, 
-                      pcorreo, pcontrasenna, pconfirmarcontrasenna, prankingmep, pcalifnum, prankingpadres, pcalifanno, pcodigoverif, pcodigoautenticar, pestado) {
+                      pcorreo, pcontrasenna, pconfirmarcontrasenna, prankingmep, pcalifnum, prankingpadres, pcalifanno, pcodigoverif, 
+                      pcodigoautenticar, pestado) {
     let respuesta = '';
     let peticion = $.ajax({
-        url: 'http://localhost:4000/api/modificar_usuario',
+        url: 'http://localhost:4000/api/modificar_usuario_db',
         type: 'post',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',
         async: false,
         data: { 
+            id: pid,
             tipo: ptipo,
             nombrecomercial: pnombrecomercial,
             cedulajuridica: pcedulajuridica,
@@ -213,7 +215,7 @@ function actualizar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecen
             califanno: pcalifanno,
             codigoverif: pcodigoverif,
             codigoautenticar: pcodigoautenticar,
-            estado: pestado
+            estado: pestado,
         },
     });
 

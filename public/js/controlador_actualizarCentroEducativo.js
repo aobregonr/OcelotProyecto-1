@@ -1,8 +1,31 @@
 'use strict';
 
+//VALIDAR FORMULARIOS CON BOOTSRAP 4 
+//(se pone rojo cuando esta incompleto, verde cuando esta validado)
+
+(function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+document.getElementById("btn_registrar").addEventListener('click', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+
+//-----------------------------------------------------------------------------------//
 
 
-const botonRegistrar = document.querySelector('#btn_registrar');
+
+const botonActualizar = document.querySelector('#btn_registrar');
 
 //Estos son los inputs del centro educativo.
 const inputTipo = document.querySelector('#txtTipo');
@@ -51,11 +74,7 @@ const inputMujeres = document.querySelector('#cbMujeres');
 //
 const inputPrimaria = document.querySelector('#cbPrimaria');
 const inputSecundaria = document.querySelector('#cbSecundaria');
-//NUEVOS EXCLUSIVOS DE ACTUALIZAR
-const inputCalifnum =0;
-const inputCodigoverif=0;
-const inputCodigoautenticar='';
-const inputEstado='';
+
 
 
 
@@ -69,6 +88,7 @@ let get_param = (param) => {
 
 
 let _id = get_param('id_usuario'); 
+console.log(_id);
 
 let user= obtener_usuario_por_id(_id) //obtener toda la info del usuario actual
 
@@ -133,13 +153,12 @@ let mostrardatos = () =>{
 	inputApellido.value = user.apellido;
 	inputApellido2.value = user.segundoapellido;
 
-	let tipo_id = document.querySelectorAll('#txtTipoCentroEducat option')
+	let tipo_id = document.querySelectorAll('#sltIdentificación option')
 
 	for(let i=0; i < tipo_id.length; i++){
 		if (tipo_id[i].textContent == user.tipoidentificacion){
 			tipo_id.selected = true;
 			inputTipoID.value=tipo_id[i].value
-			console.log(tipo_id[i].value)
 			}
 	}
 
@@ -165,26 +184,23 @@ let mostrardatos = () =>{
 	inputPrimaria.checked = user.primaria;
 	inputSecundaria.checked = user.secundaria;
 
-	//NUEVOS
-	inputCalifnum.value = user.califnum
-	inputCodigoverif.value = user.codigoverif
-	inputCodigoautenticar.value = user.codigoautenticar
-	inputEstado.value = user.estado
+
+
 };
 
 
 //si el usuario existe, retornar datos en el formulario
 if(user){
 	mostrardatos();
-	console.log(mostrardatos());
-
 };
 
-let obtener_datos = () => {
+
+
+function obtener_datos() {
 
 	let bError = false;
 
-
+	let id = _id;
 	let tipo = inputTipo.value;
     let nombrecomercial = inputNombreComercial.value;
     let cedulajuridica = Number(inputCedulaJuridica.value);
@@ -232,13 +248,12 @@ let obtener_datos = () => {
     let contrasenna = inputPassword.value;  
     let confirmarcontrasenna = inputPasswordConf.value;   
     let rankingmep = 5;
-    let califnum = inputCalifnum.value;
+    let califnum = user.califnum;
     let rankingpadres = 5;
     let califanno = 2019;
-    let codigoverif = inputCodigoverif.value;
-    let codigoautenticar = inputCodigoautenticar.value;
-    let estado = inputEstado.value ;
-
+    let codigoverif = user.codigoverif;
+    let codigoautenticar = user.codigoautenticar;
+    let estado = user.estado;
 
 
 	//expresiones regulares
@@ -312,27 +327,37 @@ let obtener_datos = () => {
 			customClass: {
 			title: 'title-class',
 			confirmButton: 'confirm-button-class'},
-            title: 'Registro incorrecto',
-            text: 'No se pudo registrar el centro educativo, por favor complete los datos pendientes.',
+            title: 'Actualización incorrecta',
+            text: 'No se pudo actualizar el centro educativo, por favor complete los datos pendientes.',
             type: 'warning',
           });
 	
 	}else{
-    actualizar_usuario(tipo, nombrecomercial, cedulajuridica, tipodecentro, telefonoctro, fax, sitioweb, facebook, emailinstit, 
+    actualizar_usuario(id, tipo, nombrecomercial, cedulajuridica, tipodecentro, telefonoctro, fax, sitioweb, facebook, emailinstit, 
                       direccionexacta, anofund, refhist, departamento, ext, escudo, foto, bilingue, tecnico, 
                       religioso, noreligioso, vocacional, idiomas, becas, bachilleratoint, mixto, varones, mujeres, primaria, 
                       secundaria, telefono, cantidaddehijos, anodenacimiento, tipoidentificacion, identificacion, nombre, 
                       segundonombre, apellido, segundoapellido, nacionalidad, fechanacimiento, provincia, canton, distrito, 
                       correo, contrasenna, confirmarcontrasenna, rankingmep, califnum, rankingpadres, califanno, 
                       codigoverif, codigoautenticar, estado
-);
+	)
 
-    lista_centros = obtener_lista_usuarios();
+	 swal.fire({
+        	type : 'success',
+            buttonsStyling: false,
+			customClass: {
+			title: 'title-class',
+			confirmButton: 'confirm-button-class'},
+            title: 'Actualización realizada',
+            text: 'El centro educativo ha sido actualizado con éxito.'
+          }).then(function() {
+    		window.location = "baseDatosUsuarios.html";
+    	});
 
-	}
-    mostrar_lista_centros(); 
-	 
+
+}	 
  };
 
 
-btn_registrar.addEventListener('click', obtener_datos);
+
+botonActualizar.addEventListener('click', obtener_datos);

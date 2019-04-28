@@ -256,10 +256,31 @@ function mostrar_lista_usuarios(){
         botonEditar.classList.add('editIcon');
         botonEditar.dataset._id = lista_usuarios[i]['_id'];
 
+        //boton eliminar
+        let botonEliminar = document.createElement('a');
+        botonEliminar.classList.add('fas');
+        botonEliminar.classList.add('fa-trash-alt');  
+        botonEliminar.classList.add('removeIcon');
+        botonEliminar.dataset._id = lista_usuarios[i]['_id'];
+
         let idUser = botonEditar.dataset._id;
-        botonEditar.href = `actualizarCentroEducativo.html?id_usuario=${lista_usuarios[i]['_id']}`;
+        let idUser2 = botonEliminar.dataset._id;
+
+
+        //mandar al registro especifico de cada usuario
+        if ( lista_usuarios[i]['tipo'] == 'CentroEducativo' ){
+            botonEditar.href = `actualizarCentroEducativo.html?id_usuario=${lista_usuarios[i]['_id']}`;
+        }else if ( lista_usuarios[i]['tipo'] == 'PadreFam' ){
+            botonEditar.href = `actualizarPadreFamilia.html?id_usuario=${lista_usuarios[i]['_id']}`;
+        }else{
+            botonEditar.classList.add('hide');
+            botonEliminar.classList.add('hide');
+            console.log('el admin, no se puede modificar o borrar')
+        }
+
 
         celdaConfig.appendChild(botonEditar);
+        celdaConfig.appendChild(botonEliminar);
 
 
     	}
