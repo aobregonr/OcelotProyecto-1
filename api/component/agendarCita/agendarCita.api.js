@@ -33,3 +33,22 @@ module.exports.registrar = function(req, res){
 
 };
 
+module.exports.listarPadre = function(req, res){
+    agendModel.findOne({
+        identPadresFamilia: req.body.identPadresFamilia
+    }).then(
+        function (agendUsuario) {
+            res.send(agendUsuario);
+        }
+    )
+}
+
+module.exports.listarCentro = function (req, res) {
+    agendModel.findOne({
+        identCentroEducativo: req.body.identCentroEducativo
+    }).then(
+        function (agendCentro) {
+            res.send(agendCentro);
+        }
+    )
+}
