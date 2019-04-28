@@ -127,8 +127,8 @@ th{
 
 .editIcon{
 	cursor: pointer;
-	font-size: 100px;
-	margin:60px 80px;
+	font-size: 65px;
+	margin:30px;
 	text-decoration-line: none;
 	color: black;
 }
@@ -136,4 +136,22 @@ th{
 .editIcon:hover { 
 	color: orange !important; 
 	text-decoration-line: none;
+}
+
+.removeIcon{
+	cursor: pointer;
+	font-size: 65px;
+	margin-right:10px;
+	text-decoration-line: none;
+	color: black;
+}
+
+.removeIcon:hover { 
+	color: red !important; 
+	text-decoration-line: none;
+}
+
+.hide{
+	display: none;
+	visibility: hidden;
 }
