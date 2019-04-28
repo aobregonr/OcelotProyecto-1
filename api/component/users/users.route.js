@@ -3,6 +3,11 @@ const express = require('express');
 const router = express.Router();
 const userApi = require('./users.api');
 
+router.param('id', function(req, res, next, id){
+    req.body.id = id;
+    next();
+});
+
 router.route('/registrar_usuario')
     .post(function (req, res) {
         userApi.registrar(req, res);
@@ -28,6 +33,7 @@ router.route('/buscar_usuario')
     .post(function (req, res) {
         userApi.buscarUsuario(req, res);
     });
+
 
 router.route('/modificar_usuario')
     .post(function (req, res) {

@@ -168,7 +168,7 @@ module.exports.olvidoContrasenna = function(req, res){
 
                                          <h1 style="font-family:Helvetica, sans-serif; font-size: 24px;">¡Hola, ${usuario.nombre}!</h1>
 
-                                    <p style="font-family:Helvetica, sans-serif; font-size: 14px;">¡Bienvenido/a al buscador de Centros Educativos<br> más completo y accesible de Costa Rica! </p>
+                                    <p style="font-family:Helvetica, sans-serif; font-size: 14px;">¡Usted ha realizado una solicitud de recuperación contraseña. <br> A continuación se muestra su contraseña registrada a este correo. </p>
 
                              
                                     <div style="padding-left: 15px;">
@@ -277,3 +277,6 @@ module.exports.eliminar_centro = function(req, res){
         }
     )
 };
+
+
+
