@@ -81,7 +81,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 			width: 25%;
 			height:100%;
 			position: absolute;
-			min-height: 3200px;
+			min-height: 3457px;
 
 }
 
@@ -485,6 +485,31 @@ ul {
 			padding: 10px; 
 }
 
+/*     -------------  tables  -------------    */
+
+#tblNewsfeed{
+	display: block;
+	height: 340px;
+	overflow-y: scroll;
+}
+#tblActivities{
+	display: block;
+	height: 420px;
+	overflow-y: scroll;
+}
+#tblFaqs{
+	display: block;
+	height: 420px;
+	overflow-y: scroll;
+}
+
+#tblCitas{
+	display: block;
+	height: 300px;
+	overflow-y: scroll;
+}
+
+
 /*     -------------  activities  -------------    */
 
 #activities, #faqsMain{
@@ -605,13 +630,18 @@ th{
 	max-height: 200px;
 }
 
+/*     ------------- FAQS  -------------    */
+.mb-0{
+	color: #571845;
+	font-weight: bold;
+	text-decoration-line: none;
+}
+a{
 
+	text-decoration-line: none !important; 
+}
 /*     -------------  Agendar citas  -------------    */
 
-#tblCitas{
-
-
-}
 
 .tableContainer3{
 	width: 90%;
