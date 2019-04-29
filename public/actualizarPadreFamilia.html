@@ -91,10 +91,10 @@
                     <div id="regData">
                         <label> Identificación  *</label>
                         <select class="form-control" id="sltIdentificacion" required>
-                            <option value=""> -- Identificación-- </option>
-                            <option value='Cedula Nacional'>Cedula Nacional</option>
-                            <option value='Cedula de Residencia'>Cedula de Residencia</option>
-                            <option value='Cedula Nacional'>Pasaporte</option>
+                            <option value="0"> -- Identificación-- </option>
+                            <option value="1">Cedula Nacional</option>
+                            <option value="2">Cedula de Residencia</option>
+                            <option value="3">Pasaporte</option>
                         </select>
                     </div>
 
@@ -159,23 +159,22 @@
 
                     <div id="regData">
                         <label for="">Dirección General  *</label>
-                        
-                            <label for="txtProvincia"></label>
+                        <label for="txtProvincia"></label>
                             <!--<input type="text" class="form-control" id="txtProvincia" placeholder="Provincia" required>-->
-                            <select class="form-control" id="txtProvincia" required>
-                                <option value="">--Selecciones una provincia--</option>
+                            <select class="form-control" id="txtProvincia">
+                                <option value="" required>--Selecciones una provincia--</option>
                             </select>
             
                             <label for="txtCanton"></label>
                             <!--<input type="text" class="form-control" id="txtCanton" placeholder="Cantón" required>-->
-                            <select class="form-control" id="txtCanton" required>
-                                <option value="" >--Seleccione un cantón--</option>
+                            <select class="form-control" id="txtCanton">
+                                <option value="" required>--Seleccione un cantón--</option>
                             </select>
 
                             <label for="txtDistrito"></label>
                             <!--<input type="text" class="form-control" id="txtDistrito" placeholder="Distrito" required>   -->
-                            <select class="form-control"id="txtDistrito" required>
-                                <option  value="" >--Selecciones un distrito--</option>
+                            <select class="form-control"id="txtDistrito">
+                                <option  value="" required>--Selecciones un distrito--</option>
                             </select>
                     </div>
 
@@ -252,21 +251,23 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <!--REFERENCIAR JAVASCRIPT -->
         <script src="js/servicio_padreFam.js"></script>
-        <script src="js/controlador_padreFam.js"></script>
 
+         <!-- Scripts cloudinary -->
+        <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+        <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+        <script src="js/servicio_imagen.js"></script>
+       
         <!-- Scripts provincia, canton, distrito-->
         <script src="js/provincias.js"></script>
         <script src="js/cantones.js"></script>
         <script src="js/distritos.js"></script>
         <script src="js/controlador_ubicacion.js"></script>
 
-        <!-- Scripts cloudinary -->
-        <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
-        <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-        <script src="js/servicio_imagen.js"></script>
 
         <script src="js/servicio_inicio.js"></script>
-        <script src="js/controlador_nav.js"></script>  <!--restringir accesos-->
+         <!--<script src="js/controlador_nav.js"></script> restringir accesos-->
+         
+       <script src="js/controlador_actualizarPadreFamilia.js"></script>
 
 </body>
 
