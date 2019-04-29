@@ -35,10 +35,17 @@ router.route('/buscar_usuario')
     });
 
 
-router.route('/modificar_usuario')
+router.route('/modificar_usuario') //exclusivo de los estados del perfil del admin
     .post(function (req, res) {
         userApi.autenticar_usuario(req, res);
     });
+
+
+router.route('/modificar_usuario_db') //exclusivo de la base de datos
+    .post(function (req, res) {
+        userApi.modificar_usuario(req, res);
+    });
+
 
 router.route('/eliminar_centro')
 .post(

@@ -216,7 +216,6 @@ module.exports.listar = function(req, res){
 
 
 
-
  module.exports.validar = function (req, res) {
      userModel.findOne({
          correo: req.body.correo
@@ -265,6 +264,21 @@ module.exports.autenticar_usuario = function (req, res) {
     });
 
 };
+
+//esta es para modificar cualquier usuario en el db
+module.exports.modificar_usuario = function (req, res) {
+  userModel.findByIdAndUpdate(req.body.id, { $set: req.body},
+    function (error) {
+      if(error){
+        res.json({success : false, msg: 'No se pudo modificar el usuario, ocurrió el siguiente error ' + error});
+      }else{
+        res.json({success : true, msg: 'El usuario fue modificado con éxito'}); 
+      }
+    });
+
+};
+
+
 
 module.exports.eliminar_centro = function(req, res){
     userModel.findByIdAndRemove(req.body.id,
