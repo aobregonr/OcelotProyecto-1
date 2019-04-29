@@ -27,35 +27,36 @@ form.classList.add('was-validated');
 
  const inputFecha = document.querySelector('#textFecha');
  const inputNombre = document.querySelector('#textNombre');
+ const inputApellido = document.querySelector('#textApellido');
  const inputEmail = document.querySelector('#textEmail');
  const inputHora = document.querySelector('#textHora');
- const inputApellido = document.querySelector('#textApellido');
  const inputTelefono = document.querySelector('#textTelefono');
  const inputDescripcion = document.querySelector('#textDescripcion');
  const botonRegistrar = document.querySelector('#btnAgendar');
  const identUsuario = sessionStorage.getItem('id_usuario');
 
- function getParameterByName(name) {
-     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-     let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-         results = regex.exec(location.search);
-     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
- }
 
- let identCentroEducativo = getParameterByName('b');
+
+//obtener el id del URL (con el parametro que viene de la base de datos)
+var url = window.location.href;
+var b = url.substring(url.indexOf("=")+1);
+console.log(b, identUsuario);
+
 
 function registrarCita(){
 
     let bError = false;
     let fecha = inputFecha.value;
     let nombre = inputNombre.value;
+    let apellido = inputApellido.value;
     let email = inputEmail.value;
     let hora = inputHora.value;
-    let apellido = inputApellido.value;
     let telefono = inputTelefono.value;
     let descripcion = inputDescripcion.value;
-    let identificadorUsuario = identUsuario;
-    let identificadorCentroEducativo = identCentroEducativo;
+    let identCentroEducativo = b;
+    let identPadresFamilia = identUsuario;
+
+
 
     if(inputFecha.value == ''){
         bError = true;
@@ -65,15 +66,15 @@ function registrarCita(){
         bError = true;
     };
 
+    if(inputApellido.value == '' ){
+        bError = true;
+    };
+
     if(inputEmail.value == '' ){
         bError = true;
     };
 
     if(inputHora.value == '' ){
-        bError = true;
-    };
-
-    if(inputApellido.value == '' ){
         bError = true;
     };
 
@@ -99,7 +100,7 @@ if(bError == true){
           });
     
     }else{
-        agendarCita(fecha, nombre, apellido, email, hora, telefono, descripcion, identificadorUsuario, identificadorCentroEducativo);
+        agendarCita(fecha, nombre, apellido,  hora, email, telefono, descripcion, identCentroEducativo, identPadresFamilia);
         swal.fire({
             type: 'success',
             buttonsStyling: false,
@@ -109,9 +110,9 @@ if(bError == true){
             },
             title: 'Actualización realizada',
             text: 'La cita se agendo con exito.'
-        }).then(function () {
-            window.location = "perfilAdmin.html";
-        });
+       }) /*.then(function () {
+            window.location = "perfilUsuario.html";
+        });*/
                
 }};
 
