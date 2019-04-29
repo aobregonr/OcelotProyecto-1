@@ -20,7 +20,7 @@ let agentSchema = new mongoose.Schema({
         required: true
     },
     hora: {
-        type: Date,
+        type: String,
         required: true
     }, 
     telefono: {
