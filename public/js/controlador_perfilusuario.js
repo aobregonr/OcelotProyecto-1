@@ -1,37 +1,26 @@
 'use strict';
 
-
 let nombre_usuario=sessionStorage.getItem('nombre_usuario');
 let apellido_usuario=sessionStorage.getItem('apellido_usuario');
 let foto_usuario=sessionStorage.getItem('foto_usuario');
 let provincia_usuario=sessionStorage.getItem('provincia');
-
 let img=document.querySelector('#fotoUs');
 img.setAttribute("src", foto_usuario);
 let h2Nombre= document.querySelector('#username');
 h2Nombre.innerHTML=nombre_usuario+" "+apellido_usuario;
-
-
-
 let listaCen=obtener_lista_centros();
 let i;
 let j;
 let listaResul=[];
-
-console.log(provincia_usuario);
- console.log(listaCen);
-   
-  
-    let varFilter=[];
-   
-    varFilter[0]=provincia_usuario.toLowerCase();
+let listaCitasUsuario = obtener_lista_citas_usuario();
+let varFilter=[];
+varFilter[0]=provincia_usuario.toLowerCase();
     
-   
-
 //____________________________________________________________________________________________________________
 const boton= document.querySelector('#btnSearch');
 boton.addEventListener('click' , ShowData);
 ShowData();
+mostrar_citas();
 function ShowData(){
     listaCen=obtener_lista_centros();
     listaResul=[];  
@@ -40,13 +29,10 @@ function ShowData(){
 
         for (j=0; j < varFilter.length; j++){
 
-
          varFilter[j]=varFilter[j].toLowerCase();
             
-            let count=0;
+        let count=0;
             
-
-
             for(i = 0; i <listaCen.length; i++){
                   
               if ((listaCen[i]['provincia'].toLowerCase().includes(varFilter[j]))&&(listaCen[i]['tipo']=='CentroEducativo')){
@@ -296,9 +282,7 @@ function ShowData(){
                                     };
                                     
                                    
-               };
-
-                       
+               };         
           };
          
 // si listaResul no tiene valores almacenados osea no hubieron coincidencias se mantiene listaCen
@@ -461,4 +445,33 @@ for(let i = 0; i < listaCen.length; i++){
 };
 };
 };
-     
+
+function mostrar_citas(){
+     let tbody = document.querySelector('#tblCitas tbody');
+     tbody.innerHTML = '';
+
+      for (let i = 0; i < listaCitas.length; i++) {
+          let fila = tbody.insertRow();
+
+
+          let celdaFecha = fila.insertCell();
+          let celdaNombre = fila.insertCell();
+          let celdaApellido = fila.insertCell();
+          let celdaEmail = fila.insertCell();
+          let celdaHora = fila.insertCell();
+          let celdaTelefono = fila.insertCell();
+          let celdaDescripcion = fila.insertCell();
+
+          //
+
+          celdaFecha.innerHTML = listaCitas[i]['fecha'];
+          celdaNombre.innerHTML = listaCitas[i]['nombre'];
+          celdaApellido.innerHTML = listaCitas[i]['apellido'];
+          celdaEmail.innerHTML = listaCitas[i]['email'];
+          celdaHora.innerHTML = listaCitas[i]['hora'];
+          celdaTelefono.innerHTML = listaCitas[i]['telefono'];
+          celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+
+      }
+
+}

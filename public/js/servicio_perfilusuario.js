@@ -21,7 +21,27 @@ function obtener_lista_centros(){
       request.fail(function(){
        
       });
-      console.log(lista_centros);
     return lista_centros;
 };
 
+function obtener_lista_citas_usuario() {
+
+    let lista_centros = [];
+    let request = $.ajax({
+      url: 'http://localhost:4000/api/listar_agendaUsuario',
+      type: 'GET',
+      contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+      dataType: 'json',
+      async: false,
+      data: {}
+    });
+
+    request.done(function (res) {
+      lista_citasUsuario = res;
+    });
+
+    request.fail(function () {
+
+    });
+    return lista_centros;
+};
