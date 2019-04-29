@@ -89,13 +89,11 @@ let mostrardatos = () =>{
 	inputNumeroTelefono.value = user.telefono;
 
 	let opciones_provincias = document.querySelectorAll('#txtProvincia option')
-	console.log(opciones_provincias)
 
 	for(let i=0; i < opciones_provincias.length; i++){
 		if (opciones_provincias[i].textContent == user.provincia){
 			opciones_provincias.selected = true;
 			inputProvincia.value=opciones_provincias[i].value
-			console.log(inputProvincia.value)
 			llenar_cantones();
 			}
 	}
@@ -107,13 +105,11 @@ let mostrardatos = () =>{
 		if (opciones_cantones[i].textContent == user.canton){
 			opciones_cantones.selected = true;
 			inputCanton.value=opciones_cantones[i].value
-			console.log(inputCanton.value)
 			llenar_distritos();
 			}
 	}
 
 	let opciones_distritos = document.querySelectorAll('#txtDistrito option')
-	console.log(opciones_distritos)
 
 	for(let i=0; i < opciones_distritos.length; i++){
 		if (opciones_distritos[i].textContent == user.distrito){
