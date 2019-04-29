@@ -277,8 +277,9 @@ function obtener_comentario(){
            let padre_apellido=sessionStorage.getItem('apellido_usuario');
            let foto=sessionStorage.getItem('foto_usuario')
            let comentario=msg;
+           let estado = 'pendiente'
 
-           registrar_comentario( cod1,(padre+" "+padre_apellido), foto, comentario)
+           registrar_comentario( cod1,(padre+" "+padre_apellido), foto, comentario, estado)
                 
           input_msg.value='';
 
@@ -307,47 +308,54 @@ function imprimirComentarios(){
 
         if (comentarios[h]['cod']==b){
 
-            let commentsList = document.querySelector('#comments_var');
-            var midiv1 = document.createElement("div");
-            midiv1.setAttribute("id","commentin");
-            midiv1.setAttribute("class","comment");
-                     var midiv2 = document.createElement("i");
-                     midiv2.setAttribute("id","imgPa");                    
-                     midiv2.setAttribute("class","fas fa-user-circle fa-5x");
-                     
+                let commentsList = document.querySelector('#comments_var');
+                var midiv1 = document.createElement("div");
+                midiv1.setAttribute("id","commentin");
+                midiv1.setAttribute("class","comment");
+                         var midiv2 = document.createElement("i");
+                         midiv2.setAttribute("id","imgPa");                    
+                         midiv2.setAttribute("class","fas fa-user-circle fa-5x");
+                         
+                        
+                         let foto= comentarios[h]['foto'];
+                         var imagen2 = document.createElement('img');
+                         imagen2.setAttribute("id","imgpadre");
+                         imagen2.setAttribute("class","fas fa-user-circle fa-5x");
+                         imagen2.src = foto;
+        
+                     var midiv3 = document.createElement("p");
+                     midiv3.setAttribute("class","name");
+                     let padre=comentarios[h]['padre'];
                     
-                     let foto= comentarios[h]['foto'];
-                     var imagen2 = document.createElement('img');
-                     imagen2.setAttribute("id","imgpadre");
-                     imagen2.setAttribute("class","fas fa-user-circle fa-5x");
-                     imagen2.src = foto;
-    
-                 var midiv3 = document.createElement("p");
-                 midiv3.setAttribute("class","name");
-                 let padre=comentarios[h]['padre'];
-                
-                 midiv3.innerHTML= padre;                
-                 
-    
-                 var midiv4 = document.createElement("p");
-                 midiv4.setAttribute("class","pComment");
-                 midiv4.innerHTML=comentarios[h]['comentario'];
-    
-    
-                 document.querySelector("#comments_var").appendChild(midiv1);
-                 document.querySelector("#commentin").appendChild(imagen2);
-                 document.querySelector("#imgpadre").appendChild(midiv2);
-                 document.querySelector("#commentin").appendChild(midiv3);
-                 document.querySelector("#commentin").appendChild(midiv4);
-        };
+                     midiv3.innerHTML= padre;                
+                     
+        
+                     var midiv4 = document.createElement("p");
+                     midiv4.setAttribute("class","pComment");
+                     midiv4.innerHTML=comentarios[h]['comentario'];
+        
+        
+                     document.querySelector("#comments_var").appendChild(midiv1);
+                     document.querySelector("#commentin").appendChild(imagen2);
+                     document.querySelector("#imgpadre").appendChild(midiv2);
+                     document.querySelector("#commentin").appendChild(midiv3);
+                     document.querySelector("#commentin").appendChild(midiv4);
 
-       
+                 //si el estado del comentario es pendiente, esconderlo
+                 if (comentarios[h]['estado'] == 'pendiente'){
 
+                    midiv1.classList.add('hide');
+                    midiv2.classList.add('hide');
+                    imagen2.classList.add('hide');
+                    midiv3.classList.add('hide');
+                    midiv4.classList.add('hide');
+            }
 
+       }
 
-    };
+    }
 
-}
+};
 
 
 let listaNovedades = obtener_novedad();

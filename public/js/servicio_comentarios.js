@@ -4,7 +4,7 @@
 
 
 
-function registrar_comentario( pcod, ppadre, pfoto, pcomentario){
+function registrar_comentario( pcod, ppadre, pfoto, pcomentario, pestado){
     let request= $.ajax({
         url: 'http://localhost:4000/api/registrar_comment',
         method: "POST",
@@ -12,7 +12,8 @@ function registrar_comentario( pcod, ppadre, pfoto, pcomentario){
             cod: pcod,
             padre: ppadre,
             foto: pfoto,
-            comentario : pcomentario
+            comentario : pcomentario,
+            estado: pestado
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8'

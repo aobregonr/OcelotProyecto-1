@@ -176,7 +176,61 @@ function eliminar_centro(pid){
     return respuesta;
 };
 
-/*
+
+function buscar_comentario(pid){
+    let comentario= '';
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/buscar_comentario',
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+            id: pid
+        }
+      });
+    
+      request.done(function(res){
+        comentario = res;
+      });
+    
+      request.fail(function(){
+       
+      });
+
+    return comentario;
+
+};
+
+
+function actualizar_comentario(pid, pestado) {
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/modificar_comentario',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: { 
+            id: pid, 
+            estado: pestado
+        },
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+       
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+
+
+    return respuesta;
+};
+
 function eliminar_comentario(pid){
     let respuesta = '';
     let peticion = $.ajax({
@@ -202,7 +256,7 @@ function eliminar_comentario(pid){
     return respuesta;
 };
 
-*/
+
 
 function obtener_comentarios(){
     let listaComment = [];

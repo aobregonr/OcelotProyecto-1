@@ -16,5 +16,25 @@ router.route('/listar_comment')
                 api_comment.listar(req,res);
             }
         );
+
+router.route('/buscar_comentario')
+    .post(function (req, res) {
+        api_comment.buscar_comentario(req, res);
+    });
+
+router.route('/modificar_comentario')
+    .post(function (req, res) {
+        api_comment.actualizar_comentario(req, res);
+    });
+
+
+router.route('/eliminar_comentario')
+.post(
+    function(req , res){
+        api_comment.eliminar_comentario(req, res);
+    }
+);
+
+
         
 module.exports = router;

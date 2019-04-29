@@ -282,9 +282,39 @@ function mostrar_lista_usuarios(){
         celdaConfig.appendChild(botonEditar);
         celdaConfig.appendChild(botonEliminar);
 
+        botonEliminar.addEventListener('click', elimanarUsuarios);
+
 
     	}
 	}
 
 };
 
+function elimanarUsuarios(){
+
+    //binding epico increible!! <3  (this)
+        //sirve para enlazar la funcion con el contexto que la llama. 
+        let id = this.dataset._id;
+        let usuario = obtener_usuario_por_id(id);
+
+        console.log(usuario)
+
+
+        eliminar_usuario(id);
+
+        //dar un mensaje de confirmacion
+         swal.fire({
+            type : 'info',
+            buttonsStyling: false,
+            customClass: {
+            title: 'title-class',
+            confirmButton: 'confirm-button-class'},
+            text: 'El usuario se ha eliminado con éxito de la base de datos.',
+          });
+
+        //refresca la tabla
+        lista_usuarios = obtener_lista_usuarios();
+        mostrar_lista_usuarios(); 
+
+
+};
