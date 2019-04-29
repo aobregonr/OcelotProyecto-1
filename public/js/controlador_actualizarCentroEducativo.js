@@ -88,8 +88,6 @@ let get_param = (param) => {
 
 
 let _id = get_param('id_usuario'); 
-console.log(_id);
-
 let user= obtener_usuario_por_id(_id) //obtener toda la info del usuario actual
 
 let mostrardatos = () =>{
@@ -103,7 +101,6 @@ let mostrardatos = () =>{
 		if (tipo_de_centro[i].textContent == user.tipodecentro){
 			tipo_de_centro.selected = true;
 			inputTipoDeCentro.value=tipo_de_centro[i].value
-			console.log(tipo_de_centro[i].value)
 			}
 	}
 
