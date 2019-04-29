@@ -59,7 +59,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 /*Esto es para restringir accesos por tipos de usuarios    */
 .hide{
 	display: none;
-	/*visibility: hidden;*/
+	visibility: hidden;*/
 }
 
 /*     -------------  side menu  -------------    */
