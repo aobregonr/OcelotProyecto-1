@@ -155,3 +155,22 @@ th{
 	display: none;
 	visibility: hidden;
 }
+
+
+/*     ------------- modal  -------------    */
+
+.title-class{
+    background-color: white;
+    
+}
+
+.confirm-button-class{
+    background-color: #FFCC33;
+    padding: 0% 15% 0% 15%;
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
