@@ -26,6 +26,15 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
     background-color: #330033;
 }
 
+#mapa{
+	border-style: solid;
+	height: 400px;
+	width: 100%; 
+}
+#imgMap {
+	height: 380px; 
+	width: 900px; 
+}
 
 .navbar-nav{
     margin-left: 6%;
@@ -149,6 +158,18 @@ label{
 			font-size: 0.8em;
 
 }
+.yellowBtn{
+	background-color: #FFCC33;
+	font-family: Helvetica, sans-serif;
+	font-weight: bolder;
+	margin: 5px 0px;
+	font-size: 1.2em;
+	padding: 10px 10px;
+}
+.yellowBtn:hover{
+	background-color: yellow;
+}
+
 
 #yellowBtn:hover{
 			background-color: yellow;
