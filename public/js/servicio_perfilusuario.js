@@ -26,7 +26,7 @@ function obtener_lista_centros(){
 
 function obtener_lista_citas_usuario() {
 
-    let lista_centros = [];
+    let lista_citasUsuario = [];
     let request = $.ajax({
       url: 'http://localhost:4000/api/listar_agendaUsuario',
       type: 'GET',
@@ -43,5 +43,5 @@ function obtener_lista_citas_usuario() {
     request.fail(function () {
 
     });
-    return lista_centros;
+    return lista_citasUsuario;
 };

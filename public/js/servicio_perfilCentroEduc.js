@@ -93,3 +93,25 @@ function obtener_novedad(){
       
     return listaNovedades;
 };
+
+function obtener_lista_citas_centroseducativos() {
+
+    let lista_citasCentros = [];
+    let request = $.ajax({
+      url: 'http://localhost:4000/api/listar_agendaCentro',
+      type: 'GET',
+      contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+      dataType: 'json',
+      async: false,
+      data: {}
+    });
+
+    request.done(function (res) {
+      lista_citasCentros = res;
+    });
+
+    request.fail(function () {
+
+    });
+    return lista_citasCentros;
+};
