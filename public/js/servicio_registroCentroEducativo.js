@@ -231,3 +231,53 @@ function actualizar_usuario(pid, ptipo, pnombrecomercial, pcedulajuridica, ptipo
     return respuesta;
 };
 
+
+function obtener_usuario_por_id(pid){
+    let usuario= '';
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/buscar_usuario',
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+            id: pid
+        }
+      });
+    
+      request.done(function(res){
+        usuario = res;
+      });
+    
+      request.fail(function(){
+       
+      });
+
+    return usuario;
+};
+
+function eliminar_usuario(pid){
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/eliminar_centro',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: { 
+            id: pid, 
+        },
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+       
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+    return respuesta;
+};
+

@@ -483,6 +483,9 @@ imprimirComentarios();
 
 function imprimirComentarios(){
 
+	let tbody = document.querySelector('#tblComentariosPF tbody');
+			tbody.innerHTML = ''
+
     for (let h=0; h< comentarios.length; h++){
 
 /* Busqueda del centro educativo atravez de id en los datos del comentario____________________*/
@@ -491,91 +494,103 @@ function imprimirComentarios(){
 						CentroEd=obtener_usuario_por_id(cod);
 //____________________________________________________________________________________________
 
-			let commentsList = document.querySelector('#CommentTable');
-			
-			var midiv1 = document.createElement("tr");
-			midiv1.setAttribute("id","trComment"+h);
-                var midiv2 = document.createElement("td");
-				midiv2.setAttribute("id","tdPa"+h);
-				var midiv5 = document.createElement("td");
-				midiv5.setAttribute("id","tdComment"+h);
-						var midiv6 = document.createElement("p");
-						midiv6.setAttribute("id","pComment"+h);
-						midiv6.setAttribute("class","comment");
-				var midiv18 = document.createElement("td");
-				midiv18.setAttribute("id","pCentro"+h); 
-				var midiv7 = document.createElement("td");
-				midiv7.setAttribute("id","listMod"+h); 
-						var midiv8 = document.createElement("ul");
-						midiv8.setAttribute("id","listing"+h);  
-							var midiv9 = document.createElement("li");
-							midiv9.setAttribute("id","list1"+h);
-							midiv9.setAttribute("class","toolRegistrar");
-									var midiv12 = document.createElement("a");
-									midiv12.setAttribute("id","a1"+h);
-									midiv12.setAttribute("href","#"); // referencia para editar
-											var midiv15 = document.createElement("i");
-											midiv15.setAttribute("id","i1"+h);
-											midiv15.setAttribute("class","fas fa-edit edit");
+		
 
-							var midiv10 = document.createElement("li");
-							midiv10.setAttribute("id","list2"+h);
-							midiv10.setAttribute("class","toolRegistrar");
-							        var midiv13 = document.createElement("a");
-									midiv13.setAttribute("id","a2"+h);
-									midiv13.setAttribute("href","#"); // referencia para check
-											var midiv16 = document.createElement("i");
-											midiv16.setAttribute("id","i2"+h);
-											midiv16.setAttribute("class","fas fa-check-circle check");
-							
-							var midiv11 = document.createElement("li");
-							midiv11.setAttribute("id","list3"+h);
-							midiv11.setAttribute("class","toolRegistrar");
-									var midiv14 = document.createElement("a");
-									midiv14.setAttribute("id","a3"+h);
-									midiv14.setAttribute("href","#");  // referencia para eliminar
-											var midiv17 = document.createElement("i");
-											midiv17.setAttribute("id","i3"+h);
-											midiv17.setAttribute("class","fas fa-trash-alt trash");
-									
-                 let padre=comentarios[h]['padre'];
-                 midiv2.innerHTML= padre;                
-				 midiv6.innerHTML=comentarios[h]['comentario'];
-				 midiv18.innerHTML=CentroEd['nombrecomercial'];
-    
-    
-				 document.querySelector("#CommentTable").appendChild(midiv1);
-				 document.querySelector("#trComment"+h).appendChild(midiv2);
-				 document.querySelector("#trComment"+h).appendChild(midiv5);
-				 document.querySelector("#trComment"+h).appendChild(midiv18);
 
-				 document.querySelector("#tdComment"+h).appendChild(midiv6);
-				 document.querySelector("#trComment"+h).appendChild(midiv7);
-				 document.querySelector("#listMod"+h).appendChild(midiv8);
+			if (comentarios[h]['estado'] == 'pendiente'){
 
-				 document.querySelector("#listing"+h).appendChild(midiv9);
-				 document.querySelector("#list1"+h).appendChild(midiv12);
-				 document.querySelector("#a1"+h).appendChild(midiv15);
+				var midiv1 = document.createElement("tr");
+				midiv1.setAttribute("id","trComment"+h);
+	                var midiv2 = document.createElement("td");
+					midiv2.setAttribute("id","tdPa"+h);
+					var midiv5 = document.createElement("td");
+					midiv5.setAttribute("id","tdComment"+h);
+							var midiv6 = document.createElement("p");
+							midiv6.setAttribute("id","pComment"+h);
+							midiv6.setAttribute("class","comment");
+					var midiv18 = document.createElement("td");
+					midiv18.setAttribute("id","pCentro"+h); 
+					var midiv7 = document.createElement("td");
+					midiv7.setAttribute("id","listMod"+h); 
+							var midiv8 = document.createElement("ul");
+							midiv8.setAttribute("id","listing"+h);  
+								var midiv9 = document.createElement("li");
+								midiv9.setAttribute("id","list1"+h);
+								midiv9.setAttribute("class","toolRegistrar");
+										var midiv12 = document.createElement("a");
+										midiv12.setAttribute("id","a1"+h);
+										midiv12.setAttribute("href","#"); // referencia para editar
+												var midiv15 = document.createElement("i");
+												midiv15.setAttribute("id","i1"+h);
+												//midiv15.setAttribute("class","fas fa-edit edit");
 
-				 document.querySelector("#listing"+h).appendChild(midiv10);
-				 document.querySelector("#list2"+h).appendChild(midiv13);
-				 document.querySelector("#a2"+h).appendChild(midiv16);
+								var midiv10 = document.createElement("li");
+								midiv10.setAttribute("id","list2"+h);
+								midiv10.setAttribute("class","toolRegistrar");
+								        var midiv13 = document.createElement("a");
+										midiv13.setAttribute("id","a2"+h);
+										midiv13.setAttribute("href","#"); // referencia para check
+												var midiv16 = document.createElement("i");
+												midiv16.dataset._id = comentarios[h]['_id']; //se le asigna el id DEL COMENTARIO
+												midiv16.setAttribute("class","fas fa-check-circle check");
 
-				 document.querySelector("#listing"+h).appendChild(midiv11);
-				 document.querySelector("#list3"+h).appendChild(midiv14);
-				 document.querySelector("#a3"+h).appendChild(midiv17);
+												midiv16.addEventListener('click', aceptar_comentario);
+								
+								var midiv11 = document.createElement("li");
+								midiv11.setAttribute("id","list3"+h);
+								midiv11.setAttribute("class","toolRegistrar");
+										var midiv14 = document.createElement("a");
+										midiv14.setAttribute("id","a3"+h);
+										midiv14.setAttribute("href","#");  // referencia para eliminar
+												var midiv17 = document.createElement("i");
+												midiv17.dataset._id = comentarios[h]['_id']; //se le asigna el id DEL COMENTARIO
+												midiv17.setAttribute("class","fas fa-trash-alt trash");
+
+												midiv17.addEventListener('click', eliminar_coment);
+										
+	                 let padre=comentarios[h]['padre'];
+	                 midiv2.innerHTML= padre;                
+					 midiv6.innerHTML=comentarios[h]['comentario'];
+					 midiv18.innerHTML=CentroEd['nombrecomercial'];
+	    
+	    
+					 document.querySelector("#CommentTable").appendChild(midiv1);
+					 document.querySelector("#trComment"+h).appendChild(midiv2);
+					 document.querySelector("#trComment"+h).appendChild(midiv5);
+					 document.querySelector("#trComment"+h).appendChild(midiv18);
+
+					 document.querySelector("#tdComment"+h).appendChild(midiv6);
+					 document.querySelector("#trComment"+h).appendChild(midiv7);
+					 document.querySelector("#listMod"+h).appendChild(midiv8);
+
+					 document.querySelector("#listing"+h).appendChild(midiv9);
+					 document.querySelector("#list1"+h).appendChild(midiv12);
+					 document.querySelector("#a1"+h).appendChild(midiv15);
+
+					 document.querySelector("#listing"+h).appendChild(midiv10);
+					 document.querySelector("#list2"+h).appendChild(midiv13);
+					 document.querySelector("#a2"+h).appendChild(midiv16);
+
+					 document.querySelector("#listing"+h).appendChild(midiv11);
+					 document.querySelector("#list3"+h).appendChild(midiv14);
+					 document.querySelector("#a3"+h).appendChild(midiv17);
 				 
-				 			 
-				 
-    };
-
+				} 			 		 
+    	};
 };
-/*
-function eliminar_comentario(){
-		let id = this.dataset._id;
 
-		console.log(id);
-		eliminar_comentario(id);
+//const tableComents = document.getElementById('tblComentariosPF')
+
+function aceptar_comentario(){
+
+		let id = this.dataset._id;
+		
+		let comentario = buscar_comentario(id);
+		let estado = comentario.estado;
+		
+		estado = 'activo'; //hacer que el estado ahora sea activo.
+
+		actualizar_comentario(id, estado);
 
 		//dar un mensaje de confirmacion
 		 swal.fire({
@@ -587,8 +602,33 @@ function eliminar_comentario(){
             text: 'El comentario ha sido aprobado con éxito.',
           });
 
-		//refresca la tabla de comentarios...
-
+		//refresca la tabla
+		comentarios= obtener_comentarios();
+		imprimirComentarios();
+		
 };
 
-*/	
+
+
+function eliminar_coment(){
+
+		let id = this.dataset._id;
+		let comentario = buscar_comentario(id);
+
+		eliminar_comentario(id);
+
+		//dar un mensaje de confirmacion
+		 swal.fire({
+        	type : 'info',
+            buttonsStyling: false,
+			customClass: {
+			title: 'title-class',
+			confirmButton: 'confirm-button-class'},
+            text: 'El comentario ha sido eliminado con éxito.',
+          });
+
+		//refresca la tabla de comentarios...
+		comentarios= obtener_comentarios();
+		imprimirComentarios();
+
+};
