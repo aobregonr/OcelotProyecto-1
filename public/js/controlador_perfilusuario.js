@@ -455,21 +455,13 @@ function mostrar_citas(){
 
 
           let celdaFecha = fila.insertCell();
-          let celdaNombre = fila.insertCell();
-          let celdaApellido = fila.insertCell();
-          let celdaEmail = fila.insertCell();
           let celdaHora = fila.insertCell();
-          let celdaTelefono = fila.insertCell();
           let celdaDescripcion = fila.insertCell();
 
           //
 
           celdaFecha.innerHTML = listaCitas[i]['fecha'];
-          celdaNombre.innerHTML = listaCitas[i]['nombre'];
-          celdaApellido.innerHTML = listaCitas[i]['apellido'];
-          celdaEmail.innerHTML = listaCitas[i]['email'];
           celdaHora.innerHTML = listaCitas[i]['hora'];
-          celdaTelefono.innerHTML = listaCitas[i]['telefono'];
           celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
 
       }
