@@ -425,7 +425,8 @@ function mostrar_rankingPF(){
 
 };
 
-let listaCitaCentro = obtener_lista_citas_centroseducativos();
+let listaCitaCentro = [];
+listaCitaCentro = obtener_lista_citas_centroseducativos();
 mostrar_citas();
 
 function mostrar_citas(){
