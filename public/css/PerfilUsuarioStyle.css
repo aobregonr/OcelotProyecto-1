@@ -28,12 +28,14 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 #mapa{
 	border-style: solid;
+	margin-left: 20px;
+	margin-right: 80px;
 	height: 400px;
-	width: 100%; 
+	width: 87%; 
 }
 #imgMap {
 	height: 380px; 
-	width: 900px; 
+	width: 780px; 
 }
 
 .navbar-nav{
