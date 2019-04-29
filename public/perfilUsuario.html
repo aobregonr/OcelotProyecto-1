@@ -78,33 +78,33 @@
 				<form>
 					<h3>Niveles </h3>
 					<div class="form-check">
-		              	<input type="checkbox" class="form-check-input" id="cbPrimaria" checked="">
+		              	<input type="checkbox" class="form-check-input" id="cbPrimaria" >
 		              	<label class="form-check-label">Primaria</label>
 		           </div>
 		           <div class="form-check">
-		             	<input type="checkbox" class="form-check-input" id="cbSecundaria" checked="">
+		             	<input type="checkbox" class="form-check-input" id="cbSecundaria" >
 		             	<label class="form-check-label">Secundaria</label>
 		           </div>
 					<br>
 
 					<h3>Tipo de Centro </h3>
 					<div class="form-check">
-						<input type="checkbox" class="form-check-input" id="cbPublico" checked="">
+						<input type="checkbox" class="form-check-input" id="cbPublico" >
 						<label class="form-check-label" >Público</label>
 					</div>
 					<div class="form-check">
-						<input type="checkbox" class="form-check-input" id="cbPrivado" checked="">
+						<input type="checkbox" class="form-check-input" id="cbPrivado" >
 						<label class="form-check-label" >Privado</label>
 					</div>
 					<br>
 
 					<h3>Características </h3>
 					<div class="form-check">
-						<input type="checkbox" class="form-check-input" id="cbDefault" checked="" onclick="ShowData()">
+						<input type="checkbox" class="form-check-input" id="cbDefault" checked="" >
 						<label class="form-check-label" >Todas (por defecto)</label>
 					</div>
 					<div class="form-check">
-						<input type="checkbox" class="form-check-input" id="cbBilingue" onclick="ShowData()">
+						<input type="checkbox" class="form-check-input" id="cbBilingue">
 						<label class="form-check-label" >Bilingüe</label>
 					</div>
 					<div class="form-check">
@@ -149,6 +149,9 @@
 					</div>
 					
 				</form>
+				<div class="col">
+						<button type="button" class="yellowBtn" id="btnSearch">Buscar Por Criterios</button>
+				 </div>
 			</div>
 		</div>
 		
@@ -157,18 +160,15 @@
 		<div class= mainProfile>
 
 			<div class="containerMain1">
-				<div class="well redFlagBig"> Colegios cerca de su ubicación </div>
+				
+				<div>
+					<div class="well redFlagBig"> Instituciones cercanas a su ubicación </div>
+					<br>
+					<div id="mapa"></div>
+				  
+				</div>
 
-
-				<div class="mapouter">
-					<div class="gmap_canvas">
-						<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">	
-						</iframe>
-						<span style="font-size:12px;">Werbung: 
-						<a href="https://www.pureblack.de">Pure Black GmbH</a>
-					</span>
-					</div>
-				</div>  
+				
  
 
 				<!--Aqui se generan los cards de busqueda -->
@@ -262,16 +262,24 @@
         </div>
     </footer>
 
+		
 		<script src="js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 
 		<script src="js/servicio_perfilusuario.js"></script>
-		<script src="js/controlador_perfilusuario.js"></script>
+		
 
+		<script src="js/controlador_mapa2.js"></script>
+
+		
 
 		<script src="js/servicio_inicio.js"></script>
+		
 		<script src="js/controlador_nav.js"></script>  <!--restringir accesos-->
 
+		<script src="js/controlador_perfilusuario.js"></script>
+
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUmBVjS6bNGRj9d76D6hh5_r290AJs1fk"></script>
 	</body>
 </html>
