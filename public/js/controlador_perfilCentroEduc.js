@@ -297,7 +297,6 @@ function obtener_comentario(){
 
 let comentarios=[];
 comentarios= obtener_comentarios();
-console.log(comentarios);
 
 imprimirComentarios();
 
@@ -400,44 +399,6 @@ let star3 = document.querySelector('#radio3');
 let star4 = document.querySelector('#radio2');
 let star5 = document.querySelector('#radio1');
 
-/*
-function registrarRankingPadres(){
-
-    if id_usuario
-    document.getElementById("myBtn").disabled = true;
-    //variable que guarda la calificacion de las estrellas.
-    let estrellas = '';
-
-    //establecer el ranking.
-    if (star1.checked == true){
-        console.log("1 estrella marcada");
-        estrellas = 1;
-    }
-    else if (star2.checked == true ){
-        console.log("2 estrellas marcadas")
-        estrellas = 2;
-    }
-    else if (star3.checked == true ){
-        console.log("3 estrellas marcadas")
-        estrellas = 3;
-    }
-    else if (star4.checked == true ){
-        console.log("4 estrellas marcadas")
-        estrellas = 4;
-    }
-    else if (star5.checked == true ){
-        console.log("5 estrellas marcadas")
-        estrellas = 5;
-    }
-
-
-    //registrar_rankingPF( pid, pimagen)
-
-}
-
-botonCalificar.addEventListener('click', registrarRankingPadres)
-*/
-
 function mostrar_rankingPF(){
     let tbody = document.querySelector('#tblRankingPF tbody');
     let lista_rankingMep = obtener_rankingMEP();
@@ -463,3 +424,34 @@ function mostrar_rankingPF(){
     };
 
 };
+
+let listaCitaCentro = obtener_lista_citas_centroseducativos();
+mostrar_citas();
+
+function mostrar_citas(){
+       let tbody = document.querySelector('#tblCitas tbody');
+       tbody.innerHTML = '';
+
+       for (let i = 0; i < listaCitasCentro.length; i++) {
+           let fila = tbody.insertRow();
+            
+            let celdaNombre = fila.insertCell();
+            let celdaApellido = fila.insertCell();
+            let celdaEmail = fila.insertCell();
+            let celdaFecha = fila.insertCell();
+            let celdaHora = fila.insertCell();
+            let celdaTelefono = fila.insertCell();
+            let celdaDescripcion = fila.insertCell();
+
+           //
+
+           celdaNombre.innerHTML = listaCitas[i]['nombre'];
+           celdaApellido.innerHTML = listaCitas[i]['apellido'];
+            celdaEmail.innerHTML = listaCitas[i]['email'];
+           celdaFecha.innerHTML = listaCitas[i]['fecha'];
+           celdaHora.innerHTML = listaCitas[i]['hora'];
+           celdaTelefono.innerHTML = listaCitas[i]['telefono'];
+           celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+
+       }
+}
