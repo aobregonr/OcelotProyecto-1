@@ -90,6 +90,8 @@ function obtenerDatos(){
                             sessionStorage.setItem('mixto_usuario', usuarioAceptado.usuario.mixto);
                             sessionStorage.setItem('vocacional_usuario', usuarioAceptado.usuario.vocacional);
                             sessionStorage.setItem('tipoDeCentro_usuario', usuarioAceptado.usuario.tipodecentro);
+                           
+
                             //
                             sessionStorage.setItem('telefono_centro', usuarioAceptado.usuario.telefonoctro);
                             sessionStorage.setItem('email_centro', usuarioAceptado.usuario.emailinstit);
@@ -118,6 +120,7 @@ function obtenerDatos(){
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                     sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+                    sessionStorage.setItem('provincia', usuarioAceptado.usuario.provincia);
                     window.location.href = 'perfilUsuario.html';
 
                 }else if(usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar != usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){ //si el codigo de verificacion autenticado esta en blanco o incorrecto, mostrar modal
@@ -148,6 +151,7 @@ function obtenerDatos(){
                             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                             sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+                            sessionStorage.setItem('provincia', usuarioAceptado.usuario.provincia);
                             window.location.href = 'perfilUsuario.html';
                             
                         }
@@ -365,6 +369,7 @@ function obtenerDatosModal(){
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                     sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+                    sessionStorage.setItem('provincia', usuarioAceptado.usuario.provincia);
                     
 
                     window.location.href = 'perfilUsuario.html';
@@ -397,6 +402,7 @@ function obtenerDatosModal(){
                             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                             sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
+                            sessionStorage.setItem('provincia', usuarioAceptado.usuario.provincia);
                             window.location.href = 'perfilUsuario.html';
                             
                         }
