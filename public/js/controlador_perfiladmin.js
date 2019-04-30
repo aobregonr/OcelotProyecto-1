@@ -175,7 +175,7 @@ function obtener_ranking(){
 
 				for(let s = 1; s<6; s++ ) {
 
-					stars += "<i id='star" + s + '_' + lista_centros[i]['_id'] + "' class='fas fa-star fa-1x'>"; //generar estrellas grises
+					stars += "<i id='star" + s + '_' + lista_centros[i]['_id'] + "' class='fas fa-star fa-1x starMep'>"; //generar estrellas grises
 				};
 
 				celdaRankingMEP.innerHTML = stars; //llenar la celda con estrellas

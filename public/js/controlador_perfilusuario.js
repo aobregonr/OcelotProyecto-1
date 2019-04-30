@@ -12,7 +12,6 @@ let listaCen=obtener_lista_centros();
 let i;
 let j;
 let listaResul=[];
-let listaCitasUsuario = obtener_lista_citas_usuario();
 let varFilter=[];
 varFilter[0]=provincia_usuario.toLowerCase();
     
@@ -20,7 +19,17 @@ varFilter[0]=provincia_usuario.toLowerCase();
 const boton= document.querySelector('#btnSearch');
 boton.addEventListener('click' , ShowData);
 ShowData();
+
+
+let listaCitas = listarCitas();
+
+
 mostrar_citas();
+
+
+
+
+
 function ShowData(){
     listaCen=obtener_lista_centros();
     listaResul=[];  
@@ -447,23 +456,39 @@ for(let i = 0; i < listaCen.length; i++){
 };
 
 function mostrar_citas(){
+
+
      let tbody = document.querySelector('#tblCitas tbody');
      tbody.innerHTML = '';
 
       for (let i = 0; i < listaCitas.length; i++) {
-          let fila = tbody.insertRow();
 
+        //obtener el padre de familia actual:
+        let padreActual = obtener_usuario_por_id( listaCitas[i]['identPadresFamilia']);
+        let centroData = obtener_usuario_por_id(listaCitas[i]['identCentroEducativo']);
+
+
+        console.log(nombre_usuario);
+        console.log(padreActual.nombre);
+        console.log(centroData.nombrecomercial);
+
+
+        //si el padre de la cita coincide con el inicio de sesion, mostrar cita
+        if (padreActual.nombre == nombre_usuario){
+
+
+          let fila = tbody.insertRow();
 
           let celdaFecha = fila.insertCell();
           let celdaHora = fila.insertCell();
+          let celdaCentro = fila.insertCell();
           let celdaDescripcion = fila.insertCell();
 
           //
-
           celdaFecha.innerHTML = listaCitas[i]['fecha'];
           celdaHora.innerHTML = listaCitas[i]['hora'];
+          celdaCentro.innerHTML = centroData.nombrecomercial;
           celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
-
-      }
-
+        }
+    }
 }

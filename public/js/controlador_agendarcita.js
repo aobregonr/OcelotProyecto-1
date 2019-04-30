@@ -108,11 +108,10 @@ if(bError == true){
                 title: 'title-class',
                 confirmButton: 'confirm-button-class'
             },
-            title: 'Actualización realizada',
-            text: 'La cita se agendo con exito.'
-       }) /*.then(function () {
+            title: 'La cita se agendó con éxito'
+       }).then(function () {
             window.location = "perfilUsuario.html";
-        });*/
+        });
                
 }};
 

@@ -109,6 +109,18 @@ let tipoDeCentro=document.querySelector('#listBil9');
     let b=sessionStorage.getItem('id_usuario');
     imprimirComentarios();
 
+
+//ranking Padres de familia y MEP
+//let lista_rankingPF = obtener_rankingPF();
+let lista_ranking = obtener_rankingMEP();
+let lista_rankingPF = obtener_rankingPF();
+
+//mostrar_rankingPF();
+mostrar_rankingMep();
+mostrar_rankingPF_promedio();
+
+
+
 function imprimirComentarios(){
     
 
@@ -157,3 +169,175 @@ function imprimirComentarios(){
     };
 
 }
+
+function mostrar_rankingMep(){
+
+   let centroActual = obtener_usuario_por_id(b);
+
+    //la tabla de ranking del MEP no guarda el id, entonces lo retengo por nombre.
+   
+    let tbody = document.querySelector('#tblRankingMEP tbody');
+    let lista_rankingMep = obtener_rankingMEP();
+    tbody.innerHTML = ''; 
+
+    //sin calificacion por defecto
+    let fila = tbody.insertRow();
+    let celdaRankingmepNoCalif = fila.insertCell(); 
+    celdaRankingmepNoCalif.innerHTML = '<i id="star1" class="fas fa-star fa-1x" style="color: gray;"><i id="star2" class="fas fa-star fa-1x" style="color: gray;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+
+    //si hay calificacion:
+    for(let i = 0; i < lista_rankingMep.length; i++){
+        let fila = tbody.insertRow();
+
+        //mostrar exclusivamente el ranking de UN centro, no de todos
+        if (lista_rankingMep[i]['nombrecomercial'] == centroActual.nombrecomercial){
+            let celdaRankingmep = fila.insertCell(); 
+            celdaRankingmep.innerHTML = lista_rankingMep[i]['rankingmep'];
+            //esconder la que no tiene calif.
+            celdaRankingmepNoCalif.classList.add('hide');
+
+            break;
+        }
+    };
+};
+
+
+//MODIFICADA PARA Q SOLO MUESTRE EL COLE ACTUAL (viene del modulo de reportes)
+// hace un promedio de la calificacion de todos los padres para cada colegio, no muestra todos. 
+function mostrar_rankingPF_promedio(){
+
+    let tbody = document.querySelector('#tblRankingPF_Promedio tbody');
+    tbody.innerHTML = ''; 
+    let centroActual = obtener_usuario_por_id(b);
+
+    //variables importantes:
+    var  count = {}; //diccionario de coles y cantidad de papas que rankearon
+    var value = [] //solo las personas que rankearon, numero.
+    let promedio = 0 ; // promedio de notas x cole. 
+
+
+    //obtener primero los repetidos de cada centro
+    for(let i = 0; i < lista_rankingPF.length; i++){
+
+      //obtener nombre comercial de cada centro
+      let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
+     
+      //crear un diccionario q diga cual cole y cuantos rankings x cole
+      let uniqueCount = [centrosInfo.nombrecomercial];
+      uniqueCount.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+    }
+
+
+    //obtener la cantidad de rankings x cole
+     for(var key in count) {
+        value = count[key];
+        var contadorNotas = 0;
+
+        //obtener la suma de las notas de cada cole
+        for(let i = 0; i < lista_rankingPF.length; i++){
+
+          let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
+          if (centrosInfo.nombrecomercial == key){
+          
+            let nota = lista_rankingPF[i]['califnum'];
+            contadorNotas += parseInt(nota);
+            }
+        }
+
+      //sacar el promedio con la suma de notas y la cantidad de rankings
+      promedio = Math.trunc(contadorNotas / value);
+
+      //key=nombre del cole. 
+      //value= cantidad de personas que rankearon el cole.
+      //promedio= promedio de nota de ranking basado en los ranking. (truncados)
+    
+
+      //generar la tabla
+      for(let i = 0; i < lista_rankingPF.length; i++){
+
+        //obtener nombre comercial y escudo de cada centro
+        let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
+        let papaInfo = obtener_usuario_por_id(lista_rankingPF[i]['idpadres']);
+
+       if (key == centrosInfo.nombrecomercial && key == centroActual.nombrecomercial){
+
+          let fila = tbody.insertRow();
+
+          let celdaEstrellas = fila.insertCell(); 
+
+          //definir la cantidad de estrellas basado en el promedio:
+          let promedioStars = '';
+
+          if (promedio == 0){
+            promedioStars = '<i id="star1" class="fas fa-star fa-1x" style="color: gray;"><i id="star2" class="fas fa-star fa-1x" style="color: gray;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>'; 
+          }
+
+          else if (promedio == 1){
+            promedioStars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: gray;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+          }
+
+          else if (promedio == 2){
+            promedioStars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+          }
+
+          else if (promedio == 3){
+            promedioStars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+          }
+
+          else if (promedio == 4){
+            promedioStars =  '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+          }
+
+          else if (promedio == 5){
+            promedioStars =  '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: orange;"></i></i></i></i></i>';
+          }
+    
+          //llenar la tabla con los datos (hacer un condicional para que no se repitan)
+         
+            celdaEstrellas.innerHTML = promedioStars;
+            break;
+        }
+          
+        }
+      }
+};
+
+
+
+
+/*
+let listaCitaCentro = [];
+listaCitaCentro = obtener_lista_citas_centroseducativos();
+mostrar_citas();
+
+
+function mostrar_citas(){
+       let tbody = document.querySelector('#tblCitas tbody');
+       tbody.innerHTML = '';
+
+       for (let i = 0; i < listaCitasCentro.length; i++) {
+           let fila = tbody.insertRow();
+            
+            let celdaNombre = fila.insertCell();
+            let celdaApellido = fila.insertCell();
+            let celdaEmail = fila.insertCell();
+            let celdaFecha = fila.insertCell();
+            let celdaHora = fila.insertCell();
+            let celdaTelefono = fila.insertCell();
+            let celdaDescripcion = fila.insertCell();
+
+           //
+
+           celdaNombre.innerHTML = listaCitas[i]['nombre'];
+           celdaApellido.innerHTML = listaCitas[i]['apellido'];
+            celdaEmail.innerHTML = listaCitas[i]['email'];
+           celdaFecha.innerHTML = listaCitas[i]['fecha'];
+           celdaHora.innerHTML = listaCitas[i]['hora'];
+           celdaTelefono.innerHTML = listaCitas[i]['telefono'];
+           celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+
+       }
+}
+
+*/

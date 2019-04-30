@@ -24,6 +24,31 @@ function obtener_lista_centros(){
     return lista_centros;
 };
 
+
+function obtener_usuario_por_id(pid){
+    let usuario= '';
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/buscar_usuario',
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+            id: pid
+        }
+      });
+    
+      request.done(function(res){
+        usuario = res;
+      });
+    
+      request.fail(function(){
+       
+      });
+
+    return usuario;
+};
+
 function obtener_actividad(){
   let listaActividades = [];
   let peticion = $.ajax({
@@ -93,6 +118,33 @@ function obtener_novedad(){
       
     return listaNovedades;
 };
+
+function obtener_rankingMEP(){
+
+    let lista_rankingMep = [];
+    let request = $.ajax({
+        url: 'http://localhost:4000/api/listar_rankingMep',
+        type: 'GET',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async:false,
+        data:{
+        }
+      });
+    
+      request.done(function(res){
+        lista_rankingMep = res;
+      });
+    
+      request.fail(function(){
+       
+      });
+
+    return lista_rankingMep;
+};
+
+
+
 
 function obtener_lista_citas_centroseducativos() {
 

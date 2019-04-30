@@ -4,7 +4,6 @@
 
 var url = window.location.href;
     var b = url.substring(url.indexOf("=")+1);
-    console.log(b);
 // ___________________________________________________________________________
 const boton_comentario = document.querySelector('#sendComment');
 const input_msg = document.querySelector('#msgComment');
@@ -13,9 +12,9 @@ boton_comentario.addEventListener('click', obtener_comentario);
 //_______________________________________________________________________________
 
 
-    let listaCen=[];
-    let listaRe=[];
-    listaCen=obtener_lista_centros();
+let listaCen=[];
+let listaRe=[];
+listaCen=obtener_lista_centros();
    
     
     for(let i = 0; i <listaCen.length; i++){
@@ -26,7 +25,6 @@ boton_comentario.addEventListener('click', obtener_comentario);
            };
     };
 
-    console.log(listaRe);
 
 let identCentro = '';
 
@@ -86,14 +84,14 @@ function sitioweb(){
 
 if (bilingue_usuario==true){
     let bilingue=document.querySelector('#listBil1');
-    bilingue.innerHTML="Bilingue";
+    bilingue.innerHTML="Bilingüe";
     let espannol=document.querySelector('#listBil6');
     espannol.innerHTML="Español";
 }else{
     let espannol=document.querySelector('#listBil6');
     espannol.innerHTML="Español";
     let bilingue=document.querySelector('#listBil1');
-    bilingue.innerHTML="No es bilingue";
+    bilingue.innerHTML="No es bilingüe";
 };
 
 if (idiomas_usuario==true){
@@ -144,8 +142,12 @@ let tipoDeCentro=document.querySelector('#listBil9');
     tipoDeCentro.innerHTML=tipoDeCentro_usuario;
 };
 
+//ranking Padres de familia y MEP
+let lista_rankingPF = obtener_rankingPF();
+let lista_ranking = obtener_rankingMEP();
 
-
+mostrar_rankingPF();
+mostrar_rankingMep();
 
 
 
@@ -259,8 +261,6 @@ function imprimir_listaFaqs() {
     };
 };
 
-
-
 function obtener_comentario(){
 
     let msg = input_msg.value;
@@ -268,8 +268,8 @@ function obtener_comentario(){
     if (msg!=''){
         Swal.fire({
             type: 'success',
-            title: 'Gracias sus comentarios son valiosos para nosotros!',
-            text: 'Su comentario:  "'+msg+'"   esta pendiente de aprobación...'
+            title: '¡Gracias, sus comentarios son valiosos para nosotros!',
+            text: 'Su comentario:  "'+msg+'"   está pendiente de aprobación.'
            });
 
            let cod1=b;
@@ -287,8 +287,8 @@ function obtener_comentario(){
     }else{
         Swal.fire({
             type: 'warning',
-            title: 'Favor ingrese un comentario en el espacio asignado!',
-            text: 'Gracias su opinión es importante para nosotros...'
+            title: 'Favor ingrese un comentario en el espacio asignado.',
+            text: 'Gracias, su opinión es importante para nosotros.'
             
           });
     }
@@ -392,67 +392,156 @@ function imprimir_listaNovedades() {
     }
 };
 
-let botonCalificar = document.querySelector('#btnRegRanking')
-let star1 = document.querySelector('#radio5');
-let star2 = document.querySelector('#radio4');
-let star3 = document.querySelector('#radio3');
-let star4 = document.querySelector('#radio2');
-let star5 = document.querySelector('#radio1');
+
+const botonCalificar = document.querySelector('#btnRegRanking')
+
+function registrarRankingPadres(){
+
+    let idpadres = sessionStorage.getItem('id_usuario');
+    let idcentro = b; 
+    let califnum  = 0;
+    let stars = ''; 
+
+    const star1 = document.querySelector('#radio5');
+    const star2 = document.querySelector('#radio4');
+    const star3 = document.querySelector('#radio3');
+    const star4 = document.querySelector('#radio2');
+    const star5 = document.querySelector('#radio1');
+
+    //establecer el ranking.
+    if (star1.checked != true){
+        Swal.fire({
+            type: 'warning',
+            text: 'Por favor elija al menos una estrella para realizar la calificación.'        
+          })
+    }
+
+    if (star1.checked == true){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: gray;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>'; //solo una estrella marcada
+
+        registrar_rankingPF(idpadres, idcentro, 1, stars);
+    }
+
+    else if (star2.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+        registrar_rankingPF(idpadres, idcentro, 2, stars);
+    }
+
+    else if (star3.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+        registrar_rankingPF(idpadres, idcentro, 3, stars);
+    }
+
+    else if (star4.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+        registrar_rankingPF(idpadres, idcentro, 4, stars);      
+    }
+
+    else if (star5.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: orange;"></i></i></i></i></i>';
+        registrar_rankingPF(idpadres, idcentro, 5, stars);
+
+        Swal.fire({
+            title: '¡Gracias por calificarnos!'        
+          }).then(function() {
+                window.location.reload();
+            });
+        }
+};
+
+botonCalificar.addEventListener('click', registrarRankingPadres)
+
 
 function mostrar_rankingPF(){
+
+    const botonCalificar = document.querySelector('#btnRegRanking')
+    const star1Hover = document.querySelector('#starPF1')
+    const star2Hover = document.querySelector('#starPF2')
+    const star3Hover = document.querySelector('#starPF3')
+    const star4Hover = document.querySelector('#starPF4')
+    const star5Hover = document.querySelector('#starPF5')
+    const califiquenos = document.querySelector('#califiquenos')
+    const califgracias = document.querySelector('#califGracias')
+    //
+    let idpadres = sessionStorage.getItem('id_usuario');
+    let idcentro = b; 
+    let califnum  = 0;
+    let stars = ''; 
+
     let tbody = document.querySelector('#tblRankingPF tbody');
+    tbody.innerHTML = ''; 
+
+
+    for(let i = 0; i < lista_rankingPF.length; i++){
+        let fila = tbody.insertRow();
+
+
+            //si el padre de familia ya califico al centro, mostrar calificacion.
+            if ((lista_rankingPF[i]['idpadres']).includes(idpadres) && (lista_rankingPF[i]['idcentro']).includes(idcentro)){
+
+                // si el id de la lista de centro es igual al centro actual, y el id padres es igual al papa actual.
+                //esto es para que solo muestre la calificacion del papa actual y no la de todos.
+                if (lista_rankingPF[i]['idcentro'] == b && lista_rankingPF[i]['idpadres'] == idpadres){
+
+                    let celdaNota = fila.insertCell(); 
+                    let celdaEstrellas = fila.insertCell(); 
+              
+                    //
+                    celdaEstrellas.innerHTML = lista_rankingPF[i]['stars'];
+                    celdaEstrellas.classList.add('estrellasRankeadas') //temporal
+                }
+
+                //esconder el calificador de padres.
+                botonCalificar.classList.add('hide');
+                star1Hover.classList.add('hide');
+                star2Hover.classList.add('hide');
+                star3Hover.classList.add('hide');
+                star4Hover.classList.add('hide');
+                star5Hover.classList.add('hide');
+                califiquenos.classList.add('hide');
+                califgracias.classList.remove('hide');
+
+                break; //para que deje de loopear entre el resto de los padres de familia.
+        }
+    }
+};
+//-----------------------------------------------------------------------------------//
+
+function mostrar_rankingMep(){
+
+   let centroActual = obtener_usuario_por_id(b);
+
+    //la tabla de ranking del MEP no guarda el id, entonces lo retengo por nombre.
+   
+    let tbody = document.querySelector('#tblRankingMEP tbody');
     let lista_rankingMep = obtener_rankingMEP();
     tbody.innerHTML = ''; 
 
+    //sin calificacion por defecto
+    let fila = tbody.insertRow();
+    let celdaRankingmepNoCalif = fila.insertCell(); 
+    celdaRankingmepNoCalif.innerHTML = '<i id="star1" class="fas fa-star fa-1x" style="color: gray;"><i id="star2" class="fas fa-star fa-1x" style="color: gray;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+
+    //si hay calificacion:
     for(let i = 0; i < lista_rankingMep.length; i++){
         let fila = tbody.insertRow();
 
-        let celdaNombrecomercial = fila.insertCell();
-        let celdaEscudo = fila.insertCell();
-        let celdaRankingmep = fila.insertCell(); 
-        let celdaCalifnum = fila.insertCell(); 
-        //let celdaCalifanno = fila.insertCell(); 
-   
-        //
+        //mostrar exclusivamente el ranking de UN centro, no de todos
+        if (lista_rankingMep[i]['nombrecomercial'] == centroActual.nombrecomercial){
+            let celdaRankingmep = fila.insertCell(); 
+            celdaRankingmep.innerHTML = lista_rankingMep[i]['rankingmep'];
+            //esconder la que no tiene calif.
+            celdaRankingmepNoCalif.classList.add('hide');
 
-        celdaNombrecomercial.innerHTML = lista_rankingMep[i]['nombrecomercial'];
-        celdaEscudo.innerHTML =lista_rankingMep[i]['escudo'];
-        celdaRankingmep.innerHTML = lista_rankingMep[i]['rankingmep'];
-        celdaCalifnum.innerHTML = lista_rankingMep[i]['califnum'];
-        //celdaCalifanno.innerHTML = lista_rankingMep[i]['califanno'];
-
+            break;
+        }
     };
 
 };
 
-let listaCitaCentro = [];
-listaCitaCentro = obtener_lista_citas_centroseducativos();
-mostrar_citas();
 
-function mostrar_citas(){
-       let tbody = document.querySelector('#tblCitas tbody');
-       tbody.innerHTML = '';
 
-       for (let i = 0; i < listaCitasCentro.length; i++) {
-           let fila = tbody.insertRow();
-            
-            let celdaNombre = fila.insertCell();
-            let celdaApellido = fila.insertCell();
-            let celdaEmail = fila.insertCell();
-            let celdaFecha = fila.insertCell();
-            let celdaHora = fila.insertCell();
-            let celdaTelefono = fila.insertCell();
-            let celdaDescripcion = fila.insertCell();
-
-           //
-
-           celdaNombre.innerHTML = listaCitas[i]['nombre'];
-           celdaApellido.innerHTML = listaCitas[i]['apellido'];
-            celdaEmail.innerHTML = listaCitas[i]['email'];
-           celdaFecha.innerHTML = listaCitas[i]['fecha'];
-           celdaHora.innerHTML = listaCitas[i]['hora'];
-           celdaTelefono.innerHTML = listaCitas[i]['telefono'];
-           celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
-
-       }
-}

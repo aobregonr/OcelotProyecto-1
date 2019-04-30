@@ -2,14 +2,15 @@
 
 
 
-function registrar_rankingPF( pid, pimagen){
+function registrar_rankingPF( pidpadres, pidcentro, pcalifnum, pstars){
     let request= $.ajax({
         url: 'http://localhost:4000/api/registrar_ranking',
         method: "POST",
         data: {
-            id: pid,
-            imagen: pimagen
-
+            idpadres: pidpadres,
+            idcentro: pidcentro,
+            califnum: pcalifnum,
+            stars: pstars
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -18,7 +19,6 @@ function registrar_rankingPF( pid, pimagen){
     request.done(function(res){
         swal.fire({
             type: 'info',
-            title: 'Atención',
             text: res.msg
         });
     });

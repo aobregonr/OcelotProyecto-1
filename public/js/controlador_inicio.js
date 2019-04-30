@@ -117,6 +117,7 @@ function obtenerDatos(){
             }else{
                 if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
+                    sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id); 
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                     sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
@@ -148,6 +149,7 @@ function obtenerDatos(){
                             //iniciar sesion normal
                             
                             sessionStorage.setItem('tipo_usuario', 'PadreFam');
+                            sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id); 
                             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                             sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
@@ -366,6 +368,7 @@ function obtenerDatosModal(){
             }else{
                 if (usuarioAceptado.success == true && (usuarioAceptado.usuario.codigoautenticar == usuarioAceptado.usuario.codigoverif) && usuarioAceptado.usuario.tipo == 'PadreFam'){  //verifica si es padre de familia
                     sessionStorage.setItem('tipo_usuario', 'PadreFam');
+                    sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id); 
                     sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                     sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                     sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
@@ -399,6 +402,7 @@ function obtenerDatosModal(){
                             //iniciar sesion normal
                             
                             sessionStorage.setItem('tipo_usuario', 'PadreFam');
+                            sessionStorage.setItem('id_usuario', usuarioAceptado.usuario._id); 
                             sessionStorage.setItem('nombre_usuario', usuarioAceptado.usuario.nombre); 
                             sessionStorage.setItem('apellido_usuario', usuarioAceptado.usuario.apellido);
                             sessionStorage.setItem('foto_usuario', usuarioAceptado.usuario.foto);
