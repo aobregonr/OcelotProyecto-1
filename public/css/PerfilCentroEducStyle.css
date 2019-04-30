@@ -777,3 +777,39 @@ a{
 	color: gray;
 }
 
+
+/*-------------------citas----------------------*/
+
+#tblCitas{
+	display: block;
+	height: 300px;
+	overflow-y: scroll;
+}
+
+#tblCitas> thead{
+	text-align: center;
+}
+
+.citasHead{
+	min-width: 100px;
+}
+
+
+
+.aprovIcon{
+	margin: 20px;
+	cursor: pointer;
+	font-size: 30px;
+}
+.aprovIcon:hover { 
+	color: green !important; 
+}
+
+.rejectIcon{
+	cursor: pointer;
+	font-size: 30px;
+}
+.rejectIcon:hover { 
+	color: red !important; 
+}
+
