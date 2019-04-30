@@ -306,38 +306,134 @@ function mostrar_rankingPF_promedio(){
 
 
 
-/*
-let listaCitaCentro = [];
-listaCitaCentro = obtener_lista_citas_centroseducativos();
+
+let listaCitas = listarCitas();
 mostrar_citas();
 
 
-function mostrar_citas(){
-       let tbody = document.querySelector('#tblCitas tbody');
-       tbody.innerHTML = '';
 
-       for (let i = 0; i < listaCitasCentro.length; i++) {
-           let fila = tbody.insertRow();
-            
+function mostrar_citas(){
+
+    //obtener el padre de familia actual
+    let centroActualId = sessionStorage.getItem('id_usuario');
+
+    //crear la tabla
+     let tbody = document.querySelector('#tblCitas tbody');
+     tbody.innerHTML = '';
+
+      for (let i = 0; i < listaCitas.length; i++) {
+
+        //si el padre de la cita coincide con el que inicio de sesion, mostrar cita
+        if (centroActualId == listaCitas[i]['identCentroEducativo']){
+
+            //obtener info papa
+
+
+            let fila = tbody.insertRow();
+
             let celdaNombre = fila.insertCell();
             let celdaApellido = fila.insertCell();
-            let celdaEmail = fila.insertCell();
+            let celdaCorreo = fila.insertCell();
             let celdaFecha = fila.insertCell();
             let celdaHora = fila.insertCell();
             let celdaTelefono = fila.insertCell();
             let celdaDescripcion = fila.insertCell();
+            let celdaEstado = fila.insertCell();
+            let celdaHerramientas = fila.insertCell();
 
-           //
 
-           celdaNombre.innerHTML = listaCitas[i]['nombre'];
-           celdaApellido.innerHTML = listaCitas[i]['apellido'];
-            celdaEmail.innerHTML = listaCitas[i]['email'];
-           celdaFecha.innerHTML = listaCitas[i]['fecha'];
-           celdaHora.innerHTML = listaCitas[i]['hora'];
-           celdaTelefono.innerHTML = listaCitas[i]['telefono'];
-           celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+            //
+            celdaNombre.innerHTML = listaCitas[i]['nombre'];
+            celdaApellido.innerHTML = listaCitas[i]['apellido'];
+            celdaCorreo.innerHTML = listaCitas[i]['email'];
+            celdaFecha.innerHTML = listaCitas[i]['fecha'];
+            celdaHora.innerHTML = listaCitas[i]['hora'];
+            celdaTelefono.innerHTML = listaCitas[i]['telefono'];
+            celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+            celdaEstado.innerHTML = listaCitas[i]['estado'];
 
-       }
+             //boton activar centro
+
+            let botonActivar = document.createElement('a');
+            botonActivar.classList.add('fas');
+            botonActivar.classList.add('fa-check-circle');
+            botonActivar.classList.add('check'); //es para hacer hover a otro color
+            botonActivar.classList.add('aprovIcon'); //es para dar espacio
+
+            //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
+            botonActivar.dataset._id = listaCitas[i]['_id'];
+
+            //boton rechazar centro
+            let botonEliminar = document.createElement('a');
+            botonEliminar.classList.add('fas');
+            botonEliminar.classList.add('fa-trash-alt');
+            botonEliminar.classList.add('trash'); //es para hacer hover a otro color
+            botonEliminar.classList.add('rejectIcon'); //es para dar espacio
+
+            //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
+            botonEliminar.dataset._id = listaCitas[i]['_id'];
+
+            //insertar los botones dinamicamente 
+            celdaHerramientas.appendChild(botonActivar);
+            celdaHerramientas.appendChild(botonEliminar);
+
+            //agregar las funciones a los botones
+            botonActivar.addEventListener('click', aceptarCita);
+            botonEliminar.addEventListener('click', eliminarCita);
+        }
+    }
 }
 
+
+function aceptarCita(){
+    //binding epico increible!! <3  (this)
+    //sirve para enlazar la funcion con el contexto que la llama. 
+    let id = this.dataset._id;
+    let usuario = obtener_usuario_por_id(id);
+    let estado = usuario.estado;
+
+    estado = 'activo'; //hacer que el estado ahora sea activo.
+
+    /*
+    console.log(id, estado);
+    activar_centro(id,  estado);
+  */
+    //dar un mensaje de confirmacion
+     swal.fire({
+          type : 'info',
+            buttonsStyling: false,
+      customClass: {
+      title: 'title-class',
+      confirmButton: 'confirm-button-class'},
+            text: 'La cita se ha sido aprobado con éxito.',
+          });
+
+    //refresca la tabla
+     listaCitas = listarCitas();
+    mostrar_citas();
+
+};
+
+function eliminarCita(){
+  //binding epico increible!! <3  (this)
+    //sirve para enlazar la funcion con el contexto que la llama. 
+    /*
+    let id = this.dataset._id;
+    let usuario = obtener_usuario_por_id(id);
+
+    eliminar_centro(id);
 */
+    //dar un mensaje de confirmacion
+     swal.fire({
+          type : 'info',
+            buttonsStyling: false,
+      customClass: {
+      title: 'title-class',
+      confirmButton: 'confirm-button-class'},
+            text: 'La cita se eliminó con éxito.',
+          });
+
+    //refresca la tabla
+    listaCitas = listarCitas();
+    mostrar_citas();
+};

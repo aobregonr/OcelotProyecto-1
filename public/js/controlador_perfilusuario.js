@@ -22,8 +22,6 @@ ShowData();
 
 
 let listaCitas = listarCitas();
-
-
 mostrar_citas();
 
 
@@ -304,7 +302,6 @@ function ShowData(){
             listaCen=listaResul;
          };
          
-         console.log(listaCen);
 // se setea listaResult a cero para la nueva valoracion
 
           listaResul=[];   
@@ -457,38 +454,35 @@ for(let i = 0; i < listaCen.length; i++){
 
 function mostrar_citas(){
 
+    //obtener el padre de familia actual
+    let padreActualId = sessionStorage.getItem('id_usuario');
 
+    //crear la tabla
      let tbody = document.querySelector('#tblCitas tbody');
      tbody.innerHTML = '';
 
       for (let i = 0; i < listaCitas.length; i++) {
 
-        //obtener el padre de familia actual:
-        let padreActual = obtener_usuario_por_id( listaCitas[i]['identPadresFamilia']);
-        let centroData = obtener_usuario_por_id(listaCitas[i]['identCentroEducativo']);
+        //si el padre de la cita coincide con el que inicio de sesion, mostrar cita
+        if (padreActualId == listaCitas[i]['identPadresFamilia']){
 
+            //obtener info centro
+            let centroData = obtener_usuario_por_id(listaCitas[i]['identCentroEducativo']);
 
-        console.log(nombre_usuario);
-        console.log(padreActual.nombre);
-        console.log(centroData.nombrecomercial);
+            let fila = tbody.insertRow();
 
+            let celdaFecha = fila.insertCell();
+            let celdaHora = fila.insertCell();
+            let celdaCentro = fila.insertCell();
+            let celdaDescripcion = fila.insertCell();
+            let celdaEstado = fila.insertCell();
 
-        //si el padre de la cita coincide con el inicio de sesion, mostrar cita
-        if (padreActual.nombre == nombre_usuario){
-
-
-          let fila = tbody.insertRow();
-
-          let celdaFecha = fila.insertCell();
-          let celdaHora = fila.insertCell();
-          let celdaCentro = fila.insertCell();
-          let celdaDescripcion = fila.insertCell();
-
-          //
-          celdaFecha.innerHTML = listaCitas[i]['fecha'];
-          celdaHora.innerHTML = listaCitas[i]['hora'];
-          celdaCentro.innerHTML = centroData.nombrecomercial;
-          celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+            //
+            celdaFecha.innerHTML = listaCitas[i]['fecha'];
+            celdaHora.innerHTML = listaCitas[i]['hora'];
+            celdaCentro.innerHTML = centroData.nombrecomercial;
+            celdaDescripcion.innerHTML = listaCitas[i]['descripcion'];
+            celdaEstado.innerHTML = listaCitas[i]['estado'];
         }
     }
 }
