@@ -38,6 +38,10 @@ let agentSchema = new mongoose.Schema({
     identPadresFamilia: {
         type: String,
         required: true
+    },
+    estado: {
+        type: String,
+        required: true
     }
 });
 

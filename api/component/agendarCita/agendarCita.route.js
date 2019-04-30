@@ -8,6 +8,12 @@ router.route('/registrar_agendaCita')
         userApi.registrar(req, res);
     });
 
+router.route('/listar_agendaCita')
+    .get(function (req, res) {
+        userApi.listarCita(req, res);
+    });
+
+
 router.route('/listar_agendaUsuario')
     .get(function (req, res) {
         userApi.listarPadre(req, res);

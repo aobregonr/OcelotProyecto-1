@@ -6,15 +6,19 @@ const modeloRankingPF = require('../perfilCentro/rankingPF.model');
 
 module.exports.registar=function(req,res){
     let rankingNew= new modeloRankingPF({
-        id : req.body.id,
-        stars : req.body.stars,
+
+        idpadres : req.body.idpadres,
+        idcentro : req.body.idcentro,
+        califnum : req.body.califnum,
+        stars: req.body.stars
+
     });
     rankingNew.save(
         function (error){
             if (error){
                 res.json({ success: false, msg: 'No se pudo registrar ranking'});
             }else{
-                res.json({ success: true, msg: 'Ranking agregado exitosamente'});
+                //no quiero que envie respuesta, porque necesito agregar una funcion al boton de confirm.
             }
         }
     );

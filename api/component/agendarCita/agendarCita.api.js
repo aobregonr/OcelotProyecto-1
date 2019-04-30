@@ -13,7 +13,8 @@ module.exports.registrar = function(req, res){
         telefono: req.body.telefono,
         descripcion: req.body.descripcion,
         identCentroEducativo: req.body.identCentroEducativo,
-        identPadresFamilia: req.body.identPadresFamilia
+        identPadresFamilia: req.body.identPadresFamilia,
+        estado: req.body.estado
 
     });
 
@@ -26,29 +27,23 @@ module.exports.registrar = function(req, res){
          } else {
              res.json({
                  success: true,
-                 msg: 'Se pudo agendar la cita con exito'
+                 msg: 'Se agendó la cita con éxito'
              });
          }
     })
 
 };
 
-module.exports.listarPadre = function(req, res){
-    agendModel.findOne({
-        identPadresFamilia: req.body.identPadresFamilia
-    }).then(
-        function (agendUsuario) {
-            res.send(agendUsuario);
-        }
-    )
-}
 
-module.exports.listarCentro = function (req, res) {
-    agendModel.findOne({
-        identCentroEducativo: req.body.identCentroEducativo
-    }).then(
-        function (agendCentro) {
-            res.send(agendCentro);
-        }
-    )
-}
+module.exports.listarCita = function(req, res){
+    agendModel.find().then(
+
+        function(cita){
+
+            res.send(cita);
+        });
+
+};
+
+ 
+
