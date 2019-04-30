@@ -167,3 +167,32 @@ function obtener_lista_citas_centroseducativos() {
     });
     return lista_citasCentros;
 };
+
+
+function modificarCita(pid, pestado) {
+    let respuesta = '';
+    let peticion = $.ajax({
+        url: 'http://localhost:4000/api/modificar_cita',
+        type: 'post',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: { 
+            id: pid, 
+            estado: pestado
+        },
+    });
+
+    peticion.done(function (response) {
+        respuesta = response;
+       
+    });
+
+    peticion.fail(function (response) {
+        respuesta = response;
+    });
+
+    return respuesta;
+};
+
+

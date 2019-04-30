@@ -357,29 +357,34 @@ function mostrar_citas(){
             let botonActivar = document.createElement('a');
             botonActivar.classList.add('fas');
             botonActivar.classList.add('fa-check-circle');
-            botonActivar.classList.add('check'); //es para hacer hover a otro color
+            botonActivar.classList.add('disabled');
             botonActivar.classList.add('aprovIcon'); //es para dar espacio
 
             //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
             botonActivar.dataset._id = listaCitas[i]['_id'];
 
             //boton rechazar centro
-            let botonEliminar = document.createElement('a');
-            botonEliminar.classList.add('fas');
-            botonEliminar.classList.add('fa-trash-alt');
-            botonEliminar.classList.add('trash'); //es para hacer hover a otro color
-            botonEliminar.classList.add('rejectIcon'); //es para dar espacio
+            let botonCancelar = document.createElement('a');
+            botonCancelar.classList.add('fas');
+            botonCancelar.classList.add('fa-times-circle'); 
+            botonCancelar.classList.add('rejectIcon'); //es para dar espacio
 
             //dataset (propiedad q permite definir atributos personalizados para un elemento de html)
-            botonEliminar.dataset._id = listaCitas[i]['_id'];
+            botonCancelar.dataset._id = listaCitas[i]['_id'];
 
             //insertar los botones dinamicamente 
             celdaHerramientas.appendChild(botonActivar);
-            celdaHerramientas.appendChild(botonEliminar);
+            celdaHerramientas.appendChild(botonCancelar);
 
             //agregar las funciones a los botones
             botonActivar.addEventListener('click', aceptarCita);
-            botonEliminar.addEventListener('click', eliminarCita);
+            botonCancelar.addEventListener('click', cancelarCita);
+
+
+            if (listaCitas[i]['estado'] == 'activo' ||  listaCitas[i]['estado'] == 'cancelada'){
+                botonCancelar.classList.add('hide');
+                botonActivar.classList.add('hide');
+            }
         }
     }
 }
@@ -389,23 +394,22 @@ function aceptarCita(){
     //binding epico increible!! <3  (this)
     //sirve para enlazar la funcion con el contexto que la llama. 
     let id = this.dataset._id;
-    let usuario = obtener_usuario_por_id(id);
-    let estado = usuario.estado;
+    let cita = obtener_usuario_por_id(id);
+    let estado = cita.estado;
 
     estado = 'activo'; //hacer que el estado ahora sea activo.
 
-    /*
-    console.log(id, estado);
-    activar_centro(id,  estado);
-  */
+
+    modificarCita(id,  estado);
+
     //dar un mensaje de confirmacion
      swal.fire({
-          type : 'info',
+          type : 'success',
             buttonsStyling: false,
       customClass: {
       title: 'title-class',
       confirmButton: 'confirm-button-class'},
-            text: 'La cita se ha sido aprobado con éxito.',
+            text: 'La cita ha sido aprobada con éxito.',
           });
 
     //refresca la tabla
@@ -414,26 +418,29 @@ function aceptarCita(){
 
 };
 
-function eliminarCita(){
-  //binding epico increible!! <3  (this)
-    //sirve para enlazar la funcion con el contexto que la llama. 
-    /*
+function cancelarCita(){
     let id = this.dataset._id;
-    let usuario = obtener_usuario_por_id(id);
+    let cita = obtener_usuario_por_id(id);
+    let estado = cita.estado;
 
-    eliminar_centro(id);
-*/
+    estado = 'cancelada'; //hacer que el estado ahora sea activo.
+
+
+    modificarCita(id,  estado);
+
     //dar un mensaje de confirmacion
      swal.fire({
-          type : 'info',
+          type : 'success',
             buttonsStyling: false,
       customClass: {
       title: 'title-class',
       confirmButton: 'confirm-button-class'},
-            text: 'La cita se eliminó con éxito.',
+            text: 'La cita ha sido cancelada con éxito.',
           });
 
     //refresca la tabla
-    listaCitas = listarCitas();
+     listaCitas = listarCitas();
     mostrar_citas();
+
 };
+
