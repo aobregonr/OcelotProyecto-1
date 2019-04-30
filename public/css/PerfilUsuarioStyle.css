@@ -85,7 +85,7 @@ display: none;
 			width: 25%;
 			height:auto;
 			position: absolute;
-			min-height: 6878px;
+			min-height: 1900px;
 }
 
 #container1{
@@ -182,33 +182,11 @@ label{
 .mainProfile{ 
 			width: 75%;
 			margin: 0 29%;	
-			min-height: 6603px;
+			min-height: 1824px;
  }
 /*     -------------  mapa  -------------    */
-
-.mapouter{
-			position:relative;
-			text-align:center;
-			height:500px;
-			width:50%;
-			margin: 5% 15%;
-}
-
-.lic{
-			position:absolute;
-			z-index:999;
-			bottom:-14px;
-			right:0;
-			font-size:11px;
-			font-family:arial;
-			color:#666;
-}
-
-.gmap_canvas {
-			overflow:hidden;
-			background:none!important;
-			height:500px;
-			width:600px;
+.containerBig2{
+	margin-left: 100px;
 }
 
 /*     -------------  main containers -------------    */
@@ -234,7 +212,9 @@ label{
 /*sucess*/
 .container2{   /*cards holder*/
   padding: 10px;
-  max-width: 1100px;
+ display: block;
+		  height: 750px;
+		  overflow-y: scroll;
 }
 
 .card{ /* espacio entre card y card*/
@@ -276,6 +256,14 @@ label{
     display: none;
     visibility: hidden;
 }
+
+
+#tblCitas{
+	display: block;
+		  height: 300px;
+		  overflow-y: scroll;
+}
+
 /*     -------------  citas pendientes  -------------    */
 
 .appointmentContainer{

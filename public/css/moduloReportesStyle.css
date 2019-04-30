@@ -159,9 +159,21 @@ display: none;
   overflow: auto;
 }
 
+#tblRankingPF{
+  width: 100%;
+  margin-left: 18%;
+  height: 500px;
+  overflow: auto;
+}
+
 #txtFiltro{
   width: 85%;
     margin-left: 8%;
+}
+
+#txtFiltro2{
+  width: 100%;
+    margin-left: 17%;
 }
 
 .fa-star{

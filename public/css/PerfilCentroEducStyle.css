@@ -154,12 +154,10 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 /*     -------------  MEP ranking starts  -------------    */
 
- .clasificacion > #starMEP1, #starMEP2, #starMEP3, #starMEP4{
- 			color: #FFCC33;
- }
-  .clasificacion > #starMEP5{
+#starMEP1, #starMEP2, #starMEP3, #starMEP4,  #starMEP5{
  			color: gray;
  }
+
 
 /*     -------------  hover ranking stars -------------    */
 
@@ -183,12 +181,12 @@ label{
 
 label:hover,
 label:hover ~ label{
-			color: #FFCC33;  /* esto es para que las estrellas pasen de ser grises a ser amarillas. */
+			color: orange;  /* esto es para que las estrellas pasen de ser grises a ser amarillas. */
 			cursor: pointer;
 }
 
 input[type="radio"]:checked ~ label{
-			color: #FFCC33;
+			color: orange;
 }
 
 .registerBtn{
@@ -356,8 +354,6 @@ i.fa-file:hover, .fa-file-download:hover {
 			margin: 0px 30px 0px 30px;   /* top, right, bottom, left */
 
 }
-
-
 
 .mainProfileEdit {
 			width: 75%;
@@ -735,3 +731,49 @@ a{
 			margin-top: 322px;
 
 }
+
+
+/*-----------------------------  ranking   ----------------------------------*/
+#tblRankingPF{
+	margin: -60px 50px 0px;
+}
+
+#tblRankingPF_Promedio{
+	margin: 0px 60px 0px;
+}
+
+#tblRankingPF_Promedio > tbody{
+	font-size: 30px;
+}
+
+#tblRankingMEP{
+	margin: 0px 59px 0px;
+}
+#tblRankingMEP > tbody{
+	font-size: 30px;
+}
+
+.estrellasRankeadas{
+	font-size: 32px;
+}
+
+.fa-1x{
+	padding-left:5px;
+}
+
+#califiquenos, #califGracias {
+		
+			color: white;
+			font-family: Helvetica-light, sans-serif;
+			font-size: 1.4vw;
+			text-align: center;
+			padding-top: 10%; 
+}
+#btnRegRanking{
+	margin-top: 60px;
+}
+
+.starMep{
+	color: gray;
+}
+
