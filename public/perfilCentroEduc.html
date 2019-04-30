@@ -86,29 +86,40 @@
 
 					<form>
 						<p id=description> Calificación del MEP </p>
-						<p class="clasificacion">
-							<i id= starMEP5 class="fas fa-star fa-2x"></i>
-							<i id= starMEP4 class="fas fa-star fa-2x"></i>
-							<i id= starMEP3 class="fas fa-star fa-2x"></i>
-							<i id= starMEP2 class="fas fa-star fa-2x"></i>
-							<i id= starMEP1 class="fas fa-star fa-2x"></i>
-						</p>
+				
+						
+						<table id="tblRankingMEP">	
+							<tbody>
 
-						<p id=description> ¡Califíquenos! </p>
+							</tbody>
+						</table>
+
+
+						<p id="califiquenos"> ¡Califíquenos! </p>
+						<p id="califGracias" class="hide"> ¡Gracias por Calificarnos! </p>
 		
 
 						<p class="clasificacion" > 
-							<input id="radio1" type="radio" name="stars" value="5" onclick="registrarRankingPadres()">
-							<label for="radio1"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio2" type="radio" name="stars" value="4" onclick="registrarRankingPadres()">
-							<label for="radio2"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio3" type="radio" name="stars" value="3" onclick="registrarRankingPadres()">
-							<label for="radio3"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio4" type="radio" name="stars" value="2" onclick="registrarRankingPadres()">
-							<label for="radio4"><i class="fas fa-star fa-2x"></i></label>
-							<input id="radio5" type="radio" name="stars" value="1" onclick="registrarRankingPadres()">
-							<label for="radio5"><i class="fas fa-star fa-2x"></i></label>
+							<input id="radio1" type="radio" name="stars" value="5">
+							<label for="radio1"><i id="starPF1"class="fas fa-star fa-2x"></i></label>
+							<input id="radio2" type="radio" name="stars" value="4">
+							<label for="radio2"><i id="starPF2"class="fas fa-star fa-2x"></i></label>
+							<input id="radio3" type="radio" name="stars" value="3">
+							<label for="radio3"><i id="starPF3"class="fas fa-star fa-2x"></i></label>
+							<input id="radio4" type="radio" name="stars" value="2">
+							<label for="radio4"><i id="starPF4"class="fas fa-star fa-2x"></i></label>
+							<input id="radio5" type="radio" name="stars" value="1">
+							<label for="radio5"><i id="starPF5"class="fas fa-star fa-2x"></i></label>
 						</p>
+
+
+						   <!--TABLA STARS-->
+	                    <table id= "tblRankingPF">
+							<tbody>
+								
+							</tbody>
+						</table>	
+
 
 
 						<button type="button" id="btnRegRanking" class="registerBtn">Calificar</button>
@@ -305,6 +316,9 @@
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 		<script src="js/bootstrap.min.js"></script>
 
+		<script src="js/servicio_rankingPF.js"></script>
+
+
 		<script src="js/servicio_comentarios.js"></script>
 		<script src="js/servicio_inicio.js"></script>
 		
@@ -313,7 +327,6 @@
 		<script src="js/servicio_perfilCentroEduc.js"></script>
 		<script src="js/controlador_perfilCentroEduc.js"></script>
 
-		<script src="js/servicio_rankingPF.js"></script>
 
 
 

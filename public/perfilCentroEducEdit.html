@@ -87,24 +87,23 @@
 
 					<form>
 						<p id=description> Calificación del MEP </p>
-						<p class="clasificacion">
-							<i id= starMEP5 class="fas fa-star fa-2x"></i>
-							<i id= starMEP4 class="fas fa-star fa-2x"></i>
-							<i id= starMEP3 class="fas fa-star fa-2x"></i>
-							<i id= starMEP2 class="fas fa-star fa-2x"></i>
-							<i id= starMEP1 class="fas fa-star fa-2x"></i>
-						</p>
+				
+						
+						<table id="tblRankingMEP">	
+							<tbody>
+
+							</tbody>
+						</table>
 
 						<p id=description> Calificación de Padres de Familia </p>
 		
 
-						<p class="clasificacion" > 
-							<i id= starMEP5 class="fas fa-star fa-2x"></i>
-							<i id= starMEP4 class="fas fa-star fa-2x"></i>
-							<i id= starMEP3 class="fas fa-star fa-2x"></i>
-							<i id= starMEP2 class="fas fa-star fa-2x"></i>
-							<i id= starMEP1 class="fas fa-star fa-2x"></i>
-						</p>
+						<table  id="tblRankingPF_Promedio">
+								
+								<tbody>
+									<!--datos se llenan dinamicamente con JS-->
+								</tbody>
+							</table>
 					</form>
 				</div>
 			</div>
@@ -394,10 +393,13 @@
         <!--REFERENCIAR SWEET ALERT -->
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+		<script src="js/servicio_rankingPF.js"></script>
+
 		<script src="js/servicio_comentarios.js"></script>
 		<script src="js/servicio_inicio.js"></script>
 		<script src="js/controlador_nav.js"></script>  <!--restringir accesos-->
 
+		<script src="js/servicio_perfilCentroEduc.js"></script>
 		<script src="js/controlador_perfilCentroEducEdit.js"></script>
 
         <!--REFERENCIAR JAVASCRIPT -->
