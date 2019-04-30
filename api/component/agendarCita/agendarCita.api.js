@@ -45,5 +45,31 @@ module.exports.listarCita = function(req, res){
 
 };
 
+
+//esta es para modificar cualquier usuario en el db
+module.exports.modificar_cita = function (req, res) {
+  agendModel.findByIdAndUpdate(req.body.id, { $set: req.body},
+    function (error) {
+      if(error){
+        res.json({success : false, msg: 'No se pudo modificar la cita, ocurrió el siguiente error ' + error});
+      }else{
+        res.json({success : true, msg: 'La cita fue modificada con éxito'}); 
+      }
+    });
+
+};
+
+module.exports.eliminar_cita = function(req, res){
+    agendModel.findByIdAndRemove(req.body.id,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar la cita. Ocurrió el siguiente error ' + error});
+            }else{
+                res.json({success: true ,msg: 'La cita se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+
  
 
