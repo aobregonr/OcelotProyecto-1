@@ -185,9 +185,6 @@ label{
 			min-height: 1824px;
  }
 /*     -------------  mapa  -------------    */
-.containerBig2{
-	margin-left: 100px;
-}
 
 /*     -------------  main containers -------------    */
 
@@ -260,9 +257,18 @@ label{
 
 #tblCitas{
 	display: block;
-		  height: 300px;
-		  overflow-y: scroll;
+	height: 300px;
+	overflow-y: scroll;
 }
+
+#tblCitas> tbody, #tblCitas> thead{
+	text-align: center;
+}
+
+.citasHead{
+	min-width: 100px;
+}
+
 
 /*     -------------  citas pendientes  -------------    */
 
