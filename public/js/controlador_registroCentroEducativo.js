@@ -1,5 +1,9 @@
 'use strict';
 
+
+let user_tipo= sessionStorage.getItem('tipo_usuario');
+
+
 //VALIDAR FORMULARIOS CON BOOTSRAP 4 
 //(se pone rojo cuando esta incompleto, verde cuando esta validado)
 
@@ -157,7 +161,15 @@ function obtenerDatos(){
     let califanno = 2019;
     let codigoverif = codigoVerif;
     let codigoautenticar = '';
-    let estado = 'pendiente';
+    let estado;
+
+    if (user_tipo=='admin'){
+        estado = 'activo';
+        
+    }else{
+        estado = 'pendiente';
+    };
+    
 
 
 
