@@ -4,7 +4,7 @@
 //ponerlas en minuscula, meterlos como parametros 
 
 
-function registro_rankingMEP(pnombrecomercial, pescudo, prankingmep, pcalifnum, pcalifanno){
+function registro_rankingMEP(pnombrecomercial, pescudo, prankingmep, pcalifnum, pcalifanno, ptipodecentro, pprimaria, psecundaria){
     let respuesta = '';
     let request = $.ajax({
         url : 'http://localhost:4000/api/registrar_rankingMep',
@@ -14,7 +14,10 @@ function registro_rankingMEP(pnombrecomercial, pescudo, prankingmep, pcalifnum, 
             escudo : pescudo, 
             rankingmep : prankingmep,
             califnum : pcalifnum,
-            califanno : pcalifanno
+            califanno : pcalifanno,
+            tipodecentro: ptipodecentro,
+            primaria: pprimaria,
+            secundaria: psecundaria
         },
 
         dataType : "json",

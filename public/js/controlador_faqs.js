@@ -70,9 +70,9 @@ function obtenerDatos(){
         registrar_faq(cod,pregunta, respuesta);
 
     listaFaqs = obtener_faq();
+    imprimir_listaFaqs(); 
     }
-
-    imprimir_listaFaqs();   // Refresca la pagina con la ultima lista de Padres.
+ // Refresca la pagina con la ultima lista de Padres.
 
     };
 
@@ -95,8 +95,6 @@ function imprimir_listaFaqs() {
             celdaPregunta.innerHTML = listaFaqs[i]['pregunta'];
             celdaRespuesta.innerHTML = listaFaqs[i]['respuesta'];
         };
-     
-
 
     }
 };

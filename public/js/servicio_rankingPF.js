@@ -2,7 +2,7 @@
 
 
 
-function registrar_rankingPF( pidpadres, pidcentro, pcalifnum, pstars){
+function registrar_rankingPF( pidpadres, pidcentro, pcalifnum, pstars, ptipodecentro, pprimaria, psecundaria){
     let request= $.ajax({
         url: 'http://localhost:4000/api/registrar_ranking',
         method: "POST",
@@ -10,7 +10,11 @@ function registrar_rankingPF( pidpadres, pidcentro, pcalifnum, pstars){
             idpadres: pidpadres,
             idcentro: pidcentro,
             califnum: pcalifnum,
-            stars: pstars
+            stars: pstars,
+            tipodecentro: ptipodecentro,
+            primaria: pprimaria,
+            secundaria: psecundaria
+
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8'

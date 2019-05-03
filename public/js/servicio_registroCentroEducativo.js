@@ -79,7 +79,7 @@ function registrar_usuario(ptipo, pnombrecomercial, pcedulajuridica, ptipodecent
 			title: 'title-class',
 			confirmButton: 'confirm-button-class'},
             title : '¡Atención!',
-            text : res.msg + '. Le enviamos un código de verificación al correo. El centro educativo debe ser primero aprobado por el Administrador de la página.'
+            text : res.msg + '. Enviamos un código de verificación al correo registrado.  El perfil del centro educativo se habilitará por el Administrador de la página.'
         });
 
     });

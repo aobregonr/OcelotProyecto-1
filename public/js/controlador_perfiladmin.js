@@ -239,19 +239,24 @@ function obtener_ranking(){
 
             	let id = this.dataset._id;
 
+            	let usuario = obtener_usuario_por_id(id);
+
 				let nombrecomercial = celdaNombrecomercial.innerHTML;
 				let escudo = celdaEscudo.innerHTML;
 				let rankingmep = celdaRankingMEP.innerHTML;
 				let califnum = celdaCalifNum.innerHTML;
 				let califanno = califAnnoV;
 
+				let tipodecentro = usuario.tipodecentro;
+				let primaria = usuario.primaria ;
+				let secundaria = usuario.secundaria;
 
-				
 				let califNueva = califnum;
 				califActual = califNueva;
 
-				console.log(califActual)
-
+				if (califActual == null){
+					califActual = 0;
+				}
 
 				let bError = false;
 
@@ -275,7 +280,7 @@ function obtener_ranking(){
 				}else{
 
 					//registrar el ranking en base de datos exclusiva
-					registro_rankingMEP(nombrecomercial, escudo, rankingmep, califnum, califanno);
+					registro_rankingMEP(nombrecomercial, escudo, rankingmep, califnum, califanno, tipodecentro, primaria, secundaria);
 
 					//modificar el estatus de la nota del cole en la base de datos completa
 					modificar_califNumerica(id, califActual);

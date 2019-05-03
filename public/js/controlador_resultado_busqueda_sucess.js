@@ -87,7 +87,7 @@ function ShowData(){
 
     for(i = 0; i <listaCen.length; i++){
 
-      if( listaCen[i]['tipo'] == 'CentroEducativo'){
+      if( listaCen[i]['tipo'] == 'CentroEducativo' && listaCen[i]['estado']== 'activo'){
 
 //__________________________________________________________________________________________________________
         

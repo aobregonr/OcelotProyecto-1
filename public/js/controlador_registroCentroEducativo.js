@@ -245,7 +245,7 @@ function obtenerDatos(){
 			title: 'title-class',
 			confirmButton: 'confirm-button-class'},
             title: 'Registro incorrecto',
-            text: 'No se pudo registrar el centro educativo, por favor complete los datos pendientes.',
+            text: 'No se pudo registrar el centro educativo, por favor complete o verifique los datos.',
             type: 'warning',
           });
 	

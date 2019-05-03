@@ -42,7 +42,8 @@ function ShowData(){
             
             for(i = 0; i <listaCen.length; i++){
                   
-              if ((listaCen[i]['provincia'].toLowerCase().includes(varFilter[j]))&&(listaCen[i]['tipo']=='CentroEducativo')){
+              if ((listaCen[i]['provincia'].toLowerCase().includes(varFilter[j]))
+                    &&(listaCen[i]['tipo']=='CentroEducativo')){
                
                                     if (  //si es secundaria privada
                                         (listaCen[i]['tipo'] == 'CentroEducativo' &&
@@ -406,7 +407,7 @@ for(let i = 0; i < listaCen.length; i++){
     
     
      if( 
-        listaCen[i]['tipo'] == 'CentroEducativo'){
+        listaCen[i]['tipo'] == 'CentroEducativo' && listaCen[i]['estado']== 'activo'){
     
             
     let dato1=(listaCen[i]['_id']);

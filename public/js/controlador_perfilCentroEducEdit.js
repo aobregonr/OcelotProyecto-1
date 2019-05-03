@@ -202,7 +202,7 @@ function mostrar_rankingMep(){
     };
 };
 
-
+/*
 //MODIFICADA PARA Q SOLO MUESTRE EL COLE ACTUAL (viene del modulo de reportes)
 // hace un promedio de la calificacion de todos los padres para cada colegio, no muestra todos. 
 function mostrar_rankingPF_promedio(){
@@ -303,7 +303,7 @@ function mostrar_rankingPF_promedio(){
       }
 };
 
-
+*/
 
 
 
@@ -324,9 +324,7 @@ function mostrar_citas(){
       for (let i = 0; i < listaCitas.length; i++) {
 
         //si el padre de la cita coincide con el que inicio de sesion, mostrar cita
-        if (centroActualId == listaCitas[i]['identCentroEducativo']){
-
-            //obtener info papa
+        if (centroActualId == listaCitas[i]['identCentroEducativo'] && listaCitas[i]['estado'] != 'cancelada'){
 
 
             let fila = tbody.insertRow();
@@ -439,7 +437,7 @@ function cancelarCita(){
           });
 
     //refresca la tabla
-     listaCitas = listarCitas();
+    listaCitas = listarCitas();
     mostrar_citas();
 
 };

@@ -402,6 +402,13 @@ function registrarRankingPadres(){
     let califnum  = 0;
     let stars = ''; 
 
+    let usuario = obtener_usuario_por_id(idcentro);
+
+    let tipodecentro = usuario.tipodecentro;
+    let primaria = usuario.primaria ;
+    let secundaria = usuario.secundaria;
+
+
     const star1 = document.querySelector('#radio5');
     const star2 = document.querySelector('#radio4');
     const star3 = document.querySelector('#radio3');
@@ -419,39 +426,66 @@ function registrarRankingPadres(){
     if (star1.checked == true){
         stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: gray;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>'; //solo una estrella marcada
 
-        registrar_rankingPF(idpadres, idcentro, 1, stars);
-    }
-
-    else if (star2.checked == true ){
-        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
-
-        registrar_rankingPF(idpadres, idcentro, 2, stars);
-    }
-
-    else if (star3.checked == true ){
-        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
-
-        registrar_rankingPF(idpadres, idcentro, 3, stars);
-    }
-
-    else if (star4.checked == true ){
-        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
-
-        registrar_rankingPF(idpadres, idcentro, 4, stars);      
-    }
-
-    else if (star5.checked == true ){
-        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: orange;"></i></i></i></i></i>';
-        registrar_rankingPF(idpadres, idcentro, 5, stars);
+        registrar_rankingPF(idpadres, idcentro, 1, stars, tipodecentro, primaria, secundaria);
 
         Swal.fire({
             title: '¡Gracias por calificarnos!'        
           }).then(function() {
                 window.location.reload();
             });
-        }
-};
+        
+    }
 
+    else if (star2.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: gray;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+        registrar_rankingPF(idpadres, idcentro, 2, stars, tipodecentro, primaria, secundaria);
+
+        Swal.fire({
+            title: '¡Gracias por calificarnos!'        
+          }).then(function() {
+                window.location.reload();
+            });
+        
+    }
+
+    else if (star3.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: gray;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+        registrar_rankingPF(idpadres, idcentro, 3, stars, tipodecentro, primaria, secundaria);
+
+        Swal.fire({
+            title: '¡Gracias por calificarnos!'        
+          }).then(function() {
+                window.location.reload();
+            });
+        
+    }
+
+    else if (star4.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: gray;"></i></i></i></i></i>';
+
+        registrar_rankingPF(idpadres, idcentro, 4, stars, tipodecentro, primaria, secundaria); 
+        Swal.fire({
+            title: '¡Gracias por calificarnos!'        
+          }).then(function() {
+                window.location.reload();
+            });
+           
+    }
+
+    else if (star5.checked == true ){
+        stars = '<i id="star1" class="fas fa-star fa-1x" style="color: orange;"><i id="star2" class="fas fa-star fa-1x" style="color: orange;"><i id="star3" class="fas fa-star fa-1x" style="color: orange;"><i id="star4" class="fas fa-star fa-1x" style="color: orange;"><i id="star5" class="fas fa-star fa-1x" style="color: orange;"></i></i></i></i></i>';
+        registrar_rankingPF(idpadres, idcentro, 5, stars, tipodecentro, primaria, secundaria);
+
+        Swal.fire({
+            title: '¡Gracias por calificarnos!'        
+          }).then(function() {
+                window.location.reload();
+            });
+      
+  };
+};
 botonCalificar.addEventListener('click', registrarRankingPadres)
 
 

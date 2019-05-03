@@ -54,7 +54,8 @@ function ShowData(pvarFilter,psection,pUbic,pnivel){
                 for(let i = 0; i <listaCen.length; i++){
                  
                   if ((listaCen[i]['nombrecomercial'].toLowerCase().includes(pvarFilter[j]) || (listaCen[i][pnivel]) )
-                      && (listaCen[i]['tipodecentro'].toLowerCase().includes(pvarFilter[j]))){
+                      && (listaCen[i]['tipodecentro'].toLowerCase().includes(pvarFilter[j]) 
+                        && listaCen[i]['estado']== 'activo')){
                     listaResul[count]=listaCen[i];
                     count++;
                   };

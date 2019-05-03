@@ -4,6 +4,12 @@ const botonIngresar = document.querySelector('#btnIngresar');
 const botonRegistro = document.querySelector('#btnRegistro');
 const botonCerrarSesion = document.querySelector('#cerrarsesion');
 
+//mostrar rankings
+let lista_ranking = obtener_rankingMEP();
+mostrar_top10_escuelasMEP();
+mostrar_top10_colegiosMEP();
+
+
 function obtenerDatos(){
     let correo = inputCorreo.value;
     let contrasenna = inputContrasenna.value;
@@ -466,4 +472,135 @@ function validarModal(pcorreo, pcontrasenna) {
 
 botonIngresarModal.addEventListener('click', obtenerDatosModal);
 botonRegistroModal.addEventListener('click', reenviarRegistro);
+
+
+
+function mostrar_top10_escuelasMEP(){
+ 
+  let lista_rankingMep = obtener_rankingMEP();
+  let top10centros =[];
+
+
+  //ordena ascendente
+  function sortArrayOfObjects(arrayToSort, key) {
+      function compareObjects(a, b) {
+          if (a[key] < b[key])
+              return -1;
+          if (a[key] > b[key])
+              return 1;
+          return 0;
+      }
+
+      return arrayToSort.sort(compareObjects);
+  }
+
+  //centros ordenados x calificacion de menor a mayor
+  let centrosAscendente = sortArrayOfObjects(lista_rankingMep, 'califnum');
+
+  //centros ordenados x calificacion de mayor a menor
+  let centrosDescendente = centrosAscendente.reverse()
+
+  //obtener solo escuelas  MEP
+  let primarias = []  
+
+
+  for(let i = 0; i < centrosDescendente.length; i++){
+
+    if (centrosDescendente[i]['primaria'] == true){
+        var x=(centrosDescendente[i])
+        primarias.push(x)
+       
+    }}
+
+
+  //Obtener solo las mejores 10
+  let top10escuelas = primarias.slice(0,10)
+
+    //generar la tabla
+
+    let tbody = document.querySelector('#tbltop10escuelas tbody');
+    //let lista_rankingMep = obtener_rankingMEP();
+    tbody.innerHTML = ''; 
+
+
+    for(let i = 0; i < top10escuelas.length; i++){
+
+
+      let fila = tbody.insertRow();
+      let celdaNombrecomercial = fila.insertCell();
+      let celdaRankingmep = fila.insertCell(); 
+      let celdaCalifnum = fila.insertCell(); 
+      celdaCalifnum.classList.add("alignCenter");
+
+
+      celdaNombrecomercial.innerHTML = top10escuelas[i]['nombrecomercial'];
+      celdaRankingmep.innerHTML = top10escuelas[i]['rankingmep'];
+      celdaCalifnum.innerHTML = Number(top10escuelas[i]['califnum']);
+      }
+
+};
+
+function mostrar_top10_colegiosMEP(){
+ 
+  let lista_rankingMep = obtener_rankingMEP();
+  let top10centros =[];
+
+
+  //ordena ascendente
+  function sortArrayOfObjects(arrayToSort, key) {
+      function compareObjects(a, b) {
+          if (a[key] < b[key])
+              return -1;
+          if (a[key] > b[key])
+              return 1;
+          return 0;
+      }
+
+      return arrayToSort.sort(compareObjects);
+  }
+
+  //centros ordenados x calificacion de menor a mayor
+  let centrosAscendente = sortArrayOfObjects(lista_rankingMep, 'califnum');
+
+  //centros ordenados x calificacion de mayor a menor
+  let centrosDescendente = centrosAscendente.reverse()
+
+  //obtener solo escuelas  MEP
+  let secundarias = []  
+
+
+  for(let i = 0; i < centrosDescendente.length; i++){
+
+    if (centrosDescendente[i]['secundaria'] == true){
+        var x=(centrosDescendente[i])
+        secundarias.push(x)
+       
+    }}
+
+
+  //Obtener solo las mejores 10
+  let top10colegios = secundarias.slice(0,10);
+
+    //generar la tabla
+
+    let tbody = document.querySelector('#tbltop10colegios tbody');
+    tbody.innerHTML = ''; 
+
+
+    for(let i = 0; i < top10colegios.length; i++){
+
+
+      let fila = tbody.insertRow();
+      let celdaNombrecomercial = fila.insertCell();
+      let celdaRankingmep = fila.insertCell(); 
+      let celdaCalifnum = fila.insertCell(); 
+      celdaCalifnum.classList.add("alignCenter");
+
+
+      celdaNombrecomercial.innerHTML = top10colegios[i]['nombrecomercial'];
+      celdaRankingmep.innerHTML = top10colegios[i]['rankingmep'];
+      celdaCalifnum.innerHTML = Number(top10colegios[i]['califnum']);
+      }
+
+};
 

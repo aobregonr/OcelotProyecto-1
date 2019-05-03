@@ -46,7 +46,7 @@ function ShowData(){
 
         for(let i = 0; i < listaCen.length; i++){
 
-
+                if (listaCen[i]['estado']== 'activo'){
             //______________________________tabla de datos ___________________________________
                 
          
@@ -517,6 +517,7 @@ function ShowData(){
                     midiv.style.visibility = "visible";
                     midiv.style.display = "block";
                     };
+                };
 
         };
     };

@@ -41,6 +41,7 @@ function obtenerDatos(){
         registrar_novedad(id, imagen);
 
     listaNovedades = obtener_novedad();
+    imprimir_listaNovedades();  
     }
 
     //imprimir_listaNovedades();   // Refresca la pagina con la ultima lista de Padres.
@@ -75,12 +76,7 @@ function imprimir_listaNovedades() {
                 }
     
                 celdaImagen.appendChild(imagen);
-
-
-
         };
-     
-
 
     }
 };

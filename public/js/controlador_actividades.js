@@ -65,10 +65,9 @@ function obtenerDatos(){
     }else{
         registrar_actividad(cod,actividad, imagen);
 
-    listaActiv = obtener_actividad();
+    listaActiv = obtener_actividad();   
+        imprimir_listaActividades();   // Refresca la pagina con la ultima lista de Padres.
     }
-
-    imprimir_listaActividades();   // Refresca la pagina con la ultima lista de Padres.
 
     };
 

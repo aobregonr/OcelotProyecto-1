@@ -21,6 +21,5 @@ function obtener_lista_centros(){
       request.fail(function(){
        
       });
-      console.log(lista_centros);
     return lista_centros;
 };
