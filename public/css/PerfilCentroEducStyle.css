@@ -99,6 +99,13 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 			border-radius: 50%
 }
 
+.schoolLogo1{
+	width:30%;
+	padding: 8%;
+	height: auto;
+	border-radius: 50%
+}
+
 .fa-facebook, .fa-globe{
 			margin: -5% 0% 10% 10%;
 			color: #FF6633;
