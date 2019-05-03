@@ -5,7 +5,7 @@
 
 $(function() {
     let fileUrl = '';
-    $.cloudinary.config({ cloud_name: 'ocelotfile', api_key: '528542337325244'});
+   // $.cloudinary.config({ cloud_name: 'ocelotfile', api_key: '528542337325244'});
 
     // Upload button
     let uploadButton = $('#BtnUpFile');
