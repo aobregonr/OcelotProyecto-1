@@ -9,6 +9,9 @@ let schema_rankingMep= mongoose.Schema({
 	rankingmep: {type: String, required: true},
 	califnum: {type: Number, required: true},
 	califanno: {type: Number, required: true},
+	tipodecentro: {type: String, required: true},
+	primaria: {type: Boolean, required: true},
+	secundaria: {type: Boolean, required: true}
 });
 
 

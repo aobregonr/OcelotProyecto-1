@@ -13,6 +13,9 @@ module.exports.registar=function(req,res){
     rankingmep : req.body.rankingmep,
     califnum : req.body.califnum,
     califanno : req.body.califanno,
+    tipodecentro: req.body.tipodecentro,
+    primaria: req.body.primaria,
+    secundaria: req.body.secundaria
     });
 
     rankingMepNew.save(

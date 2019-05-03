@@ -10,7 +10,10 @@ module.exports.registar=function(req,res){
         idpadres : req.body.idpadres,
         idcentro : req.body.idcentro,
         califnum : req.body.califnum,
-        stars: req.body.stars
+        stars: req.body.stars,
+        tipodecentro: req.body.tipodecentro,
+        primaria: req.body.primaria,
+        secundaria: req.body.secundaria
 
     });
     rankingNew.save(

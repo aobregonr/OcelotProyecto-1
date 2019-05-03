@@ -192,17 +192,18 @@ module.exports.olvidoContrasenna = function(req, res){
 
                         </html>`
             };
-            transporter.sendMail(mailOptions, function(error, info){
+             transporter.sendMail(mailOptions, function(error, info){
                 if(error){
                     console.log(error);
                 }else{
                     console.log('Correo enviado' + info.response);
                 }
             })
+            res.json({success : true, msg: 'Se envió la recuperación de contraseña con éxito'}); 
         }
     });     
+};
 
- };
 
 
 module.exports.listar = function(req, res){
