@@ -4,6 +4,8 @@ const modelo_listaUtiles= require('./listaUtilesCentro.model');
 
 module.exports.registar=function(req,res){
     let listaUtilesNew= new modelo_listaUtiles({
+        cod : req.body.cod,
+        centroName : req.body.centroName,
         nivel : req.body.nivel,
         tipo_articulo : req.body.tipo_articulo,
         cantidad : req.body.cantidad,
