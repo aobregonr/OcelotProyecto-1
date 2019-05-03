@@ -76,7 +76,7 @@ app.use('/api', require('./component/perfilCentro/faqs.route'));
 app.use('/api', require('./component/perfilCentro/comentarios.route'));
 app.use('/api', require('./component/perfilCentro/novedades.route'));
 app.use('/api', require('./component/perfilCentro/rankingPF.route'));
-
+app.use('/api', require('./component/perfilCentro/fileUp.route'));
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;
