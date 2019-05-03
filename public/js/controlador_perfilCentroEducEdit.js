@@ -117,7 +117,7 @@ let lista_rankingPF = obtener_rankingPF();
 
 //mostrar_rankingPF();
 mostrar_rankingMep();
-mostrar_rankingPF_promedio();
+//mostrar_rankingPF_promedio();
 
 
 
@@ -442,3 +442,32 @@ function cancelarCita(){
 
 };
 
+
+let listFile=obtener_listaFiles();
+mostrarFiles();
+
+function mostrarFiles(){
+
+    for (let gg=0; gg<listFile.length; gg++){
+
+        if (listFile[gg]['cod']==sessionStorage.getItem('id_usuario')){
+
+            var midiv1 = document.createElement("li");
+                    midiv1.setAttribute("id","filein"+gg);
+                        var midiv2 = document.createElement("img");
+                        midiv2.setAttribute("id","imgfile"+gg);
+                        midiv2.setAttribute("class","schoolLogo1");
+                        midiv2.setAttribute("src","imgs/FileUp.png");
+                        var midiv5 = document.createElement("a");
+                        midiv5.setAttribute("href",listFile[gg]['url']);
+                        midiv5.innerHTML=listFile[gg]['fileName']+"<br>";
+                   
+        
+                        document.querySelector("#fileList").appendChild(midiv1);
+                        document.querySelector("#filein"+gg).appendChild(midiv2);
+                        document.querySelector("#filein"+gg).appendChild(midiv5);
+        };
+
+    };
+
+};
