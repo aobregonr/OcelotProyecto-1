@@ -32,16 +32,19 @@
 
 
 
-	<header>
-		<nav>
-			<ul id="main_nav">
-				<li> <a href="index.html" id="logo">Educate<strong>CR</strong>.com</a></li>
-				<li> <a href="index.html" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+</head>
 
-			</ul>
-		</nav>
+<body>
+
+    <header>
+        <nav>
+            <ul id="main_nav">
+                <li> <a href="index.html" id="logo">Educate<strong>CR</strong>.com</a></li>
+                <li> <a href="index.html" id="salir">Salir</a> <i class="fas fa-sign-out-alt"></i></li>
+
+            </ul>
+        </nav>
     </header>
-    
 
     <div class=mainProfile>
 
@@ -175,62 +178,19 @@
                                 <option  value="2" >--Seleccione un distrito--</option>
                             </select>
                     </div>
+
+
                     <div id="regData">
                         <label for="txtCantHijos"> Cantidad de Hijos </label>
-                        <input type="number" class="form-control" id="txtCantHijos" placeholder="Cantidad de hijos">
+                        <input type="number" class="form-control"  id="txtCantHijos" placeholder="Cantidad de hijos">
                     </div>
 
                     <div id="regData">
-                        <label for="txtAnoDeNacimiento"> Año de nacimiento de su primer hijo </label>
-                        <input type="number" class="form-control" id="txtAnoDeNacimiento"
-                            placeholder="Año de Nacimiento">
-                    </div>
-                    <input type="checkbox" name="chk" id="chk" onclick="showHide()" />
-                    <label for="chk">Agregar fechas de nacimiento adicionales</label>
-                    <br />
-
-                    <div class="hidden">
-                        <div id="regData">
-                            <label class="hidden" for="txtAnoDeNacimiento2"> Año de nacimiento de su segundo hijo
-                            </label>
-                            <input type="number" name="hijos2" class="form-control" id="txtAnoDeNacimiento"
-                                placeholder="Año de Nacimiento">
-                        </div>
-
-
-                        <div id="regData">
-                            <label class="hidden" for="txtAnoDeNacimiento3"> Año de nacimiento de su tercer hijo
-                            </label>
-                            <input type="number" name="hijos3" class="form-control" id="txtAnoDeNacimiento"
-                                placeholder="Año de Nacimiento">
-                        </div>
-
-
-                        <div id="regData">
-                            <label class="hidden" for="txtAnoDeNacimiento4"> Año de nacimiento de su cuarto hijo
-                            </label>
-                            <input type="number" name="hijos4" class="form-control" id="txtAnoDeNacimiento"
-                                placeholder="Año de Nacimiento">
-                        </div>
-
-                        <div id="regData">
-                            <label class="hidden" for="txtAnoDeNacimiento5"> Año de nacimiento de su quinto hijo
-                            </label>
-                            <input type="number" name="hijos5" class="form-control" id="txtAnoDeNacimiento"
-                                placeholder="Año de Nacimiento">
-                        </div>
+                        <label for="txtAnoDeNacimiento"> Año de nacimiento de los hijos </label>
+                        <input type="number" class="form-control"  id="txtAnoDeNacimiento" placeholder="Año de Nacimiento">
                     </div>
 
                 </div>
-
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
 
 
 
@@ -299,10 +259,7 @@
         <script src="js/cantones.js"></script>
         <script src="js/distritos.js"></script>
         <script src="js/controlador_ubicacion.js"></script>
-    
-        <!-- Script de mostrar y esconder-->
-        <script src="js/showHide.js"></script>
-    
+
         <!-- Scripts cloudinary -->
         <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
         <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>

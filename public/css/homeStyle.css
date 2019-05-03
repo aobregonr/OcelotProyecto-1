@@ -239,6 +239,18 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 
 /*     ------------- Ranking -------------    */
 
+.mejorescentros{
+	font-family: Josefin Sans; 
+	font-size: 25px;
+}
+
+
+.alignCenter{
+	text-align: center;
+}
+
+
+
 .redFlagSchool{
 			height: auto;
 			background-color:  #CC0033;

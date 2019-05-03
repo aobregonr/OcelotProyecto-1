@@ -97,35 +97,36 @@ display: none;
 .bigLabel{
             background-color: #CC0033;
             color: white;
-            margin: 30px;
+            margin: 25px;
             padding: 10px; 
             width: 86%;
-            font-size: 32px;
+            font-size: 30px;
 }
 
-.encSecundarios{
-	width: 84%;
-	font-size: 30px;
-	margin-left: 8%;
-}
 
 
 #title{
   background-color: #CC0033;
 
 }
-.container{
-  margin: 22px 60px;
-  width: 94%;
+.accordion {
+  background-color: #FF6633;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
 }
 
-.card-header{
-  background-color: #FF6633 !important;
 
-}
-.card-header a{
-  text-decoration: none;
-  color: white;
+.panel {
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
 
 
@@ -139,9 +140,9 @@ display: none;
 /*-------------------tablas-------------------*/
 
 .imagenTabla{
-    max-width: 100px;
-    max-height: 100px;
-    margin-left: 30px;
+    max-width: 70px;
+    max-height: 70px;
+    margin-left: 20px;
 }
 
 .thead-dark{
@@ -161,20 +162,29 @@ display: none;
 
 #tblRankingPF{
   width: 100%;
-  margin-left: 18%;
+  margin-left: 12%;
   height: 500px;
   overflow: auto;
 }
 
-#txtFiltro{
-  width: 85%;
+#tbltop10escuelas, #tbltop10colegios, #tbltop10escuelasPub, #tbltop10escuelasPri, #tbltop10colesPub, #tbltop10colesPri{
+  width: 100%;
+  margin-left: 12%;
+}
+
+.grafico{
+  width: 80%;
+  height: 100%;
+  margin-left: 4%;
+}
+
+
+
+#txtFiltro, #txtFiltro2{
+  width: 70%;
     margin-left: 8%;
 }
 
-#txtFiltro2{
-  width: 100%;
-    margin-left: 17%;
-}
 
 .fa-star{
   color: gray;
@@ -183,54 +193,6 @@ display: none;
 
 /*-------------------     -------------------*/
 
-#regData {
-	margin-left: 15%;
-	margin-bottom: 10px;
-	border-radius: 15px;
-}
-
-.containerBig2 {
-    background-color: #990033;
-    height: auto;
-    margin: 5% 5% 5% 20%;
-    border-radius: 10px;
-    padding: 40px;
-	color: white;
-	width: 50%;
-}
-
-.containerSmallSelectr {
-    text-align: center;
-    margin: 0% 15% 0% 15%;
-    padding: 0% 5% 0% 5%;
-	color: white;
-}
-
-.closeBtn1 {
-	background-color: #FFCC33;
-	padding: 0% 5% 0% 5%;
-	font-size: 1.6em;
-	font-family: Helvetica Light, sans-serif;
-	color: black;
-	cursor: pointer;
-	border-radius: 5px;
-	margin: 0% 25% 0% 20%;
-}
-
-.listadoCtros{
-    border: 15px;
-    border-radius: 2px;
-    padding: 1%;
-    margin-left: 20%;
-    margin-bottom: 10%;
-    width: 55%;
-}
-
-#container {
-
-  margin: 0;
-  padding: 0;
-}
 
 
 

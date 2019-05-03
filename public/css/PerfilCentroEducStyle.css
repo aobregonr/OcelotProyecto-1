@@ -81,7 +81,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol
 			width: 25%;
 			height:100%;
 			position: absolute;
-			min-height: 3457px;
+			min-height: 3502px;
 
 }
 
@@ -450,7 +450,9 @@ ul {
 			margin: 0px 30px;
 			min-height: 100px;
 }
-
+#image_preview2{
+	max-width: 200px;
+}
 
 .imagenNews{
 	max-width: 870px;

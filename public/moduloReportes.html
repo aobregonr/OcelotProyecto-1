@@ -71,490 +71,218 @@
   <div class=mainProfile>
 
 
+  	<br><br>
+
     <div class="contEncabezado">
-      <h1 class="bigLabel"> Módulo de Reportes (Rankings) </h1>
+		<h1 class="bigLabel"> Módulo de Reportes (Rankings) </h1>
     </div>
 
-  </div>
+	<br>
+	<h4 class="accordion">Calificaciones del MEP </h4>
 
-  <br><br>
 
-		<div class="container-fluid" id="content">
-			<div class="container" id="modReportes">
-				<div class="card">
-					<div class="card-header">
-						<a class="card-link" data-toggle="collapse" href="#collapseOne" id="section">
-							<h4 class="bigLabel2">Calificaciones del MEP </h4>
-						</a>
-					</div>
-					<div class="card-deck collapse" class="collapse show" id="collapseOne">
-							
+	<div class="panel">
+		<br>
+		<input  class="form-control" type="text" id="txtFiltro" placeholder="Filtrar por NOMBRE">
+		<br>
+   
+				<table class="table table-light table-striped table-responsive table-hover" id="tblRankingMEP">
+					<thead class="thead-dark sortable">
+						<tr>
+						<th class="thCalif" id=centroName> Centro Educativo</th>
+						<th class="thCalif"> Escudo</th>
+						<th class="thCalif"> Ranking del MEP </th>
+						<th class="thCalif" data-tsorter="numeric"> Calificación Numérica</th>
+						<!--<th class="thCalif"> Año de Calificación</th>-->
+						</tr>
+					</thead class="thead-light">
+					<tbody>
+						<!--datos se llenan dinamicamente con JS-->
+					</tbody>
+				</table>
 
-				
-						<div class="card-body">
+	
+		</div>
+	<br>
 
-							<br>
-							<input  class="form-control" type="text" id="txtFiltro" placeholder="Filtrar por NOMBRE">
+
+			<h4 class="accordion">Calificaciones de Padres de Familia </h4>
 			
-
-								<div class="container">         
-							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingMEP">
-								<thead class="thead-dark sortable">
-									<tr>
-									<th class="thCalif" id=centroName> Centro Educativo</th>
-									<th class="thCalif"> Escudo</th>
-									<th class="thCalif"> Ranking del MEP </th>
-									<th class="thCalif" data-tsorter="numeric"> Calificación Numérica</th>
-									<!--<th class="thCalif"> Año de Calificación</th>-->
-									</tr>
-								</thead class="thead-light">
-								<tbody>
-									<!--datos se llenan dinamicamente con JS-->
-								</tbody>
-							</table>
-						</div>
-						
-							<div id="container"></div>
-
-
-				
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container-fluid" id="content">
-					<div class="container" id="modRankingMEP">
-						<div class="card">
-							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#collapse3" id="section">
-						<h4 class="bigLabel2"> Calificaciones de Padres de Familia </h4>
-					</a>
-				</div>
-				<div class="card-deck collapse" id="collapse3">
-					<div class="MEPscoreTable">
-						<div class="card-body">
-
-
-							<br>
-							<input  class="form-control" type="text" id="txtFiltro2" placeholder="Filtrar por NOMBRE">
+				<div class="panel">
+					<br>
+					<input  class="form-control" type="text" id="txtFiltro2" placeholder="Filtrar por NOMBRE">
+					<br>
+	      
+					<table class="table table-light table-striped table-responsive table-hover" id="tblRankingPF">
+						<thead class="thead-dark sortable">
+							<tr>
+							<th class="thCalif" id=centroName> Centro Educativo</th>
+							<th class="thCalif"> Escudo</th>
+							<th class="thCalif"> Promedio </th>
+							<th class="thCalif"> Ranking de Padres </th>
+							</tr>
+						</thead class="thead-light">
+						<tbody>
+							<!--datos se llenan dinamicamente con JS-->
+						</tbody>
+					</table>
 			
+				</div>
 
-								<div class="container">         
-							<table class="table table-light table-striped table-responsive table-hover" id="tblRankingPF">
-								<thead class="thead-dark sortable">
-									<tr>
-									<th class="thCalif" id=centroName> Centro Educativo</th>
-									<th class="thCalif"> Escudo</th>
-									<th class="thCalif"> Promedio </th>
-									<th class="thCalif"> Ranking de Padres </th>
-									</tr>
-								</thead class="thead-light">
-								<tbody>
-									<!--datos se llenan dinamicamente con JS-->
-								</tbody>
-							</table>
-						</div>
+	
+			<br><br>
 
 
+      <h1 class="bigLabel encSecundarios"> ¡Top 10 Centros Educativos! </h1>
+
+        <br>
+		<h4 class="accordion">10 Mejores Escuelas </h4>
+			
+		<div class="panel">			
+       	<br>
+			<table class="table table-light table-striped table-responsive table-hover" id="tbltop10escuelas">
+				<thead class="thead-dark sortable">
+					<tr>
+					<th class="thCalif" id=centroName> Centro Educativo</th>
+					<th class="thCalif"> Escudo</th>
+					<th class="thCalif"> Ranking del MEP </th>
+					<th class="thCalif"> Calificación Numérica</th>
+					</tr>
+				</thead class="thead-light">
+				<tbody>
+					<!--datos se llenan dinamicamente con JS-->
+				</tbody>
+			</table>
+
+			<div class="grafico" ><div id="container"></div></div>
 						
-							<div id="container"></div>
-
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-	</div> </div>
-		<br><br>
-      <h1 class="bigLabel encSecundarios"> Ranking de los mejores centros educativos según el MEP </h1>
 
 
-	<div id="accordion2">
-
-			<div class="container-fluid" id="content">
-					<div class="container" id="modRankingMEP">
-						<div class="card">
-							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#collapse3" id="section">
-						<h4 class="bigLabel2"> 10 Mejores Escuelas </h4>
-					</a>
-				</div>
-				<div class="card-deck collapse" id="collapse3">
-					<div class="MEPscoreTable">
-						<div class="card-body">
-							<table>
-								<thead>
-									<tr>
-										<td> <b>Centro Educativo</b> </td>
-										<td> <b>Calificación</b> </td>
-										<td> <b>Calificación Base 100</b> </td>
-										<td> <b>Año</b> </td>
-									</tr>
-									<tr> </tr>
-								</thead>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
+		<br>
+		<h4 class="accordion">10 Mejores Colegios </h4>
+			
+		<div class="panel">			
+       	<br>
+			<table class="table table-light table-striped table-responsive table-hover" id="tbltop10colegios">
+				<thead class="thead-dark sortable">
+					<tr>
+					<th class="thCalif" id=centroName> Centro Educativo</th>
+					<th class="thCalif"> Escudo</th>
+					<th class="thCalif"> Ranking del MEP </th>
+					<th class="thCalif"> Calificación Numérica</th>
+					</tr>
+				</thead class="thead-light">
+				<tbody>
+					<!--datos se llenan dinamicamente con JS-->
+				</tbody>
+			</table>
+			
+			<div class="grafico" ><div id="container_2"></div></div>
 		</div>
-	</div> </div>
-
-	<div class="container-fluid" id="content">
-			<div class="container" id="modRankingMEP">
-				<div class="card">
-					<div class="card-header">
-						<a class="card-link" data-toggle="collapse" href="#collapse4" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Colegios </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse4">
-				<div class="MEPscoreTable">
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> 
-</div>  </div>
+	
 
 
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingMEP">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse5" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Escuelas Públicas </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse5">
-				<div class="MEPscoreTable">
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingMEP">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse6" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Escuelas Privadas </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse6">
-				<div class="MEPscoreTable">
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingMEP">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse7" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Colegios Públicos </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse7">
-				<div class="MEPscoreTable">
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingMEP">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse8" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Colegios Privados</h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse8">
-				<div class="MEPscoreTable">
-					
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-	<div id="accordion3">
-
-
-		<br><br>
-      <h1 class="bigLabel encSecundarios"> Ranking de los mejores centros educativos según Padres de Familia </h1>
-
-
-			<div class="container-fluid" id="content">
-
-
-					<div class="container" id="modRankingFAM">
-
-
-
-						<div class="card">
-							<div class="card-header">
-								<a class="card-link" data-toggle="collapse" href="#collapse9" id="section">
-						<h4 class="bigLabel2"> 10 Mejores Escuelas </h4>
-					</a>
-				</div>
-				<div class="card-deck collapse" id="collapse9">
-					<div class="FAMscoreTable">
-						
-						<div class="card-body">
-							<table>
-								<thead>
-									<tr>
-										<td> <b>Centro Educativo</b> </td>
-										<td> <b>Calificación</b> </td>
-										<td> <b>Calificación Base 100</b> </td>
-										<td> <b>Año</b> </td>
-									</tr>
-									<tr> </tr>
-								</thead>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> </div>
-
-	<div class="container-fluid" id="content">
-			<div class="container" id="modRankingFAM">
-				<div class="card">
-					<div class="card-header">
-						<a class="card-link" data-toggle="collapse" href="#collapse10" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Colegios </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse10">
-				<div class="FAMscoreTable">
+		<br>
+		<h4 class="accordion">10 Mejores Escuelas Públicas </h4>
+			
+		<div class="panel">			
+       	<br>
 				
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
+			<table class="table table-light table-striped table-responsive table-hover" id="tbltop10escuelasPub">
+				<thead class="thead-dark sortable">
+					<tr>
+					<th class="thCalif" id=centroName> Centro Educativo</th>
+					<th class="thCalif"> Escudo</th>
+					<th class="thCalif"> Ranking del MEP </th>
+					<th class="thCalif"> Calificación Numérica</th>
+					</tr>
+				</thead class="thead-light">
+				<tbody>
+					<!--datos se llenan dinamicamente con JS-->
+				</tbody>
+			</table>
+
+				<div class="grafico" ><div id="container_3"></div></div>
 			</div>
-		</div>
-	</div> 
-</div>  </div>
+	
 
 
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingFAM">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse11" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Escuelas Públicas </h4>
-				</a>
+		<br>
+		<h4 class="accordion">10 Mejores Escuelas Privadas </h4>
+			
+		<div class="panel">			
+       	<br>
+				
+			<table class="table table-light table-striped table-responsive table-hover" id="tbltop10escuelasPri">
+					<thead class="thead-dark sortable">
+						<tr>
+						<th class="thCalif" id=centroName> Centro Educativo</th>
+						<th class="thCalif"> Escudo</th>
+						<th class="thCalif"> Ranking del MEP </th>
+						<th class="thCalif"> Calificación Numérica</th>
+						</tr>
+					</thead class="thead-light">
+					<tbody>
+						<!--datos se llenan dinamicamente con JS-->
+					</tbody>
+				</table>
+
+				<div class="grafico" ><div id="container_4"></div></div>	
 			</div>
-			<div class="card-deck collapse" id="collapse11">
-				<div class="FAMscoreTable">
+
+
+		<br>
+		<h4 class="accordion">10 Mejores Colegios Públicos </h4>
+			
+		<div class="panel">			
+       	<br>
+			<table class="table table-light table-striped table-responsive table-hover" id="tbltop10colesPub">
+					<thead class="thead-dark sortable">
+						<tr>
+						<th class="thCalif" id=centroName> Centro Educativo</th>
+						<th class="thCalif"> Escudo</th>
+						<th class="thCalif"> Ranking del MEP </th>
+						<th class="thCalif"> Calificación Numérica</th>
+						</tr>
+					</thead class="thead-light">
+					<tbody>
+						<!--datos se llenan dinamicamente con JS-->
+					</tbody>
+				</table>
+
+				<div class="grafico" ><div id="container_5"></div></div>
+			</div>
+
+
+		<br>
+		<h4 class="accordion">10 Mejores Colegios Privados </h4>
+			
+		<div class="panel">			
+       	<br>
 					
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
+			<table class="table table-light table-striped table-responsive table-hover" id="tbltop10colesPri">
+					<thead class="thead-dark sortable">
+						<tr>
+						<th class="thCalif" id=centroName> Centro Educativo</th>
+						<th class="thCalif"> Escudo</th>
+						<th class="thCalif"> Ranking del MEP </th>
+						<th class="thCalif"> Calificación Numérica</th>
+						</tr>
+					</thead class="thead-light">
+					<tbody>
+						<!--datos se llenan dinamicamente con JS-->
+					</tbody>
+				</table>
+
+				<div class="grafico" ><div id="container_6"></div></div>
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
+	
 
 
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingFAM">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse12" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Escuelas Privadas </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse12">
-				<div class="FAMscoreTable">
-					
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingFAM">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse13" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Colegios Públicos </h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse13">
-				<div class="FAMscoreTable">
-					
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="container-fluid" id="content">
-		<div class="container" id="modRankingFAM">
-			<div class="card">
-				<div class="card-header">
-					<a class="card-link" data-toggle="collapse" href="#collapse14" id="section">
-					<h4 class="bigLabel2"> 10 Mejores Colegios Privados</h4>
-				</a>
-			</div>
-			<div class="card-deck collapse" id="collapse14">
-				<div class="FAMscoreTable">
-					
-					<div class="card-body">
-						<table>
-							<thead>
-								<tr>
-									<td> <b>Centro Educativo</b> </td>
-									<td> <b>Calificación</b> </td>
-									<td> <b>Calificación Base 100</b> </td>
-									<td> <b>Año</b> </td>
-								</tr>
-								<tr> </tr>
-							</thead>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+		<br><br><br><br><br><br>
 
 	</div>
-
-
-		<br><br><br><br>
  <footer>
         <div class="footerBack">
             <div class="row">
@@ -569,8 +297,10 @@
     </footer>
 
 
+    <script src="js/servicio_inicio.js"></script>
+    <script src="js/controlador_nav.js"></script>  <!--restringir accesos-->
+
  	<script src="js/servicio_rankingPF.js"></script>
-	<script src="js/servicio_inicio.js"></script>
 	<script src="js/servicio_registroCentroEducativo.js"></script> <!--para obtener la lista de centros y escudos-->
 	<script src="js/servicio_perfiladmin.js"></script>
 	<script src="js/controlador_moduloReportes.js"></script>
