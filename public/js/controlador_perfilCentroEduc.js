@@ -11,6 +11,10 @@ const input_msg = document.querySelector('#msgComment');
 boton_comentario.addEventListener('click', obtener_comentario);
 //_______________________________________________________________________________
 
+let dirUtilesCentro=document.querySelector('#utilesCentroLink');
+let linkCod="lista_utilescentroeducativo.html?b="+b;
+dirUtilesCentro.setAttribute("href",linkCod);
+//_________________________________________________________________________________
 
 let listaCen=[];
 let listaRe=[];
