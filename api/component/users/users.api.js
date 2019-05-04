@@ -149,7 +149,7 @@ module.exports.olvidoContrasenna = function(req, res){
               let mailOptions = {
                 from: 'educatecr.ocelot@gmail.com',
                 to : usuario.correo,
-                subject : 'Bienvenido a EducateCR',
+                subject : 'Recuperar contraseña - EducateCR',
                 html: `<!DOCTYPE html>
                         <html lang="es">
 
