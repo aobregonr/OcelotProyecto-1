@@ -154,14 +154,14 @@ display: none;
 
 
 #tblRankingMEP{
-  width: 80%;
-  margin-left: 10%;
+  width: 62%;
+  margin-left: 12%;
   height: 500px;
   overflow: auto;
 }
 
 #tblRankingPF{
-  width: 100%;
+  width: 62%;
   margin-left: 12%;
   height: 500px;
   overflow: auto;
