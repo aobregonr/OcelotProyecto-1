@@ -164,7 +164,7 @@ let mostrardatos = () =>{
 	inputDepartamento.value = user.departamento;
 	inputTelefono.value = user.telefono;
 	inputExt.value= user.ext;
-	imgEscudo.value = user.imgEscudo;
+	imgEscudo.value = user.escudo;
 	imgFoto.value = user.foto;
 
 	inputBilingue.checked = user.bilingue;

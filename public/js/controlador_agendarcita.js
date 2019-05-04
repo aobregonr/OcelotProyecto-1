@@ -40,7 +40,6 @@ form.classList.add('was-validated');
 //obtener el id del URL (con el parametro que viene de la base de datos)
 var url = window.location.href;
 var b = url.substring(url.indexOf("=")+1);
-console.log(b, identUsuario);
 
 
 function registrarCita(){
@@ -55,6 +54,7 @@ function registrarCita(){
     let descripcion = inputDescripcion.value;
     let identCentroEducativo = b;
     let identPadresFamilia = identUsuario;
+    let estado = 'pendiente';
 
 
 
@@ -100,7 +100,7 @@ if(bError == true){
           });
     
     }else{
-        agendarCita(fecha, nombre, apellido,  hora, email, telefono, descripcion, identCentroEducativo, identPadresFamilia);
+        agendarCita(fecha, nombre, apellido, email, hora, telefono, descripcion, identCentroEducativo, identPadresFamilia, estado);
         swal.fire({
             type: 'success',
             buttonsStyling: false,

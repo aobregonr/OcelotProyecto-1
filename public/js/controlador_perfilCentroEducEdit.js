@@ -104,20 +104,18 @@ let tipoDeCentro=document.querySelector('#listBil9');
 
     let comentarios=[];
     comentarios= obtener_comentarios();
-    console.log(comentarios);
     
     let b=sessionStorage.getItem('id_usuario');
     imprimirComentarios();
 
 
 //ranking Padres de familia y MEP
-//let lista_rankingPF = obtener_rankingPF();
-let lista_ranking = obtener_rankingMEP();
 let lista_rankingPF = obtener_rankingPF();
+let lista_ranking = obtener_rankingMEP();
 
 //mostrar_rankingPF();
 mostrar_rankingMep();
-//mostrar_rankingPF_promedio();
+mostrar_rankingPF_promedio();
 
 
 
@@ -202,32 +200,37 @@ function mostrar_rankingMep(){
     };
 };
 
-/*
+
 //MODIFICADA PARA Q SOLO MUESTRE EL COLE ACTUAL (viene del modulo de reportes)
 // hace un promedio de la calificacion de todos los padres para cada colegio, no muestra todos. 
 function mostrar_rankingPF_promedio(){
 
+  let centroActual = obtener_usuario_por_id(b);
+
+
     let tbody = document.querySelector('#tblRankingPF_Promedio tbody');
     tbody.innerHTML = ''; 
-    let centroActual = obtener_usuario_por_id(b);
 
     //variables importantes:
-    var  count = {}; //diccionario de coles y cantidad de papas que rankearon
+    var count = {}; //diccionario de coles y cantidad de papas que rankearon
     var value = [] //solo las personas que rankearon, numero.
-    let promedio = 0 ; // promedio de notas x cole. 
+    let promedio = 0 ; // promedio de notas x cole. \
+    //let contadorNotas = 0; //el holder de todas las notas de papa
+    let centrosList = [];
 
 
     //obtener primero los repetidos de cada centro
     for(let i = 0; i < lista_rankingPF.length; i++){
 
       //obtener nombre comercial de cada centro
-      let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
-     
+       let centrosInfo =  obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
+       centrosList.push(centrosInfo)
+
+   
       //crear un diccionario q diga cual cole y cuantos rankings x cole
       let uniqueCount = [centrosInfo.nombrecomercial];
       uniqueCount.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     }
-
 
     //obtener la cantidad de rankings x cole
      for(var key in count) {
@@ -237,8 +240,7 @@ function mostrar_rankingPF_promedio(){
         //obtener la suma de las notas de cada cole
         for(let i = 0; i < lista_rankingPF.length; i++){
 
-          let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
-          if (centrosInfo.nombrecomercial == key){
+          if (centrosList[i].nombrecomercial == key){
           
             let nota = lista_rankingPF[i]['califnum'];
             contadorNotas += parseInt(nota);
@@ -248,6 +250,7 @@ function mostrar_rankingPF_promedio(){
       //sacar el promedio con la suma de notas y la cantidad de rankings
       promedio = Math.trunc(contadorNotas / value);
 
+
       //key=nombre del cole. 
       //value= cantidad de personas que rankearon el cole.
       //promedio= promedio de nota de ranking basado en los ranking. (truncados)
@@ -256,11 +259,7 @@ function mostrar_rankingPF_promedio(){
       //generar la tabla
       for(let i = 0; i < lista_rankingPF.length; i++){
 
-        //obtener nombre comercial y escudo de cada centro
-        let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
-        let papaInfo = obtener_usuario_por_id(lista_rankingPF[i]['idpadres']);
-
-       if (key == centrosInfo.nombrecomercial && key == centroActual.nombrecomercial){
+       if (key == centrosList[i].nombrecomercial && key == centroActual.nombrecomercial){
 
           let fila = tbody.insertRow();
 
@@ -303,7 +302,6 @@ function mostrar_rankingPF_promedio(){
       }
 };
 
-*/
 
 
 

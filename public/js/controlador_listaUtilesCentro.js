@@ -9,7 +9,7 @@ let titleCentro2 = document.querySelector('#title2Centro');
 
 let tipoUser=sessionStorage.getItem('tipo_usuario');
 
-if (tipoUser=='PadreFam'){
+if (tipoUser=='PadreFam' || tipoUser=='admin'){
     showDataPad();
 }else{
     showData();

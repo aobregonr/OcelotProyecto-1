@@ -102,20 +102,22 @@ function mostrar_rankingPF_promedio(){
     //variables importantes:
     var count = {}; //diccionario de coles y cantidad de papas que rankearon
     var value = [] //solo las personas que rankearon, numero.
-    let promedio = 0 ; // promedio de notas x cole. 
+    let promedio = 0 ; // promedio de notas x cole. \
+    let centrosList = []; //lista de la info de todos los coles.
 
 
     //obtener primero los repetidos de cada centro
     for(let i = 0; i < lista_rankingPF.length; i++){
 
       //obtener nombre comercial de cada centro
-      let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
-     
+       let centrosInfo =  obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
+       centrosList.push(centrosInfo)
+
+   
       //crear un diccionario q diga cual cole y cuantos rankings x cole
       let uniqueCount = [centrosInfo.nombrecomercial];
       uniqueCount.forEach(function(i) { count[i] = (count[i]||0) + 1;});
     }
-
 
     //obtener la cantidad de rankings x cole
      for(var key in count) {
@@ -125,8 +127,7 @@ function mostrar_rankingPF_promedio(){
         //obtener la suma de las notas de cada cole
         for(let i = 0; i < lista_rankingPF.length; i++){
 
-          let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
-          if (centrosInfo.nombrecomercial == key){
+          if (centrosList[i].nombrecomercial == key){
           
             let nota = lista_rankingPF[i]['califnum'];
             contadorNotas += parseInt(nota);
@@ -136,6 +137,7 @@ function mostrar_rankingPF_promedio(){
       //sacar el promedio con la suma de notas y la cantidad de rankings
       promedio = Math.trunc(contadorNotas / value);
 
+
       //key=nombre del cole. 
       //value= cantidad de personas que rankearon el cole.
       //promedio= promedio de nota de ranking basado en los ranking. (truncados)
@@ -144,13 +146,9 @@ function mostrar_rankingPF_promedio(){
       //generar la tabla
       for(let i = 0; i < lista_rankingPF.length; i++){
 
-        //obtener nombre comercial y escudo de cada centro
-        let centrosInfo = obtener_usuario_por_id(lista_rankingPF[i]['idcentro']);
-        let papaInfo = obtener_usuario_por_id(lista_rankingPF[i]['idpadres']);
-
         //el filtro aun no sirve
         if(key.toLowerCase().includes(filtro2.toLowerCase())) { 
-           if (key == centrosInfo.nombrecomercial){
+           if (key == centrosList[i].nombrecomercial){
 
           let fila = tbody.insertRow();
 
@@ -161,8 +159,8 @@ function mostrar_rankingPF_promedio(){
           let imagen = document.createElement('img');
               imagen.classList.add('imagenTabla'); //para definir el tamano de la imagen
 
-              if(centrosInfo.escudo){
-                  imagen.src = centrosInfo.escudo;
+              if(centrosList[i].escudo){
+                  imagen.src = centrosList[i].escudo;
               }else{
                   if (lista_usuarios[i]['tipo'] == 'CentroEducativo'){
                   imagen.src = 'imgs/escudo.png';
@@ -199,7 +197,7 @@ function mostrar_rankingPF_promedio(){
     
           //llenar la tabla con los datos 
          
-          celdaCentro.innerHTML = centrosInfo.nombrecomercial;
+          celdaCentro.innerHTML = centrosList[i].nombrecomercial;
           celdaEscudo.appendChild(imagen);
           celdaPromedio.innerHTML = promedio;
           celdaEstrellas.innerHTML = promedioStars;
